@@ -1,1 +1,1 @@
-c:\users\piotr kruk\documents\visual studio 2012\Projects\App3\App3\App3.jsproj;neutral
+F:\repo\przepisy\src\App3\App3.jsproj;neutral

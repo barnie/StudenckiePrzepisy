@@ -1,5 +1,6 @@
 ﻿// For an introduction to the Blank template, see the following documentation:
 // http://go.microsoft.com/fwlink/?LinkId=232509
+
 (function () {
     "use strict";
 
@@ -28,7 +29,34 @@
     function buttonClickHandler(eventInfo) {
         var md = new Windows.UI.Popups.MessageDialog("Hello World!");
         (new Windows.UI.Popups.MessageDialog("Test", "Button testujacy klikanie mozna wypieprzyc go z layoutu")).showAsync().done();
-        
+
+        var dbPath = Windows.Storage.ApplicationData.current.localFolder.path + '\\db.sqlite',
+      Package = Windows.ApplicationModel.Package;
+
+        WinJS.Utilities.ready().then(function () {
+            return SQLite3JS.openAsync(dbPath);
+        }).then(function (db) {
+            return db.runAsync('CREATE TABLE IF NOT EXISTS images (id INT PRIMARY KEY, image BLOB)')
+            .then(function () {
+
+                return Package.current.installedLocation.getFileAsync("images\\logo.png");
+            }).then(function (file) {
+                return Windows.Storage.FileIO.readBufferAsync(file);
+            }).then(function (buffer) {
+                return db.runAsync('INSERT INTO images (image) VALUES (?)', [buffer]);
+            }).then(function () {
+                var div;
+                return db.eachAsync('SELECT image FROM images', function (row) {
+                    div = document.createElement("img");
+                    div.src = 'data:image/png;base64,' + row.image;
+                    document.body.appendChild(div);
+                });
+            }).then(function () {
+                return db.runAsync("DROP TABLE images");
+            }).then(function () {
+                db.close();
+            });
+        });
     }
 
     app.oncheckpoint = function (args) {
