@@ -1,0 +1,45 @@
+﻿body {
+    background-size: 100% 100%;
+    background-color: green;
+}
+
+    body .Gallery {
+        height: 80%;
+        width: 70%;
+        margin-left:20%;
+    }
+
+        body .Gallery ul {
+            list-style: none;
+        }
+
+            body .Gallery ul li {
+                height: 100%;
+                width: 100%;
+                display: inline;
+            }
+
+                body .Gallery ul li  img {
+                    height: 92%;
+                    width: 20%;
+                    margin-right: 1%;
+                    margin-bottom: 1%;
+                    border-style: solid;
+                    border-color: black;
+                    border-radius: 1px;
+                    float: left;
+                }
+
+
+
+@media screen and (-ms-view-state: fullscreen-landscape) {
+}
+
+@media screen and (-ms-view-state: filled) {
+}
+
+@media screen and (-ms-view-state: snapped) {
+}
+
+@media screen and (-ms-view-state: fullscreen-portrait) {
+}

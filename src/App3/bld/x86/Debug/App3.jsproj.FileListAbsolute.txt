@@ -1,0 +1,16 @@
+F:\repo\przepisy\src\App3\bin\x86\Debug\resources.pri
+F:\repo\przepisy\src\App3\bin\x86\Debug\AppxManifest.xml
+F:\repo\przepisy\src\App3\bin\x86\Debug\App3.build.appxrecipe
+F:\repo\przepisy\src\App3\bld\x86\Debug\App3.jsproj.GenerateResource.Cache
+F:\repo\przepisy\src\App3\bld\x86\Debug\priconfig.xml
+F:\repo\przepisy\src\App3\bld\x86\Debug\priconfig.xml.intermediate
+F:\repo\przepisy\src\App3\bld\x86\Debug\layout.resfiles
+F:\repo\przepisy\src\App3\bld\x86\Debug\layout.resfiles.intermediate
+F:\repo\przepisy\src\App3\bld\x86\Debug\resources.resfiles
+F:\repo\przepisy\src\App3\bld\x86\Debug\resources.resfiles.intermediate
+F:\repo\przepisy\src\App3\bld\x86\Debug\pri.resfiles
+F:\repo\przepisy\src\App3\bld\x86\Debug\pri.resfiles.intermediate
+F:\repo\przepisy\src\App3\bld\x86\Debug\qualifiers.txt
+F:\repo\przepisy\src\App3\bld\x86\Debug\qualifiers.txt.intermediate
+F:\repo\przepisy\src\App3\bld\x86\Debug\MultipleQualifiersPerDimensionFound.txt
+F:\repo\przepisy\src\App3\bld\x86\Debug\ProjectArchitectures.txt
