@@ -1,12 +1,12 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <PropertyGroup>
-    <Machine>FRACTALDESIGN</Machine>
-    <WindowsUser>Piotr</WindowsUser>
+    <Machine>PIOTR_KRUK</Machine>
+    <WindowsUser>Piotr Kruk</WindowsUser>
     <SolutionConfiguration>Debug|x86</SolutionConfiguration>
     <PackageArchitecture>x86</PackageArchitecture>
     <PackageIdentityName>7cbc57f9-d6bb-4fc5-8ce0-d0c51fa32295</PackageIdentityName>
-    <RegisteredManifestChecksum>C6680CA56E27A4679D0CED8E03CEC028EE34EF7DE2ECFC2548BF12A7CDAA7946</RegisteredManifestChecksum>
+    <RegisteredManifestChecksum>0359DC2A8E3443C790E774A5E0244EA60045F4F0EB6051F7B87570B23847EA5B</RegisteredManifestChecksum>
     <RegisteredPackageMoniker>7cbc57f9-d6bb-4fc5-8ce0-d0c51fa32295_1.0.0.0_x86__1b32gpn6wq9vm</RegisteredPackageMoniker>
     <RegisteredUserModeAppID>7cbc57f9-d6bb-4fc5-8ce0-d0c51fa32295_1b32gpn6wq9vm!App</RegisteredUserModeAppID>
     <RegisteredPackageID>7cbc57f9-d6bb-4fc5-8ce0-d0c51fa32295</RegisteredPackageID>
@@ -14,56 +14,100 @@
     <RegisteredVersion>1.0.0.0</RegisteredVersion>
   </PropertyGroup>
   <ItemGroup>
-    <AppXManifest Include="F:\repo\przepisy\src\App3\bin\x86\Debug\AppxManifest.xml">
+    <AppXManifest Include="E:\Projekt_Zespolowy\przepisy\src\App3\bin\x86\Debug\AppxManifest.xml">
       <PackagePath>AppxManifest.xml</PackagePath>
       <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
-      <Modified>2013-11-09T19:40:10.780</Modified>
+      <Modified>2013-11-10T01:32:23.885</Modified>
     </AppXManifest>
   </ItemGroup>
   <ItemGroup>
+    <AppxPackagedFile Include="E:\Projekt_Zespolowy\przepisy\src\App3\Debug\SQLite3Component\SQLite3.winmd">
+      <PackagePath>SQLite3.winmd</PackagePath>
+      <Modified>2013-11-10T01:32:20.001</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="E:\Projekt_Zespolowy\przepisy\src\App3\Debug\SQLite3Component\SQLite3Component.dll">
+      <PackagePath>SQLite3Component.dll</PackagePath>
+      <Modified>2013-11-10T01:32:21.451</Modified>
+    </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Program Files %28x86%29\Microsoft SDKs\Windows\v8.0\ExtensionSDKs\SQLite.WinRT\3.8.1\Redist\Debug\x86\sqlite3.dll">
       <PackagePath>sqlite3.dll</PackagePath>
-      <Modified>2013-11-09T18:40:22.080</Modified>
+      <Modified>2013-11-09T14:56:55.607</Modified>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="F:\repo\przepisy\src\App3\default.html">
+    <AppxPackagedFile Include="E:\Projekt_Zespolowy\przepisy\src\App3\default.html">
       <PackagePath>default.html</PackagePath>
-      <Modified>2013-11-09T20:06:29.384</Modified>
+      <Modified>2013-11-10T01:15:24.309</Modified>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="F:\repo\przepisy\src\App3\images\logo.png">
+    <AppxPackagedFile Include="E:\Projekt_Zespolowy\przepisy\src\App3\images\logo.png">
       <PackagePath>images\logo.png</PackagePath>
       <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
-      <Modified>2013-11-09T18:55:34.271</Modified>
+      <Modified>2013-11-09T19:42:38.983</Modified>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="F:\repo\przepisy\src\App3\images\smalllogo.png">
+    <AppxPackagedFile Include="E:\Projekt_Zespolowy\przepisy\src\App3\images\smalllogo.png">
       <PackagePath>images\smalllogo.png</PackagePath>
       <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
-      <Modified>2013-11-09T18:55:34.272</Modified>
+      <Modified>2013-11-09T19:42:38.984</Modified>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="F:\repo\przepisy\src\App3\images\splashscreen.png">
+    <AppxPackagedFile Include="E:\Projekt_Zespolowy\przepisy\src\App3\images\splashscreen.png">
       <PackagePath>images\splashscreen.png</PackagePath>
       <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
-      <Modified>2013-11-09T18:55:34.274</Modified>
+      <Modified>2013-11-09T19:42:38.984</Modified>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="F:\repo\przepisy\src\App3\images\storelogo.png">
+    <AppxPackagedFile Include="E:\Projekt_Zespolowy\przepisy\src\App3\images\storelogo.png">
       <PackagePath>images\storelogo.png</PackagePath>
       <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
-      <Modified>2013-11-09T18:55:34.274</Modified>
+      <Modified>2013-11-09T19:42:38.984</Modified>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="F:\repo\przepisy\src\App3\images\warzywa.jpg">
+    <AppxPackagedFile Include="E:\Projekt_Zespolowy\przepisy\src\App3\SQLite3JS\images\logo.png">
+      <PackagePath>SQLite3\logo.png</PackagePath>
+      <Modified>2013-11-09T19:42:38.900</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="E:\Projekt_Zespolowy\przepisy\src\App3\SQLite3JS\images\smalllogo.png">
+      <PackagePath>SQLite3\smalllogo.png</PackagePath>
+      <Modified>2013-11-09T19:42:38.901</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="E:\Projekt_Zespolowy\przepisy\src\App3\SQLite3JS\images\splashscreen.png">
+      <PackagePath>SQLite3\splashscreen.png</PackagePath>
+      <Modified>2013-11-09T19:42:38.901</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="E:\Projekt_Zespolowy\przepisy\src\App3\SQLite3JS\images\storelogo.png">
+      <PackagePath>SQLite3\storelogo.png</PackagePath>
+      <Modified>2013-11-09T19:42:38.902</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="E:\Projekt_Zespolowy\przepisy\src\App3\SQLite3JS\images\widelogo.png">
+      <PackagePath>SQLite3\widelogo.png</PackagePath>
+      <Modified>2013-11-09T19:42:38.902</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="E:\Projekt_Zespolowy\przepisy\src\App3\images\warzywa.jpg">
       <PackagePath>images\warzywa.jpg</PackagePath>
-      <Modified>2013-11-09T18:55:34.275</Modified>
+      <Modified>2013-11-09T19:42:38.985</Modified>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="F:\repo\przepisy\src\App3\js\default.js">
+    <AppxPackagedFile Include="E:\Projekt_Zespolowy\przepisy\src\App3\js\default.js">
       <PackagePath>js\default.js</PackagePath>
-      <Modified>2013-11-09T20:04:47.456</Modified>
+      <Modified>2013-11-10T01:29:37.417</Modified>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="F:\repo\przepisy\src\App3\css\default.css">
+    <AppxPackagedFile Include="E:\Projekt_Zespolowy\przepisy\src\App3\js\SQLite3.js">
+      <PackagePath>js\SQLite3.js</PackagePath>
+      <Modified>2013-11-09T19:42:38.904</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="E:\Projekt_Zespolowy\przepisy\src\App3\css\default.css">
       <PackagePath>css\default.css</PackagePath>
-      <Modified>2013-11-09T18:55:34.270</Modified>
+      <Modified>2013-11-09T19:42:38.981</Modified>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="F:\repo\przepisy\src\App3\bin\x86\Debug\resources.pri">
+    <AppxPackagedFile Include="E:\Projekt_Zespolowy\przepisy\src\App3\packages.config">
+      <PackagePath>packages.config</PackagePath>
+      <Modified>2013-11-09T22:19:53.742</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="E:\Projekt_Zespolowy\przepisy\src\App3\SQLite.cs">
+      <PackagePath>SQLite.cs</PackagePath>
+      <Modified>2013-11-09T22:19:53.616</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="E:\Projekt_Zespolowy\przepisy\src\App3\SQLiteAsync.cs">
+      <PackagePath>SQLiteAsync.cs</PackagePath>
+      <Modified>2013-11-09T22:19:53.207</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="E:\Projekt_Zespolowy\przepisy\src\App3\bin\x86\Debug\resources.pri">
       <PackagePath>resources.pri</PackagePath>
-      <Modified>2013-11-09T19:40:10.620</Modified>
+      <Modified>2013-11-10T01:32:22.925</Modified>
     </AppxPackagedFile>
   </ItemGroup>
   <ItemGroup>
@@ -96,9 +140,9 @@
     </ResolvedSDKReference>
     <ResolvedSDKReference Include="C:\Program Files %28x86%29\Microsoft SDKs\Windows\v8.0\ExtensionSDKs\Microsoft.WinJS.1.0\1.0\">
       <Name>Microsoft.WinJS.1.0</Name>
-      <Version>1.0.9200.20789</Version>
+      <Version>1.0.9200.20512</Version>
       <Architecture>Neutral</Architecture>
-      <FrameworkIdentity>Name=Microsoft.WinJS.1.0, MinVersion=1.0.9200.20789</FrameworkIdentity>
+      <FrameworkIdentity>Name=Microsoft.WinJS.1.0, MinVersion=1.0.9200.20512</FrameworkIdentity>
       <AppxLocation>C:\Program Files %28x86%29\Microsoft SDKs\Windows\v8.0\ExtensionSDKs\Microsoft.WinJS.1.0\1.0\Microsoft.WinJS.1.0.appx</AppxLocation>
       <MoreInfo>
       </MoreInfo>

@@ -61,12 +61,19 @@
     <Content Include="images\warzywa.jpg" />
     <Content Include="js\default.js" />
     <Content Include="css\default.css" />
+    <Content Include="js\SQLite3.js" />
+    <Content Include="packages.config" />
+    <Content Include="SQLite.cs" />
+    <Content Include="SQLiteAsync.cs" />
     <None Include="App3_TemporaryKey.pfx" />
   </ItemGroup>
   <ItemGroup>
     <SDKReference Include="Microsoft.VCLibs, version=11.0" />
     <SDKReference Include="Microsoft.WinJS.1.0, Version=1.0" />
     <SDKReference Include="SQLite.WinRT, Version=3.8.1" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\..\..\..\SQLite3-WinRT-master\SQLite3Component\SQLite3Component.vcxproj" />
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)\$(WMSJSProjectDirectory)\Microsoft.VisualStudio.$(WMSJSProject).targets" />
   <!-- To modify your build process, add your task inside one of the targets below then uncomment

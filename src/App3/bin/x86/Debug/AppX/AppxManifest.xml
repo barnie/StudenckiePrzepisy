@@ -33,8 +33,18 @@
   </Capabilities>
   <Dependencies>
     <PackageDependency Name="Microsoft.VCLibs.110.00.Debug" MinVersion="11.0.51106.1" />
-    <PackageDependency Name="Microsoft.WinJS.1.0" MinVersion="1.0.9200.20789" />
+    <PackageDependency Name="Microsoft.WinJS.1.0" MinVersion="1.0.9200.20512" />
   </Dependencies>
+  <Extensions>
+    <Extension Category="windows.activatableClass.inProcessServer">
+      <InProcessServer>
+        <Path>SQLite3Component.dll</Path>
+        <ActivatableClass ActivatableClassId="SQLite3.ResultCode" ThreadingModel="both" />
+        <ActivatableClass ActivatableClassId="SQLite3.Datatype" ThreadingModel="both" />
+        <ActivatableClass ActivatableClassId="SQLite3.Database" ThreadingModel="both" />
+      </InProcessServer>
+    </Extension>
+  </Extensions>
   <build:Metadata>
     <build:Item Name="VisualStudio" Version="12.0" />
     <build:Item Name="VisualStudioEdition" Value="Microsoft Visual Studio Ultimate 2013" />

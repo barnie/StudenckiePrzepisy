@@ -27,36 +27,27 @@
     };
 
     function buttonClickHandler(eventInfo) {
-        var md = new Windows.UI.Popups.MessageDialog("Hello World!");
-        (new Windows.UI.Popups.MessageDialog("Test", "Button testujacy klikanie mozna wypieprzyc go z layoutu")).showAsync().done();
-
-        var dbPath = Windows.Storage.ApplicationData.current.localFolder.path + '\\db.sqlite',
-      Package = Windows.ApplicationModel.Package;
-
-        WinJS.Utilities.ready().then(function () {
-            return SQLite3JS.openAsync(dbPath);
-        }).then(function (db) {
-            return db.runAsync('CREATE TABLE IF NOT EXISTS images (id INT PRIMARY KEY, image BLOB)')
+        // that button test a database only :) Cool and chill nigga!
+        var dbPath = Windows.Storage.ApplicationData.current.localFolder.path + '\\db.sqlite';
+        // wymagane wlaczenie podgladu ukrytych folderow by zobaczyc plik bazy
+        //baze przechowuje w Uzytkownicy/Nazwa_uzytkownika/Appdata/Local/Packages/nazwa_paczki/LocalState lub LocalCache ;p
+        SQLite3JS.openAsync(dbPath)
+        .then(function (db) {
+            return db.runAsync('CREATE TABLE Item (name TEXT, price REAL, id INT PRIMARY KEY)')
             .then(function () {
-
-                return Package.current.installedLocation.getFileAsync("images\\logo.png");
-            }).then(function (file) {
-                return Windows.Storage.FileIO.readBufferAsync(file);
-            }).then(function (buffer) {
-                return db.runAsync('INSERT INTO images (image) VALUES (?)', [buffer]);
-            }).then(function () {
-                var div;
-                return db.eachAsync('SELECT image FROM images', function (row) {
-                    div = document.createElement("img");
-                    div.src = 'data:image/png;base64,' + row.image;
-                    document.body.appendChild(div);
+                return db.runAsync('INSERT INTO Item (name, price, id) VALUES (?, ?, ?)', ['Mango', 4.6, 123]);
+            })
+            .then(function () {
+                return db.eachAsync('SELECT * FROM Item', function (row) {
+                    console.log('Get a ' + row.name + ' for $' + row.price);
                 });
-            }).then(function () {
-                return db.runAsync("DROP TABLE images");
-            }).then(function () {
+            })
+            .then(function () {
                 db.close();
             });
         });
+
+        
     }
 
     app.oncheckpoint = function (args) {

@@ -6,3 +6,7 @@ images\splashscreen.png
 images\storelogo.png
 images\warzywa.jpg
 js\default.js
+js\SQLite3.js
+packages.config
+SQLite.cs
+SQLiteAsync.cs
