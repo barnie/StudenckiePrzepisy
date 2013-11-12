@@ -3,6 +3,10 @@
     background-color: green;
 }
 
+    body .cleaner {
+        clear:both;
+    }
+
     body .Gallery {
         height: 80%;
         width: 70%;
@@ -29,6 +33,89 @@
                     border-radius: 1px;
                     float: left;
                 }
+
+body .Menu {
+    border-style: solid;
+    border-bottom: none;
+    border-color: black;
+    border-radius: 1px;
+    text-align: center;
+    padding-top: 2%;
+    float: left;
+    height: 87%;
+    width: 15%;
+    color: black;
+    background-color: red;
+    font-family: "Arial";
+    font-size: medium;
+}
+
+    body .Menu a {
+        color: inherit;
+        text-decoration:none;
+    }
+
+        body .Menu a:hover {
+            font-weight:bold;
+        }
+
+        body .Menu a:active {
+            color: green;
+        }
+
+    body .Menu .title {
+
+        width: 100%;
+        font-weight: bold;
+        font-size: 125%;
+    }
+
+    body .Menu ul {
+        padding-top: 1%;
+        line-height: 2em;
+         list-style: none;
+    }
+
+        body .Menu ul li {
+            text-align: left;
+        }
+    
+    body .search {   
+        border-style: solid;
+        border-color: black;
+        border-radius: 1px;
+        background-color: red;
+        width: 100%;
+        height: 10%;
+    }
+
+        body .search form {
+            display: -ms-flexbox;
+           height: 40%;
+           padding-top:1.4%;
+           padding-bottom:1.6%;
+           padding-left: 6.8%;
+           padding-right: 5%;
+        }
+
+        body .search input {
+            padding: 0;
+            margin: 0;
+            height: 100%;
+            width:100%;
+            background-color: green;
+        }
+
+        body .search .field {         
+            height: 100%;
+            width:85%;
+        }
+
+        body .search .button { 
+            margin-left: 2%;      
+            height: 100%;
+            width:10%;
+        }
 
 
 

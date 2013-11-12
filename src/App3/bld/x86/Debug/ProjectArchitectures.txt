@@ -1,2 +1,2 @@
-E:\Projekt_Zespolowy\przepisy\src\App3\App3.jsproj;x86
-E:\SQLite3-WinRT-master\SQLite3Component\SQLite3Component.vcxproj;x86
+C:\Dokumenty\przepisy\src\App3\App3.jsproj;x86
+C:\Dokumenty\przepisy\src\App3\SQLite3Component\SQLite3Component.vcxproj;x86
