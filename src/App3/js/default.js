@@ -59,5 +59,11 @@
         // args.setPromise().
     };
 
+    // App bar initialization.
+    document.addEventListener("DOMContentLoaded", function () {
+        WinJS.UI.processAll();
+    }, false);
+    
+
     app.start();
 })();
