@@ -28,24 +28,7 @@
 
     function buttonClickHandler(eventInfo) {
         // that button test a database only :) Cool and chill nigga!
-        var dbPath = Windows.Storage.ApplicationData.current.localFolder.path + '\\db.sqlite';
-        // wymagane wlaczenie podgladu ukrytych folderow by zobaczyc plik bazy
-        //baze przechowuje w Uzytkownicy/Nazwa_uzytkownika/Appdata/Local/Packages/nazwa_paczki/LocalState lub LocalCache ;p
-        SQLite3JS.openAsync(dbPath)
-        .then(function (db) {
-            return db.runAsync('CREATE TABLE Item (name TEXT, price REAL, id INT PRIMARY KEY)')
-            .then(function () {
-                return db.runAsync('INSERT INTO Item (name, price, id) VALUES (?, ?, ?)', ['Mango', 4.6, 123]);
-            })
-            .then(function () {
-                return db.eachAsync('SELECT * FROM Item', function (row) {
-                    console.log('Get a ' + row.name + ' for $' + row.price);
-                });
-            })
-            .then(function () {
-                db.close();
-            });
-        });
+        createDB();
 
         
     }
