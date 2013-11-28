@@ -29,7 +29,7 @@
     function buttonClickHandler(eventInfo) {
         // that button test a database only :) Cool and chill nigga!
         createDB();
-
+       // init_miary();
         
     }
 
