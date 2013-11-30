@@ -63,6 +63,7 @@
     <Content Include="js\default.js" />
     <Content Include="css\default.css" />
     <Content Include="js\SQLite3.js" />
+    <Content Include="js\test_init_db.js" />
     <Content Include="packages.config" />
     <Content Include="SQLite.cs" />
     <Content Include="SQLiteAsync.cs" />
