@@ -1,11 +1,7 @@
 ﻿body {
     background-size: 100% 100%;
-    background-color: green;
+    background-color: #005500;
 }
-
-    body .cleaner {
-        clear:both;
-    }
 
     body .Gallery {
         height: 80%;

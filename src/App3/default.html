@@ -3,7 +3,7 @@
 <head>
     <meta charset="utf-8" />
     <title>App3</title>
-
+    <script src="/js/LayoutContainer.js"></script>
     <!-- WinJS references -->
     <link href="//Microsoft.WinJS.1.0/css/ui-dark.css" rel="stylesheet" />
     <script src="//Microsoft.WinJS.1.0/js/base.js"></script>
@@ -19,10 +19,12 @@
 <body>
     <div class="Menu">
             <span class="title">Menu</span>
-            <ul>
+            <ul>                
                 <li><a href="google.pl">Strona startowa</a></li>
+                <li><a href="recipe.html">Przepis</a></li>
                 <li><a href="google.pl">Galeria</a></li>
                 <li><a href="google.pl">Kategorie</a></li>
+                <li><a href="list_recipes.html">Przepisy</a></li>
             </ul>
     </div>
     <button id="klik"></button>
@@ -30,7 +32,7 @@
         <ul class="1rzad" style="display: -ms-flexbox">
             <li><a href="x">
                 <img src="images/warzywa.jpg" title="Przepis warzywny wow xD" /></a></li>
-            <li><a href="">
+            <li><a href="x">
                 <img src="images/warzywa.jpg" title="Przepis warzywny wow xD" /></a></li>
             <li><a href="google.pl">
                 <img src="images/warzywa.jpg" title="Przepis warzywny wow xD" /></a></li>
@@ -44,7 +46,6 @@
                 <img src="images/warzywa.jpg" title="Przepis warzywny wow xD" /></a></li>
         </ul>
     </div>
-    <p class="cleaner"></p>
     <div data-win-control="WinJS.UI.AppBar" aria-label="Navigation Bar" 
         data-win-options="{layout:'custom',placement:'bottom'}", class="bottomMenu">
         <header aria-label="Navigation bar" role="banner">
