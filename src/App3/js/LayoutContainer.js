@@ -5,13 +5,16 @@
 //
 // window.onload = function ()
 // {
+//     var count = 3;
 //     var layout = new LayoutContainer(count, 'myTableCss', 'myRowCss', 'myCellCss');
-//
+//     
 //     var table = layout.CreateContainer();
 //
 //     document.getElementById('myDiv').innerHTML = window.toStaticHTML(table.toString());
 //     var prefix = 'first';
 //     var j = 0;
+//     var picturesPaths = ["images/1.jpg", "images/2.jpg", "images/3.jpg"];
+//     var repicesIds = ["1", "2", "3"];
 //     for (var i = 0; i < count; i++)
 //     {
 //         var image = layout.CreateElementContent(picturesPaths[i], 'openWindowWithRepice', 'myImageCss', repicesIds[i]);
