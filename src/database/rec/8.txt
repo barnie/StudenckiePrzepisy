@@ -1,3 +1,6 @@
+<cat>warzywa<cat>
+<cat>nabial<cat>
+<cat>zupy<cat>
 <title>Zupa krem z cukini</title>
 <components>2 œrednie cukinie<next>2 i 1/3 szklanki bulionu drobiowego lub warzywnego<next>1 ma³y pêczek kolendry lub natki pietruszki, same listki<next>6 listków œwie¿ej bazylii<next>œwie¿o zmielony czarny pieprz<next>2/3 szklanki p³ynnej œmietany 18% lub kremówki</components>
 <des>Obieramy cukiniê, kroimy na plastry i wrzucamy do wrz¹cej i osolonej wody na oko³o 8 minut. Ods¹czon¹ miksujemy razem z drobno posiekan¹ kolendr¹ lub natk¹, dodajemy do gotuj¹cego siê bulionu, przyprawiam pieprzem i porwan¹ na kawa³eczki bazyli¹.  Podajemy gor¹c¹, posypan¹ œwie¿ymi zio³ami, ze œmietan¹ w oddzielnej miseczce. Mo¿na sch³odziæ lodówce, najlepiej przez noc i serwowaæ jako ch³odnik.  Smaczn</des>

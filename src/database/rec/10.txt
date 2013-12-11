@@ -1,3 +1,6 @@
+<cat>nabial<cat>
+<cat>pieczywo<cat>
+<cat>desery<cat>
 <title>Gofry z owocami i bit¹ œmietan¹</title>
 <components>3 szklanki m¹ki<next>4 jajka<next>200 ml mleka<next>200 ml wody<next>3/4 szklanki oleju lub 15 dag roztopionego mas³a<next>szklanka cukru pudru<next>20 g proszku do pieczenia<next>aromat zapachowy waniliowy<next>du¿y cukier waniliowy </components>
 <des>Jajka ucieramy z cukrem na pulchn¹ masê, dodajemy m¹kê wymieszan¹ z proszkiem do pieczenia, mleko, wodê i olej oraz pozosta³e sk³adniki.  Ca³oœæ dok³adnie mieszamy.  Ciasto powinno mieæ konsystencjê gêstej œmietany. Sma¿ymyw rozgrzanej gofrownicy.  Po upieczeniu stawiaæ pionowo, bêd¹ przez to bardziej chrupi¹ce! Podajemy z bit¹ œmietan¹ i owocami sezonowymi. </des>

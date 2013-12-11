@@ -1,3 +1,6 @@
+<cat>nabial<cat>
+<cat>warzywa<cat>
+<cat>studenckie<cat>
 <title>Spaghetti carbonara</title>
 <components>• 400 gram makaronu<next>• 200 ml œmietany 30%<next>• 100 gram wêdzonego boczku<next>• 3 ¿ó³tka<next>• 50 gram tartego sera<next>• 1 z¹bek czosnku<next>• 1 cebula<next>• oliwa do sma¿enia</components>
 <des>Makaron gotujemy al dente - 10-12 minut. Boczek siekamy w kostkê i sma¿ymy na suchej patelni. Skwarki odk³adamy na bok, a na t³uszczu z boczku sma¿ymy posiekan¹ cebulê i przecisniêty przez praskê czosnek. ¯ó³tka ubiæ ze œmiatank¹ i serem, dodaæ boczek, doprawiæ sol¹ i pieprzem. Sos wlaæ na patelniê, wymieszaæ, dodaæ ugotowany makaron i podgrzewaæ a¿ sos bêdzie gêsty i kremowy. <</des>

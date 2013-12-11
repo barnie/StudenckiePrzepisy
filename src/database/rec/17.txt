@@ -1,3 +1,8 @@
+<cat>warzywa<cat>
+<cat>nabial<cat>
+<cat>salatki<cat>
+<cat>mieso<cat>
+<cat>studenckie<cat>
 <title>Lekka sa³atka wiosenna</title>
 <components>sa³ata: zwyk³a lub pekiñska<next>pomidor/papryka<next>kukurydza<next>groszek<next>jajka <next>majonez<next>ser ¿ó³ty<next>szynka</components>
 <des>Jajka ugotowaæ i obraæ.&nbsp; Przed dodaniem jajek do sa³atki nale¿y je ostudziæ i osoliæ. Ca³e jajka œcieramy drobno na tarce lub kroimy w kostki. Ser œcieramy na du¿ych oczkach.&nbsp; Kroimy sa³atê, szynkê, paprykê i pomidory w drobn¹ kostkê.&nbsp; Sa³atkê uk³adamy warstwowo rozpoczynaj¹c od sa³aty nastêpnie dodajemy kolejno, paprykê/pomidory, kukurydzê, groszek, jajka i szynkê. Do pierwszej warstwy dodajemy na wierzch 5 ³y¿ek majonezu. Warstwy powielamy w tej samej kolejnoœci. Na wierzch posypujemy serem ¿ó³tym. Sa³atka dziêki swojej efektownej formie œwietnie nadaje siê na przyjêcia czy bankiety, ale z pewnoœci¹ bêdzie mia³a równie¿ zastosowanie w formie lekkiej kolacji. Rada dla dbaj¹cych o liniê: majonez mo¿emy zast¹piæ jogurtem.   Niech lekkoœ</des>

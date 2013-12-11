@@ -1,3 +1,7 @@
-<title>Muesli z owocami i jogurtem naturalnym</title>
-<components>jogurt naturalny<next>granola lub muesli z rodzynkami<next>maliny, truskawki, je¿yny, borówki – owoce wed³ug uznania i pory roku</components>
-<des>lewamy jogurt do miseczki/asjetki/kieliszka - w zale¿noœci kiedy i komu je podajemy, bo muesli w takiej formie mo¿e byæ równie¿ doskona³ym sposobem na deser:)  Wsypujemy 3 du¿e ³y¿ki muesli lub granoli. Na wierzch wyk³adamy jedn¹ ³y¿kê jogurtu i uk³adamy owoce wybrane przez nas.  Mo¿na dodaæ miodu lub przyozdobiæ listkiem miêty. </des>
+<cat>nabial<cat>
+<cat>warzywa<cat>
+<cat>salatki<cat>
+<cat>studenckie<cat>
+<title>Broku³y z serem feta</title>
+<components>1 œwie¿y broku³<next>opakowanie sera feta<next>2 z¹bki czosnku<next>3 ³y¿ki jogurtu naturalnego<next>2 ³y¿ki majonezu<next>1 ³y¿eczka sosu tzatziki<next>ziarna s³onecznika (doda³em ok. 3 ³y¿ek)<next>œrednia puszka kukurydzy konserwowej</components>
+<des>Broku³ myjemy, dzielimy na ró¿yczki.  Gotujemy wodê z sol¹ i 1 ³y¿k¹ cukru.  Do wrz¹tku wrzucamy ró¿yczki broku³ i gotujemy a¿ bêd¹ miêkkie - kilka minut, ¿eby nie zrobiæ z nich &quot;ciapki&quot; ;) Odcedzamy broku³y przez sitko, a nastêpnie przelewamy zimn¹ wod¹ i studzimy. Fetê kroimy w kostkê. W miseczce mieszamy jogurt i majonez, dodajemy sos tzatziki i zmia¿d¿one z¹bki czosnku, mieszamy - to bêdzie nasz sos. Na suchej patelni pra¿ymy s³onecznik. W misce delikatnie mieszamy broku³y, kukurydzê i ser feta.  Ostro¿nie przek³adamy ca³oœæ do przeŸroczystej salaterki tak ¿eby jej nie ubrudziæ - estetyka ma tu du¿e znaczenie:)  Ca³oœæ polewamy sosem czosnkowym i posypujemy pra¿onym s³onecznikiem.  Przed podaniem mo¿emy schodziæ w lodówce. <b</des>

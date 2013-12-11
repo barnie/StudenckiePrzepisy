@@ -1,3 +1,7 @@
+<cat>nabial<cat>
+<cat>owoce<cat>
+<cat>desery<cat>
+<cat>studenckie<cat>
 <title>Crepes suzette</title>
 <components>3 ³y¿ki cukru<next>sok z 1/4 cytryny<next>skórka z 1 pomarañczy<next>sok z 1 2 pomarañczy<next>3 ³y¿ki mas³a<next>1 ³y¿ka likieru pomarañczowego<next>3 ³y¿ki brandy do podpalenia <next>bita œmietana</components>
 <des>Na œrednim ogniu rozgrzewamy patelniê, na œrodek wsypujemy cukier i skrapiamy go sokiem z cytryny. Trzymamy patelniê na œrednim ogniu przez oko³o 2 minut - powstanie syrop z cukru, który z czasem zacznie siê rumieniæ. Gdy syrop bêdzie br¹zowy, dodajemy skórkê oraz sok z pomarañczy i szybko mieszamy. Dodajemy mas³o i mieszamy ca³y czas a¿ syrop bêdzie g³adki, wlewamy likier pomarañczowy i mieszamy. Trzymamy patelniê z syropem na ogniu wk³adamy jeden naleœnik, maczamy go w sosie, sk³adamy w trójk¹t i przesuwamy na bok patelni, wyk³adamy drugi naleœnik i powtarzamy jak poprzednio. Przygotowujemy resztê naleœników, nastêpnie wlewamy brandy i od razu podpalamy. Naleœniki z sosem wyk³adamy na talerz i podajemy z bit¹ œmietan¹. </des>

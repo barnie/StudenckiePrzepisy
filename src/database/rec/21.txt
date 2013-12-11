@@ -1,3 +1,6 @@
-<title>Panna cotta</title>
-<components>• 250 ml œmietanki kremówki 30%<next>• 250 ml mleka<next>• 50 gram cukru pudru<next>• 3-4 ³y¿ki ¿elatyny<next>• 2-3 ³y¿ki cukru waniliowego</components>
-<des>¯elatynê rozpuszczamy w 5 ³y¿kach wody. Do jednego garnka wlewamy mleko, wsypujemy cukier i dodajemy ¿elatynê. Do drugiego garnka wlewamy œmietanê z cukrem waniliowym.  Œmietankê powoli wlewamy do garnka z mlekiem, mieszamy trzepaczk¹. Ca³oœæ przelewamy do miseczek i odstawiamy do zgêstnienia najlepiej na 24 h.  Przed podaniem wk³adamy miseczkê do ciep³ej wody, odwracamy o 180 stopni i wyk³adamy pana cottê na talerz.  Mo¿na podawaæ z malinami, truskawkami, jagodami, syropami – wed³ug uznania. </des>
+<cat>nabial<cat>
+<cat>owoce<cat>
+<cat>studenckie<cat>
+<title>Muesli z owocami i jogurtem naturalnym</title>
+<components>jogurt naturalny<next>granola lub muesli z rodzynkami<next>maliny, truskawki, je¿yny, borówki – owoce wed³ug uznania i pory roku</components>
+<des>lewamy jogurt do miseczki/asjetki/kieliszka - w zale¿noœci kiedy i komu je podajemy, bo muesli w takiej formie mo¿e byæ równie¿ doskona³ym sposobem na deser:)  Wsypujemy 3 du¿e ³y¿ki muesli lub granoli. Na wierzch wyk³adamy jedn¹ ³y¿kê jogurtu i uk³adamy owoce wybrane przez nas.  Mo¿na dodaæ miodu lub przyozdobiæ listkiem miêty. </des>

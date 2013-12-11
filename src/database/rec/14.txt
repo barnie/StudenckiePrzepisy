@@ -1,3 +1,4 @@
+<cat>warzywa<cat>
 <title>M³ode ziemniaczki</title>
 <components>ziemniaki (jakiekolwiek) <next>sól<next>koperek <next>mas³o klarowane</components>
 <des>Ziemniaki obraæ - oczywiœcie mog¹ byæ &quot;stare&quot;. Ugotowaæ w osolonej wodzie, nie rozgotowaæ. Odlaæ wodê.  Do ziemniaków w³o¿yæ wg upodobania pewn¹ iloœæ klarowanego mase³ka (na 1 kg - 1 ³y¿eczka) i obsypaæ spor¹ iloœci¹ koperku (na 1 kg ziemniaków 1 ³y¿ka. Lekko potrz¹saj¹c, tak aby siê nie rozsypa³y, po³¹czyæ ziemniaki z dodatkami.   Tak przygotowane ziemniaki daj¹ przy spo¿ywaniu wra¿enie m³odych ziemniaczków. Dla wiêkszego oszustwa mo¿emy ziemniaczki obraæ w ma³e kulki.<br /</des>
