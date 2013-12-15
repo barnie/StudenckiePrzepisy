@@ -105,3 +105,29 @@ function addPrzepis(id_kategorii, nazwa, opis, zdjecie, tab) {
         })
     });
 }
+
+function getKategorie(array) {
+    
+    return new WinJS.Promise(function () {
+        var dbPath = Windows.Storage.ApplicationData.current.localFolder.path + '\\przepisy_db.sqlite';
+
+        var i = 0;
+        SQLite3JS.openAsync(dbPath)
+              .then(function (db) {
+                  console.log('DB opened');
+                  return db.eachAsync('SELECT * FROM kategorie;', function (row) {
+                      array[i++] = row.rodzaj;
+                      console.log('Get a ' + row.rodzaj);
+                  });
+              })
+             .then(function (db) {
+                 console.log('close the db');
+                 db.close();
+             }).then(function () {
+                 return array;
+             });
+        return array;
+    })
+}
+
+

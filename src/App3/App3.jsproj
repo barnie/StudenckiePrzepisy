@@ -77,7 +77,6 @@
     <Content Include="images\7.jpg" />
     <Content Include="images\8.jpg" />
     <Content Include="images\9.jpg" />
-    <Content Include="js\jquery-1.10.2.min.js" />
     <Content Include="js\LayoutContainer.js" />
     <Content Include="recipe.html" />
     <Content Include="list_recipes.html" />
