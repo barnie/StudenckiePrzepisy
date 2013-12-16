@@ -34,14 +34,16 @@
         tab[0][0] = 1; tab[0][1] = 'szklanka'; tab[0][2] = 2;
         tab[1][0] = 2; tab[1][1] = 'lyzka'; tab[1][2] = 3;
          addPrzepis(1,'aaa','xxx','img',tab) */
+       /* var array = [];
+        getKategorie(array).then(function () {
+            for (var i = 0; i < array.length; i++)
+                console.log(array[i]);
+        })*/
         var array = [];
-        var z = getKategorie(array).done(function () {
-            console.log("AAA");
-        }, function (e) {
-            console.log(e.message);
+        getSkladnik(array).then(function () {
+            for (var i = 0; i < array.length; ++i)
+                console.log(array[i]);
         });
-        
-        
     }
 
     app.oncheckpoint = function (args) {

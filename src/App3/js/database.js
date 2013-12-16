@@ -1,4 +1,9 @@
-﻿function createDB() {
+﻿
+/*
+    Tworzy baze, podstawowy pusty schemat.
+*/
+
+function createDB() {
     var dbPath = Windows.Storage.ApplicationData.current.localFolder.path + '\\przepisy_db.sqlite';
     SQLite3JS.openAsync(dbPath).then(function (db) {
         db.runAsync('create table IF NOT EXISTS Kategorie (id integer PRIMARY KEY AUTOINCREMENT, rodzaj TEXT)');
@@ -11,6 +16,9 @@
     });
 }
 
+/*
+    Dodaje kategorie.
+*/
 
 function addKategorie(nazwa) {
     var dbPath = Windows.Storage.ApplicationData.current.localFolder.path + '\\przepisy_db.sqlite';
@@ -28,6 +36,10 @@ function addKategorie(nazwa) {
         })
     });
 }
+
+/*
+    Dodaje wiele kategorii przyjmuje tablice kategorii.
+*/
 
 function addManyKategorie(array) {
     var dbPath = Windows.Storage.ApplicationData.current.localFolder.path + '\\przepisy_db.sqlite';
@@ -49,6 +61,11 @@ function addManyKategorie(array) {
     });
 }
 
+/*
+    Dodaje skladnik.
+
+*/
+
 function addSkladnik(nazwa) {
     var dbPath = Windows.Storage.ApplicationData.current.localFolder.path + '\\przepisy_db.sqlite';
     SQLite3JS.openAsync(dbPath).then(function (db) {
@@ -64,6 +81,10 @@ function addSkladnik(nazwa) {
         })
     });
 }
+
+/*
+    Dodaje wiele skladnikow, baza jest asynchroniczna w ten sposob oszczedzamy czas.
+*/
 
 function addManySkladnik(array) {
     var dbPath = Windows.Storage.ApplicationData.current.localFolder.path + '\\przepisy_db.sqlite';
@@ -85,6 +106,15 @@ function addManySkladnik(array) {
     });
 }
 
+/*
+    Dodaje przepis (id_kategorii, nazwa,opis, url_Zdjecie, tablica skladnikow)
+    Przyklad uzycia : 
+        var tab = [];
+        tab[0] = new Array(); tab[1] = new Array();
+        tab[0][0] = 1; tab[0][1] = 'szklanka'; tab[0][2] = 2;
+        tab[1][0] = 2; tab[1][1] = 'lyzka'; tab[1][2] = 3;
+        addPrzepis(1,'aaa','xxx','img',tab)
+*/
 
 function addPrzepis(id_kategorii, nazwa, opis, zdjecie, tab) {
     var dbPath = Windows.Storage.ApplicationData.current.localFolder.path + '\\przepisy_db.sqlite';
@@ -106,19 +136,27 @@ function addPrzepis(id_kategorii, nazwa, opis, zdjecie, tab) {
     });
 }
 
+/*
+    Zwraca jednowymiarowa tablice Kategorii
+    Zwraca pole rodzaj i zapisuje je do podanej tablicy
+*/
+
 function getKategorie(array) {
     
-    return new WinJS.Promise(function () {
-        var dbPath = Windows.Storage.ApplicationData.current.localFolder.path + '\\przepisy_db.sqlite';
-
-        var i = 0;
-        SQLite3JS.openAsync(dbPath)
+    var dbPath = Windows.Storage.ApplicationData.current.localFolder.path + '\\przepisy_db.sqlite';
+    var i = 0;
+    return SQLite3JS.openAsync(dbPath)
               .then(function (db) {
                   console.log('DB opened');
                   return db.eachAsync('SELECT * FROM kategorie;', function (row) {
                       array[i++] = row.rodzaj;
-                      console.log('Get a ' + row.rodzaj);
+                      console.log('##Kategorie_Select : ' + row.rodzaj);
                   });
+              }, function (error) {
+                  if (db) {
+                      db.close();
+                  }
+                  console.log('ERROR Select * from kategorie ' + error.message);
               })
              .then(function (db) {
                  console.log('close the db');
@@ -126,8 +164,111 @@ function getKategorie(array) {
              }).then(function () {
                  return array;
              });
-        return array;
-    })
+    
 }
 
+/*
+    zwraca dwuwymiarowa tablice Przepis (indeksy :  0 - id_kategorii, 1 - nazwa
+        2 - opis, 3 - adres_do_zdjecia
+    example uzycia : 
+        var array = [];
+        getPrzepis(array).then(function () {
+            for (var i = 0; i < array.length; i++) {
+                    console.log(array[i][1]);
+            }
+        })
+*/
+
+function getPrzepis(array) {
+    var dbPath = Windows.Storage.ApplicationData.current.localFolder.path + '\\przepisy_db.sqlite';
+    var i = 0;
+    return SQLite3JS.openAsync(dbPath)
+              .then(function (db) {
+                  console.log('DB opened');
+                  return db.eachAsync('SELECT * FROM Przepis;', function (row) {
+                      array[i] = new Array();
+                      array[i][0] = row.id_kategorii;
+                      array[i][1] = row.nazwa;
+                      array[i][2] = row.opis;
+                      array[i][3] = row.zdjecie;
+                      i++;
+                  });
+              }, function (error) {
+                  if (db) {
+                      db.close();
+                  }
+                  console.log('ERROR Select * from kategorie ' + error.message);
+              })
+             .then(function (db) {
+                 console.log('close the db');
+                 db.close();
+             }).then(function () {
+                 return array;
+             });
+}
+
+/*
+    Zwraca dwuwymiarowa tabele Przepis_Skladnik
+    Indeksy kazdego wiersza : 
+    0 - id_przepis
+    1 - id_skladnik
+    2 - miara
+    3 - ile
+*/
+
+function getPrzepis_Skladnik(array) {
+    var dbPath = Windows.Storage.ApplicationData.current.localFolder.path + '\\przepisy_db.sqlite';
+    var i = 0;
+    return SQLite3JS.openAsync(dbPath)
+              .then(function (db) {
+                  console.log('DB opened');
+                  return db.eachAsync('SELECT * FROM Przepis_Skladnik;', function (row) {
+                      array[i] = new Array();
+                      array[i][0] = row.id_przepis;
+                      array[i][1] = row.id_skladnik;
+                      array[i][2] = row.miara;
+                      array[i][3] = row.ile;
+                      i++;
+                  });
+              }, function (error) {
+                  if (db) {
+                      db.close();
+                  }
+                  console.log('ERROR Select * Przepis_Skladnik ' + error.message);
+              })
+             .then(function (db) {
+                 console.log('close the db');
+                 db.close();
+             }).then(function () {
+                 return array;
+             });
+}
+
+/*
+    Zwraca Skladniki w jednowymiarowej tablicy :
+    zwraca pole nazwe dla kazdego skladnika
+*/
+
+function getSkladnik(array) {
+    var dbPath = Windows.Storage.ApplicationData.current.localFolder.path + '\\przepisy_db.sqlite';
+    var i = 0;
+    return SQLite3JS.openAsync(dbPath)
+              .then(function (db) {
+                  console.log('DB opened');
+                  return db.eachAsync('SELECT * FROM Skladnik;', function (row) {
+                      array[i++] = row.nazwa;
+                  });
+              }, function (error) {
+                  if (db) {
+                      db.close();
+                  }
+                  console.log('ERROR Select * Skladnik ' + error.message);
+              })
+             .then(function (db) {
+                 console.log('close the db');
+                 db.close();
+             }).then(function () {
+                 return array;
+             });
+}
 
