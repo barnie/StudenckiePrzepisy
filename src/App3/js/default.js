@@ -28,7 +28,7 @@
 
     function buttonClickHandler(eventInfo) {
         // that button test a database only :) Cool and chill nigga!
-         //createDB();
+         createDB();
       /*  var tab = [];
         tab[0] = new Array(); tab[1] = new Array();
         tab[0][0] = 1; tab[0][1] = 'szklanka'; tab[0][2] = 2;
@@ -40,10 +40,12 @@
                 console.log(array[i]);
         })*/
         var array = [];
-        getSkladnik(array).then(function () {
+        /*getSkladnik(array).then(function () {
             for (var i = 0; i < array.length; ++i)
                 console.log(array[i]);
-        });
+        });*/
+        addSkladnik('xD');
+        
     }
 
     app.oncheckpoint = function (args) {

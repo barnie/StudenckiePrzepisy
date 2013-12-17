@@ -5,11 +5,11 @@
 
 function createDB() {
     var dbPath = Windows.Storage.ApplicationData.current.localFolder.path + '\\przepisy_db.sqlite';
-    SQLite3JS.openAsync(dbPath).then(function (db) {
+    return SQLite3JS.openAsync(dbPath).then(function (db) {
         db.runAsync('create table IF NOT EXISTS Kategorie (id integer PRIMARY KEY AUTOINCREMENT, rodzaj TEXT)');
-        db.runAsync('create table IF NOT EXISTS Przepis (id integer PRIMARY KEY AUTOINCREMENT, id_kategorii integer REFERENCES Kategorie(id), nazwa TEXT, opis TEXT, zdjecie TEXT)')
+        db.runAsync('create table IF NOT EXISTS Przepis (id integer PRIMARY KEY AUTOINCREMENT, id_kategorii integer REFERENCES Kategorie(id), nazwa TEXT NOT NULL UNIQUE, opis TEXT, zdjecie TEXT)')
 
-        db.runAsync('create table IF NOT EXISTS Skladnik (id integer PRIMARY KEY AUTOINCREMENT,nazwa TEXT)')
+        db.runAsync('create table IF NOT EXISTS Skladnik (id integer PRIMARY KEY AUTOINCREMENT,nazwa TEXT, ile INT DEFAULT 1)')
         db.runAsync('create table IF NOT EXISTS Przepis_Skladnik (id_przepis integer REFERENCES Przepis(id), id_skladnik integer REFERENCES Skladnik(id),miara TEXT,ile REAL, PRIMARY KEY(id_przepis,id_skladnik))').then(function () {
             db.close()
         })
@@ -22,7 +22,7 @@ function createDB() {
 
 function addKategorie(nazwa) {
     var dbPath = Windows.Storage.ApplicationData.current.localFolder.path + '\\przepisy_db.sqlite';
-    SQLite3JS.openAsync(dbPath).then(function (db) {
+    return SQLite3JS.openAsync(dbPath).then(function (db) {
         return db.runAsync("INSERT INTO Kategorie (rodzaj) VALUES (:rodzaj)", { rodzaj: nazwa }).
         done(function () {
             console.log('Dodano nowa kategorie : ' + nazwa);
@@ -43,7 +43,7 @@ function addKategorie(nazwa) {
 
 function addManyKategorie(array) {
     var dbPath = Windows.Storage.ApplicationData.current.localFolder.path + '\\przepisy_db.sqlite';
-    SQLite3JS.openAsync(dbPath).then(function (db) {
+    return SQLite3JS.openAsync(dbPath).then(function (db) {
         var i = 0;
         for (i = 0; i < array.length - 1; i++) {
             db.runAsync("INSERT INTO Kategorie (rodzaj) VALUES (:rodzaj)", { rodzaj: array[i] })
@@ -68,9 +68,10 @@ function addManyKategorie(array) {
 
 function addSkladnik(nazwa) {
     var dbPath = Windows.Storage.ApplicationData.current.localFolder.path + '\\przepisy_db.sqlite';
-    SQLite3JS.openAsync(dbPath).then(function (db) {
+    return SQLite3JS.openAsync(dbPath).then(function (db) {
         return db.runAsync("INSERT INTO Skladnik (nazwa) VALUES (:nazwa)", { nazwa: nazwa }).
         done(function () {
+
             console.log('Dodano nowy skladnik : ' + nazwa);
             db.close();
         }, function (error) {
@@ -88,7 +89,7 @@ function addSkladnik(nazwa) {
 
 function addManySkladnik(array) {
     var dbPath = Windows.Storage.ApplicationData.current.localFolder.path + '\\przepisy_db.sqlite';
-    SQLite3JS.openAsync(dbPath).then(function (db) {
+    return SQLite3JS.openAsync(dbPath).then(function (db) {
         var i = 0;
         for (i = 0; i < array.length - 1; i++) {
             db.runAsync("INSERT INTO Skladnik (nazwa) VALUES (:nazwa)", { nazwa: array[i] })
@@ -118,7 +119,7 @@ function addManySkladnik(array) {
 
 function addPrzepis(id_kategorii, nazwa, opis, zdjecie, tab) {
     var dbPath = Windows.Storage.ApplicationData.current.localFolder.path + '\\przepisy_db.sqlite';
-    SQLite3JS.openAsync(dbPath).then(function (db) {
+    return SQLite3JS.openAsync(dbPath).then(function (db) {
         return db.runAsync("INSERT INTO Przepis (id_kategorii,nazwa,opis,zdjecie) VALUES (:idkategorii, :nazwa, :opis, :zdjecie)", { idkategorii: id_kategorii, nazwa: nazwa, opis: opis, zdjecie: zdjecie }).
         then(function () {
             db.eachAsync("SELECT * from Przepis Where nazwa = ? ", [nazwa], function (row) {
