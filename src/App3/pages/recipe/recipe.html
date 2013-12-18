@@ -1,0 +1,58 @@
+﻿<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8" />
+        <title>recipe</title>
+
+        <!-- WinJS references -->
+        <link href="/pages/recipe/recipe.css" rel="stylesheet" />
+        <script src="/pages/recipe/recipe.js"></script>
+    </head>
+    <body>
+        <div class="button_container"> 
+            <button data-win-control="WinJS.UI.AppBarCommand" data-win-options="{icon:'back', label:'Wstecz', onclick:null, type:'button', tooltip:'Powrót do głownego ekranu'}"></button> 
+        </div>
+        <div class="recipe">
+            <div class="category"><a href="default.html">Dania wegetariańskie</a></div>
+            <div class="name">Naleśniki</div>
+                <div class="img_container">
+                    <img src="/images/warzywa.jpg" title="Naleśniki" />
+                </div>
+            <div class="description">Do dużej miski przesiać mąkę, dodać jajka, 1 szklankę mleka, cukier i dużą szczyptę soli. Miksować mikserem lub energicznie mieszać rózgą, dodając roztopione i ostudzone masło, a następnie wlewając stopniowo mleko. Miksować lub mieszać aż powstanie gładkie ciasto bez grudek.
+                Miskę z ciastem przykryć folią i odstawić na minimum 30 minut na blat kuchenny lub wstawić do lodówki na maksymalnie 24 godziny. Ciasto ocieplić w temperaturze pokojowej (około 15-30 minut). Przed smażeniem wymieszać ciasto.
+                Patelnię o średnicy około 18-20 cm rozgrzać na dużym ogniu. Następnie przetrzeć ręcznikiem papierowym zanurzonym w oleju. Zmniejszyć ogień do średniego, wylać około 4 łyżek stołowych ciasta na środek patelni i od razu rozprowadzić je po całej powierzchni patelni przechylając ją we wszystkie strony. Smażyć przez około 1 minutę, aż spód będzie zrumieniony i będzie łatwo odchodził od dna patelni (można podważyć widelcem).
+                Za pomocą łopatki przewrócić naleśnik na drugą stronę i smażyć do zrumienienia przez około minutę. Gdyby naleśnik za szybko się rumienił (przypalał) należy zmniejszyć ogień. Jeśli zbyt długo trzeba będzie czekać na zrumienienie się naleśnika, można zwiększyć ogień.
+                Zdjąć naleśnik z patelni i odłożyć na talerz. Smażyć kolejne naleśniki, patelnię można smarować naoliwionym ręcznikiem papierowym co 3 - 4 naleśnik.
+                Gotowe naleśniki można trzymać w lodówce przez maksymalnie 3 dni, można je też zamrozić.
+           </div>
+       </div>
+        <div class="ingredients">
+                        <div class="list">
+                            <ul>
+                                <li>Marchewka - 50g</li>
+                                <li>Ziemniaki - 50g</li>
+                                <li>Sól - 50g</li> 
+                                <li>Marchewka - 50g</li>
+                                <li>Ziemniaki - 50g</li>
+                                <li>Sól - 50g</li>
+                                <li>Marchewka - 50g</li>
+                                <li>Ziemniaki - 50g</li>
+                                <li>Sól - 50g</li>            
+                            </ul>
+                        </div>
+                </div>
+       <div data-win-control="WinJS.UI.AppBar" aria-label="Navigation Bar" 
+            data-win-options="{layout:'custom',placement:'bottom'}", class="bottomMenu">
+            <header aria-label="Navigation bar" role="banner">
+                <div class="left">
+                    <button data-win-control="WinJS.UI.AppBarCommand" data-win-options="{icon:'home', label:'Home', onclick:null, type:'button', tooltip:'Powrót do głownego ekranu'}"></button>
+                </div>
+                <div class="right">
+                    <button data-win-control="WinJS.UI.AppBarCommand" data-win-options="{icon:'bullets', label:'Zaznacz posiadane składniki', type:'button', tooltip:'Powiem ci co możesz zjeść'}"></button>
+                    <button data-win-control="WinJS.UI.AppBarCommand" data-win-options="{icon:'find', label:'Wyszukiwanie proste', type:'button', tooltip:'Wpisz nazę bądź fragment'}"></button>
+                    <button data-win-control="WinJS.UI.AppBarCommand" data-win-options="{icon:'find', label:'Wyszukiwanie zaawansowane', type:'button', tooltip:'Szukamy po nazwie, typie, składnikach'}"></button>
+                </div>
+            </header>
+        </div>
+    </body>
+</html>
