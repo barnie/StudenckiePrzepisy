@@ -1,4 +1,4 @@
-﻿body {
+﻿#listContainer {
     background-color: #005500;
     margin: 1%;
     width: auto;
@@ -9,39 +9,39 @@
     overflow-y: hidden;
 }
 
-    body #containerOfRecipies {
+    #listContainer #containerOfRecipies {
         height: 90%;
         width: inherit;
         margin-top: 3.5%;
     }
 
-        body #containerOfRecipies #name {
+        #listContainer #containerOfRecipies #name {
             font-size: 250%;
             margin-left: 45px;
             text-decoration:underline;
         }
-        body #containerOfRecipies #myDiv {
+        #listContainer #containerOfRecipies #myDiv {
             margin-top: 2.5%;
             height: inherit;
         }
 
-            body #containerOfRecipies #myDiv .myTabCss {
+            #listContainer #containerOfRecipies #myDiv .myTabCss {
                 border-spacing: 45px 0px;
                 height: inherit;
                 width: inherit;
             }
 
-            body #containerOfRecipies #myDiv .myRowCss {
+            #listContainer #containerOfRecipies #myDiv .myRowCss {
                 height: 42%;
                 width: inherit;
             }
 
-            body #containerOfRecipies #myDiv .myCellCss {
+            #listContainer #containerOfRecipies #myDiv .myCellCss {
                 height: inherit;
                 width: 20em;
             }
 
-            body #containerOfRecipies #myDiv .myImageCss {
+            #listContainer #containerOfRecipies #myDiv .myImageCss {
                 border: solid;
                 border-color: black;
                 height:100%;
