@@ -37,12 +37,9 @@
         app.sessionState.history = nav.history;
     };
 
-
-
-    // App bar initialization.
-    document.addEventListener("DOMContentLoaded", function () {
-        WinJS.UI.processAll();
-    }, false);
+    app.onready = function () {
+   //     WinJS.Utilities.query("a").listen("click", anchorHandler, false);
+    }
 
     app.start();
 })();

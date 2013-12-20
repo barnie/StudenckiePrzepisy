@@ -79,6 +79,9 @@
     <Content Include="images\9.jpg" />
     <Content Include="js\LayoutContainer.js" />
     <Content Include="js\navigator.js" />
+    <Content Include="pages\categories\categories.css" />
+    <Content Include="pages\categories\categories.html" />
+    <Content Include="pages\categories\categories.js" />
     <Content Include="pages\home\home.css" />
     <Content Include="pages\home\home.html" />
     <Content Include="pages\home\home.js" />
@@ -88,8 +91,6 @@
     <Content Include="pages\recipe\recipe.css" />
     <Content Include="pages\recipe\recipe.html" />
     <Content Include="pages\recipe\recipe.js" />
-    <Content Include="recipe.html" />
-    <Content Include="list_recipes.html" />
     <Content Include="default.html" />
     <Content Include="images\logo.png" />
     <Content Include="images\smalllogo.png" />
@@ -112,9 +113,6 @@
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="SQLite3Component\SQLite3Component.vcxproj" />
-  </ItemGroup>
-  <ItemGroup>
-    <Folder Include="pages\categories\" />
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)\$(WMSJSProjectDirectory)\Microsoft.VisualStudio.$(WMSJSProject).targets" />
   <!-- To modify your build process, add your task inside one of the targets below then uncomment

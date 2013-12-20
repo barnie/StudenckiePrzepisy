@@ -3,6 +3,11 @@
     Tworzy baze, podstawowy pusty schemat.
 */
 
+/*
+Baza znajduje sie (Windows.Storage.ApplicationData.current.localFolder.path):
+C:\Users\Twoja_nazwa_usera\AppData\Local\Packages\7cbc57f9-d6bb-4fc5-8ce0-d0c51fa32295_1b32gpn6wq9vm\LocalState
+*/
+
 function createDB() {
     var dbPath = Windows.Storage.ApplicationData.current.localFolder.path + '\\przepisy_db.sqlite';
     SQLite3JS.openAsync(dbPath).then(function (db) {
@@ -149,7 +154,10 @@ function getKategorie(array) {
               .then(function (db) {
                   console.log('DB opened');
                   return db.eachAsync('SELECT * FROM kategorie;', function (row) {
-                      array[i++] = row.rodzaj;
+                      array[i] = new Array();
+                      array[i][0] = row.id;
+                      array[i][1] = row.rodzaj;
+                      i++;
                       console.log('##Kategorie_Select : ' + row.rodzaj);
                   });
               }, function (error) {
@@ -179,7 +187,7 @@ function getKategorie(array) {
         })
 */
 
-function getPrzepis(array) {
+function getPrzepisy(array) {
     var dbPath = Windows.Storage.ApplicationData.current.localFolder.path + '\\przepisy_db.sqlite';
     var i = 0;
     return SQLite3JS.openAsync(dbPath)
@@ -207,7 +215,8 @@ function getPrzepis(array) {
              });
 }
 
-/*
+
+/*                 }
     Zwraca dwuwymiarowa tabele Przepis_Skladnik
     Indeksy kazdego wiersza : 
     0 - id_przepis
@@ -250,11 +259,13 @@ function getPrzepis_Skladnik(array) {
 */
 
 function getSkladnik(array) {
+
     var dbPath = Windows.Storage.ApplicationData.current.localFolder.path + '\\przepisy_db.sqlite';
     var i = 0;
     return SQLite3JS.openAsync(dbPath)
               .then(function (db) {
                   console.log('DB opened');
+                  console.log(Windows.Storage.ApplicationData.current.localFolder.path);
                   return db.eachAsync('SELECT * FROM Skladnik;', function (row) {
                       array[i++] = row.nazwa;
                   });
@@ -271,4 +282,6 @@ function getSkladnik(array) {
                  return array;
              });
 }
+
+
 
