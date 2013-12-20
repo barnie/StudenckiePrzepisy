@@ -283,5 +283,29 @@ function getSkladnik(array) {
              });
 }
 
-
+function getRandom(array) {
+    var dbPath = Windows.Storage.ApplicationData.current.localFolder.path + '\\przepisy_db.sqlite';
+    var i = 0;
+    return SQLite3JS.openAsync(dbPath)
+              .then(function (db) {
+                  return db.eachAsync('select p.id_kategorii AS rodzaj, p.zdjecie AS zdjecie from przepis p, kategorie k group by p.id_kategorii;', function (row) {
+                      console.log('#' + row.rodzaj + '#' + row.zdjecie)
+                      array[i] = new Array();
+                      array[i][0] = row.rodzaj;
+                      array[i][1] = row.zdjecie;
+                      i++;
+                  });
+              }, function (error) {
+                  if (db) {
+                      db.close();
+                  }
+                  console.log('ERROR Select unique kategorie ' + error.message);
+              })
+             .then(function (db) {
+                 console.log('close the db');
+                 db.close();
+             }).then(function () {
+                 return array;
+             });
+}
 

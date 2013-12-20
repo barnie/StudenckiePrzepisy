@@ -33,12 +33,36 @@
         }
     });
 
+    function buttonClickHandler(eventInfo) {
+        // that button test a database only :) Cool and chill nigga!
+        //createDB();
+        /*  var tab = [];
+          tab[0] = new Array(); tab[1] = new Array();
+          tab[0][0] = 1; tab[0][1] = 'szklanka'; tab[0][2] = 2;
+          tab[1][0] = 2; tab[1][1] = 'lyzka'; tab[1][2] = 3;
+           addPrzepis(1,'aaa','xxx','img',tab) */
+        /* var array = [];
+         getKategorie(array).then(function () {
+             for (var i = 0; i < array.length; i++)
+                 console.log(array[i]);
+         })*/
+        var array = [];
+        getRandom(array).done(function () {
+            for (var i = 0; i < array.length; i++)
+                console.log(array[i]);
+        })
+    }
+
+
     app.oncheckpoint = function (args) {
         app.sessionState.history = nav.history;
     };
 
     app.onready = function () {
-   //     WinJS.Utilities.query("a").listen("click", anchorHandler, false);
+        //     WinJS.Utilities.query("a").listen("click", anchorHandler, false);
+
+        var button1 = document.getElementById("klik");
+        button1.addEventListener("click", buttonClickHandler, false);
     }
 
     app.start();
