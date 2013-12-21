@@ -69,6 +69,12 @@
 
         var button1 = document.getElementById("klik");
         button1.addEventListener("click", buttonClickHandler, false);
+        var home = document.getElementById("home");
+        home.addEventListener("click", goToHome, false);
+    }
+
+    function goToHome() {
+        WinJS.Navigation.navigate("/pages/home/home.html");
     }
 
     app.start();
