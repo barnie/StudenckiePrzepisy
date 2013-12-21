@@ -53,7 +53,6 @@
     <AppxManifest Include="package.appxmanifest">
       <SubType>Designer</SubType>
     </AppxManifest>
-    <Content Include="css\metro-bootstrap.css" />
     <Content Include="images\1.jpg" />
     <Content Include="images\10.jpg" />
     <Content Include="images\11.jpg" />
@@ -111,7 +110,7 @@
   <ItemGroup>
     <SDKReference Include="Microsoft.VCLibs, version=11.0" />
     <SDKReference Include="Microsoft.WinJS.1.0, Version=1.0" />
-    <SDKReference Include="SQLite.WinRT, Version=3.8.2" />
+    <SDKReference Include="SQLite.WinRT, Version=3.8.1" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="SQLite3Component\SQLite3Component.vcxproj" />
