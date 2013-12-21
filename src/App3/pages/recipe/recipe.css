@@ -1,8 +1,10 @@
 ﻿#recipeContainer {
+    height: 100%;
     margin: 1%;
     display: -ms-flexbox;
     -ms-flex-direction: row;
-   
+    overflow: auto;
+    overflow-x: hidden; 
 }
     #recipeContainer a, a:active, a:visited{
         color: inherit;
@@ -13,11 +15,11 @@
         text-decoration:underline;
     }
     #recipeContainer .recipe {
-        width: 65%;
+        width: 75%;
         display: -ms-flexbox;
         -ms-flex-direction: column;
         margin-top: 2%;
-        margin-left: 2%;
+        margin-left: 5%;
     }
 
     #recipeContainer .recipe .category{
@@ -27,10 +29,11 @@
 
      #recipeContainer .img_container{
         text-align: center;
+        margin-left:15%;
         margin-top:4%;
         margin-bottom:2%;
         height: 45%;
-        width: 100%;
+        width: 70%;
     }
 
         #recipeContainer .img_container img {
@@ -45,6 +48,10 @@
     }
 
     #recipeContainer .description {
+        height: 33%;
+        overflow: auto;
+        overflow-x: hidden;
+        padding-right:4%;
         margin-top:2%;
         text-align: justify;
         width: 100%;
