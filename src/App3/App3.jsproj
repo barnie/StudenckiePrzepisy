@@ -76,6 +76,7 @@
     <Content Include="images\7.jpg" />
     <Content Include="images\8.jpg" />
     <Content Include="images\9.jpg" />
+    <Content Include="images\food_wallpaper.jpg" />
     <Content Include="js\LayoutContainer.js" />
     <Content Include="js\navigator.js" />
     <Content Include="js\ParseHelper.js" />
@@ -110,7 +111,7 @@
   <ItemGroup>
     <SDKReference Include="Microsoft.VCLibs, version=11.0" />
     <SDKReference Include="Microsoft.WinJS.1.0, Version=1.0" />
-    <SDKReference Include="SQLite.WinRT, Version=3.8.1" />
+    <SDKReference Include="SQLite.WinRT, Version=3.8.2" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="SQLite3Component\SQLite3Component.vcxproj" />

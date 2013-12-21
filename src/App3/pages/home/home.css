@@ -1,6 +1,6 @@
 ﻿body {
     background-size: 100% 100%;
-    background-color: #005500;
+    background: rgb(51,51,51) url("/images/food_wallpaper.jpg");
 }
 
     body .Gallery {

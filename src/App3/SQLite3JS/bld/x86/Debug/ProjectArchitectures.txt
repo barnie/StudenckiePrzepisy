@@ -1,2 +1,0 @@
-C:\Dokumenty\przepisy\src\App3\SQLite3Component\SQLite3Component.vcxproj;x86
-C:\Dokumenty\przepisy\src\App3\SQLite3JS\SQLite3JS.jsproj;x86
