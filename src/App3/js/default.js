@@ -53,9 +53,10 @@
         })*/
         console.log('xD');
         var array = [];
-        getPrzepis_poNazwie(array).then(function () {
+        getOnePrzepis('a', array).then(function () {
+         //   console.log('@' + array)
             for (var i = 0; i < array.length; i++)
-                console.log(array[i])
+                console.log('@' + array[i]);
         })
     }
 
@@ -69,6 +70,12 @@
 
         var button1 = document.getElementById("klik");
         button1.addEventListener("click", buttonClickHandler, false);
+        var home = document.getElementById("home");
+        home.addEventListener("click", goToHome, false);
+    }
+
+    function goToHome() {
+        WinJS.Navigation.navigate("/pages/home/home.html");
     }
 
     app.start();

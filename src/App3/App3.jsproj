@@ -53,6 +53,7 @@
     <AppxManifest Include="package.appxmanifest">
       <SubType>Designer</SubType>
     </AppxManifest>
+    <Content Include="css\metro-bootstrap.css" />
     <Content Include="images\1.jpg" />
     <Content Include="images\10.jpg" />
     <Content Include="images\11.jpg" />
