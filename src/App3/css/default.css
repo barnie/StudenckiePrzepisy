@@ -1,95 +1,73 @@
-﻿body {
-    background-size: 100% 100%;
-    background-color: #005500;
+﻿#contenthost {
+    height: 100%;
+    width: auto;
 }
 
-    body .Gallery {
-        height: 80%;
-        width: 70%;
-        margin-left:20%;
+.fragment {
+    /* Define a grid with rows for a banner and a body */
+    -ms-grid-columns: 1fr;
+    -ms-grid-rows: 128px 1fr;
+    display: -ms-grid;
+    height: 100%;
+    width: 100%;
+}
+
+    .fragment header[role=banner] {
+        /* Define a grid with columns for the back button and page title. */
+        -ms-grid-columns: 120px 1fr;
+        -ms-grid-rows: 1fr;
+        display: -ms-grid;
     }
 
-        body .Gallery ul {
-            list-style: none;
+        .fragment header[role=banner] .win-backbutton {
+            margin-left: 39px;
+            margin-top: 59px;
         }
 
-            body .Gallery ul li {
-                height: 100%;
-                width: 100%;
-                display: inline;
+        .fragment header[role=banner] .titlearea {
+            -ms-grid-column: 2;
+            margin-top: 37px;
+        }
+
+            .fragment header[role=banner] .titlearea .pagetitle {
+                width: calc(100% - 20px);
             }
 
-                body .Gallery ul li  img {
-                    height: 92%;
-                    width: 20%;
-                    margin-right: 1%;
-                    margin-bottom: 1%;
-                    border-style: solid;
-                    border-color: black;
-                    border-radius: 1px;
-                    float: left;
-                }
-
-body .Menu {
-    text-align: center;
-    padding-top: 2%;
-    float: left;
-    height: 100%;
-    width: 15%;
-    color: black;
-    background-color: #800000 ;
-    font-family: "Arial";
-    font-size: medium;
-}
-
-    body .Menu a {
-        color: inherit;
-        text-decoration:none;
-    }
-
-        body .Menu a:hover {
-            font-weight:bold;
-        }
-
-        body .Menu a:active {
-            color: green;
-        }
-
-    body .Menu .title {
-
+    .fragment section[role=main] {
+        -ms-grid-row: 2;
+        height: 100%;
         width: 100%;
-        font-weight: bold;
-        font-size: 125%;
     }
-
-    body .Menu ul {
-        padding-top: 1%;
-        line-height: 2em;
-         list-style: none;
-    }
-
-        body .Menu ul li {
-            text-align: left;
-        }
-
-    body .bottomMenu .left {
-        float: left;
-        text-align: left;
-    }
-    body .bottomMenu .right {
-        float: right;
-        text-align: right;
-    }
-
-
-@media screen and (-ms-view-state: fullscreen-landscape) {
-}
-
-@media screen and (-ms-view-state: filled) {
-}
 
 @media screen and (-ms-view-state: snapped) {
+    .fragment header[role=banner] {
+        -ms-grid-columns: auto 1fr;
+        margin-left: 20px;
+    }
+
+        .fragment header[role=banner] .win-backbutton {
+            margin: 0;
+            margin-right: 10px;
+            margin-top: 76px;
+        }
+
+            .fragment header[role=banner] .win-backbutton:disabled {
+                display: none;
+            }
+
+        .fragment header[role=banner] .titlearea {
+            -ms-grid-column: 2;
+            margin-left: 0;
+            margin-top: 68px;
+        }
 }
 
 @media screen and (-ms-view-state: fullscreen-portrait) {
+    .fragment header[role=banner] {
+        -ms-grid-columns: 100px 1fr;
+    }
+
+        .fragment header[role=banner] .win-backbutton {
+            margin-left: 29px;
+        }
 }
