@@ -27,8 +27,10 @@
 
         }
         else {
-            console.log("normalnie idziemy nie przesylamy komunikatu");
-            WinJS.Navigation.navigate(link.href);
+            var array = [];
+            getOnePrzepis("ala", array).then(function(){
+                WinJS.Navigation.navigate(link.href);
+            })
         }
     }
 
