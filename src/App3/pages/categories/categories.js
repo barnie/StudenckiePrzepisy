@@ -51,10 +51,9 @@
 
                 //date prepare:
                 var categories = options;
-                var count = options.length;                 
-                var picturesPaths = ["images/1.jpg", "images/3.jpg", "images/4.jpg",
-                "images/4.jpg", "images/5.jpg", "images/6.jpg", "images/5.jpg", "images/7.jpg",
-                "images/8.jpg", "images/10.jpg"]; //to powinno byc z bazy pobrane
+                var count = options.length;
+                var picturesPaths = [];
+                getRandom(picturesPaths).then(function () {
                         //date prepared, start script:
                         var layout = new LayoutContainer(count, 'myTabCss', 'myRowCss', 'myCellCss');
                         var table = layout.CreateContainer();
@@ -96,6 +95,7 @@
                             document.getElementById(prefix + j.toString()).innerHTML = window.toStaticHTML(image.toString());
                             j++;
                         }
+                })
         },
 
         unload: function () {
