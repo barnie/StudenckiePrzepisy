@@ -311,3 +311,27 @@ function getRandom(array) {
              });
 }
 
+
+function getPrzepis_poNazwie(array) {
+    var dbPath = Windows.Storage.ApplicationData.current.localFolder.path + '\\przepisy_db.sqlite';
+    var i = 0;
+    return SQLite3JS.openAsync(dbPath)
+              .then(function (db) {
+                  return db.eachAsync('select nazwa from przepis;', function (row) {
+                      console.log('#' + row.nazwa + '#')
+                      array[i] = row.nazwa;
+                      i++;
+                  });
+              }, function (error) {
+                  if (db) {
+                      db.close();
+                  }
+                  console.log('ERROR Select  po nazwie ' + error.message);
+              })
+             .then(function (db) {
+                 console.log('close the db');
+                 db.close();
+             }).then(function () {
+                 return array;
+             });
+}
