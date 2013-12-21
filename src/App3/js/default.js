@@ -53,9 +53,10 @@
         })*/
         console.log('xD');
         var array = [];
-        getPrzepis_poNazwie(array).then(function () {
+        getOnePrzepis('a', array).then(function () {
+         //   console.log('@' + array)
             for (var i = 0; i < array.length; i++)
-                console.log(array[i])
+                console.log('@' + array[i]);
         })
     }
 

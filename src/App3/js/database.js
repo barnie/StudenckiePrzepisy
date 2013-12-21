@@ -335,3 +335,43 @@ function getPrzepis_poNazwie(array) {
                  return array;
              });
 }
+
+function getOnePrzepis(nazwa, array) {
+    var dbPath = Windows.Storage.ApplicationData.current.localFolder.path + '\\przepisy_db.sqlite';
+    var i = 5;
+    var category_id = 0;
+    return SQLite3JS.openAsync(dbPath)
+              .then(function (db) {
+                  return db.eachAsync("SELECT id AS id, id_kategorii, nazwa, opis,zdjecie FROM przepis WHERE nazwa = ? ", [nazwa], function (row) {
+                      //console.log('#' + row.nazwa + ' ' + row.id_kategorii + ' ' + row.nazwa + ' ' + row.opis + ' ' + row.zdjecie);
+                      array[0] = row.id;
+                      category_id = row.id_kategorii;
+                      array[2] = row.nazwa;
+                      array[3] = row.opis;
+                      array[4] = row.zdjecie;
+                  }).then(function () {
+                      return db.eachAsync("SELECT s.nazwa, ps.miara, ps.ile FROM Przepis_Skladnik ps, skladnik s WHERE ps.id_skladnik = s.id AND ps.id_przepis = ? ", [array[0]], function (row) {
+                          array[i] = new Array();
+                          array[i][0] = row.nazwa;
+                          array[i][1] = row.ile;
+                          array[i][2] = row.miara;
+                          i++;
+                      }).then(function () {
+                          return db.eachAsync("SELECT rodzaj from Kategorie where id = ?",[category_id], function (row) {
+                              array[1] = row.rodzaj;
+                          });
+                      });
+                  });
+              }, function (error) {
+                  if (db) {
+                      db.close();
+                  }
+                  console.log('ERROR Select  po nazwie ' + error.message);
+              })
+             .then(function (db) {
+                 console.log('close the db');
+                 db.close();
+             }).then(function () {
+                 return array;
+             });
+}
