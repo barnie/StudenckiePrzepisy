@@ -5,6 +5,9 @@
         ready: function (element, options) {
 
            WinJS.Utilities.query("a").listen("click", anchorHandler, false);
+        },
+        unload: function () {
+            // TODO: Respond to navigations away from this page.
         }
     });
 
@@ -19,6 +22,16 @@
             var array = [];
 
             getKategorie(array).then(function () {
+                WinJS.Navigation.navigate(link.href, array);
+            })
+
+        }
+        else if (("" + link).search("list_recipes") != -1) { 
+
+            var array = [];
+
+            getPrzepisy(array).then(function () {
+                MyGlobals.recipies = array;
                 WinJS.Navigation.navigate(link.href, array);
             })
 

@@ -1,5 +1,10 @@
 ﻿// For an introduction to the Navigation template, see the following documentation:
 // http://go.microsoft.com/fwlink/?LinkId=232506
+
+WinJS.Namespace.define("MyGlobals", {
+    recipies: null,
+});
+
 (function () {
     "use strict";
 
