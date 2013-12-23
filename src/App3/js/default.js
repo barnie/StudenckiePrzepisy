@@ -75,13 +75,21 @@ WinJS.Namespace.define("MyGlobals", {
 
         var button1 = document.getElementById("klik");
         button1.addEventListener("click", buttonClickHandler, false);
+
         var home = document.getElementById("home");
         home.addEventListener("click", goToHome, false);
+
+       // var search = document.getElementById("search");
+        //search.addEventListener("click", openSearch1, false);
     }
 
     function goToHome() {
-        WinJS.Navigation.navigate("/pages/home/home.html");
+        WinJS.Navigation.navigate("/pages/basic_search/basic_search.html.html");
     }
+
+    //function openSearch1() {
+    //    WinJS.Navigation.navigate("/pages/basic_search/basic_search.html");
+   // }
 
     app.start();
 })();

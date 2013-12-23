@@ -1,0 +1,50 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <title>Dodaj przepis</title>
+    <link href="//Microsoft.WinJS.2.0/css/ui-dark.css" rel="stylesheet" />
+    <script src="//Microsoft.WinJS.2.0/js/base.js"></script>
+    <script src="//Microsoft.WinJS.2.0/js/ui.js"></script>
+    <style>
+        #contentHolder {
+            height: 100%;
+            margin: 1%;
+            display: -ms-flexbox;
+            -ms-flex-direction: row;
+            overflow: auto;
+            overflow-x: hidden;
+        }
+    </style>
+</head>
+<body>
+    <div id="contentHolder">
+        <div class="button_container">
+            <header aria-label="Header content" role="banner">
+                <button class="win-backbutton" aria-label="Back" disabled type="button"></button>
+            </header>
+        </div>
+        <div id="contentDiv">
+            <button id="selectPic" data-win-control="WinJS.UI.AppBarCommand" data-win-options="{icon:'folder', label:'Wybierz zdjęcie', type:'button', tooltip:'Wybierz zdjęcie dla potrawy'}"></button>
+            <img id="imgToAdd" src="/images/logo.png" />
+            <button id="saveit" data-win-control="WinJS.UI.AppBarCommand" data-win-options="{icon:'save', label:'Zapisz przepis', type:'button', tooltip:'Zapisz przepis'}"></button>
+            <textarea id="repiceName" rows="1"></textarea>
+            <textarea id="repiceGuide" rows="8"></textarea>
+            <button id="addSkladnik" data-win-control="WinJS.UI.AppBarCommand" data-win-options="{icon:'add', label:'Dodaj skladnik', type:'button', tooltip:'Dodaj skladnik dla potrawy'}">
+                <button id="listaSkladnikow" data-win-control="WinJS.UI.ListView" data-win-options="{label:'Lista skladników', type:'button', tooltip:'Tutaj znajduja sie skladniki dodane do przepisu'}">></button>
+</div>
+        <div data-win-control="WinJS.UI.AppBar" aria-label="Navigation Bar"
+             data-win-options="{layout:'custom',placement:'bottom'}" , class="bottomMenu">
+            <header aria-label="Navigation bar" role="banner">
+                <div class="left">
+                    <button data-win-control="WinJS.UI.AppBarCommand" data-win-options="{icon:'home', label:'Home', onclick:null, type:'button', tooltip:'Powrót do głownego ekranu'}"></button>
+                </div>
+                <div class="right">
+                    <button data-win-control="WinJS.UI.AppBarCommand" data-win-options="{icon:'bullets', label:'Zaznacz posiadane składniki', type:'button', tooltip:'Powiem ci co możesz zjeść'}"></button>
+                    <button data-win-control="WinJS.UI.AppBarCommand" data-win-options="{icon:'find', label:'Wyszukiwanie proste', type:'button', tooltip:'Wpisz nazę bądź fragment'}"></button>
+                    <button data-win-control="WinJS.UI.AppBarCommand" data-win-options="{icon:'find', label:'Wyszukiwanie zaawansowane', type:'button', tooltip:'Szukamy po nazwie, typie, składnikach'}"></button>
+                </div>
+            </header>
+        </div>
+    </div>
+</body>
+</html>
