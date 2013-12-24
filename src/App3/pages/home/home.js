@@ -26,7 +26,7 @@
             })
 
         }
-        else if (("" + link).search("list_recipes") != -1) { 
+        else if (("" + link).search("list_recipes") != -1) {
 
             var array = [];
 
@@ -39,7 +39,7 @@
         else {
             var array = [];
             getOnePrzepis("ala", array).then(function () {
-                WinJS.Navigation.navigate(link.href , array);
+                WinJS.Navigation.navigate(link.href, array);
             })
         }
     }

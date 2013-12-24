@@ -71,3 +71,11 @@
             margin-left: 29px;
         }
 }
+
+body {
+    color: black;
+}
+.win-backbutton {
+    color: black;
+    border-color: black;
+}

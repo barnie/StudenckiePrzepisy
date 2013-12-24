@@ -1,24 +1,47 @@
 ﻿<head>
     <meta charset="utf-8" />
     <title>Recipes list</title>
-
     <link href="/pages/list_recipes/list_recipes.css" rel="stylesheet" />
+    
     <script src="/pages/list_recipes/list_recipes.js"></script>
+    <!-- Data for ListView -->
+    <script src="/pages/list_recipes/data.js"></script>
+    
+
     
 </head>
 <body>
-    
-    <div id="listContainer">
+
         <div id="backCont">
             <header aria-label="Header content" role="banner">
                 <button class="win-backbutton" aria-label="Back" disabled type="button"></button>
             </header>
         </div>
-        <div id="containerOfRecipies">
-            <div id="name">Przepisy</div>
-            <div id="myDiv">Jeżeli widzisz ten tekst to niedobrze</div>
+        <div id="letter" data-win-control="WinJS.Binding.Template" 
+            style="display: none">
+            <div class="simpleHeaderItem">
+                <h1 data-win-bind="innerText: title"></h1>
+            </div>
         </div>
-    </div>
-    
+        <div id="names" 
+            data-win-control="WinJS.Binding.Template" 
+            style="display: none">
+
+            <div class="namesItem">
+                <div class="namesItem-Detail">
+                    <h4 data-win-bind="innerText: title"></h4>
+                </div>
+            </div>
+        </div>
+        <div id="groupedListView"
+            data-win-control="WinJS.UI.ListView" 
+            data-win-options="{itemDataSource: myData.groupedItemsList.dataSource, 
+                itemTemplate: select('#names'),
+                groupDataSource: myData.groupedItemsList.groups.dataSource,
+                groupHeaderTemplate: select('#letter')}">
+        </div>
+
+
+
    
 </body>
