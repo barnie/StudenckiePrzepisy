@@ -15,6 +15,7 @@ public class readDescribe {
 		pisz("Z czego chcesz czytac:");
 		pisz("1) Z klawiatury");
 		pisz("2) Z pliku");
+		pisz("3) Styl stary");
 		pisz("0) Zamknij");
 		boolean tr = true;
 		
@@ -25,6 +26,9 @@ public class readDescribe {
 			case 1: new readFromKey();
 			break;
 			case 2: new readFromFile();
+			break;
+			case 3: new oldStyle();
+			break;
 			default: pisz("Komenda niezrozumiala");
 			break;
 			}
