@@ -15,7 +15,7 @@ import org.jsoup.select.Elements;
 public class readFromKey {
 	private String urlText;
 	private  Document doc;
-	private  PrintWriter zapis;
+	private  PrintWriter zapis, skladnik;
 	private  BufferedImage image;
 	private int n, s;
 	private String tab[] = new String[3];
@@ -36,7 +36,8 @@ public class readFromKey {
 	
 	public void init(int inx){
 		try{
-		zapis = new PrintWriter("inserts.txt");
+		zapis = new PrintWriter("inserts" + String.valueOf(inx) + ".txt");
+		skladnik = new PrintWriter("sklad" + String.valueOf(inx) + ".txt");
 		doc = Jsoup.connect(urlText).get();
 		String tmp = "";
 		boolean tr = true;
@@ -60,7 +61,10 @@ public class readFromKey {
 		while(tr){
 		readDescribe.pisz("Podaj kategorie: ");
 		switch(readDescribe.in.nextInt()){
-		case 0: tr = false;
+		case 0: if(catList.isEmpty())
+			readDescribe.pisz("Przepis musi nalezec do kategorii. Wpisz jeszcze raz");
+		else
+			tr = false;
 		break;
 		case 1: catList.add(1);
 		break;
@@ -111,11 +115,11 @@ public class readFromKey {
 		klas = doc.getElementsByClass("post_content2");
 		tmp = klas.toString();
 		tmp = tmp.substring(66, tmp.length() - 11);
-		tmp = tmp.replace("<br />", "<next>");
+		tmp = tmp.replace("<br />", "\n");
 		tmp = tmp.replace("&oacute;", "�");
 		tmp = tmp.replace("- ", "");
 		// pisz(tmp);
-//		zapis.println("<components>" + tmp + "</components>");
+		skladnik.println(tmp);
 
 		/**
 		 * bierze opis
@@ -142,11 +146,15 @@ public class readFromKey {
 		File imageFile = new File(String.valueOf(inx) + ".jpg");
 		ImageIO.write(image, "jpg", imageFile);
 		
-		while(!catList.isEmpty())
+		try{
+		while(catList.size()!=0){
 			zapis.println("INSERT INTO przepis VALUES (" + inx +", " + catList.remove(0) + ", '" + tab[0] + "', '" + tab[1] + "', '" + tab[2] + "');");
+		}}catch(Exception e) {
+			e.printStackTrace();
+		}
 		
 		zapis.close();
-
+		skladnik.close();
 	} catch (Exception e) {
 		e.printStackTrace();
 	}
