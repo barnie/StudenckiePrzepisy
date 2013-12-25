@@ -113,15 +113,9 @@
     <None Include="App3_TemporaryKey.pfx" />
   </ItemGroup>
   <ItemGroup>
-<<<<<<< HEAD
-    <SDKReference Include="Microsoft.VCLibs, version=11.0" />
-    <SDKReference Include="Microsoft.WinJS.1.0, Version=1.0" />
-    <SDKReference Include="SQLite.WinRT, Version=3.8.1" />
-=======
     <SDKReference Include="Microsoft.VCLibs, version=12.0" />
     <SDKReference Include="Microsoft.WinJS.2.0, Version=1.0" />
     <SDKReference Include="SQLite.WinRT81, Version=3.8.2" />
->>>>>>> 07a7c6d764b18769de4027f7ba40e9650770d07b
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="SQLite3Component\SQLite3Component.vcxproj" />
