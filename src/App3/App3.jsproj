@@ -78,6 +78,12 @@
     <Content Include="images\8.jpg" />
     <Content Include="images\9.jpg" />
     <Content Include="images\food_wallpaper.jpg" />
+    <Content Include="images\food_wallpaper1.jpg" />
+    <Content Include="images\food_wallpaper2.jpg" />
+    <Content Include="images\food_wallpaper3.jpg" />
+    <Content Include="images\red_metro.jpg" />
+    <Content Include="images\spadzetixD.jpg" />
+    <Content Include="images\Windows8Green.jpg" />
     <Content Include="js\LayoutContainer.js" />
     <Content Include="js\navigator.js" />
     <Content Include="js\ParseHelper.js" />

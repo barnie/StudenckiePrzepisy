@@ -1,15 +1,16 @@
 ﻿body {
     background-size: 100% 100%;
-    background: rgb(51,51,51) url("/images/food_wallpaper.jpg");
+    background: rgb(51,51,51) url("/images/spadzetixD.jpg") ;
 }
 
     body .Gallery {
-        height: 80%;
+        height: 100%;
         width: 70%;
         margin-left:20%;
     }
 
         body .Gallery ul {
+            height:40%;
             list-style: none;
         }
 
@@ -20,14 +21,16 @@
             }
 
                 body .Gallery ul li  img {
-                    height: 92%;
-                    width: 20%;
+                    height: 90%;
+                    width: 90%;
                     margin-right: 1%;
                     margin-bottom: 1%;
-                    border-style: solid;
+                    border-style: groove;
                     border-color: black;
                     border-radius: 1px;
                     float: left;
+                    display: block;
+
                 }
 
 body .Menu {
@@ -37,14 +40,20 @@ body .Menu {
     height: 100%;
     width: 15%;
     color: black;
-    background-color: #800000 ;
+    background: rgb(187,27,28); 
+    opacity: 0.9;
     font-family: "Arial";
     font-size: medium;
 }
 
     body .Menu a {
         color: inherit;
-        text-decoration:none;
+        text-decoration:wavy;
+        margin: 0px;
+	    padding: 0px;
+	    color: black;
+	    clear: both;
+	    padding-bottom: 6px;
     }
 
         body .Menu a:hover {
@@ -82,14 +91,14 @@ body .Menu {
     }
 
 
-@media screen and (-ms-view-state: fullscreen-landscape) {
+@media screen and (max-width: fullscreen-landscape) {
 }
 
-@media screen and (-ms-view-state: filled) {
+@media screen and (max-width: filled) {
 }
 
-@media screen and (-ms-view-state: snapped) {
+@media screen and (max-width: snapped) {
 }
 
-@media screen and (-ms-view-state: fullscreen-portrait) {
+@media screen and (max-width: fullscreen-portrait) {
 }
