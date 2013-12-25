@@ -1,6 +1,8 @@
 ﻿body {
     background-size: 100% 100%;
     background: rgb(51,51,51) url("/images/spadzetixD.jpg") ;
+    background-color: rgba(0,0,0,0.6);
+
 }
 
     body .Gallery {
@@ -12,6 +14,7 @@
         body .Gallery ul {
             height:40%;
             list-style: none;
+            display:inline-block;
         }
 
             body .Gallery ul li {
@@ -42,8 +45,9 @@ body .Menu {
     color: black;
     background: rgb(187,27,28); 
     opacity: 0.9;
-    font-family: "Arial";
     font-size: medium;
+    font-family: Georgia;
+    font-style: italic;
 }
 
     body .Menu a {
@@ -54,6 +58,8 @@ body .Menu {
 	    color: black;
 	    clear: both;
 	    padding-bottom: 6px;
+        font-family: Georgia;
+        font-style: italic;
     }
 
         body .Menu a:hover {
