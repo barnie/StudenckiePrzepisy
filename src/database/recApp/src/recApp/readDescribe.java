@@ -4,7 +4,7 @@ import java.io.IOException;
 import java.util.Scanner;
 
 public class readDescribe {
-	public static Scanner in = new Scanner(System.in);
+	static Scanner in = new Scanner(System.in);
 
 	public static void pisz(String txt) {
 		System.out.println(txt);
