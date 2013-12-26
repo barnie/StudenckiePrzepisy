@@ -1,0 +1,9 @@
+INSERT INTO przepis VALUES (17, 11, 'Sorbet truskawkowy', '</p>
+ <p>Przepis jest bardzo prosty :)  Wszytko wrzucamy do miksera lub rozdrabniamy blenderem. Konsystencja nie może być za rzadka.  Jeśli nie miksujemy z mrożonych truskawek, dodajemy do świeżych parę kostek lodu.</p>
+ <p> Najładniej wygląda w szklanych naczyniach, ozdabiamy listkiem jakiś zi�ł, mięty czy melisy.  Sorbet nie musi być tylko z truskawek, pyszny jest r�wnież z owoc�w leśnych jak i innych owoc�w kt�re akurat mamy w domu.   Pyszny, prosty i orzeźwiający przepis na szybki deser.  Smaczneg', '17.jpg');
+INSERT INTO przepis VALUES (17, 5, 'Sorbet truskawkowy', '</p>
+ <p>Przepis jest bardzo prosty :)  Wszytko wrzucamy do miksera lub rozdrabniamy blenderem. Konsystencja nie może być za rzadka.  Jeśli nie miksujemy z mrożonych truskawek, dodajemy do świeżych parę kostek lodu.</p>
+ <p> Najładniej wygląda w szklanych naczyniach, ozdabiamy listkiem jakiś zi�ł, mięty czy melisy.  Sorbet nie musi być tylko z truskawek, pyszny jest r�wnież z owoc�w leśnych jak i innych owoc�w kt�re akurat mamy w domu.   Pyszny, prosty i orzeźwiający przepis na szybki deser.  Smaczneg', '17.jpg');
+INSERT INTO przepis VALUES (17, 14, 'Sorbet truskawkowy', '</p>
+ <p>Przepis jest bardzo prosty :)  Wszytko wrzucamy do miksera lub rozdrabniamy blenderem. Konsystencja nie może być za rzadka.  Jeśli nie miksujemy z mrożonych truskawek, dodajemy do świeżych parę kostek lodu.</p>
+ <p> Najładniej wygląda w szklanych naczyniach, ozdabiamy listkiem jakiś zi�ł, mięty czy melisy.  Sorbet nie musi być tylko z truskawek, pyszny jest r�wnież z owoc�w leśnych jak i innych owoc�w kt�re akurat mamy w domu.   Pyszny, prosty i orzeźwiający przepis na szybki deser.  Smaczneg', '17.jpg');
