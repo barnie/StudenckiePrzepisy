@@ -17,6 +17,9 @@ import org.jsoup.select.Elements;
 
 
 public class readFromFile {
+	
+	Scanner input = new Scanner(new File("input.txt"));
+	
 	private String urlText;
 	private  Document doc;
 	private  PrintWriter zapis, skladnik;
@@ -26,7 +29,7 @@ public class readFromFile {
 	private ArrayList<Integer> catList;
 	
 	readFromFile() throws FileNotFoundException{
-		Scanner input = new Scanner(new File("input.txt"));
+		
 //		readDescribe.pisz("Wpisz ilosc insertow do utworzenia: ");
 		n = input.nextInt();
 //		readDescribe.pisz("Napisz pierwszy indeks od ktorego ma zostac numerowane");
@@ -48,7 +51,7 @@ public class readFromFile {
 		doc = Jsoup.connect(urlText).get();
 		String tmp = "";
 		boolean tr = true;
-
+/*
 		System.out.println("KATEGORIE");
 		System.out.println("1) mieso i wedliny");
 		System.out.println("2) ryby i owoce morza");
@@ -64,13 +67,12 @@ public class readFromFile {
 		System.out.println("12) napoje");
 		System.out.println("13) salatki");
 		System.out.println("14) studenckie");
-		System.out.println("0) konczy");
+		System.out.println("0) konczy");*/
+		
 		while(tr){
-		readDescribe.pisz("Podaj kategorie: ");
-		switch(readDescribe.in.nextInt()){
-		case 0: if(catList.isEmpty())
-			readDescribe.pisz("Przepis musi nalezec do kategorii. Wpisz jeszcze raz");
-		else
+//		readDescribe.pisz("Podaj kategorie: ");
+		switch(input.nextInt()){
+		case 0: if(!catList.isEmpty())
 			tr = false;
 		break;
 		case 1: catList.add(1);
@@ -101,7 +103,8 @@ public class readFromFile {
 		break;
 		case 14: catList.add(14);
 		break;
-		default: readDescribe.pisz("Podany numer jest bledny. Sprobuj jeszcze raz.");
+		default: 
+//			readDescribe.pisz("Podany numer jest bledny. Sprobuj jeszcze raz.");
 		break;
 		}
 		}
