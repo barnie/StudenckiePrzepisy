@@ -1,6 +1,0 @@
-<cat>nabial<cat>
-<cat>desery<cat>
-<cat>studenckie<cat>
-<title>Brownie Cake</title>
-<components>dwie tabliczki czekolady<next>10 dag m¹ki<next>30 dag cukru<next>6 jajek<next>1/3 kostki mas³a</components>
-<des>Mas³o z czekolad¹ roztapiamy w rondelku lub na parze. Odstawiamy do ostygniêcia. Ubijamy mikserem jajka, cukier i m¹kê.&nbsp; Do powsta³ej, g³adkiej masy dolewamy mieszankê mas³a i czekolady (mo¿na opcjonalnie dodaæ np. kruszone orzechy, migda³y, bakalie). Spód œredniej wielkoœci blaszki wyk³adamy pergaminem do pieczenia.  Wlewamy ciasto. Piekarnik ustawiamy na 200 stopni, gdy siê ju¿ nagrzeje ciasto pieczemy oko³o 20 minut.  Wyci¹gamy do ostygniêcia, kroimy w kwadraty.  Na wierzch wylewamy polewê czekoladow¹ – gotow¹, kupion¹ w sklepie, lub zrobion¹ samemu (roztapiamy tabliczkê gorzkiej czekolady z mas³em i odrobin¹ œmietanki 30%). </des>

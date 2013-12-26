@@ -1,6 +1,0 @@
-<cat>nabial<cat>
-<cat>pieczywo<cat>
-<cat>desery<cat>
-<title>Tiramius z bia³¹ czekolad¹</title>
-<components>150 gram bia³ej czekolady<next>200 gram serka mascarpone<next>75 ml œmietany 30 %<next>4 ³y¿ki wermutu<next>27 d³ugich biszkoptów<next>200 ml wody przegotowanej <next>3-4 ³y¿ki kawy rozpuszczalnej<next>kakao</components>
-<des>Œmietanê ubijamy na sztywno. Dodajemy serek mascarpone i mieszamy.  Rozpuszczamy bia³¹ czekoladê. Lekko przestudzon¹ czekoladê dodajemy do masy, mieszamy i dodajemy wermut.  Wlewamy 200ml ciep³ej przegotowanej wody do g³êbokiego talerza i rozpuszczamy w nim ok 3-4 ³y¿ek kawy rozpuszczalnej. Po wystygnieciu moczymy w tym po ok 2-3 sekundy biszkopty.   W du¿ej najlepiej przeŸroczystej misce uk³adamy biszkopty obok siebie, k³adziemy na nie krem, nastêpnie uk³adamy na nich kolejne biszkopty i tak a¿ do wype³nienia ca³ej miski.   Wk³adamy gotow¹ porcjê do lodówki na oko³o 2 godziny.  Przed podaniem posypujemy kakao. </des>

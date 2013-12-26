@@ -1,6 +1,0 @@
-<cat>mieso<cat>
-<cat>warzywa<cat>
-<cat>grzyby<cat>
-<title>Szasz³yki warzywne z kurczakiem</title>
-<components>Szasz³yki:<next>papryka ró¿nokolorowa<next>pieczarki<next>ogórki lub m³oda cukinia<next>cebula bia³a i czerwona<next>pomidory koktajlowe<next>pierœ z kurczaka<next><next>Marynata:<next>oliwa<next>sos sojowy<next>ocet winny<next>pieprz<next>zio³a prowansalskie<next>przyprawa do grilla</components>
-<des>Pieczarki myjemy i odkrajamy ogonki.  Paprykê kroimy w kwadraty, a cebulê i ogórka w plastry (wszystkie kawa³ki warzyw powinny mieæ podobn¹ wielkoœæ). Nadziewamy wszystkie warzywa na mokre patyczki, w dowolnej kolejnoœci i kombinacji. Oba koñce zakañczamy kawa³kami piersi z kurczaka lub przek³adamy warzywa 2-3 kawa³kami.  Mieszamy oliwê z sosem sojowym i octem winnym w proporcjach 3:1, dodajemy zio³a.  Maczamy szasz³yki w marynacie, obracaj¹c je co jakiœ czas przez oko³o 20 minut. Grillujemy polewaj¹c marynat¹ a¿ warzywa bêd¹ „al dente&quot;, a kurczak kruchy.  Mo¿emy podaæ z grillowanymi ziemniakami (ziemniaki kroimy na 4-5 pod³u¿nych kawa³ków ¿eby wygl¹da³y jak ³ódeczki, pakujemy w folie aluminiow¹ posypujemy veget¹ i grillujemy z boku/na lekkim ogniu przez ok 40 minut) </des>

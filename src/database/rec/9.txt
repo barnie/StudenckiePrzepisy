@@ -1,6 +1,0 @@
-<cat>warzywa<cat>
-<cat>pieczywo<cat>
-<cat>studenckie<cat>
-<title>Sma¿ona bagietka z pomidorami</title>
-<components>6 pomidorów<next>3 m³ode cebulki ze szczypiorkiem<next>2 z¹bki czosnku<next>1 ³y¿ka cukru<next>oliwa z oliwek<next>sól, pieprz, bazylia<next>bagietka pe³noziarnista lub ciabatta (te¿ jest super)<next>œwie¿a bazylia lub suszona<next>czarne oliwki</components>
-<des>Pomidory i cebulkê kroimy w kostkê, czosnek mia¿d¿ymy lub przeciskamy przez praskê.  Doprawiamy sol¹, pieprzem, bazyli¹, cukrem. Polewamy oliw¹. Ca³oœæ dobrze mieszamy.   Rozgrzewamy du¿¹ patelniê teflonow¹.  Bagietkê lub ciabattê kroimy na cienkie kromki i nastêpnie k³adziemy na rozgrzan¹ patelniê, obracaj¹c je tak, ¿eby by³y chrupi¹ce z obu stron.  Na chrupi¹ce kromki nak³adamy pomidory z przyprawami, przyozdabiamy œwie¿¹ bazyli¹ i cienko krojonymi czarnymi oliwkami - gotowe :) </des>
