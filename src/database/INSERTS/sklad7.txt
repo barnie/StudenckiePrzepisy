@@ -1,7 +1,7 @@
-1 kg szynki wieprzowej
-7-8 ząbk�w czosnku
-p�ł łyżeczki soli
-p�ł łyżeczki świeżo zmielonego kolorowego pieprzu
-p�ł łyżeczki czosnku granulowanego
-p�ł łyżeczki świeżo zmielonych pestek z ostrych papryk (można zastąpić ostrą papryką ale to nie to samo)
-magi
+INSERT INTO przepis_skladnik VALUES (7,46,(SELECT ile FROM skladnik WHERE id = 46), 1);
+INSERT INTO przepis_skladnik VALUES (7,44,(SELECT ile FROM skladnik WHERE id = 44), 8);
+INSERT INTO przepis_skladnik VALUES (7,47,(SELECT ile FROM skladnik WHERE id = 47), 1/2);
+INSERT INTO przepis_skladnik VALUES (7,48,(SELECT ile FROM skladnik WHERE id = 48), 1/2);
+INSERT INTO przepis_skladnik VALUES (7,49,(SELECT ile FROM skladnik WHERE id = 49), 1/2);
+INSERT INTO przepis_skladnik VALUES (7,50,(SELECT ile FROM skladnik WHERE id = 50), 1/2);
+INSERT INTO przepis_skladnik VALUES (7,51,(SELECT ile FROM skladnik WHERE id = 51), null);

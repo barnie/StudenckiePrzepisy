@@ -1,9 +1,8 @@
-1,5 szklanki startej na małych oczkach marchewki
-3 jajka + 1 białko
-2 łyżki maizeny
-2 łyżki zmielonych otręb�w owsianych
-2 łyżki słodziku w proszku
-2 łyżeczki cynamonu
-1 łyżeczka proszku do pieczenia
-szczypta soli
-mała garść rodzynek
+INSERT INTO przepis_skladnik VALUES (8,52,(SELECT ile FROM skladnik WHERE id = 52), 3/2);
+INSERT INTO przepis_skladnik VALUES (8,13,(SELECT ile FROM skladnik WHERE id = 13), 4);
+INSERT INTO przepis_skladnik VALUES (8,54,(SELECT ile FROM skladnik WHERE id = 54), 2);
+INSERT INTO przepis_skladnik VALUES (8,57,(SELECT ile FROM skladnik WHERE id = 57), 2);
+INSERT INTO przepis_skladnik VALUES (8,53,(SELECT ile FROM skladnik WHERE id = 53), 2);
+INSERT INTO przepis_skladnik VALUES (8,55,(SELECT ile FROM skladnik WHERE id = 55), 1);
+INSERT INTO przepis_skladnik VALUES (8,5,(SELECT ile FROM skladnik WHERE id = 5), 1);
+INSERT INTO przepis_skladnik VALUES (8,56,(SELECT ile FROM skladnik WHERE id = 56), 1);

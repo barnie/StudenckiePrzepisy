@@ -1,15 +1,13 @@
-kotlety:
-1 szklanka kaszy jaglanej
-5 pieczarek
-1 cebula
-słonecznik, pestki dyni-według smaku;)
-1 jajko
-bułka tarta lub zmielone siemie lniane w ramach panierki
-oliwa do smażenia
-s�l, pieprz
-
-sos:
-jogurt naturalny duży
-pęczek koperku
-1 duży ząbek czosnku
-4-5 og�rk�w konserwowych
+INSERT INTO przepis_skladnik VALUES (6,38,(SELECT ile FROM skladnik WHERE id = 38), 1);
+INSERT INTO przepis_skladnik VALUES (6,9,(SELECT ile FROM skladnik WHERE id = 9), 5);
+INSERT INTO przepis_skladnik VALUES (6,21,(SELECT ile FROM skladnik WHERE id = 21), 1);
+INSERT INTO przepis_skladnik VALUES (6,39,(SELECT ile FROM skladnik WHERE id = 39), null);
+INSERT INTO przepis_skladnik VALUES (6,13,(SELECT ile FROM skladnik WHERE id = 13), 1);
+INSERT INTO przepis_skladnik VALUES (6,40,(SELECT ile FROM skladnik WHERE id = 40), null);
+INSERT INTO przepis_skladnik VALUES (6,41,(SELECT ile FROM skladnik WHERE id = 41), null);
+INSERT INTO przepis_skladnik VALUES (6,5,(SELECT ile FROM skladnik WHERE id = 5), 1);
+INSERT INTO przepis_skladnik VALUES (6,23,(SELECT ile FROM skladnik WHERE id = 23), null);
+INSERT INTO przepis_skladnik VALUES (6,42,(SELECT ile FROM skladnik WHERE id = 42), 1);
+INSERT INTO przepis_skladnik VALUES (6,43,(SELECT ile FROM skladnik WHERE id = 43), 1);
+INSERT INTO przepis_skladnik VALUES (6,44,(SELECT ile FROM skladnik WHERE id = 44), 1);
+INSERT INTO przepis_skladnik VALUES (6,45,(SELECT ile FROM skladnik WHERE id = 45), 5);
