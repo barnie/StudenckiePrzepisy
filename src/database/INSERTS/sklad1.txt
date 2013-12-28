@@ -1,14 +1,10 @@
-</p>
- <p>Ciasto:
-3/4 szklanki mąki
-15g drożdży
-1 szklanka letniej wody (może być mineralna gazowana)
-1 łyżeczka oleju lub oliwy z oliwek
-2 szczypty soli</p>
- <p>Dodatki:
-5 skrojonych w plastry ciemnych oliwek
-1 małą gł�wkę brokuły
-1 czerwoną ostrą papryczkę
-2 pieczarki sparzone i skrojone w całości w plastry
-ok 30g sera</p> 
- <p>
+INSERT INTO przepis_skladnik VALUES (1,1,(SELECT ile FROM skladnik WHERE id = 1), 3/4);
+INSERT INTO przepis_skladnik VALUES (1,2,(SELECT ile FROM skladnik WHERE id = 2), 15);
+INSERT INTO przepis_skladnik VALUES (1,3,(SELECT ile FROM skladnik WHERE id = 3), 1);
+INSERT INTO przepis_skladnik VALUES (1,4,(SELECT ile FROM skladnik WHERE id = 4), 1);
+INSERT INTO przepis_skladnik VALUES (1,5,(SELECT ile FROM skladnik WHERE id = 5), 2);
+INSERT INTO przepis_skladnik VALUES (1,6,(SELECT ile FROM skladnik WHERE id = 6), 5);
+INSERT INTO przepis_skladnik VALUES (1,7,(SELECT ile FROM skladnik WHERE id = 7), 1);
+INSERT INTO przepis_skladnik VALUES (1,8,(SELECT ile FROM skladnik WHERE id = 8), 1);
+INSERT INTO przepis_skladnik VALUES (1,9,(SELECT ile FROM skladnik WHERE id = 9), 2);
+INSERT INTO przepis_skladnik VALUES (1,10,(SELECT ile FROM skladnik WHERE id = 10), 30);

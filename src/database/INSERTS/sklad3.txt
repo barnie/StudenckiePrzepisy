@@ -1,7 +1,7 @@
-4 jajka
-puszka tuńczyka
-1/2 puszki kukurydzy
-200 g ż�łtego sera
-2 średnie cebule (ja daje jedną czerwona)
-5 łyżek majonezu
-pieprz
+INSERT INTO przepis_skladnik VALUES (3,13,(SELECT ile FROM skladnik WHERE id = 13), 4);
+INSERT INTO przepis_skladnik VALUES (3,19,(SELECT ile FROM skladnik WHERE id = 19), 1);
+INSERT INTO przepis_skladnik VALUES (3,20,(SELECT ile FROM skladnik WHERE id = 20), 1/2);
+INSERT INTO przepis_skladnik VALUES (3,21,(SELECT ile FROM skladnik WHERE id = 21), 2);
+INSERT INTO przepis_skladnik VALUES (3,10,(SELECT ile FROM skladnik WHERE id = 10), 200);
+INSERT INTO przepis_skladnik VALUES (3,22,(SELECT ile FROM skladnik WHERE id = 22), 6);
+INSERT INTO przepis_skladnik VALUES (3,23,(SELECT ile FROM skladnik WHERE id = 23), null);
