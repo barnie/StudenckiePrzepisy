@@ -1,105 +1,105 @@
 52 1
 http://www.kulinarne-odkrycia.pl/index.php?sekcja=przepis&przepisId=31
-6 0
+6 4 3 14 0
 http://www.kulinarne-odkrycia.pl/index.php?sekcja=przepis&przepisId=32
-3 0
+3 11 14 0
 http://www.kulinarne-odkrycia.pl/index.php?sekcja=przepis&przepisId=33
-2 0
+2 3 13 4 0
 http://www.kulinarne-odkrycia.pl/index.php?sekcja=przepis&przepisId=37
-5 0
+5 12 14 0
 http://www.kulinarne-odkrycia.pl/index.php?sekcja=przepis&przepisId=36
-1 0
+1 3 14 0
 http://www.kulinarne-odkrycia.pl/index.php?sekcja=przepis&przepisId=35
-4 0
+4 7 9 3 0
 http://www.kulinarne-odkrycia.pl/index.php?sekcja=przepis&przepisId=34
-1 0
+1 4 0
 http://www.kulinarne-odkrycia.pl/index.php?sekcja=przepis&przepisId=47
-4 0
+4 11 0
 http://www.kulinarne-odkrycia.pl/index.php?sekcja=przepis&przepisId=46
-1 0
+1 3 14 0
 http://www.kulinarne-odkrycia.pl/index.php?sekcja=przepis&przepisId=45
-11 0
+11 3 14 0
 http://www.kulinarne-odkrycia.pl/index.php?sekcja=przepis&przepisId=44
-11 0
+11 3 5 0
 http://www.kulinarne-odkrycia.pl/index.php?sekcja=przepis&przepisId=43
 6 0
 http://www.kulinarne-odkrycia.pl/index.php?sekcja=przepis&przepisId=39
-11 0
+11 3 5 0
 http://www.kulinarne-odkrycia.pl/index.php?sekcja=przepis&przepisId=38
-11 0
+11 3 5 14 0
 http://www.kulinarne-odkrycia.pl/index.php?sekcja=przepis&przepisId=48
-5 0
+5 4 1 3 14 0
 http://www.kulinarne-odkrycia.pl/index.php?sekcja=przepis&przepisId=49
-1 0
+1 4 8 0
 http://www.kulinarne-odkrycia.pl/index.php?sekcja=przepis&przepisId=50
-11 0
+11 5 14 0
 http://www.kulinarne-odkrycia.pl/index.php?sekcja=przepis&przepisId=51
-4 0
+4 3 13 0
 http://www.kulinarne-odkrycia.pl/index.php?sekcja=przepis&przepisId=52
-13 0
+13 4 3 14 0
 http://www.kulinarne-odkrycia.pl/index.php?sekcja=przepis&przepisId=53
-11 0
+11 3 0
 http://www.kulinarne-odkrycia.pl/index.php?sekcja=przepis&przepisId=54
-6 0
+6 11 5 3 0
 http://www.kulinarne-odkrycia.pl/index.php?sekcja=przepis&przepisId=55
-8 0
+8 4 3 0
 http://www.kulinarne-odkrycia.pl/index.php?sekcja=przepis&przepisId=56
-3 0
+3 5 14 12 0
 http://www.kulinarne-odkrycia.pl/index.php?sekcja=przepis&przepisId=57
-4 0
+4 1 3 14 0
 http://www.kulinarne-odkrycia.pl/index.php?sekcja=przepis&przepisId=61
-4 0
+4 10 0
 http://www.kulinarne-odkrycia.pl/index.php?sekcja=przepis&przepisId=62
-11 0
+11 3 14 0
 http://www.kulinarne-odkrycia.pl/index.php?sekcja=przepis&przepisId=63
-4 0
+4 1 3 14 0
 http://www.kulinarne-odkrycia.pl/index.php?sekcja=przepis&przepisId=64
-11 0
+11 3 0
 http://www.kulinarne-odkrycia.pl/index.php?sekcja=przepis&przepisId=65
-2 0
+2 3 0
 http://www.kulinarne-odkrycia.pl/index.php?sekcja=przepis&przepisId=66
-11 0
+11 6 5 3 0
 http://www.kulinarne-odkrycia.pl/index.php?sekcja=przepis&przepisId=67
-4 0
+4 3 9 7 0
 http://www.kulinarne-odkrycia.pl/index.php?sekcja=przepis&przepisId=68
-14 0
+14 5 3 11 0
 http://www.kulinarne-odkrycia.pl/index.php?sekcja=przepis&przepisId=69
-8 0
+8 4 3 6 0
 http://www.kulinarne-odkrycia.pl/index.php?sekcja=przepis&przepisId=70
-14 0
+12 14 0
 http://www.kulinarne-odkrycia.pl/index.php?sekcja=przepis&przepisId=71
-11 0
+11 3 6 0
 http://www.kulinarne-odkrycia.pl/index.php?sekcja=przepis&przepisId=72
-6 0
+6 11 3 0
 http://www.kulinarne-odkrycia.pl/index.php?sekcja=przepis&przepisId=73
-3 0
+3 5 0
 http://www.kulinarne-odkrycia.pl/index.php?sekcja=przepis&przepisId=74
-4 0
+3 4 0
 http://www.kulinarne-odkrycia.pl/index.php?sekcja=przepis&przepisId=75
-3 0
+3 5 1 4 0
 http://www.kulinarne-odkrycia.pl/index.php?sekcja=przepis&przepisId=76
-3 0
+3 6 0
 http://www.kulinarne-odkrycia.pl/index.php?sekcja=przepis&przepisId=77
-11 0
+11 3 0
 http://www.kulinarne-odkrycia.pl/index.php?sekcja=przepis&przepisId=78
 3 0
 http://www.kulinarne-odkrycia.pl/index.php?sekcja=przepis&przepisId=79
-3 0
+3 11 5 0
 http://www.kulinarne-odkrycia.pl/index.php?sekcja=przepis&przepisId=80
-3 0
+3 11 14 0
 http://www.kulinarne-odkrycia.pl/index.php?sekcja=przepis&przepisId=81
-11 0
+11 3 0
 http://www.kulinarne-odkrycia.pl/index.php?sekcja=przepis&przepisId=82
-11 0
+11 3 0
 http://www.kulinarne-odkrycia.pl/index.php?sekcja=przepis&przepisId=83
-1 0
+1 4 0
 http://www.kulinarne-odkrycia.pl/index.php?sekcja=przepis&przepisId=84
-12 0
+12 14 3 0
 http://www.kulinarne-odkrycia.pl/index.php?sekcja=przepis&przepisId=85
-3 0
+3 11 0
 http://www.kulinarne-odkrycia.pl/index.php?sekcja=przepis&przepisId=106
-5 0
+5 10 0
 http://www.kulinarne-odkrycia.pl/index.php?sekcja=przepis&przepisId=96
-2 0
+2 4 0
 http://www.kulinarne-odkrycia.pl/index.php?sekcja=przepis&przepisId=99
-4 0
+4 8 0

@@ -148,7 +148,7 @@ public class readFromKey {
 		
 		try{
 		while(catList.size()!=0){
-			zapis.println("INSERT INTO przepis VALUES (" + inx +", " + catList.remove(0) + ", '" + tab[0] + "', '" + tab[1] + "', '" + tab[2] + "');");
+			zapis.println("INSERT OR IGNORE INTO przepis VALUES (" + inx +", " + catList.remove(0) + ", '" + tab[0] + "', '" + tab[1] + "', '" + tab[2] + "');");
 		}}catch(Exception e) {
 			e.printStackTrace();
 		}
