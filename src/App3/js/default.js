@@ -40,7 +40,7 @@ WinJS.Namespace.define("MyGlobals", {
 
     function buttonClickHandler(eventInfo) {
         // that button test a database only :) Cool and chill nigga!
-        //createDB();
+       // createDB();
         /*  var tab = [];
           tab[0] = new Array(); tab[1] = new Array();
           tab[0][0] = 1; tab[0][1] = 'szklanka'; tab[0][2] = 2;
