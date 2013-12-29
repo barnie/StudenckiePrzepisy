@@ -1,12 +1,10 @@
-Skladniki na parkę jerzyk�w :)
-
-1 ż�łty melon
-paczka czarnych oliwek
-paczka zielonych oliwek nadziewanych papryką
-pęczek rzodkiewek
-4 kabanosy
-pomarańczowa papryka konserwowa
-kostka ż�łtego sera
-og�rki konserwowe
-pomidorki koktajlowe
-paczka wykałaczek
+INSERT INTO przepis_skladnik VALUES (15,81,(SELECT ile FROM skladnik WHERE id = 81), 1);
+INSERT INTO przepis_skladnik VALUES (15,82,(SELECT ile FROM skladnik WHERE id = 82), 1);
+INSERT INTO przepis_skladnik VALUES (15,84,(SELECT ile FROM skladnik WHERE id = 84), 1);
+INSERT INTO przepis_skladnik VALUES (15,83,(SELECT ile FROM skladnik WHERE id = 83), 1);
+INSERT INTO przepis_skladnik VALUES (15,85,(SELECT ile FROM skladnik WHERE id = 85), 4);
+INSERT INTO przepis_skladnik VALUES (15,86,(SELECT ile FROM skladnik WHERE id = 86), 1);
+INSERT INTO przepis_skladnik VALUES (15,87,(SELECT ile FROM skladnik WHERE id = 87), 1);
+INSERT INTO przepis_skladnik VALUES (15,45,(SELECT ile FROM skladnik WHERE id = 45), 'kilka');
+INSERT INTO przepis_skladnik VALUES (15,88,(SELECT ile FROM skladnik WHERE id = 88), null);
+INSERT INTO przepis_skladnik VALUES (15,89,(SELECT ile FROM skladnik WHERE id = 89), 1);

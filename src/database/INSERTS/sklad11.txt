@@ -1,37 +1,10 @@
- </p>
- <p style="margin-bottom: 0cm; font-weight: normal"><font color="#000000">Porcja na 10 foremek ok. 5 centymetrowych.</font></p> 
- 
-Ciasto kruche:
- 
-250 g mąki tortowej
- 
-150 g zimnego masła
- 
-1 łyżeczka cukru
- 
-1 łyżeczka soli
- 
-1 łyżka mleka
- 
-1 jajko
- 
-
- 
-Krem adwokatowy:
- 
-kostka margaryny kasia
- 
-1 budyn śmietankowy lub waniliowy
- 
-300ml mleka
- 
-0,5 szklanki cukru pudru
- 
-200ml adwokatu
- 
-
- 
-Dodatki:
- 
-owoce leśne, maliny, jagody, wiśnie / czereśnie drylowane, agrest itp. ja dobieram je kontrastowo :)
- <p>
+INSERT INTO przepis_skladnik VALUES (11,71,(SELECT ile FROM skladnik WHERE id = 71), 250);
+INSERT INTO przepis_skladnik VALUES (11,14,(SELECT ile FROM skladnik WHERE id = 14), 150);
+INSERT INTO przepis_skladnik VALUES (11,47,(SELECT ile FROM skladnik WHERE id = 47), 1);
+INSERT INTO przepis_skladnik VALUES (11,65,(SELECT ile FROM skladnik WHERE id = 65), 1);
+INSERT INTO przepis_skladnik VALUES (11,13,(SELECT ile FROM skladnik WHERE id = 13), 1);
+INSERT INTO przepis_skladnik VALUES (11,66,(SELECT ile FROM skladnik WHERE id = 66), 1);
+INSERT INTO przepis_skladnik VALUES (11,67,(SELECT ile FROM skladnik WHERE id = 67), 300);
+INSERT INTO przepis_skladnik VALUES (11,68,(SELECT ile FROM skladnik WHERE id = 68), 1/2);
+INSERT INTO przepis_skladnik VALUES (11,69,(SELECT ile FROM skladnik WHERE id = 69), 200);
+INSERT INTO przepis_skladnik VALUES (11,70,(SELECT ile FROM skladnik WHERE id = 70), null);

@@ -1,16 +1,12 @@
-Zaczyn:
-240 ml ciepłej wody
-140 g płatk�w żytnich (możesz je łączyć z orkiszowymi, grubymi owsianymi, jęczmiennymi)
-ok. 100 g łuskanego słonecznika (lub pestek dyni)
-kilka łyżeczek siemienia lnianego
-2 płaskie łyżeczki soli
-ok. 100 g aktywnego zakwasu żytniego
-
-Ciasto:
-8–12 g świeżych drożdży
-240 ml ciepłej wody
-4 łyżki ciemnego miodu
-300 g pełnej mąki (żytniej razowej)
-150 g zwykłej lub chlebowej mąki pszennej
-łyżeczkę oleju słonecznikowego
-2 łyżki otręb�w
+INSERT INTO przepis_skladnik VALUES (12,72,(SELECT ile FROM skladnik WHERE id = 72), 480);
+INSERT INTO przepis_skladnik VALUES (12,73,(SELECT ile FROM skladnik WHERE id = 73), 140);
+INSERT INTO przepis_skladnik VALUES (12,74,(SELECT ile FROM skladnik WHERE id = 74), 100);
+INSERT INTO przepis_skladnik VALUES (12,47,(SELECT ile FROM skladnik WHERE id = 47), 2);
+INSERT INTO przepis_skladnik VALUES (12,75,(SELECT ile FROM skladnik WHERE id = 75), 'kilka');
+INSERT INTO przepis_skladnik VALUES (12,76,(SELECT ile FROM skladnik WHERE id = 76), 100);
+INSERT INTO przepis_skladnik VALUES (12,77,(SELECT ile FROM skladnik WHERE id = 77), 10);
+INSERT INTO przepis_skladnik VALUES (12,78,(SELECT ile FROM skladnik WHERE id = 78), 4);
+INSERT INTO przepis_skladnik VALUES (12,79,(SELECT ile FROM skladnik WHERE id = 79), 300);
+INSERT INTO przepis_skladnik VALUES (12,80,(SELECT ile FROM skladnik WHERE id = 80), 150);
+INSERT INTO przepis_skladnik VALUES (12,4,(SELECT ile FROM skladnik WHERE id = 4), 1);
+INSERT INTO przepis_skladnik VALUES (12,54,(SELECT ile FROM skladnik WHERE id = 54), 2);

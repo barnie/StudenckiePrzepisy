@@ -1,83 +1,15 @@
-</p>
- <div>
-  Biszkopt klasyczny 2 szt.
- </div>
- <div>
-  &nbsp;2 x 2 jajka
- </div>
- <div>
-  &nbsp;2 x 2 łyżki cukru
- </div>
- <div>
-  &nbsp;2 x 2 łyżki mąki pszennej
- </div>
- <div>
-  &nbsp;2 x 1 łyżka mąki ziemniaczanej
- </div>
- <div>
-  &nbsp;sok z 1/2 cytryny
- </div>
- <div>
-  
-
- </div>
- <div>
-  Masa jabłkowa
- </div>
- <div>
-  1kg jabłek
- </div>
- <div>
-  2 łyżki cukru
- </div>
- <div>
-  sok z 1 cytryny
- </div>
- <div>
-  
-
- </div>
- <div>
-  Krem orzechowy
- </div>
- <div>
-  &nbsp;3 &nbsp;ż�łtka&nbsp;
- </div>
- <div>
-  &nbsp;1 jajko
- </div>
- <div>
-  &nbsp;125g cukru
- </div>
- <div>
-  &nbsp;3 łyżki mąki
- </div>
- <div>
-  &nbsp;300ml mleka
- </div>
- <div>
-  &nbsp;200g masła
- </div>
- <div>
-  &nbsp;100g zmielonych orzech�w włoskich
- </div>
- <div>
-  &nbsp;1 łyżeczka domowej esencji waniliowej
- </div>
- <div>
-  
-
- </div>
- <div>
-  Polewa:
- </div>
- <div>
-  &nbsp;100g gorzkiej czekolady o zaw. kakao 60%
- </div>
- <div>
-  &nbsp;50g mlecznej czekolady
- </div>
- <div>
-  &nbsp;100g śmietanki kremowej o zaw. tł. 30%
- </div>
- <p>
+INSERT INTO przepis_skladnik VALUES (13,95,(SELECT ile FROM skladnik WHERE id = 95), 2);
+INSERT INTO przepis_skladnik VALUES (13,13,(SELECT ile FROM skladnik WHERE id = 13), 8);
+INSERT INTO przepis_skladnik VALUES (13,97,(SELECT ile FROM skladnik WHERE id = 97), 7);
+INSERT INTO przepis_skladnik VALUES (13,98,(SELECT ile FROM skladnik WHERE id = 98), 2);
+INSERT INTO przepis_skladnik VALUES (13,99,(SELECT ile FROM skladnik WHERE id = 99), 3/2);
+INSERT INTO przepis_skladnik VALUES (13,100,(SELECT ile FROM skladnik WHERE id = 100), 1);
+INSERT INTO przepis_skladnik VALUES (13,96,(SELECT ile FROM skladnik WHERE id = 96), 2);
+INSERT INTO przepis_skladnik VALUES (13,12,(SELECT ile FROM skladnik WHERE id = 12), 125);
+INSERT INTO przepis_skladnik VALUES (13,67,(SELECT ile FROM skladnik WHERE id = 67), 300);
+INSERT INTO przepis_skladnik VALUES (13,14,(SELECT ile FROM skladnik WHERE id = 14), 200);
+INSERT INTO przepis_skladnik VALUES (13,101,(SELECT ile FROM skladnik WHERE id = 101), 100);
+INSERT INTO przepis_skladnik VALUES (13,104,(SELECT ile FROM skladnik WHERE id = 104), 1);
+INSERT INTO przepis_skladnik VALUES (13,102,(SELECT ile FROM skladnik WHERE id = 102), 100);
+INSERT INTO przepis_skladnik VALUES (13,103,(SELECT ile FROM skladnik WHERE id = 103), 50);
+INSERT INTO przepis_skladnik VALUES (13,105,(SELECT ile FROM skladnik WHERE id = 105), 100);

@@ -1,9 +1,6 @@
-</p>
- <p><strong>Masa Serowa:</strong></p>
- <p>1 serek mascarpone (500g) </p>
- <p>1 puszka schłodzonego mleka skondensowanego </p>
- <p>1/2 szklanki soku z cytryny </p>
- <p>120 g owoc�w, np. bor�wek amerykańskich, jag�d, truskawek, malin </p>
- <p><strong>Ciasto:</strong> </p>
- <p>2-3 opakowania petitk�w (200 g) rozgnieść bardzo drobno wymieszać z masłem (ok. 100 g)</p>
- <p>
+INSERT INTO przepis_skladnik VALUES (14,90,(SELECT ile FROM skladnik WHERE id = 90), 500);
+INSERT INTO przepis_skladnik VALUES (14,91,(SELECT ile FROM skladnik WHERE id = 91), 1);
+INSERT INTO przepis_skladnik VALUES (14,92,(SELECT ile FROM skladnik WHERE id = 92), 1/2);
+INSERT INTO przepis_skladnik VALUES (14,93,(SELECT ile FROM skladnik WHERE id = 93), 120);
+INSERT INTO przepis_skladnik VALUES (14,94,(SELECT ile FROM skladnik WHERE id = 94), 200);
+INSERT INTO przepis_skladnik VALUES (14,14,(SELECT ile FROM skladnik WHERE id = 14), 100);

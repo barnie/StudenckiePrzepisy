@@ -1,0 +1,87 @@
+INSERT INTO przepis_skladnik VALUES (14,90,(SELECT ile FROM skladnik WHERE id = 90), 500);
+INSERT INTO przepis_skladnik VALUES (14,91,(SELECT ile FROM skladnik WHERE id = 91), 1);
+INSERT INTO przepis_skladnik VALUES (14,92,(SELECT ile FROM skladnik WHERE id = 92), 1/2);
+INSERT INTO przepis_skladnik VALUES (14,93,(SELECT ile FROM skladnik WHERE id = 93), 120);
+INSERT INTO przepis_skladnik VALUES (14,94,(SELECT ile FROM skladnik WHERE id = 94), 200);
+INSERT INTO przepis_skladnik VALUES (14,14,(SELECT ile FROM skladnik WHERE id = 14), 100);
+  Biszkopt klasyczny 2 szt.
+ </div>
+ <div>
+  &nbsp;2 x 2 jajka
+ </div>
+ <div>
+  &nbsp;2 x 2 łyżki cukru
+ </div>
+ <div>
+  &nbsp;2 x 2 łyżki mąki pszennej
+ </div>
+ <div>
+  &nbsp;2 x 1 łyżka mąki ziemniaczanej
+ </div>
+ <div>
+  &nbsp;sok z 1/2 cytryny
+ </div>
+ <div>
+  
+
+ </div>
+ <div>
+  Masa jabłkowa
+ </div>
+ <div>
+  1kg jabłek
+ </div>
+ <div>
+  2 łyżki cukru
+ </div>
+ <div>
+  sok z 1 cytryny
+ </div>
+ <div>
+  
+
+ </div>
+ <div>
+  Krem orzechowy
+ </div>
+ <div>
+  &nbsp;3 &nbsp;ż�łtka&nbsp;
+ </div>
+ <div>
+  &nbsp;1 jajko
+ </div>
+ <div>
+  &nbsp;125g cukru
+ </div>
+ <div>
+  &nbsp;3 łyżki mąki
+ </div>
+ <div>
+  &nbsp;300ml mleka
+ </div>
+ <div>
+  &nbsp;200g masła
+ </div>
+ <div>
+  &nbsp;100g zmielonych orzech�w włoskich
+ </div>
+ <div>
+  &nbsp;1 łyżeczka domowej esencji waniliowej
+ </div>
+ <div>
+  
+
+ </div>
+ <div>
+  Polewa:
+ </div>
+ <div>
+  &nbsp;100g gorzkiej czekolady o zaw. kakao 60%
+ </div>
+ <div>
+  &nbsp;50g mlecznej czekolady
+ </div>
+ <div>
+  &nbsp;100g śmietanki kremowej o zaw. tł. 30%
+ </div>
+ <p>
