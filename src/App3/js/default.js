@@ -56,13 +56,7 @@ WinJS.Namespace.define("MyGlobals", {
             for (var i = 0; i < array.length; i++)
                 console.log(array[i]);
         })*/
-        console.log('xD');
-        var array = [];
-        getOnePrzepis('a', array).then(function () {
-         //   console.log('@' + array)
-            for (var i = 0; i < array.length; i++)
-                console.log('@' + array[i]);
-        })
+        default_insert();
     }
 
 
