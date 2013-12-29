@@ -4,3 +4,11 @@ INSERT INTO przepis_skladnik VALUES (18,113,(SELECT ile FROM skladnik WHERE id =
 INSERT INTO przepis_skladnik VALUES (18,44,(SELECT ile FROM skladnik WHERE id = 44), 7);
 INSERT INTO przepis_skladnik VALUES (18,42,(SELECT ile FROM skladnik WHERE id = 42), 1);
 INSERT INTO przepis_skladnik VALUES (18,114,(SELECT ile FROM skladnik WHERE id = 114), 1);
+sałata lodowa
+og�rek zielony
+pomidorki koktajlowe
+rzodkiewka
+mozzarella
+przyprawa winegret-te
+łyżka oliwy
+łyżka wody 
