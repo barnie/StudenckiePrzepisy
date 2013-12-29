@@ -1,0 +1,1 @@
+INSERT OR IGNORE INTO przepis VALUES (34, 14, 'Whisky Sour', 'o shakera wrzucamy 3-4 kostki lodu i wlewamy wszystkie składniki i mocno wstrząsamy - shaker można zastąpić plastikową butelką z dużym wlewem, żeby się kostki lodu zmieściły.  Całość przelewamy do niskiej szklanki (150-200ml). W razie potrzeby dopełniamy lodem.  Ozdabiamy plasterkiem cyt', '34.jpg');

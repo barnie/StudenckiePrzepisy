@@ -1,1 +1,1 @@
-INSERT OR IGNORE INTO przepis VALUES (5, 1, 'Szybkie pożywne śniadanie', 'Wszystko układamy na talerzu jak na zdjęciu i robimy bardzo miłe poranne zaskocznie najlbiższej osobie :)  Idealne śniadanie na dobry początek dn', '5.jpg');
+INSERT OR IGNORE INTO przepis VALUES (5, 1, 'Szybkie pożywne śniadanie', 'Wszystko układamy na talerzu jak na zdjęciu i robimy bardzo miłe poranne zaskocznie najlbiższej osobie :)  Idealne śniadanie na dobry początek dnia', '5.jpg');
