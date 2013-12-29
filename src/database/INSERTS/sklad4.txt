@@ -1,7 +1,7 @@
-INSERT INTO przepis_skladnik VALUES (4,24,(SELECT ile FROM skladnik WHERE id = 24), 300);
-INSERT INTO przepis_skladnik VALUES (4,25,(SELECT ile FROM skladnik WHERE id = 25), 1);
-INSERT INTO przepis_skladnik VALUES (4,26,(SELECT ile FROM skladnik WHERE id = 26), null);
-INSERT INTO przepis_skladnik VALUES (4,27,(SELECT ile FROM skladnik WHERE id = 27), null);
-INSERT INTO przepis_skladnik VALUES (4,28,(SELECT ile FROM skladnik WHERE id = 28), 2);
-INSERT INTO przepis_skladnik VALUES (4,29,(SELECT ile FROM skladnik WHERE id = 29), null);
-INSERT INTO przepis_skladnik VALUES (4,30,(SELECT ile FROM skladnik WHERE id = 30), null);
+INSERT INTO przepis_skladnik VALUES (4,24,'ml', 300);
+INSERT INTO przepis_skladnik VALUES (4,25,'sztuki', 1);
+INSERT INTO przepis_skladnik VALUES (4,26,'', '');
+INSERT INTO przepis_skladnik VALUES (4,27,'', '');
+INSERT INTO przepis_skladnik VALUES (4,28,'sztuki', 2);
+INSERT INTO przepis_skladnik VALUES (4,29,'', '');
+INSERT INTO przepis_skladnik VALUES (4,30,'', '');

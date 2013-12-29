@@ -1,8 +1,8 @@
-INSERT INTO przepis_skladnik VALUES (19,115,(SELECT ile FROM skladnik WHERE id = 115), 1);
-INSERT INTO przepis_skladnik VALUES (19,116,(SELECT ile FROM skladnik WHERE id = 116), 1);
-INSERT INTO przepis_skladnik VALUES (19,88,(SELECT ile FROM skladnik WHERE id = 88), null);
-INSERT INTO przepis_skladnik VALUES (19,84,(SELECT ile FROM skladnik WHERE id = 84), 1);
-INSERT INTO przepis_skladnik VALUES (19,117,(SELECT ile FROM skladnik WHERE id = 117), 1);
-INSERT INTO przepis_skladnik VALUES (19,118,(SELECT ile FROM skladnik WHERE id = 118), null);
-INSERT INTO przepis_skladnik VALUES (19,119,(SELECT ile FROM skladnik WHERE id = 119), 1);
-INSERT INTO przepis_skladnik VALUES (19,120,(SELECT ile FROM skladnik WHERE id = 120), 1);
+INSERT INTO przepis_skladnik VALUES (19,115,'sztuki', 1);
+INSERT INTO przepis_skladnik VALUES (19,116,'sztuki', 1);
+INSERT INTO przepis_skladnik VALUES (19,88,'','');
+INSERT INTO przepis_skladnik VALUES (19,84,'pęczki', 1);
+INSERT INTO przepis_skladnik VALUES (19,117,'sztuki', 1);
+INSERT INTO przepis_skladnik VALUES (19,118,'','');
+INSERT INTO przepis_skladnik VALUES (19,3,'łyżki', 1);
+INSERT INTO przepis_skladnik VALUES (19,41,'łyżki', 1);

@@ -1,3 +1,3 @@
-0,5kg truskawek (jeśli nie ma sezonu, idalne będą mrożone)
- 1/4 szklanki cukru
-2-4 łyżkek soku z cytryny
+INSERT INTO przepis_skladnik VALUES (17,111,'kg', 1/2);
+INSERT INTO przepis_skladnik VALUES (17,61,'szklanki', 1/4);
+INSERT INTO przepis_skladnik VALUES (17,92,'łyżki', 3);

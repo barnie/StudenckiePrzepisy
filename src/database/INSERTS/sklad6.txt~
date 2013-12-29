@@ -1,15 +1,13 @@
-kotlety:
-1 szklanka kaszy jaglanej
-5 pieczarek
-1 cebula
-słonecznik, pestki dyni-według smaku;)
-1 jajko
-bułka tarta lub zmielone siemie lniane w ramach panierki
-oliwa do smażenia
-s�l, pieprz
-
-sos:
-jogurt naturalny duży
-pęczek koperku
-1 duży ząbek czosnku
-4-5 og�rk�w konserwowych
+INSERT INTO przepis_skladnik VALUES (6,38,'szklanki', 1);
+INSERT INTO przepis_skladnik VALUES (6,9,'sztuki', 5);
+INSERT INTO przepis_skladnik VALUES (6,21,'sztuki', 1);
+INSERT INTO przepis_skladnik VALUES (6,39,'', '');
+INSERT INTO przepis_skladnik VALUES (6,13,'sztuki', 1);
+INSERT INTO przepis_skladnik VALUES (6,40,'', '');
+INSERT INTO przepis_skladnik VALUES (6,41,'', '');
+INSERT INTO przepis_skladnik VALUES (6,5,'szczypta', 1);
+INSERT INTO przepis_skladnik VALUES (6,23,'', '');
+INSERT INTO przepis_skladnik VALUES (6,42,'sztuki', 1);
+INSERT INTO przepis_skladnik VALUES (6,43,'pęczek', 1);
+INSERT INTO przepis_skladnik VALUES (6,44,'ząbki', 1);
+INSERT INTO przepis_skladnik VALUES (6,45,'sztuki', 5);

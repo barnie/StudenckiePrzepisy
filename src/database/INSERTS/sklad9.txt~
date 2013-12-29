@@ -1,5 +1,5 @@
-3 długie plasterki boczku
-3 jajka
-pieprz
-s�l
-oliwa z oliwek
+INSERT INTO przepis_skladnik VALUES (9,58,'sztuki', 3);
+INSERT INTO przepis_skladnik VALUES (9,13,'sztuki', 3);
+INSERT INTO przepis_skladnik VALUES (9,23,'','');
+INSERT INTO przepis_skladnik VALUES (9,59,'','');
+INSERT INTO przepis_skladnik VALUES (9,41,'','');

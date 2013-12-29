@@ -1,5 +1,5 @@
-INSERT INTO przepis_skladnik VALUES (9,58,(SELECT ile FROM skladnik WHERE id = 58), 3);
-INSERT INTO przepis_skladnik VALUES (9,13,(SELECT ile FROM skladnik WHERE id = 13), 3);
-INSERT INTO przepis_skladnik VALUES (9,23,(SELECT ile FROM skladnik WHERE id = 23), null);
-INSERT INTO przepis_skladnik VALUES (9,59,(SELECT ile FROM skladnik WHERE id = 59), null);
-INSERT INTO przepis_skladnik VALUES (9,41,(SELECT ile FROM skladnik WHERE id = 41), null);
+INSERT INTO przepis_skladnik VALUES (9,58,'sztuki', 3);
+INSERT INTO przepis_skladnik VALUES (9,13,'sztuki', 3);
+INSERT INTO przepis_skladnik VALUES (9,23,'','');
+INSERT INTO przepis_skladnik VALUES (9,5,'','');
+INSERT INTO przepis_skladnik VALUES (9,41,'','');

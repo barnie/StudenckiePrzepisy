@@ -1,12 +1,10 @@
-Skladniki na parkę jerzyk�w :)
-
-1 ż�łty melon
-paczka czarnych oliwek
-paczka zielonych oliwek nadziewanych papryką
-pęczek rzodkiewek
-4 kabanosy
-pomarańczowa papryka konserwowa
-kostka ż�łtego sera
-og�rki konserwowe
-pomidorki koktajlowe
-paczka wykałaczek
+INSERT INTO przepis_skladnik VALUES (15,81,'sztuki', 1);
+INSERT INTO przepis_skladnik VALUES (15,82,'paczki', 1);
+INSERT INTO przepis_skladnik VALUES (15,84,'pęczki', 1);
+INSERT INTO przepis_skladnik VALUES (15,83,'paczki', 1);
+INSERT INTO przepis_skladnik VALUES (15,85,'sztuki', 4);
+INSERT INTO przepis_skladnik VALUES (15,86,'sztuki', 1);
+INSERT INTO przepis_skladnik VALUES (15,87,'kostki', 1);
+INSERT INTO przepis_skladnik VALUES (15,45,'sztuki', 'kilka');
+INSERT INTO przepis_skladnik VALUES (15,88,'','');
+INSERT INTO przepis_skladnik VALUES (15,89,'paczki', 1);

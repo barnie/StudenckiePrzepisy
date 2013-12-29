@@ -1,6 +1,6 @@
-INSERT INTO przepis_skladnik VALUES (14,90,(SELECT ile FROM skladnik WHERE id = 90), 500);
-INSERT INTO przepis_skladnik VALUES (14,91,(SELECT ile FROM skladnik WHERE id = 91), 1);
-INSERT INTO przepis_skladnik VALUES (14,92,(SELECT ile FROM skladnik WHERE id = 92), 1/2);
-INSERT INTO przepis_skladnik VALUES (14,93,(SELECT ile FROM skladnik WHERE id = 93), 120);
-INSERT INTO przepis_skladnik VALUES (14,94,(SELECT ile FROM skladnik WHERE id = 94), 200);
-INSERT INTO przepis_skladnik VALUES (14,14,(SELECT ile FROM skladnik WHERE id = 14), 100);
+INSERT INTO przepis_skladnik VALUES (14,90,'gramy', 500);
+INSERT INTO przepis_skladnik VALUES (14,91,'puszki', 1);
+INSERT INTO przepis_skladnik VALUES (14,92,'szklanki', 1/2);
+INSERT INTO przepis_skladnik VALUES (14,70,'gramy', 120);
+INSERT INTO przepis_skladnik VALUES (14,94,'gramy', 200);
+INSERT INTO przepis_skladnik VALUES (14,14,'gramy', 100);

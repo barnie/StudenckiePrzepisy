@@ -1,6 +1,6 @@
-2 laski wanilii
-3 szklanki pełnotłustego mleka
-7 ż�łtek 
-p�ł szklanki cukru
-p�ł szklanki śmietany 30%
-paczka migdał�w (płatki lub siekane) 200g 
+INSERT INTO przepis_skladnik VALUES (20,121,'sztuki', 2);
+INSERT INTO przepis_skladnik VALUES (20,122,'szklanki', 3);
+INSERT INTO przepis_skladnik VALUES (20,17,'szklanki', 1/2);
+INSERT INTO przepis_skladnik VALUES (20,13,sztuki', 7);
+INSERT INTO przepis_skladnik VALUES (20,61,'szklanki', 1/2);
+INSERT INTO przepis_skladnik VALUES (20,124,'gramy', 200);

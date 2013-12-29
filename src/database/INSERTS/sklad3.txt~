@@ -1,7 +1,7 @@
-4 jajka
-puszka tuńczyka
-1/2 puszki kukurydzy
-200 g ż�łtego sera
-2 średnie cebule (ja daje jedną czerwona)
-5 łyżek majonezu
-pieprz
+INSERT INTO przepis_skladnik VALUES (3,13,'jajka', 4);
+INSERT INTO przepis_skladnik VALUES (3,19,'tuńczyk', 1);
+INSERT INTO przepis_skladnik VALUES (3,20,'kukurydza', 1/2);
+INSERT INTO przepis_skladnik VALUES (3,21,'cebula', 2);
+INSERT INTO przepis_skladnik VALUES (3,10,'ser żółty', 200);
+INSERT INTO przepis_skladnik VALUES (3,22,'majonez', 6);
+INSERT INTO przepis_skladnik VALUES (3,23,'pieprz', '');

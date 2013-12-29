@@ -1,6 +1,6 @@
-2 brokuły
-1 serek feta
-2 łyżki majonezu
-7 ząbk�w czosnku (drobno posiekać)
-1 jogurt naturalny (duży kubek)
-1 filiżanka dłubanego słonecznika
+INSERT INTO przepis_skladnik VALUES (18,7,'sztuki', 2);
+INSERT INTO przepis_skladnik VALUES (18,22,'łyżki', 2);
+INSERT INTO przepis_skladnik VALUES (18,113,'sztuki', 1);
+INSERT INTO przepis_skladnik VALUES (18,44,'ząbki', 7);
+INSERT INTO przepis_skladnik VALUES (18,42,'sztuki', 1);
+INSERT INTO przepis_skladnik VALUES (18,114,'filiżanki', 1);

@@ -1,8 +1,8 @@
-INSERT INTO przepis_skladnik VALUES (8,52,(SELECT ile FROM skladnik WHERE id = 52), 3/2);
-INSERT INTO przepis_skladnik VALUES (8,13,(SELECT ile FROM skladnik WHERE id = 13), 4);
-INSERT INTO przepis_skladnik VALUES (8,54,(SELECT ile FROM skladnik WHERE id = 54), 2);
-INSERT INTO przepis_skladnik VALUES (8,57,(SELECT ile FROM skladnik WHERE id = 57), 2);
-INSERT INTO przepis_skladnik VALUES (8,53,(SELECT ile FROM skladnik WHERE id = 53), 2);
-INSERT INTO przepis_skladnik VALUES (8,55,(SELECT ile FROM skladnik WHERE id = 55), 1);
-INSERT INTO przepis_skladnik VALUES (8,5,(SELECT ile FROM skladnik WHERE id = 5), 1);
-INSERT INTO przepis_skladnik VALUES (8,56,(SELECT ile FROM skladnik WHERE id = 56), 1);
+INSERT INTO przepis_skladnik VALUES (8,52,'kg', 3/2);
+INSERT INTO przepis_skladnik VALUES (8,13,'sztuki', 4);
+INSERT INTO przepis_skladnik VALUES (8,54,'łyżki', 2);
+INSERT INTO przepis_skladnik VALUES (8,57,'łyżki', 2);
+INSERT INTO przepis_skladnik VALUES (8,53,'łyżeczki', 2);
+INSERT INTO przepis_skladnik VALUES (8,55,'łyżeczki', 1);
+INSERT INTO przepis_skladnik VALUES (8,5,'szczypta', 1);
+INSERT INTO przepis_skladnik VALUES (8,56,'garść', 1);

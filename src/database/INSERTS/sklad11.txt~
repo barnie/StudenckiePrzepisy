@@ -1,40 +1,10 @@
-INSERT INTO przepis_skladnik VALUES (10,60,(SELECT ile FROM skladnik WHERE id = 60), 1);
-INSERT INTO przepis_skladnik VALUES (10,61,(SELECT ile FROM skladnik WHERE id = 13), 3/2);
-INSERT INTO przepis_skladnik VALUES (10,62,(SELECT ile FROM skladnik WHERE id = 62), 1);
-INSERT INTO przepis_skladnik VALUES (10,13,(SELECT ile FROM skladnik WHERE id = 13), 7);
-INSERT INTO przepis_skladnik VALUES (10,63,(SELECT ile FROM skladnik WHERE id = 63), 1/2);
-INSERT INTO przepis_skladnik VALUES (10,64,(SELECT ile FROM skladnik WHERE id = 64), 2);
-Ciasto kruche:
- 
-250 g mąki tortowej
- 
-150 g zimnego masła
- 
-1 łyżeczka cukru
- 
-1 łyżeczka soli
- 
-1 łyżka mleka
- 
-1 jajko
- 
-
- 
-Krem adwokatowy:
- 
-kostka margaryny kasia
- 
-1 budyn śmietankowy lub waniliowy
- 
-300ml mleka
- 
-0,5 szklanki cukru pudru
- 
-200ml adwokatu
- 
-
- 
-Dodatki:
- 
-owoce leśne, maliny, jagody, wiśnie / czereśnie drylowane, agrest itp. ja dobieram je kontrastowo :)
- <p>
+INSERT INTO przepis_skladnik VALUES (11,71,'gramy', 250);
+INSERT INTO przepis_skladnik VALUES (11,14,'gramy', 150);
+INSERT INTO przepis_skladnik VALUES (11,47,'łyzeczki', 1);
+INSERT INTO przepis_skladnik VALUES (11,65,'łyżki', 1);
+INSERT INTO przepis_skladnik VALUES (11,13,'sztuki', 1);
+INSERT INTO przepis_skladnik VALUES (11,66,'kostki', 1);
+INSERT INTO przepis_skladnik VALUES (11,67,'ml', 300);
+INSERT INTO przepis_skladnik VALUES (11,68,'szklanki', 1/2);
+INSERT INTO przepis_skladnik VALUES (11,69,'ml', 200);
+INSERT INTO przepis_skladnik VALUES (11,70,'', '');
