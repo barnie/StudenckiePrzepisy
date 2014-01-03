@@ -4,8 +4,12 @@
 }
 #groupedListView
 {
+    height: 89%;
     padding-left: 6%;
 }
+
 .win-listview .win-itembox {
-    background-color: transparent;
+    background-color:white;
+    height: 6em;
+    border: 1px solid black;
 }
