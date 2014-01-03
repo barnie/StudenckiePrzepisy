@@ -290,7 +290,7 @@ function getRandom(array) {
     var i = 0;
     return SQLite3JS.openAsync(dbPath)
               .then(function (db) {
-                  return db.eachAsync('select p.id_kategorii AS rodzaj, p.zdjecie AS zdjecie from przepis p, kategorie k group by p.id_kategorii;', function (row) {
+                  return db.eachAsync('select p.id_kategorii AS rodzaj, p.zdjecie AS zdjecie from przepis p, kategorie k group by p.id_kategorii order by p.id_kategorii;', function (row) {
                       console.log('#' + row.rodzaj + '#' + row.zdjecie)
                       array[i] = new Array();
                       array[i][0] = row.rodzaj;

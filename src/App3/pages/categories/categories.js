@@ -42,7 +42,8 @@
             LayoutContainer.prototype.CreateElementContent = function (pictureUrl, onClickFunctionName, imageCss, catName, catId) {
                 var content = '';
 
-                content += '<img src="' + pictureUrl + '" class="' + imageCss + '" onclick="' + onClickFunctionName + '(' + catId.toString() + ')' + '"></img>';
+                //TU NALEZY PODAC SCIEZKE DO OBRAZKOW ZAMIAST "images/"
+                content += '<img src="' + "images/" + pictureUrl[1] + '" class="' + imageCss + '" onclick="' + onClickFunctionName + '(' + catId.toString() + ')' + '"></img>';
                 content += '<span class="catTitle">' + catName + '</span>';
 
                 return content;
@@ -65,7 +66,7 @@
                         var prefix = 'first';
                         var j = 0;
                         for (var i = 0; i < count; i++) {
-                            var image = layout.CreateElementContent(picturesPaths[i], 'openWindowWithRepice', 'myImageCss', categories[i][1], categories[i][0]);
+                            var image = layout.CreateElementContent(picturesPaths[i][1], 'openWindowWithRepice', 'myImageCss', categories[i][1], categories[i][0]);
                             if (j == layout.width) {
                                 j = 0;
                                 prefix = "second";
