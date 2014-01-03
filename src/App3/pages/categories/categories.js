@@ -48,13 +48,16 @@
 
                 return content;
             }
+
+
+
             //script:
 
                 //date prepare:
                 var categories = options;
                 var count = options.length;
             //picturesPaths bedzie pobierane z bazy (kazda kategoria bedzie miala swoj obrazek, niezalezny od przepisow), narazie przykladowe wart:
-                var picturesPaths = [ "1.jpg", "2.jpg", "3.jpg", "4.jpg", "5.jpg", "6.jpg", "7.jpg", "8.jpg", "15.jpg", "10.jpg", "11.jpg", "12.jpg", "13.jpg", "14.jpg"];
+                var picturesPaths = [ "miecho.jpg", "ryba.jpg", "nabial.jpg", "warzywa.jpg", "owoce.jpg", "pieczywo.jpg", "grzyby.jpg", "soup.jpg", "sos.jpg", "przetwory.jpg", "deser.jpg", "napoj.jpg", "salatka.jpg", "studenckie.jpg"];
                 //date prepared, start script:
                 var layout = new LayoutContainer(count, 'myTabCss', 'myRowCss', 'myCellCss');
                 var table = layout.CreateContainer();
@@ -74,6 +77,7 @@
                     }
 
                     document.getElementById(prefix + j.toString()).innerHTML = window.toStaticHTML(image.toString());
+                    document.getElementById(prefix + j.toString()).addEventListener("click", console.log("siema" + i) );
                     j++;
                 }
         },
