@@ -7,17 +7,20 @@
 // {
 //     var count = 3;
 //     var layout = new LayoutContainer(count, 'myTableCss', 'myRowCss', 'myCellCss');
-//     
+     
 //     var table = layout.CreateContainer();
-//
+
 //     document.getElementById('myDiv').innerHTML = window.toStaticHTML(table.toString());
 //     var prefix = 'first';
 //     var j = 0;
 //     var picturesPaths = ["images/1.jpg", "images/2.jpg", "images/3.jpg"];
 //     var repicesIds = ["1", "2", "3"];
+
+//     var functions = layout.CreateAndRegisterFunctionHandlers(repicesIds, count); // <---------- Tutaj <----------------
+
 //     for (var i = 0; i < count; i++)
 //     {
-//         var image = layout.CreateElementContent(picturesPaths[i], 'openWindowWithRepice', 'myImageCss', repicesIds[i]);
+//         var image = layout.CreateElementContent(picturesPaths[i], functions[i], 'myImageCss', repicesIds[i]); // <------------------- Tutaj <-------------------
 //         if (j == layout.width)
 //         {
 //             j = 0;
@@ -27,8 +30,8 @@
 //         j++;
 //     }
 //}
-//
-// W wyniku dzia³ania takiego kodu otrzymujemy na html-u okreœlonym przez document nasz¹ tablicê z obrazkami, wraz z zbindowan¹ funkcj¹ do otwarcia nowego okna z okreœlonym id przepisu
+
+//W wyniku dzia³ania takiego kodu otrzymujemy na html-u okreœlonym przez document nasz¹ tablicê z obrazkami, wraz z zbindowan¹ funkcj¹ do otwarcia nowego okna z okreœlonym id przepisu
 
 // konstruktor
 function LayoutContainer(size, tableCss, rowCss, cellCss)
@@ -65,13 +68,33 @@ LayoutContainer.prototype.CreateContainer = function()
     return container;
 }
 
-// funkcja definiowana przez onClickFunctionName (np. openRepice) musi przyjmowac tylko jeden argument który jest identyfikatorem przepisu (np. openRepice(repiceId))
-LayoutContainer.prototype.CreateElementContent = function (pictureUrl, onClickFunctionName, imageCss, repiceId) {
+LayoutContainer.prototype.CreateElementContent = function (pictureUrl, onClickFunctionName, imageCss) {
     var content = '';
 
-    content += '<img src="' + pictureUrl + '" class="' + imageCss + '" onclick="' + onClickFunctionName + '(' + repiceId.toString() + ')' + '"></img>';
+    content += '<img src="' + pictureUrl + '" class="' + imageCss + '" onclick="' + onClickFunctionName+ '"></img>';
 
     return content;
+    
+}
+
+//Musisz wyedtyowa? t? funkcj? zmieniaj?c komentarz na kod który si? wykona np:
+//
+//   script.text = 'function ' + functionName + '{ WinJS.navigation.navigate(idArray[i]); }';
+//
+LayoutContainer.prototype.CreateAndRegisterFunctionHandlers = function (idArray, lenght)
+{
+    var functionNames = new Array();
+    for(var i=0; i<lenght; i++)
+    {
+        var head = document.getElementsByTagName('head')[0];
+        var script = document.createElement('script');
+        var functionName = 'OpenRecipe' + idArray[i] + '()';
+        script.type = 'text/javascript';
+        script.text = 'function ' + functionName + '{/*kod który otworzy to co chcesz*/}';
+        head.appendChild(script);
+        functionNames[i] = functionName;
+    }
+    return functionNames;
 }
 
 
