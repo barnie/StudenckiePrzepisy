@@ -32,7 +32,7 @@
 
             getPrzepisy(array).then(function () {
                 MyGlobals.recipies = array;
-                WinJS.Navigation.navigate(link.href, array);
+                WinJS.Navigation.navigate(link.href);
             })
 
         }

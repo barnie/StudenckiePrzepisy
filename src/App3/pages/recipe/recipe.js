@@ -12,7 +12,8 @@
             document.getElementById("category").innerHTML = options[1];
             console.log("option[1]=" + options);
             document.getElementById("name").innerHTML = options[2];
-            document.getElementById("img_container").innerHTML = window.toStaticHTML("<img src=" + options[4] + " />");
+            var picturesPath = "/images/"; //TU MUSI BYC INNA SCIEZKA NA KONIEC!
+            document.getElementById("img_container").innerHTML = window.toStaticHTML("<img src=" + picturesPath + options[4] + " />");
             console.log("options[4]=" + options[4]);
             document.getElementById("description").innerHTML = options[3];
             //skladniki:

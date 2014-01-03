@@ -6,7 +6,6 @@
 {
     padding-left: 6%;
 }
-.win-container:not(.footprint):not(.hover)
-{
+.win-listview .win-itembox {
     background-color: transparent;
 }
