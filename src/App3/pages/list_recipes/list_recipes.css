@@ -9,7 +9,9 @@
 }
 
 .win-listview .win-itembox {
+    padding: 1em;
     background-color:white;
-    height: 6em;
+    width: 10em;
+    height: 5em;
     border: 1px solid black;
 }
