@@ -1,6 +1,6 @@
 ﻿body {
     background-size: 100% 100%;
-    background: rgb(51,51,51) url("/images/spadzetixD.jpg") ;
+    background: rgb(51,51,51) url("/images/Windows8Green.jpg") ;
     background-color: rgba(0,0,0,0.6);
 
 }
@@ -43,8 +43,8 @@ body .Menu {
     height: 100%;
     width: 15%;
     color: black;
-    background: rgb(187,27,28); 
-    opacity: 0.9;
+    background: rgba(0,100,0,0.8); 
+
     font-size: medium;
     font-family: Georgia;
     font-style: italic;

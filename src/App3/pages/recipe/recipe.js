@@ -18,8 +18,12 @@
             document.getElementById("description").innerHTML = options[3];
             //skladniki:
             var container = "<ul>";
-            for( var i = 5; i < options.length ; i++)
-                container += "<li>" + options[i][0] + " - " + options[ i ][1] + options[i][2] + "</li>";
+            for (var i = 5; i < options.length ; i++) {
+                if( options[i][1] == null || options[i][1] == 0 )
+                    container += "<li>" + options[i][0] + " - " + options[i][2] + "</li>";
+                else
+                    container += "<li>" + options[i][0] + " - " + options[i][1] + " " + options[i][2] + "</li>";
+            }
             container += " </ul>";
             document.getElementById("list").innerHTML = window.toStaticHTML(container);
         },
