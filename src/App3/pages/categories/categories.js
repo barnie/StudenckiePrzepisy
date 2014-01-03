@@ -42,8 +42,8 @@
             LayoutContainer.prototype.CreateElementContent = function (pictureUrl, onClickFunctionName, imageCss, catName, catId) {
                 var content = '';
 
-                //TU NALEZY PODAC SCIEZKE DO OBRAZKOW ZAMIAST "images/"
-                content += '<img src="' + "images/" + pictureUrl[1] + '" class="' + imageCss + '" onclick="' + onClickFunctionName + '(' + catId.toString() + ')' + '"></img>';
+                var imgPath = "/images/"; //TU NALEZY PODAC SCIEZKE DO OBRAZKOW ZAMIAST "images/"
+                content += '<img src="' + imgPath + pictureUrl + '" class="' + imageCss + '" onclick="' + onClickFunctionName + '(' + catId.toString() + ')' + '"></img>';
                 content += '<span class="catTitle">' + catName + '</span>';
 
                 return content;
@@ -52,9 +52,12 @@
 
                 //date prepare:
                 var categories = options;
+                console.log("categories=" + categories);
+                console.log("options.length=" + options.length);
                 var count = options.length;
                 var picturesPaths = [];
                 getRandom(picturesPaths).then(function () {
+                    
                         //date prepared, start script:
                         var layout = new LayoutContainer(count, 'myTabCss', 'myRowCss', 'myCellCss');
                         var table = layout.CreateContainer();
@@ -66,6 +69,8 @@
                         var prefix = 'first';
                         var j = 0;
                         for (var i = 0; i < count; i++) {
+                            console.log(i);
+                            console.log(picturesPaths[i][1]);
                             var image = layout.CreateElementContent(picturesPaths[i][1], 'openWindowWithRepice', 'myImageCss', categories[i][1], categories[i][0]);
                             if (j == layout.width) {
                                 j = 0;
@@ -76,26 +81,6 @@
                             j++;
                         }
 
-                        //start script:
-                        var layout = new LayoutContainer(count, 'myTabCss', 'myRowCss', 'myCellCss');
-                        var table = layout.CreateContainer();
-
-                        if (count < 3)
-                            document.getElementById('myDiv').innerHTML = window.toStaticHTML('<br><br>' + table.toString());
-                        else
-                            document.getElementById('myDiv').innerHTML = window.toStaticHTML(table.toString());
-                        var prefix = 'first';
-                        var j = 0;
-                        for (var i = 0; i < count; i++) {
-                            var image = layout.CreateElementContent(picturesPaths[i], 'openWindowWithRepice', 'myImageCss', categories[i][1], categories[i][0]);
-                            if (j == layout.width) {
-                                j = 0;
-                                prefix = "second";
-                            }
-
-                            document.getElementById(prefix + j.toString()).innerHTML = window.toStaticHTML(image.toString());
-                            j++;
-                        }
                 })
         },
 
