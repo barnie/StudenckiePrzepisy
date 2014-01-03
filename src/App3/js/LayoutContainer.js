@@ -16,17 +16,18 @@
 //     var picturesPaths = ["images/1.jpg", "images/2.jpg", "images/3.jpg"];
 //     var repicesIds = ["1", "2", "3"];
 
-//     var functions = layout.CreateAndRegisterFunctionHandlers(repicesIds, count); // <---------- Tutaj <----------------
+//     var functions = layout.CreateAndRegisterFunctionHandlers(repicesIds, count); // <---------- Tutaj 2<----------------
 
 //     for (var i = 0; i < count; i++)
 //     {
-//         var image = layout.CreateElementContent(picturesPaths[i], functions[i], 'myImageCss', repicesIds[i]); // <------------------- Tutaj <-------------------
+//         var image = layout.CreateElementContent(picturesPaths[i], 'myImageCss'); // <------------------- Tutaj 2<-------------------
 //         if (j == layout.width)
 //         {
 //             j = 0;
 //             prefix = 'second';
 //         }
 //         document.getElementById(prefix + j.toString()).innerHTML = window.toStaticHTML(image.toString());
+//         document.getElementById(prefix + j.toString()).addEventListener("click", functions[i]); //<---------- Tutaj 2 <--------- 
 //         j++;
 //     }
 //}
@@ -68,10 +69,10 @@ LayoutContainer.prototype.CreateContainer = function()
     return container;
 }
 
-LayoutContainer.prototype.CreateElementContent = function (pictureUrl, onClickFunctionName, imageCss) {
+LayoutContainer.prototype.CreateElementContent = function (pictureUrl, imageCss) {
     var content = '';
 
-    content += '<img src="' + pictureUrl + '" class="' + imageCss + '" onclick="' + onClickFunctionName+ '"></img>';
+    content += '<img src="' + pictureUrl + '" class="' + imageCss + '"></img>';
 
     return content;
     
