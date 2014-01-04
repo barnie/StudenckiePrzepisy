@@ -34,25 +34,17 @@
     function querySubmittedHandler(eventObject) {
         var queryText = eventObject.detail.queryText;
         var found = false;
-        for(var i = 0, len = suggestionList.length; i < len; i++)
-        {
-            if(suggestionList[i].toLowerCase() === queryText.toLowerCase())
-            {
-                found = true;
-                break;
-            }
-        }
-        if(found)
-        {
             var myArray = new Array();
             getOnePrzepis(queryText, myArray).then(function ()
             {
-                WinJS.Navigation.navigate('/pages/recipe/recipe.html', myArray);
+                if(myArray[2] == undefined)
+                {
+                    WinJS.Navigation.navigate('/pages/search/searchFailed.html');
+                }
+                else
+                {
+                    WinJS.Navigation.navigate('/pages/recipe/recipe.html', myArray);
+                } 
             });
-        }
-        else
-        {
-            WinJS.Navigation.navigate('/pages/search/searchFailed.html');
-        }
     }
 })();
