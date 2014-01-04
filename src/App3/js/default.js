@@ -55,7 +55,7 @@
                 console.log(array[i]);
         })*/
         //default_insert();
-        removePrzepis("Sernik");
+        removePrzepis("Pig Steak");
     }
 
 
