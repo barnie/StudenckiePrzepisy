@@ -58,7 +58,7 @@ WinJS.Namespace.define("MyGlobals", {
             for (var i = 0; i < array.length; i++)
                 console.log(array[i]);
         })*/
-        default_insert();
+        //default_insert();
     }
 
 

@@ -36,7 +36,7 @@
         var found = false;
         for(var i = 0, len = suggestionList.length; i < len; i++)
         {
-            if(suggestionList[i].toLowerCase() === queryText)
+            if(suggestionList[i].toLowerCase() === queryText.toLowerCase())
             {
                 found = true;
                 break;
@@ -44,7 +44,11 @@
         }
         if(found)
         {
-            //TODO : Funkcja która utworzy i zaludni nową stronę.
+            var myArray = new Array();
+            getOnePrzepis(queryText, myArray).then(function ()
+            {
+                WinJS.Navigation.navigate('/pages/recipe/recipe.html', myArray);
+            });
         }
         else
         {
