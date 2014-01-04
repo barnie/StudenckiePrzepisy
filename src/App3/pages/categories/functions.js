@@ -33,8 +33,7 @@ LayoutContainer.prototype.CreateContainer = function () {
 LayoutContainer.prototype.CreateElementContent = function (cellId, pictureUrl, imageCss, pictureId, catName) {
     var content = '';
 
-    var imgPath = "images/"; //TU NALEZY PODAC SCIEZKE DO OBRAZKOW ZAMIAST "images/"
-    content += '<img id="' + cellId + 'img" src="' + imgPath + pictureUrl + '" class="' + imageCss + '" data-arg="' + pictureId + '"></img>';
+    content += '<img id="' + cellId + 'img" src="' + MyGlobals.imagesPath + pictureUrl + '" class="' + imageCss + '" data-arg="' + pictureId + '"></img>';
     content += '<span class="catName" id="' + cellId + 'name"  data-arg="' + pictureId + '">' + catName + '</span>';
     return content;
 

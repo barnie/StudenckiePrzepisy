@@ -189,6 +189,32 @@ function getKategorie(array) {
             }
         })
 */
+function getPrzepisyMax6only(array) { //for home
+    var dbPath = Windows.Storage.ApplicationData.current.localFolder.path + '\\przepisy_db.sqlite';
+    var i = 0;
+    return SQLite3JS.openAsync(dbPath)
+              .then(function (db) {
+                  console.log('DB opened');
+                  return db.eachAsync('SELECT * FROM Przepis LIMIT 0, 6 ;', function (row) {
+                      array[i] = new Array();
+                      array[i][0] = row.nazwa;
+                      array[i][1] = row.zdjecie;
+                      i++;
+                  });
+              }, function (error) {
+                  if (db) {
+                      db.close();
+                  }
+                  console.log('ERROR Select * from kategorie ' + error.message);
+              })
+             .then(function (db) {
+                 console.log('close the db');
+                 db.close();
+             }).then(function () {
+                 return array;
+             });
+}
+
 
 function getPrzepisy(array) {
     var dbPath = Windows.Storage.ApplicationData.current.localFolder.path + '\\przepisy_db.sqlite';

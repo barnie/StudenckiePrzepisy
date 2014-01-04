@@ -11,8 +11,7 @@
             //options to przekazany parametr ze strony wywolujacej (parenta)
             document.getElementById("category").innerHTML = options[1];
             document.getElementById("name").innerHTML = options[2];
-            var picturesPath = "/images/"; //TU MUSI BYC INNA SCIEZKA NA KONIEC!
-            document.getElementById("img_container").innerHTML = window.toStaticHTML("<img src=" + picturesPath + options[4] + " />");
+            document.getElementById("img_container").innerHTML = window.toStaticHTML("<img src=" + MyGlobals.imagesPath + options[4] + " />");
             document.getElementById("description").innerHTML = options[3];
             //skladniki:
             var container = "<ul>";
