@@ -1,6 +1,5 @@
-2 sztuki-galaretki ananasowej
-1 puszka ananas�w w puszce
-1 litr wrzącej wody,
-kufle do piwa
-bita śmietana
-cynamon
+INSERT INTO przepis_skladnik VALUES (32,135,'sztuki', 2);
+INSERT INTO przepis_skladnik VALUES (32,136,'puszki', 1);
+INSERT INTO przepis_skladnik VALUES (32,3,'litry', 1);
+INSERT INTO przepis_skladnik VALUES (32,67,'', '');
+INSERT INTO przepis_skladnik VALUES (32,53,'', '');

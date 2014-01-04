@@ -1,5 +1,4 @@
-Porcja:
-40 ml whisky
-15 ml syropu cukrowego
-25 ml soku z cytryny
-ok 4-5 sztuk kostek lodu
+INSERT INTO przepis_skladnik VALUES (34,143,'ml', 40);
+INSERT INTO przepis_skladnik VALUES (34,144,'ml', 15);
+INSERT INTO przepis_skladnik VALUES (34,92,'ml', 25);
+INSERT INTO przepis_skladnik VALUES (34,112,'sztuki', 5);

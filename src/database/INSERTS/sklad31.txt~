@@ -1,0 +1,21 @@
+INSERT INTO przepis_skladnik VALUES (30,95,'sztuki', 8);
+INSERT INTO przepis_skladnik VALUES (30,130,'ml', 200);
+INSERT INTO przepis_skladnik VALUES (30,12,'łyzeczki', 1);
+INSERT INTO przepis_skladnik VALUES (30,131,'gramy', 400);
+INSERT INTO przepis_skladnik VALUES (30,132,'gramy', 400);
+150 gram mąki
+2 jajkas
+szklanka mleka
+szczypta soli
+olej do smażenia
+
+Farsz:
+mrożony szpinak – jedno opakowanie
+twar�g – około 150 g
+2 ząbki czosnku
+pieprz, s�l do smaku
+
+Sos grzybowy:
+torebka sosu grzybowego instant
+pieczarki – około 15 sztuk
+3 łyżki śmietany 18%

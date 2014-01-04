@@ -1,10 +1,7 @@
-3 białka jaj
-1 ż�łtko
-3 płaskie łyżki otręb�w owsianych
-
-Nadzienie: 
-pokrojone kiwi
-rodzynki
-orzechy
-2 łyżki jogurtu greckiego
-kostka gorzkiej czekolady
+INSERT INTO przepis_skladnik VALUES (37,147,'', '');
+INSERT INTO przepis_skladnik VALUES (37,102,'kostki', 1);
+INSERT INTO przepis_skladnik VALUES (37,13,'sztuki', 3);
+INSERT INTO przepis_skladnik VALUES (37,54,'łyżki', 3);
+INSERT INTO przepis_skladnik VALUES (37,149,'łyżki', 2);
+INSERT INTO przepis_skladnik VALUES (37,56,'', '');
+INSERT INTO przepis_skladnik VALUES (37,148,'', '');

@@ -1,0 +1,21 @@
+INSERT INTO przepis_skladnik VALUES (39,79,'gramy', 200);
+INSERT INTO przepis_skladnik VALUES (37,102,'kostki', 1);
+INSERT INTO przepis_skladnik VALUES (37,13,'sztuki', 3);
+INSERT INTO przepis_skladnik VALUES (37,54,'łyżki', 3);
+INSERT INTO przepis_skladnik VALUES (37,149,'łyżki', 2);
+INSERT INTO przepis_skladnik VALUES (37,56,'', '');
+INSERT INTO przepis_skladnik VALUES (37,148,'', '');
+200g mąki razowej żytniej 2000 lub tak jak u mnie 50-60g zmielonych płatk�w owsianych/otręb�w owsianych
+2 jaja kurze całe
+p�ł szklanki mleka, z obniżoną zawartością laktozy
+p�ł szklanki wody gazowanej
+szczypta soli
+
+Nadzienia dla łasuch�w:
+w dni bezmięsne:
+dowolne owoce
+twar�g chudy
+
+w inne dni:
+kurczak
+warzywa
