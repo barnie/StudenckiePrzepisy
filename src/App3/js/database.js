@@ -404,3 +404,20 @@ function getOnePrzepis(nazwa, array) {
                  return array;
              });
 }
+
+function removePrzepis(nazwa) {
+    var dbPath = Windows.Storage.ApplicationData.current.localFolder.path + '\\przepisy_db.sqlite';
+    SQLite3JS.openAsync(dbPath).then(function (db) {
+        return db.runAsync("delete from przepis where nazwa = ? ", [nazwa]).
+        done(function () {
+            console.log('Usunieto przepis : ' + nazwa);
+            db.close();
+        }, function (error) {
+            if (db) {
+                db.close();
+            }
+            console.log('ERROR PRZY DODAWANIU SKLADNIKA' + error.message);
+        })
+    });
+}
+

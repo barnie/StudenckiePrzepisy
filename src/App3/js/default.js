@@ -55,6 +55,7 @@
                 console.log(array[i]);
         })*/
         //default_insert();
+        removePrzepis("Sernik");
     }
 
 
