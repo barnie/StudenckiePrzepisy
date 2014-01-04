@@ -1,3 +1,3 @@
-łupki z ok 15-20 dużych cebuli (możemy je zbierać przez jakiś czas i suszyć)
-1 łyżka soli na każde 10 jajek
-dowolna ilość jajek
+INSERT INTO przepis_skladnik VALUES (42,21,'łupki', 20);
+INSERT INTO przepis_skladnik VALUES (42,5,'', '');
+INSERT INTO przepis_skladnik VALUES (42,13,'sztuki', '');
