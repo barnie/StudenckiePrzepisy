@@ -1,17 +1,14 @@
-Składniki na 6 lub 8 porcji:
-
-p�łtory szklanki mąki pszennej
-czubek łyżeczki soli
-2 łyżki tłuszczu roślinnego
-50 ml przegotowanej wody
-
-Farsz:
-oliwa z oliwek
-ocet winny
-s�l i pieprz
-woreczek ryżu (ugotowanego na miękko w osolonej wodzie, wystudzonego w lod�wce ok. 1 godziny)
-paczka paluszk�w krabowycg
-200g łososia wędzonego
-twar�g + og�rek konserwowy
-sałata lodowa
-wasabi
+INSERT INTO przepis_skladnik VALUES (29,80,'szklanki', 3/2);
+INSERT INTO przepis_skladnik VALUES (29,5,'', '');
+INSERT INTO przepis_skladnik VALUES (29,23,'', '');
+INSERT INTO przepis_skladnik VALUES (29,124,'łyżki', 2);
+INSERT INTO przepis_skladnik VALUES (29,3,'ml', 50);
+INSERT INTO przepis_skladnik VALUES (29,41,'', '');
+INSERT INTO przepis_skladnik VALUES (29,125,'', '');
+INSERT INTO przepis_skladnik VALUES (29,126,'woreczki', 1);
+INSERT INTO przepis_skladnik VALUES (29,127,'paczki', 1);
+INSERT INTO przepis_skladnik VALUES (29,128,'gramy', 200);
+INSERT INTO przepis_skladnik VALUES (29,11,'', '');
+INSERT INTO przepis_skladnik VALUES (29,45,'', '');
+INSERT INTO przepis_skladnik VALUES (29,115,'sztuki', 1);
+INSERT INTO przepis_skladnik VALUES (29,129,'', '');

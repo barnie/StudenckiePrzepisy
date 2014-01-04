@@ -1,12 +1,9 @@
-Porcja na 4 duże pucharki:
-
-dwie tabliczki czekolady (około 200 gram)
-200 ml mleka
-6 łyżek cukru pudru
-4 ż�łtka
-łyżka gorzkiego kakao
-cukier waniliowy
-2 białka
-s�l
-szklanka bitej śmietany
-paczka draży M&amp;M's do ozdoby
+INSERT INTO przepis_skladnik VALUES (26,103,'gramy', 200);
+INSERT INTO przepis_skladnik VALUES (26,65,'ml', 200);
+INSERT INTO przepis_skladnik VALUES (26,68,'łyżki', 6);
+INSERT INTO przepis_skladnik VALUES (26,13,'sztuki', 4);
+INSERT INTO przepis_skladnik VALUES (26,72,'łyżki', 1);
+INSERT INTO przepis_skladnik VALUES (26,93,'sztuki', 1);
+INSERT INTO przepis_skladnik VALUES (26,5,'', '');
+INSERT INTO przepis_skladnik VALUES (26,67,'szklanki', 1);
+INSERT INTO przepis_skladnik VALUES (26,63,'paczki', 1);

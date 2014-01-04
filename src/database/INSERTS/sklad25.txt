@@ -1,9 +1,9 @@
-Porcja na 3 blachy
-4 kg &quot;mięsistych&quot; najlepiej podłużnych pomidor�w
-rozmaryn
-tymianek
-2 paczki suszonego oregano i bazylia lub 4 paczki zi�ł prowansalskich.
-8-10 ząbk�w czosnku pokrojone w drobną kosteczkę
-oliwa z oliwek
-s�l
-pieprz
+INSERT INTO przepis_skladnik VALUES (25,120,'kg', 4);
+INSERT INTO przepis_skladnik VALUES (25,74,'', '');
+INSERT INTO przepis_skladnik VALUES (25,87,'', '');
+INSERT INTO przepis_skladnik VALUES (25,96,'paczki', 2);
+INSERT INTO przepis_skladnik VALUES (25,122,'paczki', 2);
+INSERT INTO przepis_skladnik VALUES (25,44,'ząbki', 9);
+INSERT INTO przepis_skladnik VALUES (25,41,'', '');
+INSERT INTO przepis_skladnik VALUES (25,5,'', '');
+INSERT INTO przepis_skladnik VALUES (25,23,'', '');
