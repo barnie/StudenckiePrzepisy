@@ -1,18 +1,12 @@
-Ciemne ciasto:
--20dag czekolady gorzkiej
--20dag masła
--20dag cukru
--7 dużych jaj
--20dag mąki
--1 czubata łyżeczka proszku do pieczenia 
-
-Masa wiśniowa:
--1 duży słoik wiśni słodzonych bez pestek
--3 łyżki cukru
--2 łyżki mąki ziemniaczanej lub budyń waniliowy
--kieliszek spirytusu lub wiśni�wki
-
-Bita śmietana:
--750ml śmietany krem�wki minimum 30%
--4 łyżki cukru pudru
--3 fixy do śmietany
+INSERT INTO przepis_skladnik VALUES (43,14,'gramy', 200);
+INSERT INTO przepis_skladnik VALUES (43,12,'gramy', 220);
+INSERT INTO przepis_skladnik VALUES (43,102,'gramy', 200);
+INSERT INTO przepis_skladnik VALUES (43,1,'kg', 1/5);
+INSERT INTO przepis_skladnik VALUES (43,55,'łyżeczki', 1);
+INSERT INTO przepis_skladnik VALUES (43,154,'słoiki', 1);
+INSERT INTO przepis_skladnik VALUES (43,13,'sztuki', 7);
+INSERT INTO przepis_skladnik VALUES (43,98,'łyżki', 2);
+INSERT INTO przepis_skladnik VALUES (43,155,'kieliszki', 1);
+INSERT INTO przepis_skladnik VALUES (43,17,'ml', 750);
+INSERT INTO przepis_skladnik VALUES (43,68,'łyżki', 4);
+INSERT INTO przepis_skladnik VALUES (43,156,'opakowania', 3);

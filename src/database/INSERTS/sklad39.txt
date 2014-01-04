@@ -1,15 +1,7 @@
-Ciasto na naleśniki:
-200g mąki razowej żytniej 2000 lub tak jak u mnie 50-60g zmielonych płatk�w owsianych/otręb�w owsianych
-2 jaja kurze całe
-p�ł szklanki mleka, z obniżoną zawartością laktozy
-p�ł szklanki wody gazowanej
-szczypta soli
-
-Nadzienia dla łasuch�w:
-w dni bezmięsne:
-dowolne owoce
-twar�g chudy
-
-w inne dni:
-kurczak
-warzywa
+INSERT INTO przepis_skladnik VALUES (39,79,'gramy', 200);
+INSERT INTO przepis_skladnik VALUES (39,65,'szklanki', 1/2);
+INSERT INTO przepis_skladnik VALUES (39,13,'sztuki', 2);
+INSERT INTO przepis_skladnik VALUES (39,150,'szklanki', 1/2);
+INSERT INTO przepis_skladnik VALUES (39,70,'', '');
+INSERT INTO przepis_skladnik VALUES (39,5,'', '');
+INSERT INTO przepis_skladnik VALUES (39,11,'', '');

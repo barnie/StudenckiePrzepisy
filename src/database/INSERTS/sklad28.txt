@@ -1,11 +1,9 @@
-Porcja na 15-16 muffinek:
-
-2 jajka
-200 g cukru
-120 g mąki pszennej
-6 łyżek kakao
-2 łyżeczki proszku do pieczenia
-1 łyżeczka ekstraktu z wanilii
-2/3 szklanki mleka
-150 g masła
-tabliczka gorzkiej czekolady
+INSERT INTO przepis_skladnik VALUES (28,13,'sztuki', 2);
+INSERT INTO przepis_skladnik VALUES (28,12,'gramy', 200);
+INSERT INTO przepis_skladnik VALUES (28,80,'gramy', 120);
+INSERT INTO przepis_skladnik VALUES (28,47,'łyżki', 6);
+INSERT INTO przepis_skladnik VALUES (28,55,'łyżeczki', 2);
+INSERT INTO przepis_skladnik VALUES (28,104,'łyżeczki', 1);
+INSERT INTO przepis_skladnik VALUES (28,65,'szklanki', 2/3);
+INSERT INTO przepis_skladnik VALUES (28,14,'gramy', 150);
+INSERT INTO przepis_skladnik VALUES (28,102,'sztuki', 1);

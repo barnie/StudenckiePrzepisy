@@ -1,17 +1,12 @@
-Naleśniki:
-150 gram mąki
-2 jajka
-szklanka mleka
-szczypta soli
-olej do smażenia
-
-Farsz:
-mrożony szpinak – jedno opakowanie
-twar�g – około 150 g
-2 ząbki czosnku
-pieprz, s�l do smaku
-
-Sos grzybowy:
-torebka sosu grzybowego instant
-pieczarki – około 15 sztuk
-3 łyżki śmietany 18%
+INSERT INTO przepis_skladnik VALUES (31,13,'sztuki', 2);
+INSERT INTO przepis_skladnik VALUES (31,65,'szklanki', 1);
+INSERT INTO przepis_skladnik VALUES (31,5,'', '');
+INSERT INTO przepis_skladnik VALUES (31,1,'gramy', 150);
+INSERT INTO przepis_skladnik VALUES (31,4,'', '');
+INSERT INTO przepis_skladnik VALUES (31,133,'opakowania', 1);
+INSERT INTO przepis_skladnik VALUES (31,11,'gramy', 150);
+INSERT INTO przepis_skladnik VALUES (31,44,'ząbki', 2);
+INSERT INTO przepis_skladnik VALUES (31,134,'opakowania', 1);
+INSERT INTO przepis_skladnik VALUES (31,23,'', '');
+INSERT INTO przepis_skladnik VALUES (31,9,'sztuki', 15);
+INSERT INTO przepis_skladnik VALUES (31,59,'łyżki', 3);

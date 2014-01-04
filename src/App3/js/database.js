@@ -159,6 +159,7 @@ function getKategorie(array) {
                       array[i] = new Array();
                       array[i][0] = row.id;
                       array[i][1] = row.rodzaj;
+                      array[i][2] = row.zdjecie;
                       i++;
                       console.log('##Kategorie_Select : ' + row.rodzaj);
                   });
@@ -188,6 +189,32 @@ function getKategorie(array) {
             }
         })
 */
+function getPrzepisyMax6only(array) { //for home
+    var dbPath = Windows.Storage.ApplicationData.current.localFolder.path + '\\przepisy_db.sqlite';
+    var i = 0;
+    return SQLite3JS.openAsync(dbPath)
+              .then(function (db) {
+                  console.log('DB opened');
+                  return db.eachAsync('SELECT * FROM Przepis LIMIT 0, 6 ;', function (row) {
+                      array[i] = new Array();
+                      array[i][0] = row.nazwa;
+                      array[i][1] = row.zdjecie;
+                      i++;
+                  });
+              }, function (error) {
+                  if (db) {
+                      db.close();
+                  }
+                  console.log('ERROR Select * from kategorie ' + error.message);
+              })
+             .then(function (db) {
+                 console.log('close the db');
+                 db.close();
+             }).then(function () {
+                 return array;
+             });
+}
+
 
 function getPrzepisy(array) {
     var dbPath = Windows.Storage.ApplicationData.current.localFolder.path + '\\przepisy_db.sqlite';
@@ -404,3 +431,21 @@ function getOnePrzepis(nazwa, array) {
                  return array;
              });
 }
+
+function removePrzepis(nazwa) {
+    var dbPath = Windows.Storage.ApplicationData.current.localFolder.path + '\\przepisy_db.sqlite';
+    SQLite3JS.openAsync(dbPath).then(function (db) {
+        return db.eachAsync("SELECT * from Przepis Where nazwa = ? ", [nazwa], function (row) {
+                console.log('@' + row.id);
+                db.runAsync("DELETE FROM przepis_skladnik WHERE id_przepis = ?", [row.id]);
+                db.runAsync("delete from przepis where nazwa = ?", [nazwa]);
+            
+        }, function (error) {
+            if (db) {
+                db.close();
+            }
+            console.log('ERROR DODAWANIE DUZO SKLADNIKOW' + error.message);
+        })
+    });
+}
+

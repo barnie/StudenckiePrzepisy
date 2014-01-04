@@ -1,5 +1,5 @@
-• 50 ml Malibu
-• 40 ml mleka skondensowanego niesłodzonego
-• wi�rki kokosowe
-• l�d
-• plaster pomarańczy do dekoracji
+INSERT INTO przepis_skladnik VALUES (23,119,'ml', 50);
+INSERT INTO przepis_skladnik VALUES (23,91,'ml', 40);
+INSERT INTO przepis_skladnik VALUES (23,114,'', '');
+INSERT INTO przepis_skladnik VALUES (23,112,'', '');
+INSERT INTO przepis_skladnik VALUES (23,25,'plastry', 1);

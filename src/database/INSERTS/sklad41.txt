@@ -1,7 +1,7 @@
-200 g czekolady
-4 ż�łtka i 2 białka
-4 łyżki śmietany
-2 łyżki mleka skondensowanego słodzonego z puszki
-2 łyżki rumu
-4 łyżki cukru
--&nbsp; jajka marcepanowe do dekoracji oraz wi�rki białej czekolady
+INSERT INTO przepis_skladnik VALUES (41,103,'gramy', 200);
+INSERT INTO przepis_skladnik VALUES (41,91,'łyżki', 2);
+INSERT INTO przepis_skladnik VALUES (41,146,'łyżki', 2);
+INSERT INTO przepis_skladnik VALUES (41,12,'łyżki', 4);
+INSERT INTO przepis_skladnik VALUES (41,152,'', '');
+INSERT INTO przepis_skladnik VALUES (41,153,'wiórki', '');
+INSERT INTO przepis_skladnik VALUES (41,13,'sztuki', 4);

@@ -1,12 +1,11 @@
 ﻿// For an introduction to the Navigation template, see the following documentation:
 // http://go.microsoft.com/fwlink/?LinkId=232506
 
-WinJS.Namespace.define("MyGlobals", {
-    recipies: null,
-});
-
 (function () {
     "use strict";
+    WinJS.Namespace.define("MyGlobals", {
+        imagesPath: "images/",
+    });
 
     WinJS.Binding.optimizeBindingReferences = true;
 
@@ -59,6 +58,7 @@ WinJS.Namespace.define("MyGlobals", {
                 console.log(array[i]);
         })*/
         //default_insert();
+        removePrzepis("Pig Steak");
     }
 
 
@@ -67,8 +67,6 @@ WinJS.Namespace.define("MyGlobals", {
     };
 
     app.onready = function () {
-        //     WinJS.Utilities.query("a").listen("click", anchorHandler, false);
-
         var home = document.getElementById("home");
         home.addEventListener("click", goToHome, false);
         var button1 = document.getElementById("klik");

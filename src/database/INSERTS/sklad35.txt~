@@ -1,0 +1,18 @@
+INSERT INTO przepis_skladnik VALUES (35,1,'kg', 1/2);
+INSERT INTO przepis_skladnik VALUES (35,65,'szklanki', 1);
+INSERT INTO przepis_skladnik VALUES (35,14,'gramy', 40);
+INSERT INTO przepis_skladnik VALUES (35,13,'sztuki', 3);
+INSERT INTO przepis_skladnik VALUES (35,1,'kg', 1/2);
+INSERT INTO przepis_skladnik VALUES (35,65,'szklanki', 1);
+INSERT INTO przepis_skladnik VALUES (35,14,'gramy', 40);
+INSERT INTO przepis_skladnik VALUES (35,13,'sztuki', 3);
+• p�ł kilograma przesianej mąki
+• szklanka ciepłego mleka
+• 40 gram masła
+• 3 duże ż�łtka
+• 50-60 gram cukru
+• p�ł łyżeczki soli
+• opcjonalnie: p�ł łyżeczki cynamonu
+• 7 g drożdzy suchych lub 30-40g świeżych
+• woda
+• olej do smażenia

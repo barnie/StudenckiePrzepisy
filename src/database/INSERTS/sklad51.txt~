@@ -1,0 +1,10 @@
+INSERT INTO przepis_skladnik VALUES (51,168,'płaty', 4);
+INSERT INTO przepis_skladnik VALUES (51,115,'sztuki', 1);
+INSERT INTO przepis_skladnik VALUES (51,113,'sztuki', 1);
+INSERT INTO przepis_skladnik VALUES (51,23,'', '');
+INSERT INTO przepis_skladnik VALUES (51,5,'', '');
+INSERT INTO przepis_skladnik VALUES (51,99,'sztuki', 1);
+INSERT INTO przepis_skladnik VALUES (51,41,'', '');
+INSERT INTO przepis_skladnik VALUES (51,4,'', '');
+oliwa z oliwek
+olej

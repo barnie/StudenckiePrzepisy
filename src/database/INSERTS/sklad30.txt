@@ -1,7 +1,5 @@
-Składniki (na 4 porcje)
-
-osiem biszkopt�w (języczk�w)
-200 ml mocnej kawy
-łyżeczka cukru
-400 gram malin
-400 g serka homogenizowanego waniliowego
+INSERT INTO przepis_skladnik VALUES (30,95,'sztuki', 8);
+INSERT INTO przepis_skladnik VALUES (30,130,'ml', 200);
+INSERT INTO przepis_skladnik VALUES (30,12,'łyzeczki', 1);
+INSERT INTO przepis_skladnik VALUES (30,131,'gramy', 400);
+INSERT INTO przepis_skladnik VALUES (30,132,'gramy', 400);

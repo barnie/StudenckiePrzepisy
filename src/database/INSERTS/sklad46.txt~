@@ -1,0 +1,20 @@
+INSERT INTO przepis_skladnik VALUES (45,80,'szklanki', 8/3);
+INSERT INTO przepis_skladnik VALUES (45,159,'szklanki', 1/4);
+INSERT INTO przepis_skladnik VALUES (45,55,'łyżeczki', 2);
+INSERT INTO przepis_skladnik VALUES (45,12,'szklanki', 7/4);
+INSERT INTO przepis_skladnik VALUES (46,68,'gramy', 250);
+INSERT INTO przepis_skladnik VALUES (45,93,'łyżeczki', 2);
+INSERT INTO przepis_skladnik VALUES (45,5,'', '');
+INSERT INTO przepis_skladnik VALUES (45,59,'ml', 600);
+INSERT INTO przepis_skladnik VALUES (45,13,'sztuki', 4);
+INSERT INTO przepis_skladnik VALUES (45,99,'sztuki', 5);
+250 g cukru pudru
+5 jajek
+175 g mąki tortowej
+125 g mąki ziemniaczanej
+125 g oleju
+125 ml mleka
+100 g twarożku
+200 ml advocatu
+1 paczka cukru waniliowego
+1 paczka proszku do pieczenia

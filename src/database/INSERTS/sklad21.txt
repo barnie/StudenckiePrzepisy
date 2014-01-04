@@ -1,15 +1,7 @@
-Składniki:
-
-• 800 g truskawek
-• 200 g miękkiego masła
-• 200 g cukru pudru
-• 4 jajka
-• 250 g mąki
-• 1 łyżeczka proszku do pieczenia 
-
-Kruszonka:
-
-• 150 g mąki
-• 75 g masła
-• 75 g cukru
-• cukier puder 
+INSERT INTO przepis_skladnik VALUES (21,111,'gramy', 800);
+INSERT INTO przepis_skladnik VALUES (21,14,'gramy', 275);
+INSERT INTO przepis_skladnik VALUES (21,68,'gramy', 200);
+INSERT INTO przepis_skladnik VALUES (21,13,sztuki', 4);
+INSERT INTO przepis_skladnik VALUES (21,1,'gramy', 400);
+INSERT INTO przepis_skladnik VALUES (21,12,'gramy', 75);
+INSERT INTO przepis_skladnik VALUES (21,55,'łyżeczki', 1);

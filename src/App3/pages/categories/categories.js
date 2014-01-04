@@ -53,33 +53,33 @@
 
             //script:
 
-                //date prepare:
-                var categories = options;
-                var count = options.length;
+            //date prepare:
+            var categories = options;
+            var count = options.length;
             //picturesPaths bedzie pobierane z bazy (kazda kategoria bedzie miala swoj obrazek, niezalezny od przepisow), narazie przykladowe wart:
                 var picturesPaths = [ "miecho.jpg", "ryba.jpg", "nabial.jpg", "warzywa.jpg", "owoce.jpg", "pieczywo.jpg", "grzyby.jpg", "soup.jpg", "sos.jpg", "przetwory.jpg", "deser.jpg", "napoj.jpg", "salatka.jpg", "studenckie.jpg"];
-                //date prepared, start script:
-                var layout = new LayoutContainer(count, 'myTabCss', 'myRowCss', 'myCellCss');
-                var table = layout.CreateContainer();
+            //date prepared, start script:
+            var layout = new LayoutContainer(count, 'myTabCss', 'myRowCss', 'myCellCss');
+            var table = layout.CreateContainer();
 
-                if (count < 3)
-                    document.getElementById('myDiv').innerHTML = window.toStaticHTML('<br><br>' + table.toString());
-                else
-                    document.getElementById('myDiv').innerHTML = window.toStaticHTML(table.toString());
-                var prefix = 'first';
-                var j = 0;
+            if (count < 3)
+                document.getElementById('myDiv').innerHTML = window.toStaticHTML('<br><br>' + table.toString());
+            else
+                document.getElementById('myDiv').innerHTML = window.toStaticHTML(table.toString());
+            var prefix = 'first';
+            var j = 0;
 
-                for (var i = 0; i < count; i++) {
+            for (var i = 0; i < count; i++) {
                     var image = layout.CreateElementContent(picturesPaths[i], 'openWindowWithRepice', 'myImageCss', categories[i][1], categories[i][0]);
-                    if (j == layout.width) {
-                        j = 0;
-                        prefix = "second";
-                    }
-
-                    document.getElementById(prefix + j.toString()).innerHTML = window.toStaticHTML(image.toString());
-                    document.getElementById(prefix + j.toString()).addEventListener("click", console.log("siema" + i) );
-                    j++;
+                if (j == layout.width) {
+                    j = 0;
+                    prefix = "second";
                 }
+
+                document.getElementById(prefix + j.toString()).innerHTML = window.toStaticHTML(image.toString());
+                    document.getElementById(prefix + j.toString()).addEventListener("click", console.log("siema" + i) );
+                j++;
+            }
         },
 
         unload: function () {

@@ -1,9 +1,9 @@
-• Pomidory w puszcze(duże opakowanie)
-• Cebula,
-• Paczka mozzarelli w kulce,
-• Koncentrat pomidorowy w kartonie,
-• Śmietanka to dekoracji,
-• S�l, pieprz, odrobina cukru
-• Świeża bazylia
-• Olej do smażenia
-• 2 ząbki czosnku.
+INSERT INTO przepis_skladnik VALUES (22,120,'puszki', 1);
+INSERT INTO przepis_skladnik VALUES (22,21,'', '');
+INSERT INTO przepis_skladnik VALUES (22,117,'opakowania', 1);
+INSERT INTO przepis_skladnik VALUES (22,5,'', '');
+INSERT INTO przepis_skladnik VALUES (22,23,'', '');
+INSERT INTO przepis_skladnik VALUES (22,12,'', '');
+INSERT INTO przepis_skladnik VALUES (22,122,'', '');
+INSERT INTO przepis_skladnik VALUES (22,4,'', '');
+INSERT INTO przepis_skladnik VALUES (22,44,'ząbki', 2);

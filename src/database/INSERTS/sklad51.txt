@@ -1,11 +1,8 @@
-Porcja dla 4 os�b:
-4 płaty łososia norweskiego
-gł�wka sałaty lodowej
-ser feta
-przyprawa do ryb
-przyprawa kuchni włoskiej
-pieprz
-s�l
-cytryna
-oliwa z oliwek
-olej
+INSERT INTO przepis_skladnik VALUES (51,168,'płaty', 4);
+INSERT INTO przepis_skladnik VALUES (51,115,'sztuki', 1);
+INSERT INTO przepis_skladnik VALUES (51,113,'sztuki', 1);
+INSERT INTO przepis_skladnik VALUES (51,23,'', '');
+INSERT INTO przepis_skladnik VALUES (51,5,'', '');
+INSERT INTO przepis_skladnik VALUES (51,99,'sztuki', 1);
+INSERT INTO przepis_skladnik VALUES (51,41,'', '');
+INSERT INTO przepis_skladnik VALUES (51,4,'', '');

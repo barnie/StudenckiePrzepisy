@@ -1,0 +1,11 @@
+INSERT INTO przepis_skladnik VALUES (36,14,'kostki', 1);
+INSERT INTO przepis_skladnik VALUES (35,65,'szklanki', 1);
+INSERT INTO przepis_skladnik VALUES (36,98,'szklanki', 3/2);
+INSERT INTO przepis_skladnik VALUES (36,13,'sztuki', 4);
+INSERT INTO przepis_skladnik VALUES (36,12,'szklanki', 1);
+INSERT INTO przepis_skladnik VALUES (36,55,'łyżeczki', 1);
+INSERT INTO przepis_skladnik VALUES (36,71,'łyżki', 3);
+INSERT INTO przepis_skladnik VALUES (36,17,'łyżki', 4);
+INSERT INTO przepis_skladnik VALUES (36,146,'łyżka', 1);
+INSERT INTO przepis_skladnik VALUES (36,18,'', '');
+INSERT INTO przepis_skladnik VALUES (36,68,'', '');

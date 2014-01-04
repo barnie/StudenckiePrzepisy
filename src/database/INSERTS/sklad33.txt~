@@ -1,0 +1,20 @@
+INSERT INTO przepis_skladnik VALUES (33,137,'litry', 2);
+INSERT INTO przepis_skladnik VALUES (33,138,'sztuki', 2);
+INSERT INTO przepis_skladnik VALUES (33,139,'szklanki', 1/2);
+INSERT INTO przepis_skladnik VALUES (33,52,'sztuki', 1);
+INSERT INTO przepis_skladnik VALUES (33,61,'sztuki', 2);
+INSERT INTO przepis_skladnik VALUES (32,44,'ząbki', 1);
+INSERT INTO przepis_skladnik VALUES (32,5,'', '');
+INSERT INTO przepis_skladnik VALUES (32,23,'', '');
+INSERT INTO przepis_skladnik VALUES (32,52,'sztuki', 1);
+INSERT INTO przepis_skladnik VALUES (32,61,'sztuki', 2);
+• 1 ząbek czosnku
+• s�l, pieprz
+• 2 łyżki słodkiej śmietany 30%
+• 1 łyżeczka masła
+• szczypiorek lub natka pietruszki
+
+Grzanki:
+• bagietka
+• łyżka masła
+• zioła, czosnek do smaku

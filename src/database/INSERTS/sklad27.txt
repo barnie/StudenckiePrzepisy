@@ -1,7 +1,9 @@
-ziemniaki – około 6-8 sztuk średniej wielkości
-cebula – 2 sztuki średniej wielkości
-marchew – 2 sztuki
-dwie piersi z kurczaka
-400 g śmietany 18%
-starty ser ż�łty – do posypania zapiekanki, według uznania.
-s�l, pieprz, ostra papryka
+INSERT INTO przepis_skladnik VALUES (27,61,'sztuki', 7);
+INSERT INTO przepis_skladnik VALUES (27,21,'sztuki', 2);
+INSERT INTO przepis_skladnik VALUES (27,52,'sztuki', 2);
+INSERT INTO przepis_skladnik VALUES (27,60,'sztuki', 2);
+INSERT INTO przepis_skladnik VALUES (27,59,'gramy', 400);
+INSERT INTO przepis_skladnik VALUES (27,5,'', '');
+INSERT INTO przepis_skladnik VALUES (27,10,'', '');
+INSERT INTO przepis_skladnik VALUES (27,23,'', '');
+INSERT INTO przepis_skladnik VALUES (27,50,'', '');

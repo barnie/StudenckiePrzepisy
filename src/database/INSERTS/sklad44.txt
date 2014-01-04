@@ -1,5 +1,5 @@
-odżywka białkowa
-żelatyna fix do deser�w
-jogurt/woda/mleko opcja wg kaloryczności
-wi�rki kokosowe
-owoce
+INSERT INTO przepis_skladnik VALUES (44,42,'', '');
+INSERT INTO przepis_skladnik VALUES (44,158,'', '');
+INSERT INTO przepis_skladnik VALUES (44,157,'', '');
+INSERT INTO przepis_skladnik VALUES (44,114,'', '');
+INSERT INTO przepis_skladnik VALUES (44,70,'', '');

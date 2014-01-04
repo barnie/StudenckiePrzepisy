@@ -1,11 +1,9 @@
-Porcja na ok. 12 wiank�w 
-
-80g masła
-200ml mleka
-40g drożdży
-0,5kg maki
-60g cukru
-szczypta soli
-2 jaja + 1 ż�łtko jaja
-3 łyżki śmietany krem�wki
-60 przepi�rczych pisanek
+INSERT INTO przepis_skladnik VALUES (40,14,'gramy', 80);
+INSERT INTO przepis_skladnik VALUES (40,65,'ml', 200);
+INSERT INTO przepis_skladnik VALUES (40,145,'gramy', 40);
+INSERT INTO przepis_skladnik VALUES (40,1,'kg', 1/2);
+INSERT INTO przepis_skladnik VALUES (40,12,'gramy', 60);
+INSERT INTO przepis_skladnik VALUES (40,5,'', '');
+INSERT INTO przepis_skladnik VALUES (40,13,'sztuki', 3);
+INSERT INTO przepis_skladnik VALUES (40,17,'łyżki', 3);
+INSERT INTO przepis_skladnik VALUES (40,151,'sztuki', 60);

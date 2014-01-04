@@ -1,10 +1,9 @@
-250 g cukru pudru
-5 jajek
-175 g mąki tortowej
-125 g mąki ziemniaczanej
-125 g oleju
-125 ml mleka
-100 g twarożku
-200 ml advocatu
-1 paczka cukru waniliowego
-1 paczka proszku do pieczenia
+INSERT INTO przepis_skladnik VALUES (46,71,'gramy', 175);
+INSERT INTO przepis_skladnik VALUES (46,98,'gramy', 125);
+INSERT INTO przepis_skladnik VALUES (46,4,'gramy', 125);
+INSERT INTO przepis_skladnik VALUES (46,11,'gramy', 100);
+INSERT INTO przepis_skladnik VALUES (46,68,'gramy', 250);
+INSERT INTO przepis_skladnik VALUES (46,160,'ml', 200);
+INSERT INTO przepis_skladnik VALUES (46,93,'paczki', 1);
+INSERT INTO przepis_skladnik VALUES (46,55,'paczki', 1);
+INSERT INTO przepis_skladnik VALUES (46,13,'sztuki', 5);

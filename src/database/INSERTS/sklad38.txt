@@ -1,3 +1,2 @@
-kostka mrożonego szpinaku
-2-3 jajka
-przyprawy do smaku
+INSERT INTO przepis_skladnik VALUES (38,133,'kostki', 1);
+INSERT INTO przepis_skladnik VALUES (38,13,'sztuki', 3);
