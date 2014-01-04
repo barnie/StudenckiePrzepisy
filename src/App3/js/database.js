@@ -217,6 +217,35 @@ function getPrzepisy(array) {
              });
 }
 
+function getPrzepisyKat( idCat, array) { //zwraca przepisy tylko z wybranej kategorii
+    var dbPath = Windows.Storage.ApplicationData.current.localFolder.path + '\\przepisy_db.sqlite';
+    var i = 0;
+    return SQLite3JS.openAsync(dbPath)
+              .then(function (db) {
+                  console.log('DB opened');
+                  return db.eachAsync('SELECT * FROM Przepis WHERE id_kategorii =' + idCat + ';', function (row) {
+                      array[i] = new Array();
+                      array[i][0] = row.id_kategorii;
+                      array[i][1] = row.nazwa;
+                      array[i][2] = row.opis;
+                      array[i][3] = row.zdjecie;
+                      i++;
+                  });
+              }, function (error) {
+                  if (db) {
+                      db.close();
+                  }
+                  console.log('ERROR Select * from kategorie ' + error.message);
+              })
+             .then(function (db) {
+                 console.log('close the db');
+                 db.close();
+             }).then(function () {
+                 return array;
+             });
+}
+
+
 
 /*                 }
     Zwraca dwuwymiarowa tabele Przepis_Skladnik
