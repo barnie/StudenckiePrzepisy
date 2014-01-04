@@ -11,7 +11,7 @@ C:\Users\Twoja_nazwa_usera\AppData\Local\Packages\7cbc57f9-d6bb-4fc5-8ce0-d0c51f
 function createDB() {
     var dbPath = Windows.Storage.ApplicationData.current.localFolder.path + '\\przepisy_db.sqlite';
     SQLite3JS.openAsync(dbPath).then(function (db) {
-        db.runAsync('create table IF NOT EXISTS Kategorie (id integer PRIMARY KEY AUTOINCREMENT, rodzaj TEXT)');
+        db.runAsync('create table IF NOT EXISTS Kategorie (id integer PRIMARY KEY AUTOINCREMENT, rodzaj TEXT, zdjecie TEXT)');
         db.runAsync('create table IF NOT EXISTS Przepis (id integer PRIMARY KEY AUTOINCREMENT, id_kategorii integer REFERENCES Kategorie(id), nazwa TEXT, opis TEXT, zdjecie TEXT)');
         db.runAsync('create table IF NOT EXISTS Skladnik (id integer PRIMARY KEY AUTOINCREMENT,nazwa TEXT, ile INT DEFAULT 1)')
         db.runAsync('create table IF NOT EXISTS Przepis_Skladnik (id_przepis integer REFERENCES Przepis(id), id_skladnik integer REFERENCES Skladnik(id),miara TEXT,ile TEXT, PRIMARY KEY(id_przepis,id_skladnik))').then(function () {
@@ -27,10 +27,10 @@ function createDB() {
     Dodaje kategorie.
 */
 
-function addKategorie(nazwa) {
+function addKategorie(nazwa, img) {
     var dbPath = Windows.Storage.ApplicationData.current.localFolder.path + '\\przepisy_db.sqlite';
     SQLite3JS.openAsync(dbPath).then(function (db) {
-        return db.runAsync("INSERT INTO Kategorie (rodzaj) VALUES (:rodzaj)", { rodzaj: nazwa }).
+        return db.runAsync("INSERT INTO Kategorie (rodzaj,zdjecie) VALUES (:rodzaj, :zdjecie)", { rodzaj: nazwa, zdjecie:img }).
         done(function () {
             console.log('Dodano nowa kategorie : ' + nazwa);
             db.close();
@@ -53,9 +53,9 @@ function addManyKategorie(array) {
     SQLite3JS.openAsync(dbPath).then(function (db) {
         var i = 0;
         for (i = 0; i < array.length - 1; i++) {
-            db.runAsync("INSERT INTO Kategorie (rodzaj) VALUES (:rodzaj)", { rodzaj: array[i] })
+            db.runAsync("INSERT INTO Kategorie (rodzaj,zdjecie) VALUES (:rodzaj, :zdjecie)", { rodzaj: array[i][0], zdjecie:array[i][1] })
         }
-        return db.runAsync("INSERT INTO Kategorie (rodzaj) VALUES (:rodzaj)", { rodzaj: array[i] }).
+        return db.runAsync("INSERT INTO Kategorie (rodzaj,zdjecie) VALUES (:rodzaj, :zdjecie)", { rodzaj: array[i][0], zdjecie: array[i][1] }).
         done(function () {
             console.log('Dodano duzo kategorii : ');
             db.close();
