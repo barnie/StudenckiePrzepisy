@@ -1,8 +1,7 @@
-﻿function ParseHelper() {
-}
-
-ParseHelper.prototype.ParseNameToFullUrl = function(name)
+﻿function ParseNameToFullUrl(name)
 {
-    return Windows.Storage.StorageFolder.Path + name;
+    var p = Windows.Storage.ApplicationData.current.localFolder.path;
+    if (p.charAt(p.length - 1) != '\\') p += '\\';
+    return p + name;
 }
 

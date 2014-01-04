@@ -47,10 +47,15 @@
              loadRecipe : function (arg)
              {
                  arg = $(this).data('arg');
-                 // TODO 2: Tutaj umiesc kod ktory otworzy nowa strone albo wykona cos na podstawie tego arg ktory podales w funkcji CreateElementContent > repicesIds[i]
-                 // Na przyklad:
-                 console.log(arg);
-                 // TODO 2
+                 var myArray = new Array();
+                 getOnePrzepis(arg, myArray).then(function () {
+                     if (myArray[2] == undefined) {
+                         WinJS.Navigation.navigate('/pages/search/searchFailed.html');
+                     }
+                     else {
+                         WinJS.Navigation.navigate('/pages/recipe/recipe.html', myArray);
+                     }
+                 });
              },
              unload: function () {
                  // TODO: Respond to navigations away from this page.

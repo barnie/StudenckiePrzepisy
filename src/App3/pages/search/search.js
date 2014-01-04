@@ -33,7 +33,6 @@
 
     function querySubmittedHandler(eventObject) {
         var queryText = eventObject.detail.queryText;
-        var found = false;
             var myArray = new Array();
             getOnePrzepis(queryText, myArray).then(function ()
             {

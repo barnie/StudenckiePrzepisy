@@ -37,10 +37,11 @@
 
         }
         else {
-            var array = [];
-            getOnePrzepis("ala", array).then(function () {
-                WinJS.Navigation.navigate(link.href, array);
-            })
+           // var array = [];
+            //getOnePrzepis("ala", array).then(function () {
+              // 
+            //})
+            WinJS.Navigation.navigate(link.href);
         }
     }
 

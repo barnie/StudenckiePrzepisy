@@ -12,8 +12,24 @@
             document.getElementById("category").innerHTML = options[1];
             console.log("option[1]=" + options);
             document.getElementById("name").innerHTML = options[2];
-            var picturesPath = "/images/"; //TU MUSI BYC INNA SCIEZKA NA KONIEC!
-            document.getElementById("img_container").innerHTML = window.toStaticHTML("<img src=" + picturesPath + options[4] + " />");
+            //var picturesPath = "/images/"; //TU MUSI BYC INNA SCIEZKA NA KONIEC!
+
+            Windows.Storage.ApplicationData.current.localFolder.getFileAsync(options[4]).done(function (file) {
+                var imgHandler = document.createElement("img");
+                imgHandler.id = "myImgHandler";
+                var imageBlob = URL.createObjectURL(file);
+                imgHandler.src = imageBlob;
+                URL.revokeObjectURL(imageBlob);
+                document.getElementById("img_container").appendChild(imgHandler);
+            },
+            function () {
+                var imgHandler = document.createElement("img");
+                imgHandler.id = "myImgHandler";
+                imgHandler.src = '/images/' + options[4];
+                document.getElementById("img_container").appendChild(imgHandler);
+            });
+           
+
             console.log("options[4]=" + options[4]);
             document.getElementById("description").innerHTML = options[3];
             //skladniki:

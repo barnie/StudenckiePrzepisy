@@ -137,6 +137,9 @@
     <Content Include="js\ParseHelper.js" />
     <Content Include="js\SearchHelper.js" />
     <Content Include="pages\add_recipe\add_recipe.html" />
+    <Content Include="pages\add_recipe\add_recipe.js" />
+    <Content Include="pages\add_recipe\add_recipe_succes.html" />
+    <Content Include="pages\add_recipe\datafeed.js" />
     <Content Include="pages\categories\categories.css" />
     <Content Include="pages\categories\categories.html" />
     <Content Include="pages\categories\categories.js" />
