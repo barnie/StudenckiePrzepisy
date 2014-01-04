@@ -1,5 +1,5 @@
 
-//dostaje w options tablice z kategoriami jakie ma wyswietlic [i][0] -id [i][1] - nazwa 
+//dostaje w options tablice z kategoriami jakie ma wyswietlic [i][0] -id [i][1] - nazwa , [i][2] - zdjecie
 
 (function () {
     "use strict";
@@ -12,8 +12,6 @@
             //date prepare:
             var categories = options;
             var count = options.length;
-            //picturesPaths bedzie pobierane z bazy (kazda kategoria bedzie miala swoj obrazek, niezalezny od przepisow), narazie przykladowe wart:
-            var picturesPaths = [ "miecho.jpg", "ryba.jpg", "nabial.jpg", "warzywa.jpg", "owoce.jpg", "pieczywo.jpg", "grzyby.jpg", "soup.jpg", "sos.jpg", "przetwory.jpg", "deser.jpg", "napoj.jpg", "salatka.jpg", "studenckie.jpg"];
             //date prepared, start script:
             var layout = new LayoutContainer(count, 'myTabCss', 'myRowCss', 'myCellCss');
             var table = layout.CreateContainer();
@@ -27,7 +25,7 @@
             var imgTagsIds = new Array();
             var nameTagsIds = new Array();
             for (var i = 0; i < count; i++) {
-                var image = layout.CreateElementContent(prefix + j.toString(), picturesPaths[i], 'myImageCss', categories[i][0], categories[i][1]);
+                var image = layout.CreateElementContent(prefix + j.toString(), categories[i][2], 'myImageCss', categories[i][0], categories[i][1]);
                 imgTagsIds[i] = prefix + j.toString() + 'img';
                 nameTagsIds[i] = prefix + j.toString() + 'name';
                 if (j == layout.width) {
@@ -44,10 +42,6 @@
             }
             //additional data for css prepare:
             document.getElementById("container").style.borderSpacing = "" + window.screen.availWidth * 0.028 + "px 0 ";
-            for (var i = 0; i < 7; i++) {
-                document.getElementById('first' + i.toString() ).style.width = " 1 px";
-                document.getElementById('second' + i.toString()).style.width = " 1 px";
-            }
 
 
         },

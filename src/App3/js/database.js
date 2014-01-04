@@ -159,6 +159,7 @@ function getKategorie(array) {
                       array[i] = new Array();
                       array[i][0] = row.id;
                       array[i][1] = row.rodzaj;
+                      array[i][2] = row.zdjecie;
                       i++;
                       console.log('##Kategorie_Select : ' + row.rodzaj);
                   });
