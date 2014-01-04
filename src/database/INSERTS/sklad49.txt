@@ -1,5 +1,5 @@
-• 250 ml śmietanki krem�wki 30%
-• 250 ml mleka
-• 50 gram cukru pudru
-• 3-4 łyżki żelatyny
-• 2-3 łyżki cukru waniliowego
+INSERT INTO przepis_skladnik VALUES (49,17,'ml', 250);
+INSERT INTO przepis_skladnik VALUES (49,65,'ml', 250);
+INSERT INTO przepis_skladnik VALUES (49,68,'gramy', 50);
+INSERT INTO przepis_skladnik VALUES (49,158,'łyżki', 4);
+INSERT INTO przepis_skladnik VALUES (49,93,'łyżki', 3);

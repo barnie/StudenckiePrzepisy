@@ -1,4 +1,4 @@
-filiżanka świeżo mielonej, świeżo parzonej kawy
-30 ml irlandzkiej whisky lub w wersji łagodniejszej likieru typu Bailey's
-1 łyżka cukru trzcinowego lub brązowego
-bita śmietana
+INSERT INTO przepis_skladnik VALUES (48,130,'filiżanki', 1);
+INSERT INTO przepis_skladnik VALUES (48,143,'ml', 30);
+INSERT INTO przepis_skladnik VALUES (48,167,'łyżka', 1);
+INSERT INTO przepis_skladnik VALUES (48,67,'', '');
