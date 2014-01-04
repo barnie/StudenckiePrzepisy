@@ -36,7 +36,7 @@
 
             #listContainer #containerOfRecipies #myDiv .myCellCss {
                 height: inherit;
-                width: 10000000px;
+                width: inherit;
             }
 
             #listContainer #containerOfRecipies #myDiv .myImageCss {

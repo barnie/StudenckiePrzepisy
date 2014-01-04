@@ -64,8 +64,6 @@
     };
 
     app.onready = function () {
-        //     WinJS.Utilities.query("a").listen("click", anchorHandler, false);
-
         var home = document.getElementById("home");
         home.addEventListener("click", goToHome, false);
         var button1 = document.getElementById("klik");
