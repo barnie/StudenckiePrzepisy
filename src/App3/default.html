@@ -21,6 +21,9 @@
         function openSearch() {
             WinJS.Navigation.navigate("/pages/search/search.html");
         }
+        function openExample() {
+            WinJS.Navigation.navigate("/Example/BindingPicturesExample.html");
+        }
     </script>
 </head>
 <body>
@@ -34,7 +37,7 @@
             <div class="right">
                 <button data-win-control="WinJS.UI.AppBarCommand" data-win-options="{icon:'bullets', label:'Zaznacz posiadane składniki', type:'button', tooltip:'Powiem ci co możesz zjeść'}"></button>
                 <button data-win-control="WinJS.UI.AppBarCommand" data-win-options="{icon:'find', label:'Wyszukiwanie proste', type:'button', tooltip:'Wpisz nazę bądź fragment'}" onclick="openSearch()"></button>
-                <button data-win-control="WinJS.UI.AppBarCommand" data-win-options="{icon:'find', label:'Wyszukiwanie zaawansowane', type:'button', tooltip:'Szukamy po nazwie, typie, składnikach'}"></button>
+                <button data-win-control="WinJS.UI.AppBarCommand" data-win-options="{icon:'find', label:'Wyszukiwanie zaawansowane', type:'button', tooltip:'Szukamy po nazwie, typie, składnikach'}" onclick="openExample()"></button>
             </div>
         </header>
     </div>
