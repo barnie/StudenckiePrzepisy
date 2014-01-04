@@ -140,6 +140,7 @@
     <Content Include="pages\categories\categories.css" />
     <Content Include="pages\categories\categories.html" />
     <Content Include="pages\categories\categories.js" />
+    <Content Include="pages\categories\functions.js" />
     <Content Include="pages\home\home.css" />
     <Content Include="pages\home\home.html" />
     <Content Include="pages\home\home.js" />

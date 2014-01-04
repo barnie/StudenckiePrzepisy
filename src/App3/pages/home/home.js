@@ -31,7 +31,7 @@
             var array = [];
 
             getPrzepisy(array).then(function () {
-                MyGlobals.recipies = array;
+                loadRecipiesList( array ); //ladujemy liste przepisow
                 WinJS.Navigation.navigate(link.href);
             })
 
