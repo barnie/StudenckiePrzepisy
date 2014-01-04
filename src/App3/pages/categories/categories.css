@@ -43,8 +43,13 @@
             #listContainer #containerOfRecipies #myDiv .myImageCss {
                 border: solid;
                 border-color: black;
-                height:90%;
+                height:80%;
                 width:100%;
+                cursor:pointer;
+            }
+
+            #listContainer #containerOfRecipies #myDiv .catName {
+                cursor:pointer;
             }
 
 

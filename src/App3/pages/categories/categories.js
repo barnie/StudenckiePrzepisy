@@ -25,9 +25,11 @@
                 var prefix = 'first';
                 var j = 0;
                 var imgTagsIds = new Array();
+                var nameTagsIds = new Array();
                 for (var i = 0; i < count; i++) {
-                    var image = layout.CreateElementContent(prefix + j.toString(), picturesPaths[i], 'myImageCss', categories[i][0]);
+                    var image = layout.CreateElementContent(prefix + j.toString(), picturesPaths[i], 'myImageCss', categories[i][0], categories[i][1]);
                     imgTagsIds[i] = prefix + j.toString() + 'img';
+                    nameTagsIds[i] = prefix + j.toString() + 'name';
                     if (j == layout.width) {
                         j = 0;
                         prefix = "second";
@@ -38,6 +40,7 @@
                 }
                 for (var i = 0; i < count; i++) {
                     element.querySelector('#' + imgTagsIds[i]).onclick = this.loadRecipe;
+                    element.querySelector('#' + nameTagsIds[i]).onclick = this.loadRecipe;
                 }
         },
         loadRecipe: function (arg) {
@@ -46,7 +49,7 @@
             var array = [];
             getPrzepisyKat(arg, array).then(function () {
                 loadRecipiesList(array); //ladujemy liste przepisow
-                WinJS.Navigation.navigate( "pages/list_recipes/list_recipes.html" );
+                WinJS.Navigation.navigate( "pages/list_recipes/list_recipes.html" , array );
             })
             // TODO 2
         },

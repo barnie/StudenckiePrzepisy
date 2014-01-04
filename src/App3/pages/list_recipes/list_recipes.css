@@ -2,17 +2,26 @@
     margin: 1%;
     color:red;
 }
-#groupedListView
-{
+#groupedListView{
     height: 89%;
     padding-left: 6%;
     padding-right: 2%;
 }
 
-.win-listview .win-itembox {
-    padding: 1em;
-    background-color:white;
-    width: 10em;
-    height: 5em;
-    border: 1px solid black;
+#empty{
+    display:none; 
+    margin:auto;
 }
+
+    #empty h1{
+        margin: 25%; 
+        margin-top: 20%;
+    }
+
+    .win-listview .win-itembox {
+        padding: 1em;
+        background-color:white;
+        width: 10em;
+        height: 5em;
+        border: 1px solid black;
+    }

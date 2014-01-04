@@ -9,7 +9,12 @@
         // populates the page elements with the app's data.
         ready: function (element, options) {
             var listView = element.querySelector('#groupedListView').winControl;
-
+            if (options.length == 0) {
+                document.getElementById("empty").style.display = 'inline';
+            }
+            else {
+                document.getElementById("empty").style.display = 'none';
+            }
             // Notify the ListView to calculate its layout
             // listView.forceLayout();
 

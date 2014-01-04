@@ -32,7 +32,7 @@
 
             getPrzepisy(array).then(function () {
                 loadRecipiesList( array ); //ladujemy liste przepisow
-                WinJS.Navigation.navigate(link.href);
+                WinJS.Navigation.navigate(link.href , array ); //tu tez podajemy array zeby wyswietlic ze pusto jc
             })
 
         }
