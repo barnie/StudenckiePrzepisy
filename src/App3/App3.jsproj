@@ -162,6 +162,8 @@
     <Content Include="js\SQLite3.js" />
     <Content Include="packages.config" />
     <Content Include="pages\search\search.html" />
+    <Content Include="pages\search\search.js" />
+    <Content Include="pages\search\searchFailed.html" />
     <Content Include="SQLite.cs" />
     <Content Include="SQLiteAsync.cs" />
     <None Include="App3_TemporaryKey.pfx" />
