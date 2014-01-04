@@ -75,7 +75,7 @@
                                         <h6 style="visibility:hidden;" data-win-bind="innerText: id"></h6>
                             </div>
                             </div>
-                            <div id="listaSkladnikow" data-win-control="WinJS.UI.ListView" data-win-options="{label:'Lista skladników', type:'button', tooltip:'Tutaj znajduja sie skladniki dodane do przepisu', itemTemplate: select('#ingTemplate')}">></div>
+                            <div id="listaSkladnikow" data-win-control="WinJS.UI.ListView" data-win-options="{label:'Lista skladników', type:'button', tooltip:'Tutaj znajduja sie skladniki dodane do przepisu', itemTemplate: select('#ingTemplate'),layout : {type: WinJS.UI.ListLayout}}">></div>
                         </div>
                         <div style="padding: 3px; ">
                             <button id="removeSkladnikbtn" data-win-control="WinJS.UI.AppBarCommand" data-win-options="{icon:'remove', label:'Usun skladnik', type:'button', tooltip:'Usuń skladnik dla potrawy'}"></button>
