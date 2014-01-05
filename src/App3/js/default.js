@@ -57,8 +57,8 @@
             for (var i = 0; i < array.length; i++)
                 console.log(array[i]);
         })*/
-        //default_insert();
-        removePrzepis("Pig Steak");
+        default_insert();
+        //removePrzepis("Pig Steak");
     }
 
 
