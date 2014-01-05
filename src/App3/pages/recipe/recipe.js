@@ -35,7 +35,9 @@
             //skladniki:
             var container = "<ul>";
             for (var i = 5; i < options.length ; i++) {
-                if( options[i][1] == null || options[i][1] == 0 )
+                if( ( options[i][1] == null || options[i][1] == 0 ) && ( options[i][2] == null || options[i][2] == 0 ) )
+                    container += "<li>" + options[i][0] + "</li>";
+                else if( options[i][1] == null || options[i][1] == 0 )
                     container += "<li>" + options[i][0] + " - " + options[i][2] + "</li>";
                 else
                     container += "<li>" + options[i][0] + " - " + options[i][1] + " " + options[i][2] + "</li>";
