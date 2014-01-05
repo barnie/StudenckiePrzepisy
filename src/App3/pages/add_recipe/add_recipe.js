@@ -20,10 +20,12 @@
             openPicker.pickMultipleFilesAsync().then(function (files) {
                 if (files) {
                     fileObj = files;
-                    var imageBlob = URL.createObjectURL(files[0]);
-                    document.getElementById("imgHolder").src = imageBlob;
-                    document.getElementById("imgHolder").alt = files[0].path;
-                    URL.revokeObjectURL(imageBlob);
+                    if (files.length > 0) {
+                        var imageBlob = URL.createObjectURL(files[0]);
+                        document.getElementById("imgHolder").src = imageBlob;
+                        document.getElementById("imgHolder").alt = files[0].path;
+                        URL.revokeObjectURL(imageBlob);
+                    }
                 }
             });
         },
@@ -44,7 +46,7 @@
             var opis = obj3.value;
             var fileName = "";
  
-            if (fileObj != undefined) {
+            if (fileObj != undefined && fileObj.length>0) {
                 var dataPackage = new Windows.ApplicationModel.DataTransfer.DataPackage();
                 dataPackage.setStorageItems(fileObj);
                 dataPackage.requestedOperation = Windows.ApplicationModel.DataTransfer.DataPackageOperation.copy;
@@ -73,7 +75,7 @@
                 }
             });
 
-            if (nazwa != undefined && opis != undefined && fileObj != undefined && categoryid != undefined) {
+            if (nazwa != undefined && opis != undefined && fileObj != undefined && categoryid != undefined && skladniki.length>0) {
                 addPrzepis(categoryid, nazwa, opis, fileName, skladniki);
                 WinJS.Navigation.navigate("/pages/add_recipe/add_recipe_succes.html");
             }
