@@ -33,7 +33,7 @@
                     border-radius: 1px;
                     float: left;
                     display: block;
-
+                    cursor: pointer;
                 }
 
 body .Menu {
