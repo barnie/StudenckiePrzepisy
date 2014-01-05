@@ -28,38 +28,43 @@
             });
         },
         SaveRecipe: function () {
+            
             var obj = document.getElementById("listaKategorii").winControl;
-            var categoryid = 0;
+            var categoryid;
             obj.selection.getItems().done(function (items) {
-                var item = items[0];
-                categoryid = item.data.id;
+                if (items.length > 0) {
+                    var item = items[0];
+                    categoryid = item.data.id;
+                }
             });
-            obj = document.getElementById("repiceName");
-            var nazwa = obj.value;
-            obj = document.getElementById("repiceGuide");
-            var opis = obj.value;
-            var fileName = "";
 
-            var dataPackage = new Windows.ApplicationModel.DataTransfer.DataPackage();
-            dataPackage.setStorageItems(fileObj);
-            dataPackage.requestedOperation = Windows.ApplicationModel.DataTransfer.DataPackageOperation.copy;
-            Windows.ApplicationModel.DataTransfer.Clipboard.setContent(dataPackage);
-            var dataPackageView = Windows.ApplicationModel.DataTransfer.Clipboard.getContent();
-            if (dataPackageView.contains(Windows.ApplicationModel.DataTransfer.StandardDataFormats.storageItems))
-            {
-                dataPackageView.getStorageItemsAsync().done(function (storageItems) {
-                    var item = storageItems[0];
-                    if (item.isOfType(Windows.Storage.StorageItemTypes.file)) {
-                        item.copyAsync(Windows.Storage.ApplicationData.current.localFolder, item.name);
-                        fileName = item.name;
-                    }
-                });
+            var obj2 = document.getElementById("repiceName");
+            var nazwa = obj2.value;
+            var obj3 = document.getElementById("repiceGuide");
+            var opis = obj3.value;
+            var fileName = "";
+ 
+            if (fileObj != undefined) {
+                var dataPackage = new Windows.ApplicationModel.DataTransfer.DataPackage();
+                dataPackage.setStorageItems(fileObj);
+                dataPackage.requestedOperation = Windows.ApplicationModel.DataTransfer.DataPackageOperation.copy;
+                Windows.ApplicationModel.DataTransfer.Clipboard.setContent(dataPackage);
+                var dataPackageView = Windows.ApplicationModel.DataTransfer.Clipboard.getContent();
+                if (dataPackageView.contains(Windows.ApplicationModel.DataTransfer.StandardDataFormats.storageItems)) {
+                    dataPackageView.getStorageItemsAsync().done(function (storageItems) {
+                        var item = storageItems[0];
+                        if (item.isOfType(Windows.Storage.StorageItemTypes.file)) {
+                            item.copyAsync(Windows.Storage.ApplicationData.current.localFolder, item.name);
+                            fileName = item.name;
+                        }
+                    });
+                }
             }
             var skladniki = new Array();
 
-            var obj = document.getElementById("listaSkladnikow").winControl;
-            obj.selection.selectAll();
-            obj.selection.getItems().done(function (items) {
+            var obj4 = document.getElementById("listaSkladnikow").winControl;
+            obj4.selection.selectAll();
+            obj4.selection.getItems().done(function (items) {
                 for (var i = 0; i < items.length; i++) {
                     skladniki[i] = new Array();
                     skladniki[i][0] = items[i].data.id;
@@ -68,8 +73,14 @@
                 }
             });
 
-            addPrzepis(categoryid, nazwa, opis, fileName, skladniki);
-            WinJS.Navigation.navigate("/pages/add_recipe/add_recipe_succes.html");
+            if (nazwa != undefined && opis != undefined && fileObj != undefined && categoryid != undefined) {
+                addPrzepis(categoryid, nazwa, opis, fileName, skladniki);
+                WinJS.Navigation.navigate("/pages/add_recipe/add_recipe_succes.html");
+            }
+            else
+            {
+                Windows.UI.Popups.MessageDialog("Uzupełnij formularz").showAsync();
+            }
         },
         DeleteIng: function ()
         {
