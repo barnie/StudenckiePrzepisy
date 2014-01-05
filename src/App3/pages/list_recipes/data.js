@@ -1,10 +1,11 @@
-﻿(function () {
+﻿function loadRecipiesList( array ) {
     "use strict";
 
     var myData = [];
-    for (var i = 0 ; i < MyGlobals.recipies.length ; i++) {
-        myData[i] = { title: MyGlobals.recipies[i][1] };
+    for (var i = 0 ; i < array.length ; i++) {
+        myData[i] = { title: array[i][1] };
     }
+
     // Create a WinJS.Binding.List from the array. 
     var itemsList = new WinJS.Binding.List(myData);
 
@@ -37,6 +38,7 @@
 
 
 
-})();
+}
+
 
 

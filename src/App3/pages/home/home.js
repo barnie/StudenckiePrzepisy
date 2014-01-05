@@ -60,8 +60,8 @@
             var array = [];
 
             getPrzepisy(array).then(function () {
-                MyGlobals.recipies = array;
-                WinJS.Navigation.navigate(link.href);
+                loadRecipiesList(array); //ladujemy liste przepisow
+                WinJS.Navigation.navigate(link.href, array);
             })
 
         }
