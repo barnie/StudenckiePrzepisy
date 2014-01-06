@@ -9,6 +9,18 @@
         ready: function (element, options) {
             // TODO: Initialize the page here.
             //options to przekazany parametr ze strony wywolujacej (parenta)
+            
+            //usuwanie przepisu
+            function delRec() {
+                removePrzepis(options[2]);
+                WinJS.Navigation.navigate("/pages/delete/delete_confirm.html"); //strona z potwierdzeniem usuniecia
+                       
+            }
+            var deleteRecipe = document.getElementById("buttonDel");
+            deleteRecipe.addEventListener("click", delRec, false);
+            document.getElementById("buttonDel").style.display = "inline";
+            //koniec ustawiania usuwania
+
             document.getElementById("category").innerHTML = options[1];
             console.log("option[1]=" + options);
             document.getElementById("name").innerHTML = options[2];
@@ -48,6 +60,7 @@
 
         unload: function () {
             // TODO: Respond to navigations away from this page.
+            document.getElementById("buttonDel").style.display = "none";
         },
 
         updateLayout: function (element, viewState, lastViewState) {

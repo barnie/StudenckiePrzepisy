@@ -79,3 +79,6 @@ body {
     color: black;
     border-color: black;
 }
+#buttonDel{
+    display:none;
+}
