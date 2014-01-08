@@ -3,6 +3,7 @@
 <head>
     <title>Dodaj przepis</title>
     <link href="//Microsoft.WinJS.2.0/css/ui-light.css" rel="stylesheet" />
+    <link href="/pages/add_recipe/add_recipe.css" rel="stylesheet" />
     <script src="//Microsoft.WinJS.2.0/js/base.js"></script>
     <script src="//Microsoft.WinJS.2.0/js/ui.js"></script>
     <script src="/pages/add_recipe/datafeed.js"></script>
@@ -32,9 +33,9 @@
                 <tr style="padding: 3px; ">
                     <td>
                         <div style="padding: 3px; ">
-                            <label>Obraz dania</label>
+                            <div id="text"><label>Obraz dania</label></div>
                             <div id="imgToAdd">
-                                <img id="imgHolder" src="/images/logo.png" style="max-height:800px; max-width:480px;" alt="/images/logo.png" />
+                                <img class="center" id="imgHolder" src="/images/logo.png" style="max-height:800px; max-width:480px;" alt="/images/logo.png" />
                             </div>
                         </div>
                         <div style=" padding: 3px; ">
@@ -57,13 +58,14 @@
                     </td>
                     <td>
                         <div style="padding: 3px; ">
-                            <label>Nazwa Przepisu</label>
+                            <div id="fieldtext"><label id="fieldtext">Nazwa Przepisu</label></div>
                             <input id="repiceName" type="text" />
                         </div>
                         <div style="padding: 3px; ">
-                            <label>Receptura</label>
-                            <textarea id="repiceGuide"></textarea>
-                        </div>
+                            <div id="fieldtext">
+                                <label>Receptura</label></div>
+                                <textarea id="repiceGuide"></textarea>
+                            </div>
                     </td>
                     <td>
                         <div style="padding: 3px; ">
@@ -92,13 +94,15 @@
                             <div id="mozliweSkladniki" data-win-control="WinJS.UI.ListView" data-win-options="{itemDataSource : DataExample.ingList.dataSource, itemTemplate: select('#ingridientTemplate'), selectionMode: 'single',layout : {type: WinJS.UI.ListLayout}}"></div>
                         </div>
                         <div style="padding: 3px; ">
-                            <label>Jednostka wybranego składnika</label>
-                            <input type="text" id="jednostka" />
-                        </div>
+                            <div id="fieldtext">
+                                <label>Jednostka wybranego składnika</label></div>
+                                <input type="text" id="jednostka" />
+                            </div>
                         <div style="padding: 3px; ">
-                            <label>Ilość wybranego składnika</label>
-                            <input type="number" id="skladnikAmount" />
-                        </div>
+                            <div id="fieldtext">
+                                <label>Ilość wybranego składnika</label></div>
+                                <input type="number" id="skladnikAmount" />
+                            </div>
                         <div style="padding: 3px; ">
                             <button id="addSkladnikbtn" data-win-control="WinJS.UI.AppBarCommand" data-win-options="{icon:'add', label:'Dodaj skladnik', type:'button', tooltip:'Dodaj skladnik dla potrawy'}"></button>
                         </div>
