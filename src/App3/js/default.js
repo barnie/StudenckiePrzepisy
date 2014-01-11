@@ -57,8 +57,17 @@
             for (var i = 0; i < array.length; i++)
                 console.log(array[i]);
         })*/
-        default_insert();
+        //default_insert();
         //removePrzepis("Pig Steak");
+        var kategorie = [];
+        kategorie[0] = 1;
+        kategorie[1] = 2;
+        kategorie[2] = 6;
+        var skladniki = [];
+        skladniki[0] = 1;
+        skladniki[1] = 4;
+        var array = [];
+        findPrzepis(kategorie, skladniki, array);
     }
 
 

@@ -136,7 +136,6 @@
     <Content Include="js\navigator.js" />
     <Content Include="js\ParseHelper.js" />
     <Content Include="js\SearchHelper.js" />
-    <Content Include="pages\add_recipe\add_recipe.css" />
     <Content Include="pages\add_recipe\add_recipe.html" />
     <Content Include="pages\add_recipe\add_recipe.js" />
     <Content Include="pages\add_recipe\add_recipe_succes.html" />
