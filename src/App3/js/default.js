@@ -64,7 +64,7 @@
         kategorie[1] = 2;
         kategorie[2] = 6;
         var skladniki = [];
-        skladniki[0] = 1;
+        skladniki[0] = 3;
         skladniki[1] = 4;
         var array = [];
         findPrzepis(kategorie, skladniki, array);

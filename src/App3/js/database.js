@@ -454,19 +454,19 @@ function findPrzepis(kategorie,skladniki,array) {
     var i = 0;
     return SQLite3JS.openAsync(dbPath)
               .then(function (db) {
-                  query = " SELECT p.id, p.id_kategorii, p.nazwa AS pnazwa, s.nazwa FROM Przepis p, Przepis_skladnik ps, Skladnik s WHERE ps.id_skladnik =  ";
+                  QUERY = " SELECT Przepis_Skladnik.id_przepis, Przepis_Skladnik.id_skladnik ,Przepis.nazwa FROM przepis_Skladnik INNER JOIN przepis ON Przepis_Skladnik.id_przepis =  przepis.id WHERE Przepis_Skladnik.id_Skladnik =  ";
                   var j = 0;
                   for (j = 0; j < skladniki.length - 1 ; j++) {
-                      query += skladniki[j] + " OR ps.id_skladnik = ";
+                      QUERY += skladniki[j] + " OR Przepis_Skladnik.id_Skladnik = ";
                   }
-                  query += skladniki[j] + " GROUP BY p.nazwa, p.id_kategorii ORDER BY p.id; ";
-                  console.log(query);
-                  return db.eachAsync(query, function (row) {
-                      console.log('#' + row.pnazwa + '#')
+                  QUERY += skladniki[j] + " GROUP BY Przepis_Skladnik.id_przepis HAVING COUNT(*) > 1; ";
+                  console.log(QUERY);
+                  return db.eachAsync(QUERY, function (row) {
+                      console.log('#' + row.nazwa + '#')
                       array[i] = new Array();
-                      array[i][0] = row.id;
-                      array[i][1] = row.pnazwa;
-                      array[i][2] = row.nazwa;
+                      array[i][0] = row.id_przepis;
+                      array[i][1] = row.nazwa;
+                      array[i][2] = row.id_skladnik;
                       i++;
                   });
               }, function (error) {
