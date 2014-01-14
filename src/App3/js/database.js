@@ -449,3 +449,36 @@ function removePrzepis(nazwa) {
     });
 }
 
+function findPrzepis(kategorie,skladniki,array) {
+    var dbPath = Windows.Storage.ApplicationData.current.localFolder.path + '\\przepisy_db.sqlite';
+    var i = 0;
+    return SQLite3JS.openAsync(dbPath)
+              .then(function (db) {
+                  query = " SELECT p.id, p.id_kategorii, p.nazwa AS pnazwa, s.nazwa FROM Przepis p, Przepis_skladnik ps, Skladnik s WHERE ps.id_skladnik =  ";
+                  var j = 0;
+                  for (j = 0; j < skladniki.length - 1 ; j++) {
+                      query += skladniki[j] + " OR ps.id_skladnik = ";
+                  }
+                  query += skladniki[j] + " GROUP BY p.nazwa, p.id_kategorii ORDER BY p.id; ";
+                  console.log(query);
+                  return db.eachAsync(query, function (row) {
+                      console.log('#' + row.pnazwa + '#')
+                      array[i] = new Array();
+                      array[i][0] = row.id;
+                      array[i][1] = row.pnazwa;
+                      array[i][2] = row.nazwa;
+                      i++;
+                  });
+              }, function (error) {
+                  if (db) {
+                      db.close();
+                  }
+                  console.log('ERROR Select  po nazwie ' + error.message);
+              })
+             .then(function (db) {
+                 console.log('close the db');
+                 db.close();
+             }).then(function () {
+                 return array;
+             });
+}
