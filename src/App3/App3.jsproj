@@ -114,6 +114,7 @@
     <Content Include="images\food_wallpaper3.jpg" />
     <Content Include="images\Green-1024x768.jpg" />
     <Content Include="images\grzyby.jpg" />
+    <Content Include="images\loading.gif" />
     <Content Include="images\miecho.jpg" />
     <Content Include="images\nabial.jpg" />
     <Content Include="images\napoj.jpg" />
