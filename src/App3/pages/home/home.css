@@ -5,25 +5,25 @@
 
 }
 
-    body .Gallery {
+    body #Gallery {
         height: 100%;
         width: 70%;
         margin-left:20%;
     }
 
-        body .Gallery ul {
+        body #Gallery ul {
             height:40%;
             list-style: none;
             display:inline-block;
         }
 
-            body .Gallery ul li {
+            body #Gallery ul li {
                 height: 100%;
                 width: 100%;
                 display: inline;
             }
 
-                body .Gallery ul li  img {
+                body #Gallery ul li  img {
                     height: 90%;
                     width: 90%;
                     margin-right: 1%;
