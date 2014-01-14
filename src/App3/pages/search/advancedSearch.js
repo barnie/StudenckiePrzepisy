@@ -91,9 +91,8 @@
             }
         });
 
-        funkcja(categories,ingridines,myArray).then(function () {
- 
-                tempArray = new Array();
+        findPrzepis(categories, ingridines, myArray).then(function () {
+                var tempArray = new Array();
                 var j = 0;
                 for (var i = 0; i < myArray.length; i++)
                 {

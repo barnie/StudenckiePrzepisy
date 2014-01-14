@@ -39,8 +39,6 @@
                         <div id="searchBoxId" data-win-control="WinJS.UI.SearchBox" style="margin:auto;"></div>
                     </div>
                 </td>
-            </tr>
-            <tr>
                 <td>
                     <div style="text-align:center;">
                         <div id="categoryTemplate" data-win-control="WinJS.Binding.Template">
@@ -53,21 +51,19 @@
                                 </div>
                             </div>
                         </div>
-                        <div style="padding: 3px; " id="listaKategorii" data-win-control="WinJS.UI.ListView" data-win-options="{itemDataSource : DataExample.catList.dataSource, itemTemplate: select('#categoryTemplate'), layout: { orientation: WinJS.UI.Orientation.horizontal} }"></div>
+                        <div style="padding: 3px; " id="listaKategorii" data-win-control="WinJS.UI.ListView" data-win-options="{itemDataSource : DataExample.catList.dataSource, itemTemplate: select('#categoryTemplate'), layout: {type: WinJS.UI.ListLayout, orientation: WinJS.UI.Orientation.vertical} }"></div>
                     </div>
                 </td>
-            </tr>
-            <tr>
                 <td>
                     <div style="text-align:center;">
                         <div id="ingridientTemplate" data-win-control="WinJS.Binding.Template">
-                            <div style="padding:5px; margin:5px; width:50px; height:50px;">
+                            <div style="padding:5px; margin:5px; width:30px; height:30px;">
                                 <h6 data-win-bind="innerText: name"></h6>
                                 <h6 style="visibility:hidden;" data-win-bind="innerText: id"></h6>
                             </div>
                         </div>
                         <div style="padding: 3px; ">
-                            <div id="mozliweSkladniki" data-win-control="WinJS.UI.ListView" data-win-options="{itemDataSource : DataExample.ingList.dataSource, itemTemplate: select('#ingridientTemplate'),layout : { orientation: WinJS.UI.Orientation.horizontal}}"></div>
+                            <div id="mozliweSkladniki" data-win-control="WinJS.UI.ListView" data-win-options="{itemDataSource : DataExample.ingList.dataSource, itemTemplate: select('#ingridientTemplate'),layout : {type: WinJS.UI.ListLayout, orientation: WinJS.UI.Orientation.vertical}}"></div>
                         </div>
                     </div>
                 </td>
