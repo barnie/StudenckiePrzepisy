@@ -137,7 +137,6 @@
     <Content Include="js\navigator.js" />
     <Content Include="js\ParseHelper.js" />
     <Content Include="js\SearchHelper.js" />
-    <Content Include="pages\add_recipe\add_recipe.css" />
     <Content Include="pages\add_recipe\add_recipe.html" />
     <Content Include="pages\add_recipe\add_recipe.js" />
     <Content Include="pages\add_recipe\add_recipe_succes.html" />
@@ -170,6 +169,8 @@
     <Content Include="css\default.css" />
     <Content Include="js\SQLite3.js" />
     <Content Include="packages.config" />
+    <Content Include="pages\search\advancedSearch.html" />
+    <Content Include="pages\search\advancedSearch.js" />
     <Content Include="pages\search\search.html" />
     <Content Include="pages\search\search.js" />
     <Content Include="pages\search\searchFailed.html" />
