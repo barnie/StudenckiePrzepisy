@@ -1,0 +1,2 @@
+C:\GIT\src\App3\bin\x86\Release\MicrosoftAdvertising.winmd
+C:\GIT\src\App3\bin\x86\Release\SQLite3.winmd

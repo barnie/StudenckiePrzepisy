@@ -1,0 +1,52 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <title></title>
+    <!-- Importy Windowsowe-->
+    <link href="//Microsoft.WinJS.2.0/css/ui-light.css" rel="stylesheet" />
+    <script src="//Microsoft.WinJS.2.0/js/base.js"></script>
+    <script src="//Microsoft.WinJS.2.0/js/ui.js"></script>
+
+    <!-- Nasze Importy, kolejnosc wazna!!-->
+    <style>
+        #contentHolder {
+            height: 100%;
+            margin: 1%;
+            display: -ms-flexbox;
+            -ms-flex-direction: row;
+            overflow: auto;
+            overflow-x: hidden;
+        }
+    </style>
+    <script src="/js/jquery-2.0.3.min.js"></script>
+    <script src="/js/LayoutContainer.js"></script>
+    <script src="/Example/BindingPicturesExample.js"></script>
+</head>
+<body>
+    <div id="contentHolder">
+        <div class="button_container">
+            <header aria-label="Header content" role="banner">
+                <button class="win-backbutton" aria-label="Back" disabled type="button"></button>
+            </header>
+        </div>
+
+        <div id="myDiv" style="margin:auto">
+            <!-- tutaj wyladuje tabela-->
+        </div>
+
+        <div data-win-control="WinJS.UI.AppBar" aria-label="Navigation Bar"
+             data-win-options="{layout:'custom',placement:'bottom'}" , class="bottomMenu">
+            <header aria-label="Navigation bar" role="banner">
+                <div class="left">
+                    <button data-win-control="WinJS.UI.AppBarCommand" data-win-options="{icon:'home', label:'Home', onclick:null, type:'button', tooltip:'Powrót do głownego ekranu'}"></button>
+                </div>
+                <div class="right">
+                    <button data-win-control="WinJS.UI.AppBarCommand" data-win-options="{icon:'bullets', label:'Zaznacz posiadane składniki', type:'button', tooltip:'Powiem ci co możesz zjeść'}"></button>
+                    <button data-win-control="WinJS.UI.AppBarCommand" data-win-options="{icon:'find', label:'Wyszukiwanie proste', type:'button', tooltip:'Wpisz nazę bądź fragment'}"></button>
+                    <button data-win-control="WinJS.UI.AppBarCommand" data-win-options="{icon:'find', label:'Wyszukiwanie zaawansowane', type:'button', tooltip:'Szukamy po nazwie, typie, składnikach'}"></button>
+                </div>
+            </header>
+        </div>
+    </div>
+</body>
+</html>

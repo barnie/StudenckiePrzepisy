@@ -54,7 +54,7 @@
                                     </div>
                                 </div>
                             </div>
-                            <div style="padding: 3px; " id="listaKategorii" data-win-control="WinJS.UI.ListView" data-win-options="{itemDataSource : DataExample.catList.dataSource, itemTemplate: select('#categoryTemplate'), selectionMode: 'single', layout: {type: WinJS.UI.ListLayout} }"></div>
+                            <div class="category" style="padding: 3px; " id="listaKategorii" data-win-control="WinJS.UI.ListView" data-win-options="{itemDataSource : DataExample.catList.dataSource, itemTemplate: select('#categoryTemplate'), selectionMode: 'single', layout: {type: WinJS.UI.ListLayout} }"></div>
                     </td>
                     <td>
                         <div style="padding: 3px; ">
@@ -79,7 +79,7 @@
                             </div>
                             <div id="listaSkladnikow" data-win-control="WinJS.UI.ListView" data-win-options="{label:'Lista skladników', type:'button', tooltip:'Tutaj znajduja sie skladniki dodane do przepisu', itemTemplate: select('#ingTemplate'),layout : {type: WinJS.UI.ListLayout}}">></div>
                         </div>
-                        <div style="padding: 3px; ">
+                        <div style="padding: 3px; " class="bottomButtonDel">
                             <button id="removeSkladnikbtn" data-win-control="WinJS.UI.AppBarCommand" data-win-options="{icon:'remove', label:'Usun skladnik', type:'button', tooltip:'Usuń skladnik dla potrawy'}"></button>
                         </div>
                     </td>
@@ -90,9 +90,9 @@
                                 <h6 style="visibility:hidden;" data-win-bind="innerText: id"></h6>
                             </div>
                         </div>
-                        <div style="padding: 3px; ">
+                        <div class="box1">
                             <div id="mozliweSkladniki" data-win-control="WinJS.UI.ListView" data-win-options="{itemDataSource : DataExample.ingList.dataSource, itemTemplate: select('#ingridientTemplate'), selectionMode: 'single',layout : {type: WinJS.UI.ListLayout}}"></div>
-                        </div>
+                        
                         <div style="padding: 3px; ">
                             <div id="fieldtext">
                                 <label>Jednostka wybranego składnika</label></div>
@@ -102,8 +102,8 @@
                             <div id="fieldtext">
                                 <label>Ilość wybranego składnika</label></div>
                                 <input type="number" id="skladnikAmount" />
-                            </div>
-                        <div style="padding: 3px; ">
+                            </div></div>
+                        <div style="padding: 3px; " class="bottomButtonAdd">
                             <button id="addSkladnikbtn" data-win-control="WinJS.UI.AppBarCommand" data-win-options="{icon:'add', label:'Dodaj skladnik', type:'button', tooltip:'Dodaj skladnik dla potrawy'}"></button>
                         </div>
                     </td>

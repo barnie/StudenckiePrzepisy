@@ -1,0 +1,610 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Machine>ACERASPIRE</Machine>
+    <WindowsUser>Bartosz</WindowsUser>
+    <SolutionConfiguration>Debug|x86</SolutionConfiguration>
+    <PackageArchitecture>x86</PackageArchitecture>
+    <PackageIdentityName>7cbc57f9-d6bb-4fc5-8ce0-d0c51fa32295</PackageIdentityName>
+    <RegisteredManifestChecksum>85FF35EFC65418756450E94E611218B9491D049F15E17EF064C7F1D33F7E51E4</RegisteredManifestChecksum>
+    <RegisteredPackageMoniker>7cbc57f9-d6bb-4fc5-8ce0-d0c51fa32295_1.1.0.0_x86__1b32gpn6wq9vm</RegisteredPackageMoniker>
+    <RegisteredUserModeAppID>7cbc57f9-d6bb-4fc5-8ce0-d0c51fa32295_1b32gpn6wq9vm!App</RegisteredUserModeAppID>
+    <RegisteredPackageID>7cbc57f9-d6bb-4fc5-8ce0-d0c51fa32295</RegisteredPackageID>
+    <RegisteredPackagePublisher>CN=Piotr Kruk</RegisteredPackagePublisher>
+    <RegisteredVersion>1.1.0.0</RegisteredVersion>
+  </PropertyGroup>
+  <ItemGroup>
+    <AppXManifest Include="C:\GIT\src\App3\bin\x86\Debug\AppxManifest.xml">
+      <PackagePath>AppxManifest.xml</PackagePath>
+      <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
+      <Modified>2014-01-20T22:07:37.874</Modified>
+    </AppXManifest>
+  </ItemGroup>
+  <ItemGroup>
+    <AppxPackagedFile Include="C:\Program Files %28x86%29\Microsoft SDKs\Windows\v8.1\ExtensionSDKs\MSAdvertisingJS\8.1\References\CommonConfiguration\neutral\MicrosoftAdvertising.winmd">
+      <PackagePath>MicrosoftAdvertising.winmd</PackagePath>
+      <Modified>2013-09-13T10:42:48.000</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\GIT\src\App3\Debug\SQLite3Component\SQLite3.winmd">
+      <PackagePath>SQLite3.winmd</PackagePath>
+      <Modified>2014-01-06T12:34:19.317</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\GIT\src\App3\Debug\SQLite3Component\SQLite3Component.dll">
+      <PackagePath>SQLite3Component.dll</PackagePath>
+      <Modified>2014-01-06T12:34:20.097</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Program Files %28x86%29\Microsoft SDKs\Windows\v8.1\ExtensionSDKs\MSAdvertisingJS\8.1\Redist\debug\neutral\MSAdvertisingJS\ads\ad.js">
+      <PackagePath>MSAdvertisingJS\ads\ad.js</PackagePath>
+      <Modified>2013-09-13T10:46:18.000</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Program Files %28x86%29\Microsoft SDKs\Windows\v8.1\ExtensionSDKs\MSAdvertisingJS\8.1\Redist\CommonConfiguration\neutral\MSAdvertisingJS\ads\bootstrap.js">
+      <PackagePath>MSAdvertisingJS\ads\bootstrap.js</PackagePath>
+      <Modified>2013-09-13T10:46:04.000</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Program Files %28x86%29\Microsoft SDKs\Windows\v8.1\ExtensionSDKs\MSAdvertisingJS\8.1\Redist\CommonConfiguration\neutral\MSAdvertisingJS\ads\ormma.js">
+      <PackagePath>MSAdvertisingJS\ads\ormma.js</PackagePath>
+      <Modified>2013-09-13T10:46:04.000</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Program Files %28x86%29\Microsoft SDKs\Windows\v8.1\ExtensionSDKs\MSAdvertisingJS\8.1\Redist\CommonConfiguration\neutral\MSAdvertisingJS\ads\bootstrap.html">
+      <PackagePath>MSAdvertisingJS\ads\bootstrap.html</PackagePath>
+      <Modified>2013-09-13T10:43:04.000</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Program Files %28x86%29\Microsoft SDKs\Windows\v8.1\ExtensionSDKs\MSAdvertisingJS\8.1\Redist\CommonConfiguration\neutral\MSAdvertisingJS\ads\MSASettingsPanel.html">
+      <PackagePath>MSAdvertisingJS\ads\MSASettingsPanel.html</PackagePath>
+      <Modified>2013-09-13T10:43:14.000</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Program Files %28x86%29\Microsoft SDKs\Windows\v8.1\ExtensionSDKs\MSAdvertisingJS\8.1\Redist\debug\neutral\MSAdvertisingJS\ads\metadata\microsoftnsjs.advertising.adcontrol.icon.12x12.png">
+      <PackagePath>MSAdvertisingJS\ads\metadata\microsoftnsjs.advertising.adcontrol.icon.12x12.png</PackagePath>
+      <Modified>2013-09-13T10:43:04.000</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Program Files %28x86%29\Microsoft SDKs\Windows\v8.1\ExtensionSDKs\MSAdvertisingJS\8.1\Redist\debug\neutral\MSAdvertisingJS\ads\metadata\microsoftnsjs.advertising.adcontrol.icon.16x16.png">
+      <PackagePath>MSAdvertisingJS\ads\metadata\microsoftnsjs.advertising.adcontrol.icon.16x16.png</PackagePath>
+      <Modified>2013-09-13T10:43:04.000</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Program Files %28x86%29\Microsoft SDKs\Windows\v8.1\ExtensionSDKs\MSAdvertisingJS\8.1\Redist\debug\neutral\MSAdvertisingJS\ads\metadata\microsoftnsjs.advertising.adcontrol_oam.xml">
+      <PackagePath>MSAdvertisingJS\ads\metadata\microsoftnsjs.advertising.adcontrol_oam.xml</PackagePath>
+      <Modified>2013-09-13T10:43:04.000</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Program Files %28x86%29\Microsoft SDKs\Windows\v8.1\ExtensionSDKs\SQLite.WinRT81\3.8.2\Redist\Debug\x86\sqlite3.dll">
+      <PackagePath>sqlite3.dll</PackagePath>
+      <Modified>2013-12-26T16:41:30.949</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\GIT\src\App3\Example\BindingPicturesExample.html">
+      <PackagePath>Example\BindingPicturesExample.html</PackagePath>
+      <Modified>2014-01-06T12:18:02.544</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\GIT\src\App3\pages\add_recipe\add_recipe.html">
+      <PackagePath>pages\add_recipe\add_recipe.html</PackagePath>
+      <Modified>2014-01-20T22:50:08.558</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\GIT\src\App3\pages\add_recipe\add_recipe_succes.html">
+      <PackagePath>pages\add_recipe\add_recipe_succes.html</PackagePath>
+      <Modified>2014-01-20T21:48:15.371</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\GIT\src\App3\pages\categories\categories.html">
+      <PackagePath>pages\categories\categories.html</PackagePath>
+      <Modified>2014-01-06T12:18:02.810</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\GIT\src\App3\pages\delete\delete_confirm.html">
+      <PackagePath>pages\delete\delete_confirm.html</PackagePath>
+      <Modified>2014-01-08T20:38:19.389</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\GIT\src\App3\pages\home\home.html">
+      <PackagePath>pages\home\home.html</PackagePath>
+      <Modified>2014-01-20T21:48:15.392</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\GIT\src\App3\pages\list_recipes\list_recipes.html">
+      <PackagePath>pages\list_recipes\list_recipes.html</PackagePath>
+      <Modified>2014-01-20T21:48:15.411</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\GIT\src\App3\pages\recipe\recipe.html">
+      <PackagePath>pages\recipe\recipe.html</PackagePath>
+      <Modified>2014-01-08T20:38:19.404</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\GIT\src\App3\default.html">
+      <PackagePath>default.html</PackagePath>
+      <Modified>2014-01-20T21:48:15.308</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\GIT\src\App3\pages\search\advancedSearch.html">
+      <PackagePath>pages\search\advancedSearch.html</PackagePath>
+      <Modified>2014-01-20T21:48:15.444</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\GIT\src\App3\pages\search\search.html">
+      <PackagePath>pages\search\search.html</PackagePath>
+      <Modified>2014-01-20T21:48:15.454</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\GIT\src\App3\pages\search\searchFailed.html">
+      <PackagePath>pages\search\searchFailed.html</PackagePath>
+      <Modified>2014-01-20T21:48:15.483</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\GIT\src\App3\Example\BindingPicturesExample.js">
+      <PackagePath>Example\BindingPicturesExample.js</PackagePath>
+      <Modified>2014-01-06T12:18:02.544</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\GIT\src\App3\js\default_inserts.js">
+      <PackagePath>js\default_inserts.js</PackagePath>
+      <Modified>2014-01-06T12:18:02.778</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\GIT\src\App3\js\jquery-2.0.3.min.js">
+      <PackagePath>js\jquery-2.0.3.min.js</PackagePath>
+      <Modified>2014-01-06T12:18:02.778</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\GIT\src\App3\js\LayoutContainer.js">
+      <PackagePath>js\LayoutContainer.js</PackagePath>
+      <Modified>2014-01-06T12:18:02.763</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\GIT\src\App3\js\navigator.js">
+      <PackagePath>js\navigator.js</PackagePath>
+      <Modified>2013-12-21T08:45:39.630</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\GIT\src\App3\js\ParseHelper.js">
+      <PackagePath>js\ParseHelper.js</PackagePath>
+      <Modified>2014-01-06T12:18:02.763</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\GIT\src\App3\js\SearchHelper.js">
+      <PackagePath>js\SearchHelper.js</PackagePath>
+      <Modified>2013-12-26T10:14:16.156</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\GIT\src\App3\pages\add_recipe\add_recipe.js">
+      <PackagePath>pages\add_recipe\add_recipe.js</PackagePath>
+      <Modified>2014-01-06T12:18:02.794</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\GIT\src\App3\pages\add_recipe\datafeed.js">
+      <PackagePath>pages\add_recipe\datafeed.js</PackagePath>
+      <Modified>2014-01-06T12:18:02.794</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\GIT\src\App3\pages\categories\categories.js">
+      <PackagePath>pages\categories\categories.js</PackagePath>
+      <Modified>2014-01-20T21:48:15.378</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\GIT\src\App3\pages\categories\functions.js">
+      <PackagePath>pages\categories\functions.js</PackagePath>
+      <Modified>2014-01-06T12:18:02.810</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\GIT\src\App3\pages\delete\delete_confirm.js">
+      <PackagePath>pages\delete\delete_confirm.js</PackagePath>
+      <Modified>2014-01-08T20:38:19.389</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\GIT\src\App3\pages\home\home.js">
+      <PackagePath>pages\home\home.js</PackagePath>
+      <Modified>2014-01-06T12:18:02.825</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\GIT\src\App3\pages\list_recipes\list_recipes.js">
+      <PackagePath>pages\list_recipes\list_recipes.js</PackagePath>
+      <Modified>2014-01-06T12:18:02.841</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\GIT\src\App3\pages\list_recipes\data.js">
+      <PackagePath>pages\list_recipes\data.js</PackagePath>
+      <Modified>2014-01-20T21:48:15.400</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\GIT\src\App3\pages\recipe\recipe.js">
+      <PackagePath>pages\recipe\recipe.js</PackagePath>
+      <Modified>2014-01-08T20:38:19.404</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\GIT\src\App3\js\database.js">
+      <PackagePath>js\database.js</PackagePath>
+      <Modified>2014-01-20T21:48:15.323</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\GIT\src\App3\js\default.js">
+      <PackagePath>js\default.js</PackagePath>
+      <Modified>2014-01-20T21:48:15.355</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\GIT\src\App3\js\SQLite3.js">
+      <PackagePath>js\SQLite3.js</PackagePath>
+      <Modified>2013-11-25T19:48:01.525</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\GIT\src\App3\pages\search\advancedSearch.js">
+      <PackagePath>pages\search\advancedSearch.js</PackagePath>
+      <Modified>2014-01-20T21:48:15.449</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\GIT\src\App3\pages\search\search.js">
+      <PackagePath>pages\search\search.js</PackagePath>
+      <Modified>2014-01-06T12:18:02.856</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\GIT\src\App3\images\1.jpg">
+      <PackagePath>images\1.jpg</PackagePath>
+      <Modified>2014-01-06T12:18:02.560</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\GIT\src\App3\images\10.jpg">
+      <PackagePath>images\10.jpg</PackagePath>
+      <Modified>2014-01-06T12:18:02.560</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\GIT\src\App3\images\11.jpg">
+      <PackagePath>images\11.jpg</PackagePath>
+      <Modified>2014-01-06T12:18:02.560</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\GIT\src\App3\images\12.jpg">
+      <PackagePath>images\12.jpg</PackagePath>
+      <Modified>2014-01-06T12:18:02.560</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\GIT\src\App3\images\13.jpg">
+      <PackagePath>images\13.jpg</PackagePath>
+      <Modified>2014-01-06T12:18:02.560</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\GIT\src\App3\images\14.jpg">
+      <PackagePath>images\14.jpg</PackagePath>
+      <Modified>2014-01-06T12:18:02.560</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\GIT\src\App3\images\15.jpg">
+      <PackagePath>images\15.jpg</PackagePath>
+      <Modified>2014-01-06T12:18:02.575</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\GIT\src\App3\images\16.jpg">
+      <PackagePath>images\16.jpg</PackagePath>
+      <Modified>2014-01-06T12:18:02.575</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\GIT\src\App3\images\17.jpg">
+      <PackagePath>images\17.jpg</PackagePath>
+      <Modified>2014-01-06T12:18:02.575</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\GIT\src\App3\images\18.jpg">
+      <PackagePath>images\18.jpg</PackagePath>
+      <Modified>2014-01-06T12:18:02.575</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\GIT\src\App3\images\19.jpg">
+      <PackagePath>images\19.jpg</PackagePath>
+      <Modified>2014-01-06T12:18:02.575</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\GIT\src\App3\images\2.jpg">
+      <PackagePath>images\2.jpg</PackagePath>
+      <Modified>2014-01-06T12:18:02.575</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\GIT\src\App3\images\20.jpg">
+      <PackagePath>images\20.jpg</PackagePath>
+      <Modified>2014-01-06T12:18:02.575</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\GIT\src\App3\images\21.jpg">
+      <PackagePath>images\21.jpg</PackagePath>
+      <Modified>2014-01-06T12:18:02.591</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\GIT\src\App3\images\22.jpg">
+      <PackagePath>images\22.jpg</PackagePath>
+      <Modified>2014-01-06T12:18:02.591</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\GIT\src\App3\images\23.jpg">
+      <PackagePath>images\23.jpg</PackagePath>
+      <Modified>2014-01-06T12:18:02.591</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\GIT\src\App3\images\24.jpg">
+      <PackagePath>images\24.jpg</PackagePath>
+      <Modified>2014-01-06T12:18:02.591</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\GIT\src\App3\images\25.jpg">
+      <PackagePath>images\25.jpg</PackagePath>
+      <Modified>2014-01-06T12:18:02.591</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\GIT\src\App3\images\26.jpg">
+      <PackagePath>images\26.jpg</PackagePath>
+      <Modified>2014-01-06T12:18:02.591</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\GIT\src\App3\images\27.jpg">
+      <PackagePath>images\27.jpg</PackagePath>
+      <Modified>2014-01-06T12:18:02.591</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\GIT\src\App3\images\28.jpg">
+      <PackagePath>images\28.jpg</PackagePath>
+      <Modified>2014-01-06T12:18:02.591</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\GIT\src\App3\images\29.jpg">
+      <PackagePath>images\29.jpg</PackagePath>
+      <Modified>2014-01-06T12:18:02.591</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\GIT\src\App3\images\3.jpg">
+      <PackagePath>images\3.jpg</PackagePath>
+      <Modified>2014-01-06T12:18:02.591</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\GIT\src\App3\images\30.jpg">
+      <PackagePath>images\30.jpg</PackagePath>
+      <Modified>2014-01-06T12:18:02.606</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\GIT\src\App3\images\31.jpg">
+      <PackagePath>images\31.jpg</PackagePath>
+      <Modified>2014-01-06T12:18:02.606</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\GIT\src\App3\images\32.jpg">
+      <PackagePath>images\32.jpg</PackagePath>
+      <Modified>2014-01-06T12:18:02.606</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\GIT\src\App3\images\33.jpg">
+      <PackagePath>images\33.jpg</PackagePath>
+      <Modified>2014-01-06T12:18:02.606</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\GIT\src\App3\images\34.jpg">
+      <PackagePath>images\34.jpg</PackagePath>
+      <Modified>2014-01-06T12:18:02.606</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\GIT\src\App3\images\35.jpg">
+      <PackagePath>images\35.jpg</PackagePath>
+      <Modified>2014-01-06T12:18:02.606</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\GIT\src\App3\images\36.jpg">
+      <PackagePath>images\36.jpg</PackagePath>
+      <Modified>2014-01-06T12:18:02.606</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\GIT\src\App3\images\37.jpg">
+      <PackagePath>images\37.jpg</PackagePath>
+      <Modified>2014-01-06T12:18:02.606</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\GIT\src\App3\images\38.jpg">
+      <PackagePath>images\38.jpg</PackagePath>
+      <Modified>2014-01-06T12:18:02.606</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\GIT\src\App3\images\39.jpg">
+      <PackagePath>images\39.jpg</PackagePath>
+      <Modified>2014-01-06T12:18:02.606</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\GIT\src\App3\images\4.jpg">
+      <PackagePath>images\4.jpg</PackagePath>
+      <Modified>2014-01-06T12:18:02.606</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\GIT\src\App3\images\40.jpg">
+      <PackagePath>images\40.jpg</PackagePath>
+      <Modified>2014-01-06T12:18:02.606</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\GIT\src\App3\images\41.jpg">
+      <PackagePath>images\41.jpg</PackagePath>
+      <Modified>2014-01-06T12:18:02.622</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\GIT\src\App3\images\42.jpg">
+      <PackagePath>images\42.jpg</PackagePath>
+      <Modified>2014-01-06T12:18:02.622</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\GIT\src\App3\images\43.jpg">
+      <PackagePath>images\43.jpg</PackagePath>
+      <Modified>2014-01-06T12:18:02.622</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\GIT\src\App3\images\44.jpg">
+      <PackagePath>images\44.jpg</PackagePath>
+      <Modified>2014-01-06T12:18:02.622</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\GIT\src\App3\images\45.jpg">
+      <PackagePath>images\45.jpg</PackagePath>
+      <Modified>2014-01-06T12:18:02.622</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\GIT\src\App3\images\46.jpg">
+      <PackagePath>images\46.jpg</PackagePath>
+      <Modified>2014-01-06T12:18:02.638</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\GIT\src\App3\images\47.jpg">
+      <PackagePath>images\47.jpg</PackagePath>
+      <Modified>2014-01-06T12:18:02.653</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\GIT\src\App3\images\48.jpg">
+      <PackagePath>images\48.jpg</PackagePath>
+      <Modified>2014-01-06T12:18:02.669</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\GIT\src\App3\images\49.jpg">
+      <PackagePath>images\49.jpg</PackagePath>
+      <Modified>2014-01-06T12:18:02.685</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\GIT\src\App3\images\5.jpg">
+      <PackagePath>images\5.jpg</PackagePath>
+      <Modified>2014-01-06T12:18:02.685</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\GIT\src\App3\images\50.jpg">
+      <PackagePath>images\50.jpg</PackagePath>
+      <Modified>2014-01-06T12:18:02.700</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\GIT\src\App3\images\51.jpg">
+      <PackagePath>images\51.jpg</PackagePath>
+      <Modified>2014-01-06T12:18:02.716</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\GIT\src\App3\images\52.jpg">
+      <PackagePath>images\52.jpg</PackagePath>
+      <Modified>2014-01-06T12:18:02.716</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\GIT\src\App3\images\6.jpg">
+      <PackagePath>images\6.jpg</PackagePath>
+      <Modified>2014-01-06T12:18:02.716</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\GIT\src\App3\images\7.jpg">
+      <PackagePath>images\7.jpg</PackagePath>
+      <Modified>2014-01-06T12:18:02.731</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\GIT\src\App3\images\8.jpg">
+      <PackagePath>images\8.jpg</PackagePath>
+      <Modified>2014-01-06T12:18:02.731</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\GIT\src\App3\images\deser.jpg">
+      <PackagePath>images\deser.jpg</PackagePath>
+      <Modified>2014-01-06T12:18:02.731</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\GIT\src\App3\images\food_wallpaper.jpg">
+      <PackagePath>images\food_wallpaper.jpg</PackagePath>
+      <Modified>2013-12-26T10:14:16.124</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\GIT\src\App3\images\food_wallpaper1.jpg">
+      <PackagePath>images\food_wallpaper1.jpg</PackagePath>
+      <Modified>2013-12-26T10:14:16.124</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\GIT\src\App3\images\food_wallpaper2.jpg">
+      <PackagePath>images\food_wallpaper2.jpg</PackagePath>
+      <Modified>2013-12-26T10:14:16.140</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\GIT\src\App3\images\food_wallpaper3.jpg">
+      <PackagePath>images\food_wallpaper3.jpg</PackagePath>
+      <Modified>2013-12-26T10:14:16.140</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\GIT\src\App3\images\Green-1024x768.jpg">
+      <PackagePath>images\Green-1024x768.jpg</PackagePath>
+      <Modified>2013-12-26T10:14:16.093</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\GIT\src\App3\images\grzyby.jpg">
+      <PackagePath>images\grzyby.jpg</PackagePath>
+      <Modified>2014-01-06T12:18:02.731</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\GIT\src\App3\images\miecho.jpg">
+      <PackagePath>images\miecho.jpg</PackagePath>
+      <Modified>2014-01-06T12:18:02.731</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\GIT\src\App3\images\nabial.jpg">
+      <PackagePath>images\nabial.jpg</PackagePath>
+      <Modified>2014-01-06T12:18:02.731</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\GIT\src\App3\images\napoj.jpg">
+      <PackagePath>images\napoj.jpg</PackagePath>
+      <Modified>2014-01-06T12:18:02.731</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\GIT\src\App3\images\owoce.jpg">
+      <PackagePath>images\owoce.jpg</PackagePath>
+      <Modified>2014-01-06T12:18:02.731</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\GIT\src\App3\images\pieczywo.jpg">
+      <PackagePath>images\pieczywo.jpg</PackagePath>
+      <Modified>2014-01-06T12:18:02.731</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\GIT\src\App3\images\Placki z cukini.jpg">
+      <PackagePath>images\Placki z cukini.jpg</PackagePath>
+      <Modified>2013-12-26T10:14:16.109</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\GIT\src\App3\images\pobrane.jpg">
+      <PackagePath>images\pobrane.jpg</PackagePath>
+      <Modified>2014-01-06T12:18:02.731</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\GIT\src\App3\images\przetwory.jpg">
+      <PackagePath>images\przetwory.jpg</PackagePath>
+      <Modified>2014-01-06T12:18:02.747</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\GIT\src\App3\images\red_metro.jpg">
+      <PackagePath>images\red_metro.jpg</PackagePath>
+      <Modified>2013-12-26T10:14:16.140</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\GIT\src\App3\images\ryba.jpg">
+      <PackagePath>images\ryba.jpg</PackagePath>
+      <Modified>2014-01-06T12:18:02.747</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\GIT\src\App3\images\salatka.jpg">
+      <PackagePath>images\salatka.jpg</PackagePath>
+      <Modified>2014-01-06T12:18:02.747</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\GIT\src\App3\images\sos.jpg">
+      <PackagePath>images\sos.jpg</PackagePath>
+      <Modified>2014-01-06T12:18:02.747</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\GIT\src\App3\images\soup.jpg">
+      <PackagePath>images\soup.jpg</PackagePath>
+      <Modified>2014-01-06T12:18:02.747</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\GIT\src\App3\images\spadzetixD.jpg">
+      <PackagePath>images\spadzetixD.jpg</PackagePath>
+      <Modified>2013-12-26T10:14:16.140</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\GIT\src\App3\images\studenckie.jpg">
+      <PackagePath>images\studenckie.jpg</PackagePath>
+      <Modified>2014-01-06T12:18:02.747</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\GIT\src\App3\images\Windows8Green.jpg">
+      <PackagePath>images\Windows8Green.jpg</PackagePath>
+      <Modified>2013-12-26T10:14:16.124</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\GIT\src\App3\images\warzywa.jpg">
+      <PackagePath>images\warzywa.jpg</PackagePath>
+      <Modified>2014-01-06T12:18:02.747</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\GIT\src\App3\images\loading.gif">
+      <PackagePath>images\loading.gif</PackagePath>
+      <Modified>2014-01-20T21:48:15.313</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\GIT\src\App3\pages\add_recipe\add_recipe.css">
+      <PackagePath>pages\add_recipe\add_recipe.css</PackagePath>
+      <Modified>2014-01-20T23:00:44.835</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\GIT\src\App3\pages\categories\categories.css">
+      <PackagePath>pages\categories\categories.css</PackagePath>
+      <Modified>2014-01-06T12:18:02.810</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\GIT\src\App3\pages\delete\delete_confirm.css">
+      <PackagePath>pages\delete\delete_confirm.css</PackagePath>
+      <Modified>2014-01-08T20:38:19.373</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\GIT\src\App3\pages\home\home.css">
+      <PackagePath>pages\home\home.css</PackagePath>
+      <Modified>2014-01-20T21:48:15.385</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\GIT\src\App3\pages\list_recipes\list_recipes.css">
+      <PackagePath>pages\list_recipes\list_recipes.css</PackagePath>
+      <Modified>2014-01-20T21:48:15.405</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\GIT\src\App3\pages\recipe\recipe.css">
+      <PackagePath>pages\recipe\recipe.css</PackagePath>
+      <Modified>2014-01-06T12:18:02.841</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\GIT\src\App3\css\default.css">
+      <PackagePath>css\default.css</PackagePath>
+      <Modified>2014-01-08T20:38:19.357</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\GIT\src\App3\images\logo.png">
+      <PackagePath>images\logo.png</PackagePath>
+      <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
+      <Modified>2013-11-25T19:48:01.512</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\GIT\src\App3\images\smalllogo.png">
+      <PackagePath>images\smalllogo.png</PackagePath>
+      <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
+      <Modified>2013-11-25T19:48:01.513</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\GIT\src\App3\images\splashscreen.png">
+      <PackagePath>images\splashscreen.png</PackagePath>
+      <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
+      <Modified>2013-11-25T19:48:01.514</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\GIT\src\App3\images\storelogo.png">
+      <PackagePath>images\storelogo.png</PackagePath>
+      <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
+      <Modified>2013-11-25T19:48:01.515</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\GIT\src\App3\packages.config">
+      <PackagePath>packages.config</PackagePath>
+      <Modified>2013-11-25T19:48:01.531</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\GIT\src\App3\SQLite.cs">
+      <PackagePath>SQLite.cs</PackagePath>
+      <Modified>2013-11-25T19:47:59.797</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\GIT\src\App3\SQLiteAsync.cs">
+      <PackagePath>SQLiteAsync.cs</PackagePath>
+      <Modified>2013-11-25T19:48:01.471</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\GIT\src\App3\bin\x86\Debug\ReverseMap\resources.pri">
+      <PackagePath>resources.pri</PackagePath>
+      <Modified>2014-01-20T22:07:31.611</Modified>
+    </AppxPackagedFile>
+  </ItemGroup>
+  <ItemGroup>
+    <ResolvedSDKReference Include="C:\Program Files %28x86%29\Microsoft SDKs\Windows\v8.1\ExtensionSDKs\Microsoft.VCLibs\12.0\">
+      <Name>Microsoft.VCLibs.120.00.Debug</Name>
+      <Version>12.0.21005.1</Version>
+      <Architecture>ARM</Architecture>
+      <FrameworkIdentity>Name = Microsoft.VCLibs.120.00.Debug, MinVersion = 12.0.21005.1</FrameworkIdentity>
+      <AppxLocation>C:\Program Files %28x86%29\Microsoft SDKs\Windows\v8.1\ExtensionSDKs\Microsoft.VCLibs\12.0\.\AppX\Debug\ARM\Microsoft.VCLibs.ARM.Debug.12.00.appx</AppxLocation>
+      <MoreInfo>
+      </MoreInfo>
+    </ResolvedSDKReference>
+    <ResolvedSDKReference Include="C:\Program Files %28x86%29\Microsoft SDKs\Windows\v8.1\ExtensionSDKs\Microsoft.VCLibs\12.0\">
+      <Name>Microsoft.VCLibs.120.00.Debug</Name>
+      <Version>12.0.21005.1</Version>
+      <Architecture>x64</Architecture>
+      <FrameworkIdentity>Name = Microsoft.VCLibs.120.00.Debug, MinVersion = 12.0.21005.1</FrameworkIdentity>
+      <AppxLocation>C:\Program Files %28x86%29\Microsoft SDKs\Windows\v8.1\ExtensionSDKs\Microsoft.VCLibs\12.0\.\AppX\Debug\x64\Microsoft.VCLibs.x64.Debug.12.00.appx</AppxLocation>
+      <MoreInfo>
+      </MoreInfo>
+    </ResolvedSDKReference>
+    <ResolvedSDKReference Include="C:\Program Files %28x86%29\Microsoft SDKs\Windows\v8.1\ExtensionSDKs\Microsoft.VCLibs\12.0\">
+      <Name>Microsoft.VCLibs.120.00.Debug</Name>
+      <Version>12.0.21005.1</Version>
+      <Architecture>x86</Architecture>
+      <FrameworkIdentity>Name = Microsoft.VCLibs.120.00.Debug, MinVersion = 12.0.21005.1</FrameworkIdentity>
+      <AppxLocation>C:\Program Files %28x86%29\Microsoft SDKs\Windows\v8.1\ExtensionSDKs\Microsoft.VCLibs\12.0\.\AppX\Debug\x86\Microsoft.VCLibs.x86.Debug.12.00.appx</AppxLocation>
+      <MoreInfo>
+      </MoreInfo>
+    </ResolvedSDKReference>
+    <ResolvedSDKReference Include="C:\Program Files %28x86%29\Microsoft SDKs\Windows\v8.1\ExtensionSDKs\Microsoft.WinJS.2.0\1.0\">
+      <Name>Microsoft.WinJS.2.0</Name>
+      <Version>1.0.9600.16408</Version>
+      <Architecture>Neutral</Architecture>
+      <FrameworkIdentity>Name=Microsoft.WinJS.2.0, MinVersion=1.0.9600.16408</FrameworkIdentity>
+      <AppxLocation>C:\Program Files %28x86%29\Microsoft SDKs\Windows\v8.1\ExtensionSDKs\Microsoft.WinJS.2.0\1.0\Microsoft.WinJS.2.0.appx</AppxLocation>
+      <MoreInfo>http://go.microsoft.com/fwlink/%3fLinkId=260891</MoreInfo>
+    </ResolvedSDKReference>
+  </ItemGroup>
+</Project>

@@ -1,0 +1,2 @@
+C:\GIT\src\App3\App3.jsproj;x86
+C:\GIT\src\App3\SQLite3Component\SQLite3Component.vcxproj;x86

@@ -1,0 +1,110 @@
+﻿body {
+    background-size: 100% 100%;
+    background: rgb(51,51,51) url("/images/spadzetixD.jpg") ;
+    background-color: rgba(0,0,0,0.6);
+
+}
+
+    body #Gallery {
+        height: 100%;
+        width: 70%;
+        margin-left:20%;
+    }
+
+        body #Gallery ul {
+            height:40%;
+            list-style: none;
+            display:inline-block;
+        }
+
+            body #Gallery ul li {
+                height: 100%;
+                width: 100%;
+                display: inline;
+            }
+
+                body #Gallery ul li  img {
+                    height: 90%;
+                    width: 90%;
+                    margin-right: 1%;
+                    margin-bottom: 1%;
+                    border-style: groove;
+                    border-color: black;
+                    border-radius: 1px;
+                    float: left;
+                    display: block;
+                    cursor: pointer;
+                }
+
+body .Menu {
+    text-align: center;
+    padding-top: 2%;
+    float: left;
+    height: 100%;
+    width: 15%;
+    color: black;
+    background: rgba(0,100,0,0.8); 
+
+    font-size: medium;
+    font-family: Georgia;
+    font-style: italic;
+}
+
+    body .Menu a {
+        color: inherit;
+        text-decoration:wavy;
+        margin: 0px;
+	    padding: 0px;
+	    color: black;
+	    clear: both;
+	    padding-bottom: 6px;
+        font-family: Georgia;
+        font-style: italic;
+    }
+
+        body .Menu a:hover {
+            font-weight:bold;
+        }
+
+        body .Menu a:active {
+            color: green;
+        }
+
+    body .Menu .title {
+
+        width: 100%;
+        font-weight: bold;
+        font-size: 125%;
+    }
+
+    body .Menu ul {
+        padding-top: 1%;
+        line-height: 2em;
+         list-style: none;
+    }
+
+        body .Menu ul li {
+            text-align: left;
+        }
+
+    body .bottomMenu .left {
+        float: left;
+        text-align: left;
+    }
+    body .bottomMenu .right {
+        float: right;
+        text-align: right;
+    }
+
+
+@media screen and (max-width: fullscreen-landscape) {
+}
+
+@media screen and (max-width: filled) {
+}
+
+@media screen and (max-width: snapped) {
+}
+
+@media screen and (max-width: fullscreen-portrait) {
+}

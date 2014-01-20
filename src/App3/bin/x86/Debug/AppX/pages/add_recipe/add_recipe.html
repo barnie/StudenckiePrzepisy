@@ -1,0 +1,115 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <title>Dodaj przepis</title>
+    <link href="//Microsoft.WinJS.2.0/css/ui-light.css" rel="stylesheet" />
+    <link href="/pages/add_recipe/add_recipe.css" rel="stylesheet" />
+    <script src="//Microsoft.WinJS.2.0/js/base.js"></script>
+    <script src="//Microsoft.WinJS.2.0/js/ui.js"></script>
+    <script src="/pages/add_recipe/datafeed.js"></script>
+    <script src="/js/database.js"></script>
+    <script src="/pages/add_recipe/add_recipe.js"></script>
+    <style>
+        #contentHolder {
+            height: 100%;
+            margin: 1%;
+            display: -ms-flexbox;
+            -ms-flex-direction: row;
+            overflow: auto;
+            overflow-x: hidden;
+        }
+
+    </style>
+</head>
+<body>
+    <div id="contentHolder">
+        <div class="button_container">
+            <header aria-label="Header content" role="banner">
+                <button class="win-backbutton" aria-label="Back" disabled type="button"></button>
+            </header>
+        </div>
+        <div id="contentDiv" style="height: 90%; width: 90%; padding: 3px; ">
+            <table style="padding: 3px; ">
+                <tr style="padding: 3px; ">
+                    <td>
+                        <div style="padding: 3px; ">
+                            <div id="text"><label>Obraz dania</label></div>
+                            <div id="imgToAdd">
+                                <img class="center" id="imgHolder" src="/images/logo.png" style="max-height:800px; max-width:480px;" alt="/images/logo.png" />
+                            </div>
+                        </div>
+                        <div style=" padding: 3px; ">
+                            <button id="selectPic" data-win-control="WinJS.UI.AppBarCommand" data-win-options="{icon:'folder', label:'Wybierz zdjęcie', type:'button', tooltip:'Wybierz zdjęcie dla potrawy'}"></button>
+                            <button id="saveit" data-win-control="WinJS.UI.AppBarCommand" data-win-options="{icon:'save', label:'Zapisz przepis', type:'button', tooltip:'Zapisz przepis'}"></button>
+                         </div>
+                    </td>
+                    <td>
+                            <div id="categoryTemplate" data-win-control="WinJS.Binding.Template">
+                                <div style="padding:5px; margin:5px;">
+                                    <img style="width: 60px; height: 60px;"
+                                         data-win-bind="src: picture" />
+                                    <div>
+                                        <h4 data-win-bind="innerText: title"></h4>
+                                        <h6 style="visibility:hidden;" data-win-bind="innerText: id"></h6>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="category" style="padding: 3px; " id="listaKategorii" data-win-control="WinJS.UI.ListView" data-win-options="{itemDataSource : DataExample.catList.dataSource, itemTemplate: select('#categoryTemplate'), selectionMode: 'single', layout: {type: WinJS.UI.ListLayout} }"></div>
+                    </td>
+                    <td>
+                        <div style="padding: 3px; ">
+                            <div id="fieldtext"><label id="fieldtext">Nazwa Przepisu</label></div>
+                            <input id="repiceName" type="text" />
+                        </div>
+                        <div style="padding: 3px; ">
+                            <div id="fieldtext">
+                                <label>Receptura</label></div>
+                                <textarea id="repiceGuide"></textarea>
+                            </div>
+                    </td>
+                    <td>
+                        <div style="padding: 3px; ">
+                            <div id="ingTemplate" data-win-control="WinJS.Binding.Template">
+                                <div style="padding:5px; margin:5px;">
+                                        <h4 data-win-bind="innerText: nazwa"></h4>
+                                        <h4 data-win-bind="innerText: ile"></h4>
+                                        <h4 data-win-bind="innerText: miara"></h4>
+                                        <h6 style="visibility:hidden;" data-win-bind="innerText: id"></h6>
+                            </div>
+                            </div>
+                            <div id="listaSkladnikow" data-win-control="WinJS.UI.ListView" data-win-options="{label:'Lista skladników', type:'button', tooltip:'Tutaj znajduja sie skladniki dodane do przepisu', itemTemplate: select('#ingTemplate'),layout : {type: WinJS.UI.ListLayout}}">></div>
+                        </div>
+                        <div style="padding: 3px; " class="bottomButtonDel">
+                            <button id="removeSkladnikbtn" data-win-control="WinJS.UI.AppBarCommand" data-win-options="{icon:'remove', label:'Usun skladnik', type:'button', tooltip:'Usuń skladnik dla potrawy'}"></button>
+                        </div>
+                    </td>
+                    <td>
+                        <div id="ingridientTemplate" data-win-control="WinJS.Binding.Template">
+                            <div style="padding:5px; margin:5px;">
+                                <h4 data-win-bind="innerText: name"></h4>
+                                <h6 style="visibility:hidden;" data-win-bind="innerText: id"></h6>
+                            </div>
+                        </div>
+                        <div class="box1">
+                            <div id="mozliweSkladniki" data-win-control="WinJS.UI.ListView" data-win-options="{itemDataSource : DataExample.ingList.dataSource, itemTemplate: select('#ingridientTemplate'), selectionMode: 'single',layout : {type: WinJS.UI.ListLayout}}"></div>
+                        
+                        <div style="padding: 3px; ">
+                            <div id="fieldtext">
+                                <label>Jednostka wybranego składnika</label></div>
+                                <input type="text" id="jednostka" />
+                            </div>
+                        <div style="padding: 3px; ">
+                            <div id="fieldtext">
+                                <label>Ilość wybranego składnika</label></div>
+                                <input type="number" id="skladnikAmount" />
+                            </div></div>
+                        <div style="padding: 3px; " class="bottomButtonAdd">
+                            <button id="addSkladnikbtn" data-win-control="WinJS.UI.AppBarCommand" data-win-options="{icon:'add', label:'Dodaj skladnik', type:'button', tooltip:'Dodaj skladnik dla potrawy'}"></button>
+                        </div>
+                    </td>
+                </tr>
+            </table>
+        </div> 
+    </div>
+</body>
+</html>

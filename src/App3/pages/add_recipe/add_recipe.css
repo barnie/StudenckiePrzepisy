@@ -17,7 +17,36 @@
     font-weight:bold;
 }
 img.center {
+          box-sizing:border-box;
+-moz-box-sizing:border-box; /* Firefox */
     display: block;
   margin-left: auto;
   margin-right: auto;
+}
+body .bottomButtonAdd{
+    position:fixed;
+    top: 75%;
+    right: 12%;
+}
+body .bottomButtonDel{
+    position:fixed;
+    top: 75%;
+    right: 30%;
+}
+body .box1{
+    position:fixed;
+    right:5%;
+    top:5%;
+    bottom:30%;
+    left:75%;
+}
+#listaSkladnikow{
+          box-sizing:border-box;
+-moz-box-sizing:border-box; /* Firefox */
+    left:51%;
+    right:27%;
+    top:5%;
+}
+body .category{
+
 }

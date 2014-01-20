@@ -1,0 +1,1 @@
+C:\GIT\src\App3\SQLite3JS\bin\x86\Release\SQLite3.winmd
