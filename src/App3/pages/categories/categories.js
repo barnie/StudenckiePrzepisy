@@ -41,7 +41,9 @@
                 element.querySelector('#' + nameTagsIds[i]).onclick = this.loadRecipe;
             }
             //additional data for css prepare:
-            document.getElementById("container").style.borderSpacing = "" + window.screen.availWidth * 0.028 + "px 0 ";
+            document.getElementById("container").style.borderSpacing = "" + window.screen.availWidth * 0.028 + "px 0 "; //odstêpy miêdzy kategoriami
+            document.getElementById("myDiv").style.width = window.screen.availWidth * 1.25 + "px"; //sprawiam ze tabelka bedzie wychodzic poza ekran (dolny scroll)
+            console.log("szer=" + window.screen.availWidth * 1.25);
 
 
         },
