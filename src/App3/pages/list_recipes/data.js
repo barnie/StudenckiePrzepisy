@@ -3,7 +3,10 @@
 
     var myData = [];
     for (var i = 0 ; i < array.length ; i++) {
-        myData[i] = { title: array[i][1] };
+        if (array[i][1].length > 18) { //skracanie (tekst...), zeby sie w jednej lini miescilo
+            array[i][1] = array[i][1].substring(0, 15) + "...";
+        }
+        myData[i] = { title: array[i][1], picture: 'url("' + MyGlobals.imagesPath + array[i][3] + '")' }; //picture: MyGlobals.imagesPath + "" + array[i][3]
     }
 
     // Create a WinJS.Binding.List from the array. 
