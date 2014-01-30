@@ -77,3 +77,29 @@ Do poprawnego użytkowania i rozwijanie projektu potrzebujemy :
 
 Do ściągnięcia i rozwijania projektu potrzebujemy tylko i wyłącznie sklonować lub ściągnąć to repozytorium i otworzenia solucji w Microsoft Visual Studio Professional 2013 z katalogu src.
 
+### Licencja : 
+
+============
+
+Copyright (C)
+
+* 	Bartosz Bargiel < <bargl1991@gmail.com> >
+*	Piotr Kruk < <ppiotr.kruk@uj.edu.pl> >
+*	Marcin Milik < <marcin.milik@uj.edu.pl> >
+*	Piotr Rachwał < <piotr.rachwal27@gmail.com>	>
+
+Niniejszy program jest wolnym oprogramowaniem - możesz go rozpowszechniać dalej
+i/lub modyfikować na warunkach Powszechnej Licencji Publicznej GNU wydanej przez
+Fundację Wolnego Oprogramowania, według wersji 3 tej Licencji lub dowolnej
+z późniejszych wersji.
+
+Niniejszy program rozpowszechniany jest z nadzieją, iż będzie on użyteczny - jednak
+BEZ ŻADNEJ GWARANCJI, nawet domyślnej gwarancji PRZYDATNOŚCI HANDLOWEJ
+albo PRZYDATNOŚCI DO OKREŚLONYCH ZASTOSOWAŃ. Bliższe informacje na ten temat
+można uzyskać z Powszechnej Licencji Publicznej GNU.
+
+Kopia Powszechnej Licencji Publicznej GNU powinna zostać ci dostarczona razem
+z tym programem. Jeżeli nie została dostarczona, odwiedź http://www.gnu.org/licenses.
+
+Nieoficjalne, tłumaczenie licencji znajdziesz pod adresem: [License](http://itlaw.computerworld.pl/index.php/gpl-3/)
+
