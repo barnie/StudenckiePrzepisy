@@ -79,8 +79,6 @@ Do ściągnięcia i rozwijania projektu potrzebujemy tylko i wyłącznie sklonow
 
 ### Licencja : 
 
-============
-
 Copyright (C)
 
 * 	Bartosz Bargiel < <bargl1991@gmail.com> >
