@@ -8,28 +8,28 @@ Projekt Książki Kucharskiej wykonywanej w ramach kursu Projekt Zespołowy 1 i 
 ### Wykorzystane Technologie : ###
 
 * Baza Danych:
-	* SQLite3.
+	* SQLite3
 * Aplikacja Kliencka:
-	* HTML5 (GUI),
-	* CSS (GUI),
-	* JavaScript (GUI).
+	* HTML5 (GUI)
+	* CSS (GUI)
+	* JavaScript (GUI)
 * Aplikacje Pomocnicze:
-	* Java (Program do zbierania przepisów).
+	* Java (Program do zbierania przepisów)
 * Pomocnicze : 
-	* Git (System kontroli wersji),   
-	* Wrapper do SQlite 3 ([Sqlite3-WinRT](https://github.com/doo/SQLite3-WinRT "Sqlite3-WinRT")),
-	* Microsoft Visual Studio Professional (lub Ultimate ) 2013.
+	* Git (System kontroli wersji)
+	* Wrapper do SQlite 3 ([Sqlite3-WinRT](https://github.com/doo/SQLite3-WinRT "Sqlite3-WinRT"))
+	* Microsoft Visual Studio Professional (lub Ultimate ) 2013
 	
 ### Organizacja : 
 
 * Git :
-	* Na branchu master jest wersja programu, którą można bezpiecznie pobierać i rozwijać.
-	* Na branchu develop jest wersja programu, nad którą aktualnie pracujemy. Może być niestabilna.
+	* Na branchu master jest wersja programu, którą można bezpiecznie pobierać i rozwijać
+	* Na branchu develop jest wersja programu, nad którą aktualnie pracujemy. Może być niestabilna
 * Katalogi:
-	* doc -> Zawiera dokumentacje projektu.
-	* src -> Zawiera cały kod projektu.
-		*  database -> zawiera kod i treści związane z aplikacją zbierającą przepisy.
-		*  App3 -> Zawiera całą solucje projektu przygotowaną pod Microsoft Visual Professional 2013.
+	* doc -> Zawiera dokumentacje projektu
+	* src -> Zawiera cały kod projektu
+		*  database -> zawiera kod i treści związane z aplikacją zbierającą przepisy
+		*  App3 -> Zawiera całą solucje projektu przygotowaną pod Microsoft Visual Professional 2013
 	
 ### Autorzy Projektu (alfabetycznie):
 	Bartosz Bargiel <bargl1991@gmail.com>
