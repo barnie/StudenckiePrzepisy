@@ -5,7 +5,7 @@ Projekt Książki Kucharskiej wykonywanej w ramach kursu Projekt Zespołowy 1 i 
 
 -------------------------------
 
-### Wykorzystane Technologie ###
+### Wykorzystane Technologie : ###
 
 * Baza Danych:
 	* SQLite3
