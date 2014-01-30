@@ -23,10 +23,10 @@ Projekt Książki Kucharskiej wykonywanej w ramach kursu Projekt Zespołowy 1 i 
 ### Organizacja : 
 
 * Git :
-	* Na branchu master jest wersja programu którą można bezpiecznie pobierać i rozwijać.
+	* Na branchu master jest wersja programu, którą można bezpiecznie pobierać i rozwijać.
 	* Na branchu develop jest wersja programu nad którą aktualnie pracujemy, może być niestabilna.
 * Katalogi:
-	* doc -> Zawiera Dokumentacje Projektu.
+	* doc -> Zawiera dokumentacje projektu.
 	* src -> Zawiera cały kod projektu.
 		*  database -> zawiera kod i treści związane z aplikacją zbierającą przepisy.
 		*  App3 -> Zawiera całą solucje projektu przygotowaną pod Microsoft Visual Professional 2013.
@@ -51,10 +51,10 @@ Program ma służyć jako książka kucharska z intuicyjnym i przejrzystym inter
 ### 1.2. Główne założenia. 
 
 * Możliwość przeglądania przepisów kategoriami jak i alfabetycznie
-* Dodawanie Przepisów przez użytkownika.
-* Usuwanie Przepisów przez użytkownika.
-* Wyszukiwanie Przepisów po nazwie.
-* Wyszukiwanie Przepisów po składnikach.
+* Dodawanie przepisów przez użytkownika.
+* Usuwanie przepisów przez użytkownika.
+* Wyszukiwanie przepisów po nazwie.
+* Wyszukiwanie przepisów po składnikach.
 
 ### 1.3. Możliwości.
 
