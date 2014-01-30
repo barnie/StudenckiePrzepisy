@@ -78,9 +78,10 @@ Do poprawnego użytkowania i rozwijanie projektu potrzebujemy :
 Do ściągnięcia i rozwijania projektu potrzebujemy tylko i wyłącznie sklonować lub ściągnąć to repozytorium i otworzenia solucji w Microsoft Visual Studio Professional 2013 z katalogu src.
 
 
-### Licencja : 
-
 -------------------------------------------------
+
+## Licencja : 
+
 
 Copyright (C)
 
