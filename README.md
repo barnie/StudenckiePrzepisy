@@ -16,8 +16,8 @@ Projekt Książki Kucharskiej wykonywanej w ramach kursu Projekt Zespołowy 1 i 
 * Aplikacje Pomocnicze:
 	* Java (Program do zbierania przepisów)
 * Pomocnicze : 
-	* Git (System kontroli wersji)   
-	* Wrapper do SQlite 3 ([Sqlite3-WinRT](https://github.com/doo/SQLite3-WinRT "Sqlite3-WinRT"))
+	* Git (System kontroli wersji),   
+	* Wrapper do SQlite 3 ([Sqlite3-WinRT](https://github.com/doo/SQLite3-WinRT "Sqlite3-WinRT")),
 	* Microsoft Visual Studio Professional (lub Ultimate ) 2013.
 	
 ### Organizacja : 
