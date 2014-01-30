@@ -23,13 +23,13 @@ Projekt Książki Kucharskiej wykonywanej w ramach kursu Projekt Zespołowy 1 i 
 ### Organizacja: 
 
 * Git :
-	* Na branchu master jest wersja programu, którą można bezpiecznie pobierać i rozwijać
-	* Na branchu develop jest wersja programu, nad którą aktualnie pracujemy. Może być niestabilna
+	* Na branchu master jest wersja programu, którą można bezpiecznie pobierać i rozwijać.
+	* Na branchu develop jest wersja programu, nad którą aktualnie pracujemy. Może być niestabilna.
 * Katalogi:
-	* doc -> Zawiera dokumentacje projektu
-	* src -> Zawiera cały kod projektu
-		*  database -> zawiera kod i treści związane z aplikacją zbierającą przepisy
-		*  App3 -> zawiera całą solucje projektu przygotowaną pod Microsoft Visual Professional 2013
+	* doc -> Zawiera dokumentacje projektu.
+	* src -> Zawiera cały kod projektu.
+		*  database -> zawiera kod i treści związane z aplikacją zbierającą przepisy.
+		*  App3 -> zawiera całą solucje projektu przygotowaną pod Microsoft Visual Professional 2013.
 	
 ### Autorzy Projektu (alfabetycznie):
 	Bartosz Bargiel <bargl1991@gmail.com>
@@ -76,7 +76,7 @@ Do poprawnego użytkowania i rozwijanie projektu potrzebujemy:
 * .NET 4.5 >=
 
 Jeśli chcesz rozwijać ten program lub z niego korzystać, wystarczy, że ściągniesz lub sklonujesz nasze repozytorium 
-i otworzysz solucje (która znajduje się w katalogu src) w Microsoft Visual Studio Professional 2013
+i otworzysz solucje (która znajduje się w katalogu src) w Microsoft Visual Studio Professional 2013.
 
 -------------------------------------------------
 
