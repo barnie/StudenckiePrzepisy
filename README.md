@@ -38,7 +38,8 @@ Projekt Książki Kucharskiej wykonywanej w ramach kursu Projekt Zespołowy 1 i 
 	Piotr Rachwał <piotr.rachwal27@gmail.com>
 
 ---
-
+### Kontakt : 
+	Jeśli masz jakieś pytania co do projektu, proszę kierować pytania na <ppiotr.kruk@uj.edu.pl>.
 
 
 1. Założenie Projektu
