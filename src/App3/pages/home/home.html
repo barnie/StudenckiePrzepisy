@@ -1,37 +1,37 @@
 ﻿<!DOCTYPE html>
 <html>
-    <head>
-        <meta charset="utf-8" />
-        <title>homePage</title>
+<head>
+    <meta charset="utf-8" />
+    <title>homePage</title>
 
-        <!-- WinJS references -->
-    
-        <link href="/pages/home/home.css" rel="stylesheet" />
-        <script src="/js/jquery-2.0.3.min.js"></script>
-        <script src="/pages/home/home.js"></script>
-    </head>
-    <body>
-        <div class="Menu">
-                <span class="title">Menu</span>
-                <ul>                
-                    <li><a href="/pages/categories/categories.html">Kategorie</a></li>
-                    <li><a href="/pages/list_recipes/list_recipes.html">Przepisy</a></li>
-                    <li><a href="/pages/add_recipe/add_recipe.html">Dodaj przepis</a></li>
-                </ul>
-        </div>
-        <button id="klik"></button>
-        <div id="Gallery">
-            <ul id="1rzad" style="display: -ms-flexbox">
-                <li><img src="/images/loading.gif" title="Przepis warzywny wow xD" /></li>
-                <li><img src="/images/loading.gif" title="Przepis warzywny wow xD" /></li>
-                <li><img src="/images/loading.gif" title="Przepis warzywny wow xD" /></li>
-            </ul>
-            <ul id="2rzad" style="display: -ms-flexbox">
-                <li><img src="/images/loading.gif" title="Przepis warzywny wow xD" /></li>
-                <li><img src="/images/loading.gif" title="Przepis warzywny wow xD" /></li>
-                <li><img src="/images/loading.gif" title="Przepis warzywny wow xD" /></li>
-            </ul>
-        </div>
- 
-    </body>
+    <!-- WinJS references -->
+
+    <link href="/pages/home/home.css" rel="stylesheet" />
+    <script src="/js/jquery-2.0.3.min.js"></script>
+    <script src="/pages/home/home.js"></script>
+</head>
+<body>
+
+    <nav id="main-menu">
+        <ul class="nav-bar">
+            <li class="nav-button-categories"><a href="/pages/categories/categories.html">Kategorie</a></li>
+            <li class="nav-button-recipes"><a href="/pages/list_recipes/list_recipes.html">Przepisy</a></li>
+            <li class="nav-button-add_recipe"><a href="/pages/add_recipe/add_recipe.html">Dodaj Przepis</a></li>
+        </ul>
+    </nav>
+    <button id="klik" disabled="disabled"></button>
+    <div id="Gallery">
+        <ul id="1rzad" style="display: -ms-flexbox">
+            <li><img src="/images/loading.gif" title="Przepis warzywny wow xD" /></li>
+            <li><img src="/images/loading.gif" title="Przepis warzywny wow xD" /></li>
+            <li><img src="/images/loading.gif" title="Przepis warzywny wow xD" /></li>
+        </ul>
+        <ul id="2rzad" style="display: -ms-flexbox">
+            <li><img src="/images/loading.gif" title="Przepis warzywny wow xD" /></li>
+            <li><img src="/images/loading.gif" title="Przepis warzywny wow xD" /></li>
+            <li><img src="/images/loading.gif" title="Przepis warzywny wow xD" /></li>
+        </ul>
+    </div>
+
+</body>
 </html>
