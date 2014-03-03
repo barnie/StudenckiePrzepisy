@@ -19,13 +19,13 @@
             getPrzepisyMax6only(array).then(function () { //array[i][0] - nazwa, array[i][1] - zdjecie.jpg
                 var container = '';
                 for (var i = 0 ; i < 3 && i < array.length ; i++) {
-                    container += '<li><img id="galleryimg' + i.toString() + '" data-arg="' + array[i][0] + '" src="' + MyGlobals.imagesPath + array[i][1] + '" title="' + array[i][0] + '" /></li>';
+                    container += '<li><img id="galleryimg' + i.toString() + '" data-arg="' + array[i][0] + '" src="' + "/images/" + array[i][1] + '" title="' + array[i][0] + '" /></li>';
                 }
                 document.getElementById("1rzad").innerHTML = window.toStaticHTML(container);
                 
                 container = '';
                 for (var i = 3 ; i < 6 && i < array.length ; i++) {
-                    container += '<li><img id="galleryimg' + i.toString() + '" data-arg="' + array[i][0] + '" src="' + MyGlobals.imagesPath + array[i][1] + '" title="' + array[i][0] + '" /></li>';
+                    container += '<li><img id="galleryimg' + i.toString() + '" data-arg="' + array[i][0] + '" src="' + "/images/" + array[i][1] + '" title="' + array[i][0] + '" /></li>';
                 }
                 document.getElementById("2rzad").innerHTML = window.toStaticHTML(container);
                 
@@ -60,8 +60,9 @@
             var array = [];
 
             getPrzepisy(array).then(function () {
-                loadRecipiesList(array); //ladujemy liste przepisow
-                WinJS.Navigation.navigate(link.href, array);
+                loadRecipiesList(array).then(function(){
+                    WinJS.Navigation.navigate(link.href, array);
+                })
             })
 
         }

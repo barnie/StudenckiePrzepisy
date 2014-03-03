@@ -3,9 +3,6 @@
 
 (function () {
     "use strict";
-    WinJS.Namespace.define("MyGlobals", {
-        imagesPath: "images/",
-    });
 
     WinJS.Binding.optimizeBindingReferences = true;
 

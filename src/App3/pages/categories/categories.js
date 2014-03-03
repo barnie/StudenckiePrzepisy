@@ -52,8 +52,9 @@
             // TODO 2: Tutaj umiesc kod ktory otworzy nowa strone albo wykona cos na podstawie tego arg ktory podales w funkcji CreateElementContent > repicesIds[i]
             var array = [];
             getPrzepisyKat(arg, array).then(function () {
-                loadRecipiesList(array); //ladujemy liste przepisow
-                WinJS.Navigation.navigate( "pages/list_recipes/list_recipes.html" , array );
+                loadRecipiesList(array).then(function () { //ladujemy liste przepisow
+                    WinJS.Navigation.navigate("pages/list_recipes/list_recipes.html", array);
+                })
             })
             // TODO 2
         },
