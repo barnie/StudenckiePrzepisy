@@ -81,8 +81,17 @@ Do poprawnego użytkowania i rozwijanie projektu potrzebujemy:
 Jeśli chcesz rozwijać ten program lub z niego korzystać, wystarczy, że ściągniesz lub sklonujesz nasze repozytorium 
 i otworzysz solucje (która znajduje się w katalogu src) w Microsoft Visual Studio Professional 2013.
 
-### 1.5. Źródła obrazów przepisów
+### 1.5. Źródła obrazów 
 
+-> Kategorii:
+kat1.jpg - http://www.sxc.hu/photo/1439101
+kat2.jpg - http://www.sxc.hu/photo/1184163
+kat3.jpg - http://www.sxc.hu/photo/270113
+kat4.jpg - http://www.sxc.hu/photo/1438194
+kat5.jpg - http://www.sxc.hu/photo/1156122
+kat6.jpg - http://www.sxc.hu/photo/16044
+
+-> Przepisów:
 1.jpg - http://www.sxc.hu/photo/865838
 2.jpg - http://www.sxc.hu/photo/1110778
 3.jpg - http://www.sxc.hu/photo/1433738

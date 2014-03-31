@@ -42,18 +42,17 @@ body .bottomMenu .right {
 
 #listContainer {
     margin: 1%;
-    width: inherit;
-    height: 98%;
     display: -ms-flexbox;
     -ms-flex-direction: row;
     overflow: auto;
     overflow-y: hidden;
+    overflow-x: hidden;
+
 }
 
     #listContainer #containerOfRecipies {
-        height: 90%;
+        height: inherit;
         width: inherit;
-        margin-top: 3.5%;
     }
 
         #listContainer #containerOfRecipies #name {
@@ -62,34 +61,35 @@ body .bottomMenu .right {
             text-decoration:underline;
         }
         #listContainer #containerOfRecipies #myDiv {
-            margin-top: 2.5%;
-            height: inherit;
+            height: 90%;
         }
 
-            #listContainer #containerOfRecipies #myDiv .myTabCss {
-                height: inherit;
-                width: inherit;
+            .myTabCss {
+                margin-left: 2%;
+                height: 90%;
+                width: 80%;
             }
 
             #listContainer #containerOfRecipies #myDiv .myRowCss {
-                height: 42%;
-                width: inherit;
+                
             }
 
             #listContainer #containerOfRecipies #myDiv .myCellCss {
-                height: inherit;
-                width: inherit;
+                padding-top: 5%;
+                height: auto;
+                width: auto;
             }
 
             #listContainer #containerOfRecipies #myDiv .myImageCss {
                 border: solid;
                 border-color: black;
-                height:60%;
-                width:100%;
+                height:inherit;
+                width:inherit;
                 cursor:pointer;
             }
 
             #listContainer #containerOfRecipies #myDiv .catName {
+                display:block;
                 cursor:pointer;
             }
 
