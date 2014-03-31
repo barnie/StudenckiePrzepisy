@@ -10,6 +10,8 @@
     var activation = Windows.ApplicationModel.Activation;
     var nav = WinJS.Navigation;
 
+    WinJS.Utilities.query("a").listen("click", anchorHandler, false);
+
     app.addEventListener("activated", function (args) {
         if (args.detail.kind === activation.ActivationKind.launch) {
             if (args.detail.previousExecutionState !== activation.ApplicationExecutionState.terminated) {
@@ -75,8 +77,8 @@
     app.onready = function () {
         var home = document.getElementById("home");
         home.addEventListener("click", goToHome, false);
-        var button1 = document.getElementById("klik");
-        button1.addEventListener("click", buttonClickHandler, false);
+        //var button1 = document.getElementById("klik");
+        //button1.addEventListener("click", buttonClickHandler, false);
        // var search = document.getElementById("search");
         //search.addEventListener("click", openSearch1, false);
     }
@@ -88,6 +90,32 @@
     //function openSearch1() {
     //    WinJS.Navigation.navigate("/pages/basic_search/basic_search.html");
    // }
+    function anchorHandler(eventInfo) { //jak sie w linka kliknie
+        eventInfo.preventDefault();
+        var link = eventInfo.target;
+        if (("" + link).search("categories") != -1) { //jak link bedzie zawieral categories (bedzie wiec do categories)
 
+            var array = [];
+
+            getKategorie(array).then(function () {
+                WinJS.Navigation.navigate(link.href, array);
+            })
+
+        }
+        else if (("" + link).search("list_recipes") != -1) {
+
+            var array = [];
+
+            getPrzepisy(array).then(function () {
+                loadRecipiesList(array).then(function () {
+                    WinJS.Navigation.navigate(link.href, array);
+                })
+            })
+
+        }
+        else {
+            WinJS.Navigation.navigate(link.href);
+        }
+    }
     app.start();
 })();
