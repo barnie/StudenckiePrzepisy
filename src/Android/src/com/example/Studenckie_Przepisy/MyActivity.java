@@ -1,9 +1,10 @@
 package com.example.Studenckie_Przepisy;
 
 import android.app.Activity;
+import android.app.TabActivity;
 import android.os.Bundle;
 
-public class MyActivity extends Activity {
+public class MyActivity extends TabActivity {
     /**
      * Called when the activity is first created.
      */
