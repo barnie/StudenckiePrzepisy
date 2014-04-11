@@ -1,12 +1,12 @@
 ﻿function loadRecData(i, myData, array) {
-    return Windows.Storage.ApplicationData.current.localFolder.getFileAsync(array[i][3]).then(function (file) {
-        myData[i] = { title: array[i][1], picture: 'url("' + "ms-appdata:///local/" + array[i][3] + '")' };
-        i++;
-        if (i < array.length)
-            return loadRecData(i, myData, array);
-    },
+    return Windows.Storage.ApplicationData.current.localFolder.getFileAsync(array[i][3]).then(function (file) {},
             function () {
-                myData[i] = { title: array[i][1], picture: 'url("' + "/images/" + array[i][3] + '")' };
+                var varShortTitle;
+                if (array[i][1].length > 19)
+                    varShortTitle = array[i][1].substr(0, 16) + "...";
+                else
+                    varShortTitle = array[i][1];
+                myData[i] = { title: array[i][1], shortTitle: varShortTitle, picture: 'url("' + "/images/" + array[i][3] + '")', size: 'cover' };
                 i++;
                 if (i < array.length)
                     return loadRecData(i, myData, array);
@@ -52,9 +52,6 @@ function loadRecipiesList(array) {
               {
                   groupedItemsList: groupedItemsList
               });
-
-
-
     })
 }
 
