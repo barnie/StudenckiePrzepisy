@@ -1,6 +1,8 @@
 package com.example.studenckieprzepisy;
 
+import Database.Database;
 import android.app.Activity;
+import android.database.sqlite.SQLiteDatabase;
 import android.os.Bundle;
 import android.support.v4.app.ListFragment;
 import android.view.LayoutInflater;
@@ -32,6 +34,9 @@ public class TabPierwszy extends ListFragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
         CustomList adapter = new
                 CustomList(getActivity(), web, imageId);
+
+        Database db = new Database(getActivity().getApplicationContext(),null,null,1);
+        db.test();
         setListAdapter(adapter);
         return super.onCreateView(inflater, container, savedInstanceState);
     }
