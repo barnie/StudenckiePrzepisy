@@ -7,6 +7,7 @@ import android.os.Bundle;
 import android.support.v4.app.FragmentActivity;
 import android.support.v4.view.ViewPager;
 import android.util.Log;
+import android.view.Window;
 
 public class MainActivity extends FragmentActivity implements
         ActionBar.TabListener {
@@ -14,7 +15,7 @@ public class MainActivity extends FragmentActivity implements
     private TabsPager mAdapter;
     private ActionBar actionBar;
 
-    private String[] tabs = {"1", "2"};
+    private String[] tabs = {"Kategorie", "Przepisy"};
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -31,13 +32,11 @@ public class MainActivity extends FragmentActivity implements
             actionBar.addTab(actionBar.newTab().setText(tab_name)
                     .setTabListener(this));
         Log.d("AA", "COS4");
-        actionBar.hide();
+        //actionBar.hide();
         viewPager.setOnPageChangeListener(new ViewPager.OnPageChangeListener() {
 
             @Override
             public void onPageSelected(int position) {
-
-                Log.d("AA", "COS5");
                 actionBar.setSelectedNavigationItem(position);
             }
 
