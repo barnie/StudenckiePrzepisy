@@ -78,6 +78,52 @@ public class Database extends SQLiteOpenHelper {
         db.close();
     }
 
+    public void addManySkladnik(List<Skladnik> s){
+        SQLiteDatabase db = this.getWritableDatabase();
+        ContentValues values[] = new ContentValues[s.size()];
+        for (int i = 0; i < s.size(); values[i] = new ContentValues(), i++);
+        for (int i = 0; i < s.size(); i++){
+            values[i].put(COLUMN_NAZWA, s.get(i).getNazwa());
+            values[i].put(COLUMN_ILE, s.get(i).getIle());
+            db.insert(TABLE_SKLADNIK, null, values[i]);
+        }
+        db.close();
+    }
+
+    public void addSkladnik(Skladnik s){
+        SQLiteDatabase db = this.getWritableDatabase();
+        ContentValues values = new ContentValues();
+        values.put(COLUMN_NAZWA, s.getNazwa());
+        values.put(COLUMN_ILE, s.getIle());
+        db.insert(TABLE_SKLADNIK, null, values);
+        db.close();
+    }
+
+    public void insertManyPrzepis(List<Przepis> p){
+        SQLiteDatabase db = this.getWritableDatabase();
+        ContentValues values[] = new ContentValues[p.size()];
+        for (int i = 0; i < p.size(); values[i] = new ContentValues(), i++);
+        for (int i = 0; i < p.size(); i++){
+            values[i].put(COLUMN_IDKATEGORII, p.get(i).getId_kategori());
+            values[i].put(COLUMN_NAZWA, p.get(i).getNazwa());
+            values[i].put(COLUMN_OPIS, p.get(i).getOpis());
+            values[i].put(COLUMN_ZDJECIE, p.get(i).getZdjecie());
+            db.insert(TABLE_PRZEPIS, null, values[i]);
+        }
+        db.close();
+    }
+
+    public void insertPrzepis(Przepis p){
+        SQLiteDatabase db = this.getWritableDatabase();
+        ContentValues values = new ContentValues();
+        values.put(COLUMN_IDKATEGORII, p.getId_kategori());
+        values.put(COLUMN_NAZWA, p.getNazwa());
+        values.put(COLUMN_OPIS, p.getOpis());
+        values.put(COLUMN_ZDJECIE, p.getZdjecie());
+        db.insert(TABLE_PRZEPIS, null, values);
+        db.close();
+    }
+
     public void insertManyKategorie(List<Kategoria> k){
         SQLiteDatabase db = this.getWritableDatabase();
         ContentValues values[] = new ContentValues[k.size()];
