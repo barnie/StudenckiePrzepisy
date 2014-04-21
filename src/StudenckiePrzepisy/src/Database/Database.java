@@ -78,6 +78,27 @@ public class Database extends SQLiteOpenHelper {
         db.close();
     }
 
+    public void insertManyKategorie(List<Kategoria> k){
+        SQLiteDatabase db = this.getWritableDatabase();
+        ContentValues values[] = new ContentValues[k.size()];
+        for (int i = 0; i < k.size(); values[i] = new ContentValues(), ++i);
+        for (int i = 0; i < k.size(); i++){
+            values[i].put(COLUMN_RODZAJ, k.get(i).getName());
+            values[i].put(COLUMN_ZDJECIE, k.get(i).getImage());
+            db.insert(TABLE_KATEGORIE, null, values[i]);
+        }
+        db.close();
+    }
+
+    public void insertKategoria(Kategoria k){
+        SQLiteDatabase db = this.getWritableDatabase();
+        ContentValues values = new ContentValues();
+        values.put(COLUMN_RODZAJ, k.getName());
+        values.put(COLUMN_ZDJECIE, k.getImage());
+        db.insert(TABLE_KATEGORIE, null,values);
+        db.close();
+    }
+
     public void init_kategorie() {
         SQLiteDatabase db = this.getWritableDatabase();
         ContentValues[] values = new ContentValues[6];
