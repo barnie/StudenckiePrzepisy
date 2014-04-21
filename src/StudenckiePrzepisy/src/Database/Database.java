@@ -78,7 +78,7 @@ public class Database extends SQLiteOpenHelper {
         db.close();
     }
 
-    public void addManyPrzepis(List<PrzepisSkladnik> ps ){
+    public void addManyPrzepisSkladnik(List<PrzepisSkladnik> ps ){
         SQLiteDatabase db = this.getWritableDatabase();
         ContentValues values[] = new ContentValues[ps.size()];
         for (int i = 0; i < ps.size(); i++){
