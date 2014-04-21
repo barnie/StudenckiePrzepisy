@@ -78,6 +78,33 @@ public class Database extends SQLiteOpenHelper {
         db.close();
     }
 
+    public void addManyPrzepis(List<PrzepisSkladnik> ps ){
+        SQLiteDatabase db = this.getWritableDatabase();
+        ContentValues values[] = new ContentValues[ps.size()];
+        for (int i = 0; i < ps.size(); i++){
+            values[i] = new ContentValues();
+        }
+        for (int i = 0; i < ps.size(); i++){
+            values[i].put(COLUMN_IDPRZEPIS, ps.get(i).getIdprzepis() );
+            values[i].put(COLUMN_IDSKLADNIK, ps.get(i).getIdskladnik());
+            values[i].put(COLUMN_MIARA, ps.get(i).getMiara());
+            values[i].put(COLUMN_ILE, ps.get(i).getIle());
+            db.insert(TABLE_PRZEPIS_SKLADNIK, null, values[i]);
+        }
+        db.close();
+    }
+
+    public void addPrzepisSkladnik(PrzepisSkladnik ps){
+        SQLiteDatabase db = this.getWritableDatabase();
+        ContentValues values = new ContentValues();
+        values.put(COLUMN_IDPRZEPIS, ps.getIdprzepis() );
+        values.put(COLUMN_IDSKLADNIK, ps.getIdskladnik());
+        values.put(COLUMN_MIARA, ps.getMiara());
+        values.put(COLUMN_ILE, ps.getIle());
+        db.insert(TABLE_PRZEPIS_SKLADNIK, null, values);
+        db.close();
+    }
+
     public void addManySkladnik(List<Skladnik> s){
         SQLiteDatabase db = this.getWritableDatabase();
         ContentValues values[] = new ContentValues[s.size()];
