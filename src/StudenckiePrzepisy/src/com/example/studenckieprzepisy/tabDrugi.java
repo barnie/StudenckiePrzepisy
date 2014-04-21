@@ -2,7 +2,6 @@ package com.example.studenckieprzepisy;
 
 import android.app.Activity;
 import android.os.Bundle;
-import android.support.v4.app.Fragment;
 import android.support.v4.app.ListFragment;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -19,7 +18,7 @@ public class tabDrugi extends ListFragment {
             "Przepis5",
             "Przepis6",
             "Przepis7"
-    } ;
+    };
     Integer[] imageId = {
             R.drawable.ic_launcher,
             R.drawable.ic_launcher,
@@ -29,6 +28,7 @@ public class tabDrugi extends ListFragment {
             R.drawable.ic_launcher,
             R.drawable.ic_launcher
     };
+
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
         CustomList adapter = new
@@ -47,6 +47,7 @@ public class tabDrugi extends ListFragment {
         private final Activity context;
         private final String[] web;
         private final Integer[] imageId;
+
         public CustomList(Activity context,
                           String[] web, Integer[] imageId) {
             super(context, R.layout.category_row, web);
@@ -54,10 +55,11 @@ public class tabDrugi extends ListFragment {
             this.web = web;
             this.imageId = imageId;
         }
+
         @Override
         public View getView(int position, View view, ViewGroup parent) {
             LayoutInflater inflater = context.getLayoutInflater();
-            View rowView= inflater.inflate(R.layout.category_row, null, true);
+            View rowView = inflater.inflate(R.layout.category_row, null, true);
             TextView txtTitle = (TextView) rowView.findViewById(R.id.txt);
             ImageView imageView = (ImageView) rowView.findViewById(R.id.img);
             txtTitle.setText(web[position]);
