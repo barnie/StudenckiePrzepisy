@@ -35,10 +35,10 @@
                         <div style="padding: 3px; ">
                             <div id="text"><label>Obraz dania</label></div>
                             <div id="imgToAdd">
-                                <img class="center" id="imgHolder" src="/images/logo.png" style="max-height:800px; max-width:480px;" alt="/images/logo.png" />
+                                <img class="center" id="imgHolder" src="/images/logo.png" style="max-height:400px; max-width:240px;" alt="/images/logo.png" />
                             </div>
                         </div>
-                        <div style=" padding: 3px; ">
+                        <div style=" padding: 3px; display: block; margin-left: auto; margin-right: auto; background-color: white; ">
                             <button id="selectPic" data-win-control="WinJS.UI.AppBarCommand" data-win-options="{icon:'folder', label:'Wybierz zdjęcie', type:'button', tooltip:'Wybierz zdjęcie dla potrawy'}"></button>
                             <button id="saveit" data-win-control="WinJS.UI.AppBarCommand" data-win-options="{icon:'save', label:'Zapisz przepis', type:'button', tooltip:'Zapisz przepis'}"></button>
                          </div>
@@ -46,7 +46,7 @@
                     <td>
                             <div id="categoryTemplate" data-win-control="WinJS.Binding.Template">
                                 <div style="padding:5px; margin:5px;">
-                                    <img style="width: 60px; height: 60px;"
+                                    <img style="max-height: 400px; max-width: 240px;"
                                          data-win-bind="src: picture" />
                                     <div>
                                         <h4 data-win-bind="innerText: title"></h4>
@@ -54,7 +54,7 @@
                                     </div>
                                 </div>
                             </div>
-                            <div class="category" style="padding: 3px; " id="listaKategorii" data-win-control="WinJS.UI.ListView" data-win-options="{itemDataSource : DataExample.catList.dataSource, itemTemplate: select('#categoryTemplate'), selectionMode: 'single', layout: {type: WinJS.UI.ListLayout} }"></div>
+                            <div class="category" id="listaKategorii" data-win-control="WinJS.UI.ListView" data-win-options="{itemDataSource : DataExample.catList.dataSource, itemTemplate: select('#categoryTemplate'), selectionMode: 'single', layout: {type: WinJS.UI.ListLayout} }"></div>
                     </td>
                     <td>
                         <div style="padding: 3px; ">
