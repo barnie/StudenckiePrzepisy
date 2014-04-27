@@ -1,6 +1,5 @@
 package com.example.studenckieprzepisy;
 
-import Database.Database;
 import android.app.ActionBar;
 import android.app.ActionBar.Tab;
 import android.app.FragmentTransaction;
@@ -8,7 +7,6 @@ import android.os.Bundle;
 import android.support.v4.app.FragmentActivity;
 import android.support.v4.view.ViewPager;
 import android.util.Log;
-import android.view.Window;
 
 public class MainActivity extends FragmentActivity implements
         ActionBar.TabListener {
