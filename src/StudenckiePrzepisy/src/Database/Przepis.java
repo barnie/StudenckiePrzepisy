@@ -10,7 +10,7 @@ public class Przepis {
     private String opis;
     private String zdjecie;
 
-    public Przepis(int id, int id_kategori, String nazwa, String opis, String zdjecie){
+    public Przepis(int id, int id_kategori, String nazwa, String opis, String zdjecie) {
         this.id = id;
         this.id_kategori = id_kategori;
         this.nazwa = nazwa;
@@ -18,7 +18,7 @@ public class Przepis {
         this.zdjecie = zdjecie;
     }
 
-    public Przepis(int id_kategori, String nazwa, String opis, String zdjecie){
+    public Przepis(int id_kategori, String nazwa, String opis, String zdjecie) {
         this.id = 0;
         this.id_kategori = id_kategori;
         this.nazwa = nazwa;
@@ -64,5 +64,10 @@ public class Przepis {
 
     public void setZdjecie(String zdjecie) {
         this.zdjecie = zdjecie;
+    }
+
+    @Override
+    public String toString() {
+        return id_kategori + " " + nazwa + " " + opis + " " + zdjecie;
     }
 }

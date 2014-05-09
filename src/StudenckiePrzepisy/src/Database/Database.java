@@ -78,14 +78,14 @@ public class Database extends SQLiteOpenHelper {
         db.close();
     }
 
-    public void addManyPrzepisSkladnik(List<PrzepisSkladnik> ps ){
+    public void addManyPrzepisSkladnik(List<PrzepisSkladnik> ps) {
         SQLiteDatabase db = this.getWritableDatabase();
         ContentValues values[] = new ContentValues[ps.size()];
-        for (int i = 0; i < ps.size(); i++){
+        for (int i = 0; i < ps.size(); i++) {
             values[i] = new ContentValues();
         }
-        for (int i = 0; i < ps.size(); i++){
-            values[i].put(COLUMN_IDPRZEPIS, ps.get(i).getIdprzepis() );
+        for (int i = 0; i < ps.size(); i++) {
+            values[i].put(COLUMN_IDPRZEPIS, ps.get(i).getIdprzepis());
             values[i].put(COLUMN_IDSKLADNIK, ps.get(i).getIdskladnik());
             values[i].put(COLUMN_MIARA, ps.get(i).getMiara());
             values[i].put(COLUMN_ILE, ps.get(i).getIle());
@@ -94,10 +94,10 @@ public class Database extends SQLiteOpenHelper {
         db.close();
     }
 
-    public void addPrzepisSkladnik(PrzepisSkladnik ps){
+    public void addPrzepisSkladnik(PrzepisSkladnik ps) {
         SQLiteDatabase db = this.getWritableDatabase();
         ContentValues values = new ContentValues();
-        values.put(COLUMN_IDPRZEPIS, ps.getIdprzepis() );
+        values.put(COLUMN_IDPRZEPIS, ps.getIdprzepis());
         values.put(COLUMN_IDSKLADNIK, ps.getIdskladnik());
         values.put(COLUMN_MIARA, ps.getMiara());
         values.put(COLUMN_ILE, ps.getIle());
@@ -105,11 +105,11 @@ public class Database extends SQLiteOpenHelper {
         db.close();
     }
 
-    public void addManySkladnik(List<Skladnik> s){
+    public void addManySkladnik(List<Skladnik> s) {
         SQLiteDatabase db = this.getWritableDatabase();
         ContentValues values[] = new ContentValues[s.size()];
-        for (int i = 0; i < s.size(); values[i] = new ContentValues(), i++);
-        for (int i = 0; i < s.size(); i++){
+        for (int i = 0; i < s.size(); values[i] = new ContentValues(), i++) ;
+        for (int i = 0; i < s.size(); i++) {
             values[i].put(COLUMN_NAZWA, s.get(i).getNazwa());
             values[i].put(COLUMN_ILE, s.get(i).getIle());
             db.insert(TABLE_SKLADNIK, null, values[i]);
@@ -117,7 +117,7 @@ public class Database extends SQLiteOpenHelper {
         db.close();
     }
 
-    public void addSkladnik(Skladnik s){
+    public void addSkladnik(Skladnik s) {
         SQLiteDatabase db = this.getWritableDatabase();
         ContentValues values = new ContentValues();
         values.put(COLUMN_NAZWA, s.getNazwa());
@@ -126,11 +126,11 @@ public class Database extends SQLiteOpenHelper {
         db.close();
     }
 
-    public void insertManyPrzepis(List<Przepis> p){
+    public void insertManyPrzepis(List<Przepis> p) {
         SQLiteDatabase db = this.getWritableDatabase();
         ContentValues values[] = new ContentValues[p.size()];
-        for (int i = 0; i < p.size(); values[i] = new ContentValues(), i++);
-        for (int i = 0; i < p.size(); i++){
+        for (int i = 0; i < p.size(); values[i] = new ContentValues(), i++) ;
+        for (int i = 0; i < p.size(); i++) {
             values[i].put(COLUMN_IDKATEGORII, p.get(i).getId_kategori());
             values[i].put(COLUMN_NAZWA, p.get(i).getNazwa());
             values[i].put(COLUMN_OPIS, p.get(i).getOpis());
@@ -140,7 +140,7 @@ public class Database extends SQLiteOpenHelper {
         db.close();
     }
 
-    public void insertPrzepis(Przepis p){
+    public void insertPrzepis(Przepis p) {
         SQLiteDatabase db = this.getWritableDatabase();
         ContentValues values = new ContentValues();
         values.put(COLUMN_IDKATEGORII, p.getId_kategori());
@@ -151,11 +151,11 @@ public class Database extends SQLiteOpenHelper {
         db.close();
     }
 
-    public void insertManyKategorie(List<Kategoria> k){
+    public void insertManyKategorie(List<Kategoria> k) {
         SQLiteDatabase db = this.getWritableDatabase();
         ContentValues values[] = new ContentValues[k.size()];
-        for (int i = 0; i < k.size(); values[i] = new ContentValues(), ++i);
-        for (int i = 0; i < k.size(); i++){
+        for (int i = 0; i < k.size(); values[i] = new ContentValues(), ++i) ;
+        for (int i = 0; i < k.size(); i++) {
             values[i].put(COLUMN_RODZAJ, k.get(i).getName());
             values[i].put(COLUMN_ZDJECIE, k.get(i).getImage());
             db.insert(TABLE_KATEGORIE, null, values[i]);
@@ -163,19 +163,19 @@ public class Database extends SQLiteOpenHelper {
         db.close();
     }
 
-    public void insertKategoria(Kategoria k){
+    public void insertKategoria(Kategoria k) {
         SQLiteDatabase db = this.getWritableDatabase();
         ContentValues values = new ContentValues();
         values.put(COLUMN_RODZAJ, k.getName());
         values.put(COLUMN_ZDJECIE, k.getImage());
-        db.insert(TABLE_KATEGORIE, null,values);
+        db.insert(TABLE_KATEGORIE, null, values);
         db.close();
     }
 
     public void init_kategorie() {
         SQLiteDatabase db = this.getWritableDatabase();
         ContentValues[] values = new ContentValues[6];
-        for (int i = 0; i < values.length; i++){
+        for (int i = 0; i < values.length; i++) {
             values[i] = new ContentValues();
         }
         String[][] tt;
@@ -187,24 +187,37 @@ public class Database extends SQLiteOpenHelper {
                 new String[]{"Studenckie", "kat5"},
                 new String[]{"Inne", "kat6"}
         };
-        for (int i = 0; i < values.length; i++){
+        for (int i = 0; i < values.length; i++) {
             values[i].put(COLUMN_RODZAJ, tt[i][0]);
             values[i].put(COLUMN_ZDJECIE, tt[i][1]);
-            db.insert(TABLE_KATEGORIE,null,values[i]);
+            db.insert(TABLE_KATEGORIE, null, values[i]);
         }
         db.close();
     }
-    public List<Kategoria> getKategorie(){
+
+    public List<Kategoria> getKategorie() {
         List<Kategoria> categories = new ArrayList<Kategoria>();
         String selectQuery = "Select * from " + TABLE_KATEGORIE;
         SQLiteDatabase db = this.getWritableDatabase();
-        Cursor cursor = db.rawQuery(selectQuery,null);
-        if (cursor.moveToFirst()){
+        Cursor cursor = db.rawQuery(selectQuery, null);
+        if (cursor.moveToFirst()) {
             do {
-                categories.add(new Kategoria(cursor.getInt(0),cursor.getString(1), cursor.getString(2)));
+                categories.add(new Kategoria(cursor.getInt(0), cursor.getString(1), cursor.getString(2)));
             } while (cursor.moveToNext());
         }
         return categories;
     }
 
+    public List<Przepis> getPrzepisy() {
+        List<Przepis> przepisy = new ArrayList<Przepis>();
+        String selectQuery = "Select * from " + TABLE_PRZEPIS;
+        SQLiteDatabase db = this.getWritableDatabase();
+        Cursor cursor = db.rawQuery(selectQuery, null);
+        if (cursor.moveToFirst()) {
+            do {
+                przepisy.add(new Przepis(cursor.getInt(0), cursor.getInt(1), cursor.getString(2), cursor.getString(3), cursor.getString(4)));
+            } while (cursor.moveToNext());
+        }
+        return przepisy;
+    }
 }
