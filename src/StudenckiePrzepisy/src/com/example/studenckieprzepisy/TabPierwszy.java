@@ -9,7 +9,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.*;
-
+import Database.DatabaseInit;
 import java.util.List;
 
 public class TabPierwszy extends ListFragment {
@@ -28,6 +28,7 @@ public class TabPierwszy extends ListFragment {
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
         Database db = new Database(getActivity().getApplicationContext(), null, null, 1);
+        DatabaseInit a = new DatabaseInit(getActivity().getApplicationContext());
         category = db.getKategorie();
         for (int i = 0; i < category.size(); i++)
             System.out.println(category.get(i).toString());

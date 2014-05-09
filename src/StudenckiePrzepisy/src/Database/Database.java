@@ -48,11 +48,11 @@ public class Database extends SQLiteOpenHelper {
                 COLUMN_NAZWA + " TEXT, " + COLUMN_OPIS + " TEXT, " + COLUMN_ZDJECIE + " TEXT )";
         String CREATE_SKLADNIK = "CREATE TABLE " + TABLE_SKLADNIK + " ( " +
                 COLUMN_ID + " INTEGER PRIMARY KEY AUTOINCREMENT, " +
-                COLUMN_NAZWA + " TEXT, " + COLUMN_ILE + "INT DEFAULT 1 )";
+                COLUMN_NAZWA + " TEXT, " + COLUMN_ILE + " INT DEFAULT 1 )";
         String CREATE_PRZEPIS_SKLADNIK = "CREATE TABLE " + TABLE_PRZEPIS_SKLADNIK + " ( " +
                 COLUMN_IDPRZEPIS + " integer REFERENCES Przepis(id), " + COLUMN_IDSKLADNIK +
                 " integer REFERENCES Skladnik(id)," + COLUMN_MIARA + " TEXT, " + COLUMN_ILE +
-                " TEXT, PRIMARY KEY(id_przepis,id_skladnik))";
+                " TEXT)";
         db.execSQL(CREATE_KATEGORIE);
         db.execSQL(CREATE_PRZEPIS);
         db.execSQL(CREATE_SKLADNIK);
