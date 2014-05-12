@@ -9,7 +9,8 @@
         ready: function (element, options) {
             // TODO: Initialize the page here.
             //options to przekazany parametr ze strony wywolujacej (parenta)
-            
+            document.getElementById("recipeContainer").style.height = window.screen.availHeight * 1.0 + "px"; //fix issue: flicker of recipe's height  after use bottom menu
+
             //usuwanie przepisu
             function delRec() {
                 removePrzepis(options[2]);
