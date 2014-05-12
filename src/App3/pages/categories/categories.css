@@ -1,17 +1,58 @@
-﻿#listContainer {
+﻿#main-menu .nav-bar {
+    list-style: none;
+    margin-top: 10px;
+}
+
+    #main-menu .nav-bar li {
+        display: inline;
+        padding: 0 10px;
+    }
+
+        #main-menu .nav-bar li a {
+            text-decoration: none;
+            padding-left: 25px;
+            text-transform: uppercase;
+            color: #333;
+            text-shadow: 1px 1px 1px #ccc;
+        }
+
+.nav-bar .nav-button-categories a {
+    background: url("http://www.cheesetoast.co.uk/cheesepress/wp-content/uploads/2012/08/home.gif") no-repeat 0px -2px transparent;
+}
+
+.nav-bar .nav-button-recipes a {
+    background: url("http://www.cheesetoast.co.uk/cheesepress/wp-content/uploads/2012/08/services.gif") no-repeat 0px -2px transparent;
+}
+
+.nav-bar .nav-button-add_recipe a {
+    background: url("http://www.cheesetoast.co.uk/cheesepress/wp-content/uploads/2012/08/products.gif") no-repeat 0px -2px transparent;
+}
+/* Icons courtesy of Thom : http://pixelb.in/assorted-pixel-perfect-14px-icon-set-286/ */
+
+
+body .bottomMenu .left {
+    float: left;
+    text-align: left;
+}
+
+body .bottomMenu .right {
+    float: right;
+    text-align: right;
+}
+
+#listContainer {
     margin: 1%;
-    width: inherit;
-    height: 98%;
     display: -ms-flexbox;
     -ms-flex-direction: row;
     overflow: auto;
     overflow-y: hidden;
+    overflow-x: hidden;
+
 }
 
     #listContainer #containerOfRecipies {
-        height: 90%;
+        height: inherit;
         width: inherit;
-        margin-top: 3.5%;
     }
 
         #listContainer #containerOfRecipies #name {
@@ -20,34 +61,35 @@
             text-decoration:underline;
         }
         #listContainer #containerOfRecipies #myDiv {
-            margin-top: 2.5%;
-            height: inherit;
+            height: 90%;
         }
 
-            #listContainer #containerOfRecipies #myDiv .myTabCss {
-                height: inherit;
-                width: inherit;
+            .myTabCss {
+                margin-left: 2%;
+                height: 90%;
+                width: 80%;
             }
 
             #listContainer #containerOfRecipies #myDiv .myRowCss {
-                height: 42%;
-                width: inherit;
+                
             }
 
             #listContainer #containerOfRecipies #myDiv .myCellCss {
-                height: inherit;
-                width: inherit;
+                padding-top: 5%;
+                height: auto;
+                width: auto;
             }
 
             #listContainer #containerOfRecipies #myDiv .myImageCss {
                 border: solid;
                 border-color: black;
-                height:60%;
-                width:100%;
+                height:inherit;
+                width:inherit;
                 cursor:pointer;
             }
 
             #listContainer #containerOfRecipies #myDiv .catName {
+                display:block;
                 cursor:pointer;
             }
 

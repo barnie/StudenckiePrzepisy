@@ -12,37 +12,18 @@
 
     WinJS.UI.Pages.define("/pages/home/home.html", {
         ready: function (element, options) {
-           
-            //load gallery:
             var array = [];
-            
-            getPrzepisyMax6only(array).then(function () { //array[i][0] - nazwa, array[i][1] - zdjecie.jpg
-                var container = '';
-                for (var i = 0 ; i < 3 && i < array.length ; i++) {
-                    container += '<li><img id="galleryimg' + i.toString() + '" data-arg="' + array[i][0] + '" src="' + MyGlobals.imagesPath + array[i][1] + '" title="' + array[i][0] + '" /></li>';
-                }
-                document.getElementById("1rzad").innerHTML = window.toStaticHTML(container);
-                
-                container = '';
-                for (var i = 3 ; i < 6 && i < array.length ; i++) {
-                    container += '<li><img id="galleryimg' + i.toString() + '" data-arg="' + array[i][0] + '" src="' + MyGlobals.imagesPath + array[i][1] + '" title="' + array[i][0] + '" /></li>';
-                }
-                document.getElementById("2rzad").innerHTML = window.toStaticHTML(container);
-                
-                for (var i = 0 ; i < 6 && i < array.length ; i++) {
-                    document.querySelector('#galleryimg' + i.toString()).onclick = loadRecipeGallery;
-                }
-                
+            getKategorie(array).then(function () {
+                WinJS.Navigation.navigate("/pages/categories/categories.html", array);
             })
-            //gallery is loaded
             
-           WinJS.Utilities.query("a").listen("click", anchorHandler, false);
+           //WinJS.Utilities.query("a").listen("click", anchorHandler, false);
         },
         unload: function () {
             // TODO: Respond to navigations away from this page.
         }
     });
-
+    /*
     function anchorHandler(eventInfo) { //jak sie w linka kliknie
         eventInfo.preventDefault();
         var link = eventInfo.target;
@@ -60,8 +41,9 @@
             var array = [];
 
             getPrzepisy(array).then(function () {
-                loadRecipiesList(array); //ladujemy liste przepisow
-                WinJS.Navigation.navigate(link.href, array);
+                loadRecipiesList(array).then(function(){
+                    WinJS.Navigation.navigate(link.href, array);
+                })
             })
 
         }
@@ -69,6 +51,6 @@
             WinJS.Navigation.navigate(link.href);
         }
     }
-
+    */
    
 })();

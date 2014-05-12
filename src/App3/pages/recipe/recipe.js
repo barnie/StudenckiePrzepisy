@@ -22,9 +22,7 @@
             //koniec ustawiania usuwania
 
             document.getElementById("category").innerHTML = options[1];
-            console.log("option[1]=" + options);
             document.getElementById("name").innerHTML = options[2];
-            //var picturesPath = "/images/"; //TU MUSI BYC INNA SCIEZKA NA KONIEC!
 
             Windows.Storage.ApplicationData.current.localFolder.getFileAsync(options[4]).done(function (file) {
                 var imgHandler = document.createElement("img");

@@ -75,15 +75,6 @@
         app.sessionState.history = nav.history;
     };
 
-    app.onready = function () {
-        var home = document.getElementById("home");
-        home.addEventListener("click", goToHome, false);
-        var button1 = document.getElementById("klik");
-        button1.addEventListener("click", buttonClickHandler, false);
-       // var search = document.getElementById("search");
-        //search.addEventListener("click", openSearch1, false);
-    }
-
     function goToHome() {
         WinJS.Navigation.navigate("/pages/home/home.html");
     }
