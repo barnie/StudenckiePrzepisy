@@ -341,6 +341,34 @@ function getSkladnik(array) {
              });
 }
 
+function getSkladnikAddRecipe(array) {
+
+    var dbPath = Windows.Storage.ApplicationData.current.localFolder.path + '\\przepisy_db.sqlite';
+    var i = 0;
+    return SQLite3JS.openAsync(dbPath)
+              .then(function (db) {
+                  console.log('DB opened');
+                  console.log(Windows.Storage.ApplicationData.current.localFolder.path);
+                  return db.eachAsync('SELECT * FROM Skladnik;', function (row) {
+                      array[i] = new Array();
+                      array[i][0] = row.nazwa;
+                      array[i][1] = row.id;
+                      i++;
+                  });
+              }, function (error) {
+                  if (db) {
+                      db.close();
+                  }
+                  console.log('ERROR Select * Skladnik ' + error.message);
+              })
+             .then(function (db) {
+                 console.log('close the db');
+                 db.close();
+             }).then(function () {
+                 return array;
+             });
+}
+
 function getRandom(array) {
     var dbPath = Windows.Storage.ApplicationData.current.localFolder.path + '\\przepisy_db.sqlite';
     var i = 0;
