@@ -1,6 +1,8 @@
 ﻿// For an introduction to the Navigation template, see the following documentation:
 // http://go.microsoft.com/fwlink/?LinkId=232506
 
+var categoryArray = []; //add_recipe | adv_search data
+var ingridientArray = []; //add_recipe | adv_search data
 (function () {
     "use strict";
     WinJS.Namespace.define("MyGlobals", {

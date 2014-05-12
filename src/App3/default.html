@@ -23,7 +23,20 @@
             WinJS.Navigation.navigate("/pages/search/search.html");
         }
         function openExample() {
-            WinJS.Navigation.navigate("/pages/search/advancedSearch.html");
+            var array = [];
+
+            getKategorie(array).then(function () {
+                for (var i = 0 ; i < array.length ; i++) {
+                    categoryArray[i] = { title: array[i][1], picture: "/images/" + array[i][2] };
+                }
+                getSkladnikAddRecipe(array).then(function () {
+                    for (var i = 0 ; i < array.length ; i++) {
+                        ingridientArray[i] = { name: array[i][0], id: array[i][1] };
+                    }
+                    WinJS.Navigation.navigate("/pages/search/advancedSearch.html");
+                })
+            })
+            
         }
     </script>
 </head>

@@ -1,7 +1,5 @@
 
 //dostaje w options tablice z kategoriami jakie ma wyswietlic [i][0] -id [i][1] - nazwa , [i][2] - zdjecie
-var categoryArray = []; //add_recipe data
-var ingridientArray = []; //add_recipe data
 
 (function () {
     "use strict";
