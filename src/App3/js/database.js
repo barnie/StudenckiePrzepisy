@@ -325,7 +325,10 @@ function getSkladnik(array) {
                   console.log('DB opened');
                   console.log(Windows.Storage.ApplicationData.current.localFolder.path);
                   return db.eachAsync('SELECT * FROM Skladnik;', function (row) {
-                      array[i++] = row.nazwa;
+                      array[i] = new Array();
+                      array[i][0] = row.id;
+                      array[i][1] = row.nazwa;
+                      i++;
                   });
               }, function (error) {
                   if (db) {

@@ -118,4 +118,5 @@
         }
     }
     app.start();
+    LoadThatFuckingShit();
 })();

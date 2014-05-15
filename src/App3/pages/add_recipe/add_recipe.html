@@ -6,7 +6,6 @@
     <link href="/pages/add_recipe/add_recipe.css" rel="stylesheet" />
     <script src="//Microsoft.WinJS.2.0/js/base.js"></script>
     <script src="//Microsoft.WinJS.2.0/js/ui.js"></script>
-    <script src="/pages/add_recipe/datafeed.js"></script>
     <script src="/js/database.js"></script>
     <script src="/pages/add_recipe/add_recipe.js"></script>
     <style>
@@ -54,7 +53,7 @@
                                     </div>
                                 </div>
                             </div>
-                            <div class="category" id="listaKategorii" data-win-control="WinJS.UI.ListView" data-win-options="{itemDataSource : DataExample.catList.dataSource, itemTemplate: select('#categoryTemplate'), selectionMode: 'single', layout: {type: WinJS.UI.ListLayout} }"></div>
+                            <div class="category" id="listaKategorii" data-win-control="WinJS.UI.ListView" data-win-options="{itemDataSource : DataExample1.catList.dataSource, itemTemplate: select('#categoryTemplate'), selectionMode: 'single', layout: {type: WinJS.UI.ListLayout} }"></div>
                     </td>
                     <td>
                         <div style="padding: 3px; ">
@@ -91,7 +90,7 @@
                             </div>
                         </div>
                         <div class="box1">
-                            <div id="mozliweSkladniki" data-win-control="WinJS.UI.ListView" data-win-options="{itemDataSource : DataExample.ingList.dataSource, itemTemplate: select('#ingridientTemplate'), selectionMode: 'single',layout : {type: WinJS.UI.ListLayout}}"></div>
+                            <div id="mozliweSkladniki" data-win-control="WinJS.UI.ListView" data-win-options="{itemDataSource : DataExample2.ingList.dataSource, itemTemplate: select('#ingridientTemplate'), selectionMode: 'single',layout : {type: WinJS.UI.ListLayout}}"></div>
                         
                         <div style="padding: 3px; ">
                             <div id="fieldtext">
