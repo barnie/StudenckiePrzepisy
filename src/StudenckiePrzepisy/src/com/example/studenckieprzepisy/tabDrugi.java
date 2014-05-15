@@ -1,36 +1,36 @@
 package com.example.studenckieprzepisy;
 
+import Database.Database;
+import Database.Przepis;
 import android.app.Activity;
 import android.os.Bundle;
 import android.support.v4.app.ListFragment;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.*;
 
+import java.util.List;
+
 public class tabDrugi extends ListFragment {
     ListView list;
-    String[] web = {
-            "Przepis1",
-            "Przepis2",
-            "Przepis3",
-            "Przepis4",
-            "Przepis5",
-            "Przepis6",
-            "Przepis7"
-    };
-    Integer[] imageId = {
-            R.drawable.ic_launcher,
-            R.drawable.ic_launcher,
-            R.drawable.ic_launcher,
-            R.drawable.ic_launcher,
-            R.drawable.ic_launcher,
-            R.drawable.ic_launcher,
-            R.drawable.ic_launcher
-    };
+    String[] web;
+    Integer[] imageId;
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
+        Database db = new Database(getActivity().getApplicationContext(),null,null,1);
+        List<Przepis> przepis = db.getPrzepisy();
+        for (Przepis p : przepis){
+            Log.d("PRZEPISY!", p.toString());
+        }
+        web = new String[przepis.size()];
+        imageId = new Integer[przepis.size()];
+        for (int i = 0; i < przepis.size(); i++){
+            web[i] = przepis.get(i).getNazwa();
+            imageId[i] = R.drawable.ic_launcher;
+        }
         CustomList adapter = new
                 CustomList(getActivity(), web, imageId);
         setListAdapter(adapter);

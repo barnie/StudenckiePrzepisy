@@ -9,7 +9,7 @@ public class PrzepisSkladnik {
     private String miara;
     private String ile;
 
-    public PrzepisSkladnik(int idprzepis, int idskladnik, String miara, String ile){
+    public PrzepisSkladnik(int idprzepis, int idskladnik, String miara, String ile) {
         this.idprzepis = idprzepis;
         this.idskladnik = idskladnik;
         this.miara = miara;
