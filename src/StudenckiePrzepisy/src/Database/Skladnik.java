@@ -8,19 +8,19 @@ public class Skladnik {
     private String nazwa;
     private int ile;
 
-    public Skladnik(int id, String nazwa, int ile){
+    public Skladnik(int id, String nazwa, int ile) {
         this.id = id;
         this.nazwa = nazwa;
         this.ile = ile;
     }
 
-    public Skladnik(String nazwa, int ile){
+    public Skladnik(String nazwa, int ile) {
         this.id = 0;
         this.nazwa = nazwa;
         this.ile = ile;
     }
 
-    public Skladnik(String nazwa){
+    public Skladnik(String nazwa) {
         this.id = 0;
         this.nazwa = nazwa;
         this.ile = 1;

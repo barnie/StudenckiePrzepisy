@@ -8,13 +8,13 @@ public class Kategoria {
     private String name;
     private String image;
 
-    public Kategoria(int id, String name, String image){
+    public Kategoria(int id, String name, String image) {
         this.id = id;
         this.name = name;
         this.image = image;
     }
 
-    public Kategoria(String name, String image){
+    public Kategoria(String name, String image) {
         this.id = 0;
         this.name = name;
         this.image = image;
@@ -45,7 +45,7 @@ public class Kategoria {
     }
 
     @Override
-    public String toString(){
+    public String toString() {
         return "" + id + " " + name + " " + image;
     }
 

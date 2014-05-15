@@ -3,6 +3,7 @@ package com.example.studenckieprzepisy;
 import android.app.ActionBar;
 import android.app.ActionBar.Tab;
 import android.app.FragmentTransaction;
+import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.support.v4.app.FragmentActivity;
 import android.support.v4.view.ViewPager;
@@ -15,6 +16,7 @@ public class MainActivity extends FragmentActivity implements
     private ActionBar actionBar;
 
     private String[] tabs = {"Kategorie", "Przepisy"};
+    SharedPreferences prefs = null;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -32,6 +34,7 @@ public class MainActivity extends FragmentActivity implements
                     .setTabListener(this));
         Log.d("AA", "COS4");
         //actionBar.hide();
+        prefs = getSharedPreferences("com.example.studenckieprzepisy", MODE_PRIVATE);
         viewPager.setOnPageChangeListener(new ViewPager.OnPageChangeListener() {
 
             @Override
@@ -47,6 +50,16 @@ public class MainActivity extends FragmentActivity implements
             public void onPageScrollStateChanged(int arg0) {
             }
         });
+    }
+
+    @Override
+    protected void onResume() {
+        super.onResume();
+        if (prefs.getBoolean("firstrun", true)) {
+            // Do first run stuff here then set 'firstrun' as false
+            // using the following line to edit/commit prefs
+            prefs.edit().putBoolean("firstrun", false).commit();
+        }
     }
 
     @Override
