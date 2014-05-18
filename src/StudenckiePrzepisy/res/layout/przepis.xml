@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+            android:id="@+id/ScrollView01"
+            android:layout_width="fill_parent"
+            android:layout_height="fill_parent">
+    <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+        <ImageView
+                android:layout_width="fill_parent"
+                android:layout_height="150dp"
+                android:id="@+id/zdjecie"
+                android:background="#040008"/>
+        <TextView
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:text="Pusty przepis!"
+                android:id="@+id/skladniki"
+                android:layout_below="@+id/zdjecie" android:layout_alignParentLeft="true"/>
+        <TextView
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:text="Pusty Przepis"
+                android:id="@+id/opis" android:layout_below="@+id/skladniki" android:layout_alignParentLeft="true"/>
+    </RelativeLayout>
+</ScrollView>

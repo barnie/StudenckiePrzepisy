@@ -26,6 +26,11 @@ public class Skladnik {
         this.ile = 1;
     }
 
+    @Override
+    public String toString() {
+        return "" + getId() + ":" + getNazwa() + ":" + getIle();
+    }
+
     public int getId() {
         return id;
     }

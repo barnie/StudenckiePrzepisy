@@ -220,4 +220,47 @@ public class Database extends SQLiteOpenHelper {
         }
         return przepisy;
     }
+
+    public Przepis getPrzepis(String nazwa) {
+        Przepis przepis = null;
+        String query = "Select * FROM " + TABLE_PRZEPIS + " WHERE " + COLUMN_NAZWA + " = \"" + nazwa + "\"";
+        SQLiteDatabase db = this.getWritableDatabase();
+        Cursor cursor = db.rawQuery(query, null);
+        if (cursor.moveToFirst()) {
+            przepis = new Przepis(cursor.getInt(0), cursor.getInt(1), cursor.getString(2), cursor.getString(3), cursor.getString(4));
+        }
+        db.close();
+        return przepis;
+    }
+
+    public List<Skladnik> getSkladniki() {
+        List<Skladnik> skladniki = new ArrayList<Skladnik>();
+        String selectQuery = "Select * from " + TABLE_SKLADNIK;
+        SQLiteDatabase db = this.getWritableDatabase();
+        Cursor cursor = db.rawQuery(selectQuery, null);
+        if (cursor.moveToFirst()) {
+            do {
+                skladniki.add(new Skladnik(cursor.getInt(0), cursor.getString(1), cursor.getInt(2)));
+            } while (cursor.moveToNext());
+        }
+        return skladniki;
+    }
+
+    public List<PrzepisSkladnik> getPrzepisSkladnik(int idPrzepis) {
+        List<PrzepisSkladnik> ps = new ArrayList<PrzepisSkladnik>();
+        String selectQuery = "Select * FROM " + TABLE_PRZEPIS_SKLADNIK + " WHERE " + COLUMN_IDPRZEPIS + " = \"" + idPrzepis + "\"";
+        SQLiteDatabase db = this.getWritableDatabase();
+        try {
+            Cursor cursor = db.rawQuery(selectQuery, null);
+            if (cursor.moveToFirst()) {
+                do {
+                    ps.add(new PrzepisSkladnik(cursor.getInt(0), cursor.getInt(1), cursor.getString(2), cursor.getString(3)));
+                } while (cursor.moveToNext());
+            }
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+        return ps;
+    }
+
 }

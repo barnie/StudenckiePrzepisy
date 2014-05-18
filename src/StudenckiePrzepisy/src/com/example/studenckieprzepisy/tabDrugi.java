@@ -3,6 +3,7 @@ package com.example.studenckieprzepisy;
 import Database.Database;
 import Database.Przepis;
 import android.app.Activity;
+import android.content.Intent;
 import android.content.res.AssetManager;
 import android.graphics.drawable.Drawable;
 import android.os.Bundle;
@@ -13,9 +14,9 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.*;
 
-import java.io.IOException;
 import java.io.InputStream;
-import java.util.*;
+import java.util.HashMap;
+import java.util.List;
 
 public class tabDrugi extends ListFragment {
     ListView list;
@@ -25,6 +26,7 @@ public class tabDrugi extends ListFragment {
 
 
     HashMap<Integer, Drawable> lista = new HashMap<Integer, Drawable>();
+
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
         Database db = new Database(getActivity().getApplicationContext(), null, null, 1);
@@ -47,7 +49,9 @@ public class tabDrugi extends ListFragment {
     @Override
     public void onListItemClick(ListView l, View v, int position, long id) {
         super.onListItemClick(l, v, position, id);
-        Toast.makeText(getActivity().getApplicationContext(), ":D", Toast.LENGTH_LONG).show();
+        Intent intent = new Intent(getActivity(), Przeepis.class);
+        intent.putExtra("KEY", przepis.get(position).getNazwa());
+        startActivity(intent);
     }
 
     class CustomList extends ArrayAdapter<String> {
@@ -73,7 +77,7 @@ public class tabDrugi extends ListFragment {
             imageView.setImageResource(imageId[position]);
             AssetManager assetManager = getActivity().getAssets();
             try {
-                if (lista.size() < position ){
+                if (lista.size() < position) {
                     Log.d("ZDJECIE", "" + przepis.get(position).getZdjecie());
                     InputStream ims = assetManager.open(przepis.get(position).getZdjecie());
                     Drawable d = Drawable.createFromStream(ims, null);

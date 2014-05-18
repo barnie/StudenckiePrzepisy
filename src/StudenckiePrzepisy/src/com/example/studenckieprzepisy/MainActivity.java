@@ -38,6 +38,12 @@ public class MainActivity extends FragmentActivity implements
         //DatabaseInit dinit = new DatabaseInit(getApplicationContext());
         //dinit.initDB();
         prefs = getSharedPreferences("com.example.studenckieprzepisy", MODE_PRIVATE);
+        boolean firstRun = prefs.getBoolean("INSTALL", false);
+        if (!firstRun) {
+            prefs.edit().putBoolean("INSTALL", true).commit();
+            DatabaseInit dinit = new DatabaseInit(getApplicationContext());
+            dinit.initDB();
+        }
         viewPager.setOnPageChangeListener(new ViewPager.OnPageChangeListener() {
 
             @Override

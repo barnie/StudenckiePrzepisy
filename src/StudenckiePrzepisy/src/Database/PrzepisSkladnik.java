@@ -16,6 +16,11 @@ public class PrzepisSkladnik {
         this.ile = ile;
     }
 
+    @Override
+    public String toString() {
+        return "" + getIdprzepis() + ":" + getIdskladnik() + ":" + getIle() + ":" + getMiara();
+    }
+
     public int getIdprzepis() {
         return idprzepis;
     }
