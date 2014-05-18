@@ -38,7 +38,7 @@ public class tabDrugi extends ListFragment {
         imageId = new Integer[przepis.size()];
         for (int i = 0; i < przepis.size(); i++) {
             web[i] = przepis.get(i).getNazwa();
-            imageId[i] = R.drawable.ic_launcher;
+            imageId[i] = R.drawable.pingwinek;
         }
         CustomList adapter = new
                 CustomList(getActivity(), web, imageId);

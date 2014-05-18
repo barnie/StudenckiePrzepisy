@@ -43,7 +43,7 @@ public class TabPierwszy extends ListFragment {
         }
         for (int i = 0; i < category.size(); i++) {
             if (imageId[i] < 0)
-                imageId[i] = R.drawable.ic_launcher;
+                imageId[i] = R.drawable.pingwinek;
         }
         CustomList adapter = new
                 CustomList(getActivity(), web, imageId);
