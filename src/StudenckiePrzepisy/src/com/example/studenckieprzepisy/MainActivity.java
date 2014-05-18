@@ -1,5 +1,6 @@
 package com.example.studenckieprzepisy;
 
+import Database.DatabaseInit;
 import android.app.ActionBar;
 import android.app.ActionBar.Tab;
 import android.app.FragmentTransaction;
@@ -34,6 +35,8 @@ public class MainActivity extends FragmentActivity implements
                     .setTabListener(this));
         Log.d("AA", "COS4");
         //actionBar.hide();
+        //DatabaseInit dinit = new DatabaseInit(getApplicationContext());
+        //dinit.initDB();
         prefs = getSharedPreferences("com.example.studenckieprzepisy", MODE_PRIVATE);
         viewPager.setOnPageChangeListener(new ViewPager.OnPageChangeListener() {
 
