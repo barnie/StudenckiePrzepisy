@@ -85,6 +85,22 @@
             })
 
         }
+        else if(("" + link).search("add_recipe") != -1) {
+
+            var array = [];
+
+            getKategorie(array).then(function () {
+                for (var i = 0 ; i < array.length ; i++) {
+                    categoryArray[i] = { title: array[i][1], picture:  "/images/" + array[i][2] };
+                }
+                getSkladnikAddRecipe(array).then(function () {
+                    for (var i = 0 ; i < array.length ; i++) {
+                        ingridientArray[i] = { name: array[i][0], id: array[i][1] };
+                    }
+                    WinJS.Navigation.navigate(link.href);
+                })
+            })
+        }
         else {
             WinJS.Navigation.navigate(link.href);
         }

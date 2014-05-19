@@ -1,14 +1,70 @@
-﻿function loadRecData(i, myData, array) {
-    return Windows.Storage.ApplicationData.current.localFolder.getFileAsync(array[i][3]).then(function (file) {},
+﻿var AggrInf = { //interface, interator pattern:
+    getIterator: function (dataIn) { }
+};
+
+var ItInf = { //interface, interator pattern:
+    next: function () { }
+};
+
+//ListData class
+function ListData() { //singleton pattern
+    if (arguments.callee._singletonInstance)
+        return arguments.callee._singletonInstance;
+    arguments.callee._singletonInstance = this;
+    this.setValue = function (dataArg) { //Dependency Injection
+        this.data = dataArg;
+    }
+    this.data = null;
+    this.it = null;
+};
+ListData.prototype = Object.create(AggrInf); //extend AggrInf for ListData
+
+ListData.prototype.getIterator = function () {
+    this.it = new ItList(this.data);
+    if (this.data.length > 0) return true;
+    else return false;
+}
+
+//ItList class
+var ItList = function (dataIn) {
+    this.curIndx = 0;
+    this.data = dataIn;
+    if (this.data.length < 1) {
+        this.title = null;
+        this.picture = null;
+    }
+    else {
+        this.title = this.data[this.curIndx][1];
+        this.picture = this.data[this.curIndx][3];
+    }
+};
+ItList.prototype = Object.create(ItInf);
+ItList.prototype.next = function () {
+    if (this.curIndx + 1 < this.data.length) {
+        this.curIndx++;
+        this.title = this.data[this.curIndx][1];
+        this.picture = this.data[this.curIndx][3];
+        return true;
+    }
+    console.log("next return false.");
+    return false; //signal that is the end of collection
+}
+
+//main functions:
+
+function loadRecData(i, myData, array) {
+
+    return Windows.Storage.ApplicationData.current.localFolder.getFileAsync(array.it.picture).then(function (file) { },
             function () {
                 var varShortTitle;
-                if (array[i][1].length > 19)
-                    varShortTitle = array[i][1].substr(0, 16) + "...";
+                if (array.it.title > 19)
+                    varShortTitle = array.it.title.substr(0, 16) + "...";
                 else
-                    varShortTitle = array[i][1];
-                myData[i] = { title: array[i][1], shortTitle: varShortTitle, picture: 'url("' + "/images/" + array[i][3] + '")', size: 'cover' };
-                i++;
-                if (i < array.length)
+                    varShortTitle = array.it.title;
+                myData[myData.length] = { title: array.it.title, shortTitle: varShortTitle, picture: 'url("' + "/images/" + array.it.picture + '")', size: 'cover' };
+                i = array.it.next();
+                console.log("i = " + i);
+                if (i)
                     return loadRecData(i, myData, array);
             });
 }
@@ -16,13 +72,11 @@
 function loadRecipiesList(array) {
     "use strict";
     var myData = [];
-    return loadRecData(0, myData, array).then( function(){
-        
-
-        //    myData[i] = { title: array[i][1], picture: 'url("' + "ms-appdata:///local/" + array[i][3] + '")' };
-
-
-
+    var listObj = new ListData();
+    listObj.setValue(array);
+    var check = listObj.getIterator(); //if false 0 obj in collection
+    if (!check) return 0;
+    return loadRecData(check, myData, listObj).then(function () {
 
         // Create a WinJS.Binding.List from the array. 
         var itemsList = new WinJS.Binding.List(myData);

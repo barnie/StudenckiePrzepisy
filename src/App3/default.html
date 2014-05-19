@@ -10,14 +10,12 @@
     <script src="//Microsoft.WinJS.2.0/js/ui.js"></script>
 
     <!-- App4 references -->
+    <link href="/css/default.css" rel="stylesheet" />
+    <script src="/js/default.js"></script>
     <script src="/js/navigator.js"></script>
     <script src="SQLite3JS/js/SQLite3.js"></script>
     <script src="/js/SQLite3.js"></script>
     <script src="/js/database.js"></script>
-    <script src="/pages/add_recipe/datafeed.js"></script>
-    <link href="/css/default.css" rel="stylesheet" />
-    <script src="/js/default.js"></script>
-    
     <script src="/js/default_inserts.js"></script>
     <script src="/pages/list_recipes/data.js"></script>
     <script>
@@ -25,7 +23,20 @@
             WinJS.Navigation.navigate("/pages/search/search.html");
         }
         function openExample() {
-            WinJS.Navigation.navigate("/pages/search/advancedSearch.html");
+            var array = [];
+
+            getKategorie(array).then(function () {
+                for (var i = 0 ; i < array.length ; i++) {
+                    categoryArray[i] = { title: array[i][1], picture: "/images/" + array[i][2] };
+                }
+                getSkladnikAddRecipe(array).then(function () {
+                    for (var i = 0 ; i < array.length ; i++) {
+                        ingridientArray[i] = { name: array[i][0], id: array[i][1] };
+                    }
+                    WinJS.Navigation.navigate("/pages/search/advancedSearch.html");
+                })
+            })
+            
         }
     </script>
 </head>

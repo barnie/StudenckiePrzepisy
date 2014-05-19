@@ -1,7 +1,7 @@
 ﻿#text {
     text-align:center;
     height: 100%;
-    color: white;
+    color: black;
     background: rgba(0,100,0,0.8); 
     font-size: medium;
     font-family: Georgia;
@@ -10,7 +10,7 @@
 }
 #fieldtext{
     height: 100%;
-    color: white;
+    color: black;
     font-size: small;
     font-family: Georgia;
     font-style: italic;
@@ -22,19 +22,16 @@ img.center {
     display: block;
   margin-left: auto;
   margin-right: auto;
-  max-width: 10%;
 }
 body .bottomButtonAdd{
-    background-color: white;
     position:fixed;
     top: 75%;
-    left: 40%;
+    right: 12%;
 }
 body .bottomButtonDel{
-    background-color: white;
     position:fixed;
     top: 75%;
-    right: 40%;
+    right: 30%;
 }
 body .box1{
     position:fixed;
@@ -51,8 +48,5 @@ body .box1{
     top:5%;
 }
 body .category{
-    padding: 3px; 
-    position: fixed; 
-    min-width: 300px;
-    in
+
 }

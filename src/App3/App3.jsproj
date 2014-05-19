@@ -125,6 +125,7 @@
     <Content Include="css\default.css" />
     <Content Include="js\SQLite3.js" />
     <Content Include="packages.config" />
+    <Content Include="pages\recipe\recipeClass.js" />
     <Content Include="pages\search\advancedSearch.html" />
     <Content Include="pages\search\advancedSearch.js" />
     <Content Include="pages\search\search.html" />
