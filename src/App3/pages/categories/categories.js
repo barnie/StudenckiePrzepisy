@@ -13,7 +13,8 @@
             var categories = options;
             var count = options.length;
             //date prepared, start script:
-            var layout = new LayoutContainer(count, 'myTabCss', 'myRowCss', 'myCellCss');
+            var layout = new LayoutContainer();
+            layout.SetValue(count, 'myTabCss', 'myRowCss', 'myCellCss');
             var table = layout.CreateContainer();
 
             if (count < 3)

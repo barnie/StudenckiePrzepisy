@@ -1,12 +1,28 @@
-﻿
-function LayoutContainer(size, tableCss, rowCss, cellCss) {
-    this.width = Math.ceil(size / 2.0);
-    this.tableCss = tableCss;
-    this.rowCss = rowCss;
-    this.cellCss = cellCss;
-    this.cellId = 0;
-    this.rowId = 'first';
+﻿var DecInf = { //interface, decorator pattern (for future):
+    CreateContainer: function () { },
+    CreateElementContent: function (cellId, pictureUrl, imageCss, pictureId, catName) { },
+    CreateAndRegisterFunctionHandlers: function (idArray, lenght) { }
+};
+
+
+
+function LayoutContainer() { //constructor
+    
+    if (arguments.callee._singletonInstance) //singleton
+        return arguments.callee._singletonInstance;
+    arguments.callee._singletonInstance = this;
+
+    this.SetValue = function (size, tableCss, rowCss, cellCss) { //Dependency Injection
+        this.width = Math.ceil(size / 2.0);
+        this.tableCss = tableCss;
+        this.rowCss = rowCss;
+        this.cellCss = cellCss;
+        this.cellId = 0;
+        this.rowId = 'first';
+    }
 }
+
+LayoutContainer.prototype = Object.create(DecInf); //extend DecInfo for LayoutContainer
 
 // tworzenie tabeli przechowującej przepisy
 LayoutContainer.prototype.CreateContainer = function () {
@@ -39,18 +55,6 @@ LayoutContainer.prototype.CreateElementContent = function (cellId, pictureUrl, i
 
 }
 
-
-/*
-LayoutContainer.prototype.CreateElementContent = function (pictureUrl, imageCss, catName, catId) {
-    var content = '';
-
-    var imgPath = "/images/"; //TU NALEZY PODAC SCIEZKE DO OBRAZKOW ZAMIAST "images/"
-    content += '<img id="' + catId + '" src="' + imgPath + pictureUrl + '" class="' + imageCss + '" onclick="' + onClickFunctionName + '(' + catId.toString() + ')' + '"></img>';
-    content += '<span class="catTitle">' + catName + '</span>';
-
-    return content;
-}
-*/
 
 LayoutContainer.prototype.CreateAndRegisterFunctionHandlers = function (idArray, lenght) {
     var functionNames = new Array();
