@@ -22,6 +22,9 @@
         function openSearch() {
             WinJS.Navigation.navigate("/pages/search/search.html");
         }
+        function goHome() {
+            WinJS.Navigation.navigate("/pages/home/home.html");
+        }
         function openExample() {
             var array = [];
 
@@ -46,7 +49,7 @@
         data-win-options="{layout:'custom',placement:'bottom'}", class="bottomMenu">
         <header aria-label="Navigation bar" role="banner">
             <div class="left">
-                <button id="home" data-win-control="WinJS.UI.AppBarCommand" data-win-options="{icon:'home', label:'Home', onclick:null, type:'button', tooltip:'Powrót do głownego ekranu'}"></button>
+                <button id="home" data-win-control="WinJS.UI.AppBarCommand" data-win-options="{icon:'home', label:'Home', onclick:null, type:'button', tooltip:'Powrót do głownego ekranu'}" onclick="goHome()"></button>
             </div>
             <div class="right">
                 <button id="buttonDel" data-win-control="WinJS.UI.AppBarCommand" data-win-options="{icon:'delete', label:'Usuń przepis', type:'button', tooltip:'Usuń otwarty przepis'}"></button>
