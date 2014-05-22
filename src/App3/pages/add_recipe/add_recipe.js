@@ -1,21 +1,4 @@
-﻿function loadData(categoryArray) {
-    categoryArray = [
-    { title: "mieso i wedliny", picture: "images/miecho.jpg", id: 1 },
-    { title: "ryby i owoce morza", picture: "images/ryba.jpg", id: 2 },
-    { title: "nabial", picture: "images/nabial.jpg", id: 3 },
-    { title: "warzywa", picture: "images/warzywa.jpg", id: 4 },
-    { title: "owoce", picture: "images/owoce.jpg", id: 5 },
-    { title: "pieczywo", picture: "images/pieczywo.jpg", id: 6 },
-    { title: "grzyby", picture: "images/grzyby.jpg", id: 7 },
-    { title: "zupy", picture: "images/soup.jpg", id: 8 },
-    { title: "sosy", picture: "images/sos.jpg", id: 9 },
-    { title: "przetwory", picture: "images/przetwory.jpg", id: 10 },
-    { title: "desery", picture: "images/deser.jpg", id: 11 },
-    { title: "napoje", picture: "images/napoj.jpg", id: 12 },
-    { title: "salatki", picture: "images/salatka.jpg", id: 13 },
-    { title: "studenckie", picture: "images/studenckie.jpg", id: 14 }
-    ];
-}
+﻿
 (function () {
     "use strict";
     var fileObj;

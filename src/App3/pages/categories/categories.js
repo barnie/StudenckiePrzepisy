@@ -53,9 +53,8 @@
             // TODO 2: Tutaj umiesc kod ktory otworzy nowa strone albo wykona cos na podstawie tego arg ktory podales w funkcji CreateElementContent > repicesIds[i]
             var array = [];
             getPrzepisyKat(arg, array).then(function () {
-                loadRecipiesList(array).then(function () { //ladujemy liste przepisow
-                    WinJS.Navigation.navigate("pages/list_recipes/list_recipes.html", array);
-                })
+                loadRecipiesList(array); //ladujemy liste przepisow
+                WinJS.Navigation.navigate("pages/list_recipes/list_recipes.html", array);
             })
             // TODO 2
         },
@@ -63,6 +62,7 @@
             // TODO: Respond to navigations away from this page.
         }
     });
+
     function anchorHandler(eventInfo) { //jak sie w linka kliknie
         eventInfo.preventDefault();
         var link = eventInfo.target;
@@ -80,9 +80,8 @@
             var array = [];
 
             getPrzepisy(array).then(function () {
-                loadRecipiesList(array).then(function () {
-                    WinJS.Navigation.navigate(link.href, array);
-                })
+                loadRecipiesList(array);
+                WinJS.Navigation.navigate(link.href, array);  
             })
 
         }
@@ -92,7 +91,7 @@
 
             getKategorie(array).then(function () {
                 for (var i = 0 ; i < array.length ; i++) {
-                    categoryArray[i] = { title: array[i][1], picture:  "/images/" + array[i][2] };
+                    categoryArray[i] = { title: array[i][1], picture: "/images/" + array[i][2], id: array[i][0] };
                 }
                 getSkladnikAddRecipe(array).then(function () {
                     for (var i = 0 ; i < array.length ; i++) {
