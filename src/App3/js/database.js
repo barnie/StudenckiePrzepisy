@@ -482,12 +482,22 @@ function findPrzepis(kategorie,skladniki,array) {
     var i = 0;
     return SQLite3JS.openAsync(dbPath)
               .then(function (db) {
-                  QUERY = " SELECT Przepis_Skladnik.id_przepis, Przepis_Skladnik.id_skladnik ,Przepis.nazwa FROM przepis_Skladnik INNER JOIN przepis ON Przepis_Skladnik.id_przepis =  przepis.id WHERE Przepis_Skladnik.id_Skladnik =  ";
+                  QUERY = " SELECT Przepis_Skladnik.id_przepis, Przepis_Skladnik.id_skladnik ,Przepis.nazwa FROM przepis_Skladnik INNER JOIN przepis ON Przepis_Skladnik.id_przepis =  przepis.id WHERE Przepis_Skladnik.id_Skladnik in (";
                   var j = 0;
-                  for (j = 0; j < skladniki.length - 1 ; j++) {
-                      QUERY += skladniki[j] + " OR Przepis_Skladnik.id_Skladnik = ";
+                  for (j = 0; j < skladniki.length - 1; j++) {
+                      QUERY += skladniki[j] + ",";
                   }
-                  QUERY += skladniki[j] + " GROUP BY Przepis_Skladnik.id_przepis HAVING COUNT(*) > 1; ";
+                  QUERY += skladniki[j];
+                  QUERY += ") and przepis.id_kategorii in ("
+                  var k = 0;
+                  for (k = 0; k < kategorie.length-1; k++)
+                  {
+                      QUERY += kategorie[k] + ",";
+                  }
+                  QUERY += kategorie[k];
+                  QUERY += ")";
+                      
+                  QUERY += " GROUP BY Przepis_Skladnik.id_przepis HAVING COUNT(*) > 0; ";
                   console.log(QUERY);
                   return db.eachAsync(QUERY, function (row) {
                       console.log('#' + row.nazwa + '#')
