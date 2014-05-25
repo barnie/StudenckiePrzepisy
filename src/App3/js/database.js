@@ -11,14 +11,19 @@ C:\Users\Twoja_nazwa_usera\AppData\Local\Packages\7cbc57f9-d6bb-4fc5-8ce0-d0c51f
 function createDB() {
     var dbPath = Windows.Storage.ApplicationData.current.localFolder.path + '\\przepisy_db.sqlite';
     SQLite3JS.openAsync(dbPath).then(function (db) {
-        db.runAsync('create table IF NOT EXISTS Kategorie (id integer PRIMARY KEY AUTOINCREMENT, rodzaj TEXT, zdjecie TEXT)');
-        db.runAsync('create table IF NOT EXISTS Przepis (id integer PRIMARY KEY AUTOINCREMENT, id_kategorii integer REFERENCES Kategorie(id), nazwa TEXT, opis TEXT, zdjecie TEXT)');
-        db.runAsync('create table IF NOT EXISTS Skladnik (id integer PRIMARY KEY AUTOINCREMENT,nazwa TEXT, ile INT DEFAULT 1)')
-        db.runAsync('create table IF NOT EXISTS Przepis_Skladnik (id_przepis integer REFERENCES Przepis(id), id_skladnik integer REFERENCES Skladnik(id),miara TEXT,ile TEXT, PRIMARY KEY(id_przepis,id_skladnik))').then(function () {
-
-            db.runAsync('create trigger IF NOT EXISTS przepis_sklad AFTER INSERT on Przepis_Skladnik BEGIN UPDATE skladnik set ile = (select ile from skladnik where id = new.id_skladnik) + 1  where id = new.id_skladnik;   END;');
-            db.runAsync('CREATE TRIGGER IF NOT EXISTS del_przepis_sklad AFTER DELETE ON Przepis_Skladnik BEGIN 	UPDATE skladnik SET ile = (SELECT ile FROM skladnik WHERE id = old.id_skladnik) - 1         WHERE id = old.id_skladnik;         END;');
-            db.close()
+        return db.runAsync('create table IF NOT EXISTS Kategorie (id integer PRIMARY KEY AUTOINCREMENT, rodzaj TEXT, zdjecie TEXT)').then(function () {
+            return db.runAsync('create table IF NOT EXISTS Przepis (id integer PRIMARY KEY AUTOINCREMENT, id_kategorii integer REFERENCES Kategorie(id), nazwa TEXT, opis TEXT, zdjecie TEXT)').then(function () {
+                return db.runAsync('create table IF NOT EXISTS Skladnik (id integer PRIMARY KEY AUTOINCREMENT,nazwa TEXT, ile INT DEFAULT 1)').then(function () {
+                    return db.runAsync('create table IF NOT EXISTS Przepis_Skladnik (id_przepis integer REFERENCES Przepis(id), id_skladnik integer REFERENCES Skladnik(id),miara TEXT,ile TEXT, PRIMARY KEY(id_przepis,id_skladnik))').then(function () {
+                        return db.runAsync('create trigger IF NOT EXISTS przepis_sklad AFTER INSERT on Przepis_Skladnik BEGIN UPDATE skladnik set ile = (select ile from skladnik where id = new.id_skladnik) + 1  where id = new.id_skladnik;   END;').then(function () {
+                            return db.runAsync('CREATE TRIGGER IF NOT EXISTS del_przepis_sklad AFTER DELETE ON Przepis_Skladnik BEGIN 	UPDATE skladnik SET ile = (SELECT ile FROM skladnik WHERE id = old.id_skladnik) - 1         WHERE id = old.id_skladnik;         END;').then(function () {
+                                db.close();
+                                default_insert();
+                            })
+                        })
+                    })
+                })
+            })
         })
     });
 }

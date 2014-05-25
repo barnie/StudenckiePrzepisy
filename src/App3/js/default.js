@@ -28,6 +28,7 @@ var ingridientArray = []; //add_recipe | adv_search data
             if (app.sessionState.history) {
                 nav.history = app.sessionState.history;
             }
+            
             args.setPromise(WinJS.UI.processAll().then(function () {
                 if (nav.location) {
                     nav.history.current.initialPlaceholder = true;
@@ -39,40 +40,6 @@ var ingridientArray = []; //add_recipe | adv_search data
         }
     });
 
-    function buttonClickHandler(eventInfo) {
-        // that button test a database only :) Cool and chill nigga!
-        //console.log("BUTTON")
-        //createDB();
-        //addKategorie('TEST','TEST')
-        /*  var tab = [];
-          tab[0] = new Array(); tab[1] = new Array();
-          tab[0][0] = 1; tab[0][1] = 'szklanka'; tab[0][2] = 2;
-          tab[1][0] = 2; tab[1][1] = 'lyzka'; tab[1][2] = 3;
-           addPrzepis(1,'aaa','xxx','img',tab) */
-        /* var array = [];
-         getKategorie(array).then(function () {
-             for (var i = 0; i < array.length; i++)
-                 console.log(array[i]);
-         })*/
-        /*var array = [];
-        getRandom(array).done(function () {
-            for (var i = 0; i < array.length; i++)
-                console.log(array[i]);
-        })*/
-        //default_insert();
-        //removePrzepis("Pig Steak");
-        var kategorie = [];
-        kategorie[0] = 1;
-        kategorie[1] = 2;
-        kategorie[2] = 6;
-        var skladniki = [];
-        skladniki[0] = 3;
-        skladniki[1] = 4;
-        var array = [];
-        findPrzepis(kategorie, skladniki, array);
-    }
-
-
     app.oncheckpoint = function (args) {
         app.sessionState.history = nav.history;
     };
@@ -80,10 +47,6 @@ var ingridientArray = []; //add_recipe | adv_search data
     function goToHome() {
         WinJS.Navigation.navigate("/pages/home/home.html");
     }
-
-    //function openSearch1() {
-    //    WinJS.Navigation.navigate("/pages/basic_search/basic_search.html");
-   // }
 
     app.start();
 })();

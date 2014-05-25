@@ -122,8 +122,8 @@ kat[114] = "INSERT OR IGNORE INTO przepis_skladnik VALUES (13,3,'', '')";
 kat[115] = "INSERT OR IGNORE INTO przepis_skladnik VALUES (13,4,'', '')";
 kat[116] = "INSERT OR IGNORE INTO przepis(id, id_kategorii, nazwa, opis, zdjecie) VALUES (14, 5, 'Iceówka' , 'Cukierki zalewamy wrzącą wodą i mieszamy aż do całkowitego rozpuszczenia, można dodatkowo lekko podgrzewać żeby przyspieszyć cały proces choć i bez tego po kilku minutach wszystko się ładnie rozpuszcza. Czekamy aż uzyskany syrop całkowicie ostygnie i wlewamy do niego spirytus. Przelewamy iceówke do butelek i odkładamy do lodówki na przynajmniej kilka dni żeby się przegryzła. Można dowolnie zmieniać proporcje składników w zależności od pożądanego kopnięcia oraz stopnia słodkości. Wchodzi świetnie, bez przepitki.' ,'14.jpg')";
 kat[117] = "INSERT OR IGNORE INTO przepis_skladnik VALUES (14,44,'l', '0.4')";
-kat[118] = "INSERT OR IGNORE INTO przepis_skladnik VALUES (14,42,'l', '0.5')";
-kat[119] = "INSERT OR IGNORE INTO przepis_skladnik VALUES (14,42,'g', '300')";
+kat[118] = "INSERT OR IGNORE INTO przepis_skladnik VALUES (14,31,'l', '0.5')";
+kat[119] = "INSERT OR IGNORE INTO przepis_skladnik VALUES (14,46,'g', '300')";
 kat[120] = "INSERT OR IGNORE INTO przepis_skladnik VALUES (9,32,'według uznania', '')";
 
 
@@ -149,6 +149,10 @@ function default_insert() {
         done(function () {
             console.log('Baza Zapchana:)');
             db.close();
+            var array = [];
+            getKategorie(array).then(function () {
+                WinJS.Navigation.navigate("/pages/categories/categories.html", array);
+            })
         }, function (error) {
             if (db) {
                 db.close();
@@ -157,5 +161,3 @@ function default_insert() {
         })
     });
 }
-//createDB();
-//default_insert();

@@ -88,6 +88,7 @@
     <Content Include="images\spadzetixD.jpg" />
     <Content Include="images\Windows8Green.jpg" />
     <Content Include="js\default_inserts.js" />
+    <Content Include="js\installDb.js" />
     <Content Include="js\jquery-2.0.3.min.js" />
     <Content Include="js\LayoutContainer.js" />
     <Content Include="js\navigator.js" />
