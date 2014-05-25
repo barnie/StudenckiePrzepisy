@@ -83,7 +83,7 @@ function loadRecipiesList(array) {
     listObj.setValue(array);
     var check = listObj.getIterator(); //if false 0 obj in collection
     if (!check) return 0;
-    return loadRecData(check, myData, listObj).then(function () {
+    return loadRecData(check, myData, listObj).then(function () { //important - is using to asynch dowload data and chose correct url of img
 
         // Create a WinJS.Binding.List from the array. 
         var itemsList = new WinJS.Binding.List(myData);
