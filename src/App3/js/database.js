@@ -482,7 +482,7 @@ function findPrzepis(kategorie,skladniki,array) {
     var i = 0;
     return SQLite3JS.openAsync(dbPath)
               .then(function (db) {
-                  QUERY = " SELECT Przepis_Skladnik.id_przepis, Przepis_Skladnik.id_skladnik ,Przepis.nazwa FROM przepis_Skladnik INNER JOIN przepis ON Przepis_Skladnik.id_przepis =  przepis.id WHERE Przepis_Skladnik.id_Skladnik in (";
+                  QUERY = " SELECT Przepis_Skladnik.id_przepis, Przepis_Skladnik.id_skladnik ,Przepis.nazwa, Przepis.zdjecie FROM przepis_Skladnik INNER JOIN przepis ON Przepis_Skladnik.id_przepis =  przepis.id WHERE Przepis_Skladnik.id_Skladnik in (";
                   var j = 0;
                   for (j = 0; j < skladniki.length - 1; j++) {
                       QUERY += skladniki[j] + ",";
@@ -505,6 +505,7 @@ function findPrzepis(kategorie,skladniki,array) {
                       array[i][0] = row.id_przepis;
                       array[i][1] = row.nazwa;
                       array[i][2] = row.id_skladnik;
+                      array[i][3] = row.zdjecie;
                       i++;
                   });
               }, function (error) {
