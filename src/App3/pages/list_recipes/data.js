@@ -46,34 +46,34 @@ ItList.prototype.next = function () {
         this.picture = this.data[this.curIndx][3];
         return true;
     }
-    console.log("next return false.");
     return false; //signal that is the end of collection
 }
 
-//main functions:
-
-function ParseNameToFullUrl(name) {
-    var p = 'url("' + Windows.Storage.ApplicationData.current.localFolder.path;
-    if (p.charAt(p.length - 1) != '\\') p += '\\';
-    return p + name + '")';
-}
-
-
 function loadRecData(i, myData, array) {
-        
-    do {
+    return Windows.Storage.ApplicationData.current.localFolder.getFileAsync(array.it.picture).then(function (file) {
         var varShortTitle;
         if (array.it.title > 19)
             varShortTitle = array.it.title.substr(0, 16) + "...";
         else
             varShortTitle = array.it.title;
-        var url = ParseNameToFullUrl(array.it.picture); // zastanowić się czemu pobieranie miniatur z folderu nie działa
-        var project = 'url("' + "/images/" + array.it.picture + '")';
-        myData[myData.length] = { title: array.it.title, shortTitle: varShortTitle, picture: project, size: 'cover' };
-        
-    }
-    while (array.it.next());
-               
+        myData[myData.length] = { title: array.it.title, shortTitle: varShortTitle, picture: 'url("' + "ms-appdata:///local/" + array.it.picture + '")', size: 'cover' };
+        i = array.it.next();
+        console.log("i = " + i);
+        if (i)
+            return loadRecData(i, myData, array);
+    },
+            function () {
+                var varShortTitle;
+                if (array.it.title > 19)
+                    varShortTitle = array.it.title.substr(0, 16) + "...";
+                else
+                    varShortTitle = array.it.title;
+                myData[myData.length] = { title: array.it.title, shortTitle: varShortTitle, picture: 'url("' + "/images/" + array.it.picture + '")', size: 'cover' };
+                i = array.it.next();
+                console.log("i = " + i);
+                if (i)
+                    return loadRecData(i, myData, array);
+            });
 }
 
 function loadRecipiesList(array) {
@@ -83,7 +83,7 @@ function loadRecipiesList(array) {
     listObj.setValue(array);
     var check = listObj.getIterator(); //if false 0 obj in collection
     if (!check) return 0;
-    loadRecData(check, myData, listObj)
+    return loadRecData(check, myData, listObj).then(function () {
 
         // Create a WinJS.Binding.List from the array. 
         var itemsList = new WinJS.Binding.List(myData);
@@ -113,9 +113,5 @@ function loadRecipiesList(array) {
               {
                   groupedItemsList: groupedItemsList
               });
-
+    })
 }
-
-
-
-
