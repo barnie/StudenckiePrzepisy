@@ -12,10 +12,7 @@
 
     WinJS.UI.Pages.define("/pages/home/home.html", {
         ready: function (element, options) {
-            var array = [];
-            getKategorie(array).then(function () {
-                WinJS.Navigation.navigate("/pages/categories/categories.html", array);
-            })
+            //is redirect by default_insert.js
         },
         unload: function () {
             // TODO: Respond to navigations away from this page.

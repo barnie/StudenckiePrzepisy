@@ -1,6 +1,6 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Package xmlns="http://schemas.microsoft.com/appx/2010/manifest" xmlns:m2="http://schemas.microsoft.com/appx/2013/manifest">
-  <Identity Name="7cbc57f9-d6bb-4fc5-8ce0-d0c51fa32295" Version="1.1.0.0" Publisher="CN=Piotr Kruk" />
+  <Identity Name="7cbc57f9-d6bb-4fc5-8ce0-d0c51fa32295" Version="1.0.0.0" Publisher="CN=Piotr Kruk" />
   <Properties>
     <DisplayName>App3</DisplayName>
     <PublisherDisplayName>Piotr Kruk</PublisherDisplayName>

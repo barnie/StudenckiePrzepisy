@@ -3,6 +3,7 @@
 
 var categoryArray = []; //add_recipe | adv_search data
 var ingridientArray = []; //add_recipe | adv_search data
+var test = 0;
 (function () {
     "use strict";
     WinJS.Namespace.define("MyGlobals", {
