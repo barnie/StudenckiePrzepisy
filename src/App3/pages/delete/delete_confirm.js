@@ -9,7 +9,10 @@
         ready: function (element, options) {
             // TODO: Initialize the page here.
             function goToHomeBack() {
-                WinJS.Navigation.navigate("/pages/home/home.html");
+                var array = [];
+                getKategorie(array).then(function () {
+                    WinJS.Navigation.navigate("/pages/categories/categories.html", array);
+                })
             }
 
             var homeBack = document.getElementById("homeBack");

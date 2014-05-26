@@ -46,7 +46,10 @@ var test = 0;
     };
 
     function goToHome() {
-        WinJS.Navigation.navigate("/pages/home/home.html");
+        var array = [];
+        getKategorie(array).then(function () {
+            WinJS.Navigation.navigate("/pages/categories/categories.html", array);
+        })
     }
 
     app.start();
