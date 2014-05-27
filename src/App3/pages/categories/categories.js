@@ -6,7 +6,6 @@
 
     WinJS.UI.Pages.define("/pages/categories/categories.html", {
         ready: function (element, options) {
-            
             //links handler:
             WinJS.Utilities.query("a").listen("click", anchorHandler, false);
             //date prepare:

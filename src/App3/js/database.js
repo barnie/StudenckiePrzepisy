@@ -18,7 +18,7 @@ function createDB() {
                         return db.runAsync('create trigger IF NOT EXISTS przepis_sklad AFTER INSERT on Przepis_Skladnik BEGIN UPDATE skladnik set ile = (select ile from skladnik where id = new.id_skladnik) + 1  where id = new.id_skladnik;   END;').done(function () {
                             return db.runAsync('CREATE TRIGGER IF NOT EXISTS del_przepis_sklad AFTER DELETE ON Przepis_Skladnik BEGIN 	UPDATE skladnik SET ile = (SELECT ile FROM skladnik WHERE id = old.id_skladnik) - 1         WHERE id = old.id_skladnik;         END;').done(function () {
                                 db.close();
-                                default_insert();
+                                dbInsert();
                           })
                        })
                     })
@@ -148,11 +148,45 @@ function addPrzepis(id_kategorii, nazwa, opis, zdjecie, tab) {
     });
 }
 
+//use only in createDB()
+function dbInsert() {
+    var test;
+    var dbPath = Windows.Storage.ApplicationData.current.localFolder.path + '\\przepisy_db.sqlite';
+    var i = 0;
+    return SQLite3JS.openAsync(dbPath)
+              .then(function (db) {
+                  console.log('DB opened');
+                  return db.eachAsync('SELECT count(*) as sum FROM Skladnik;', function (row) {
+                      test = row.sum;
+                      console.log('##Skladnikie_Ilosc : ' + row.sum);
+                  });
+              }, function (error) {
+                  if (db) {
+                      db.close();
+                  }
+                  console.log('ERROR Select * from Skladnik ' + error.message);
+              })
+             .then(function (db) {
+                 console.log('close the db');
+                 db.close();
+                 if (test != 0) {
+                     var array = [];
+                     getKategorie(array).then(function () {
+                         WinJS.Navigation.navigate("/pages/categories/categories.html", array);
+                     })
+                 }
+                 else {
+                     default_insert();
+                 }
+             }).then(function () {
+                 return test;
+             });
+
+}
 /*
     Zwraca jednowymiarowa tablice Kategorii
     Zwraca pole rodzaj i zapisuje je do podanej tablicy
 */
-
 function getKategorie(array) {
 
     var dbPath = Windows.Storage.ApplicationData.current.localFolder.path + '\\przepisy_db.sqlite';
