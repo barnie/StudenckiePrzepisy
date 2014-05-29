@@ -57,6 +57,8 @@ public class TabPierwszy extends ListFragment {
         Toast.makeText(getActivity().getApplicationContext(), ":D", Toast.LENGTH_LONG).show();
     }
 
+
+
     class CustomList extends ArrayAdapter<String> {
         private final Activity context;
         private final String[] web;

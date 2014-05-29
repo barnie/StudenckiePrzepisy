@@ -27,6 +27,8 @@
         </activity>
         <activity android:name=".Przeepis"
                   android:icon="@drawable/ic_launcher"/>
+        <activity android:name=".AddPrzepis"/>
+        <activity android:name=".AddSkladnik"/>
     </application>
 
 </manifest>
