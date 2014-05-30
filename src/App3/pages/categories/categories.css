@@ -13,7 +13,6 @@
             padding-left: 25px;
             text-transform: uppercase;
             color: #333;
-            text-shadow: 1px 1px 1px #ccc;
         }
 
 .nav-bar .nav-button-categories a {
@@ -33,11 +32,13 @@
 body .bottomMenu .left {
     float: left;
     text-align: left;
+    font-weight: bold;
 }
 
 body .bottomMenu .right {
     float: right;
     text-align: right;
+    font-weight: bold;
 }
 
 #listContainer {
@@ -47,6 +48,8 @@ body .bottomMenu .right {
     overflow: auto;
     overflow-y: hidden;
     overflow-x: hidden;
+    font-size: large;
+    font-family:'Buxton Sketch';
 
 }
 
@@ -57,6 +60,7 @@ body .bottomMenu .right {
 
         #listContainer #containerOfRecipies #name {
             font-size: 250%;
+            font-weight: bold;
             margin-left: 2%;
             text-decoration:underline;
         }
@@ -81,8 +85,8 @@ body .bottomMenu .right {
             }
 
             #listContainer #containerOfRecipies #myDiv .myImageCss {
-                border: solid;
-                border-color: black;
+                border: ridge;
+                border-color: darkred;
                 height:inherit;
                 width:inherit;
                 cursor:pointer;

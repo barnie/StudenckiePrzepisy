@@ -23,7 +23,9 @@
         background: white;
         width: 10em;
         height: 10em;
-        border: 1px solid black;
+        border: ridge darkred;
+            font-size: large;
+    font-family:'Buxton Sketch';
     }
 
         .win-listview .win-itembox .namesItem-Detail{
@@ -37,3 +39,6 @@
         padding-bottom: 0.25em;
         background-color: rgba(0,100,0,0.8);
     }
+.spaceDown{
+    padding-top:8.2em;
+}
