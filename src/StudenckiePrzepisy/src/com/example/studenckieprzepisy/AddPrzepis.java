@@ -43,8 +43,18 @@ public class AddPrzepis extends Activity {
         add_przepis.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(getApplicationContext(), AddSkladnik.class);
-                startActivity(intent);
+                if (nazwa.getText().toString().compareTo("") == 0) {
+                    Toast.makeText(getApplicationContext(), "Przepis musi miec nazwe", Toast.LENGTH_LONG).show();
+                }
+                if (opis.getText().toString().compareTo("") == 0) {
+                    Toast.makeText(getApplicationContext(), "Przepis musi miec opis", Toast.LENGTH_LONG).show();
+                }
+                if (opis.getText().toString().compareTo("") != 0 && nazwa.getText().toString().compareTo("") != 0) {
+                    Intent intent = new Intent(getApplicationContext(), AddSkladnik.class);
+                    intent.putExtra("nazwa", nazwa.getText().toString());
+                    intent.putExtra("opis", nazwa.getText().toString());
+                    startActivity(intent);
+                }
             }
         });
     }

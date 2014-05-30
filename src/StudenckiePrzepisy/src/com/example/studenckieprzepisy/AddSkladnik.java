@@ -4,7 +4,10 @@ import Database.Database;
 import Database.Przepis;
 import Database.Skladnik;
 import android.app.Activity;
+import android.app.AlertDialog;
+import android.app.Dialog;
 import android.content.Context;
+import android.content.DialogInterface;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.LayoutInflater;
@@ -25,15 +28,27 @@ public class AddSkladnik extends Activity {
     private Button b;
     private ListView list;
     MyCustomAdapter dataAdapter = null;
-
+    private String nazwa;
+    private String opis;
+    private ArrayList<String> spinner_miary;
+    private Integer liczbelki[] = new Integer[2000];
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.addskladniklist);
         b = (Button) findViewById(R.id.button);
         list = (ListView) findViewById(R.id.listView);
+        //init layouts
+        Bundle extra = getIntent().getExtras();
+        nazwa = extra.getString("nazwa");
+        opis = extra.getString("opis");
+        //getting data
+        spinner_miary = new ArrayList<String>();
+        spinner_miary.add("ALA");
+        spinner_miary.add("MA");
+        spinner_miary.add("KOTA");
+        for (int i = 0; i < liczbelki.length; liczbelki[i] = i, ++i);
         displayListView();
-
         checkButtonClick();
 
 
@@ -106,12 +121,34 @@ public class AddSkladnik extends Activity {
                     public void onClick(View v) {
                         CheckBox cb = (CheckBox) v;
                         PrzepisSkladnikWybor _state = (PrzepisSkladnikWybor) cb.getTag();
+                        final Dialog alertbox = new Dialog(getContext());
 
-                        Toast.makeText(
-                                getApplicationContext(),
-                                "Checkbox: " + cb.getText() + " -> "
-                                        + cb.isChecked(), Toast.LENGTH_LONG)
-                                .show();
+                        LayoutInflater li = LayoutInflater.from(getContext());
+                        final View promptsView = li.inflate(R.layout.two_spinners,null);
+                        Spinner s = (Spinner) promptsView.findViewById(R.id.spinner);
+                        ArrayAdapter<String> adapter_state = new ArrayAdapter<String>(getContext(),
+                                android.R.layout.simple_spinner_item, spinner_miary);
+                        s.setAdapter(adapter_state);
+                        Spinner liczby = (Spinner) promptsView.findViewById(R.id.spinner2);
+                        ArrayAdapter<Integer> adapter_liczby = new ArrayAdapter<Integer>(getContext(),
+                                android.R.layout.simple_spinner_item, liczbelki);
+                        liczby.setAdapter(adapter_liczby);
+                        Button b = (Button) promptsView.findViewById(R.id.ok);
+                        alertbox.setContentView(promptsView);
+                        b.setOnClickListener(new View.OnClickListener() {
+                            @Override
+                            public void onClick(View v) {
+                                Spinner s = (Spinner) promptsView.findViewById(R.id.spinner);
+                                Toast.makeText(getContext(),"BAZINGA" + s.getSelectedItem(),Toast.LENGTH_LONG).show();
+                                alertbox.dismiss();
+
+                            }
+                        });
+
+                        // show it
+                        alertbox.show();
+                        _state.setMiara("ZAZNACZONO");
+                        _state.getSkladnik().setIle(32);
                         _state.setChoosen(cb.isChecked());
                     }
                 });
@@ -150,7 +187,7 @@ public class AddSkladnik extends Activity {
                     PrzepisSkladnikWybor state = stateList.get(i);
 
                     if (state.isChoosen()) {
-                        responseText.append("\n" + state.getMiara());
+                        responseText.append("\n" + state.getSkladnik().toString() + "@" + state.getIle() + " @" + state.getMiara());
                     }
                 }
 
