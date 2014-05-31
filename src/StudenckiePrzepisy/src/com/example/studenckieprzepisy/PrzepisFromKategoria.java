@@ -41,7 +41,7 @@ public class PrzepisFromKategoria extends Activity {
 
         // Array list of countries
         Database db = new Database(getApplicationContext(), null, null, 1);
-        List<Przepis> stateList = db.getPrzepisByKategoriaId(idKategorii);
+        final List<Przepis> stateList = db.getPrzepisByKategoriaId(idKategorii);
         Log.d("Lista size", "" + stateList.size());
         // create an ArrayAdaptar from the String Array
         dataAdapter = new MyCustomAdapter(this, R.layout.category_row, stateList);
@@ -54,9 +54,9 @@ public class PrzepisFromKategoria extends Activity {
             public void onItemClick(AdapterView<?> parent, View view,
                                     int position, long id) {
                 // When clicked, show a toast with the TextView text
-                Toast.makeText(getApplicationContext(),
-                        "Clicked on : " , Toast.LENGTH_LONG)
-                        .show();
+                Intent intent = new Intent(PrzepisFromKategoria.this, Przeepis.class);
+                intent.putExtra("KEY", stateList.get(position).getNazwa());
+                startActivity(intent);
             }
         });
     }
@@ -103,8 +103,10 @@ public class PrzepisFromKategoria extends Activity {
 
             Przepis state = stateList.get(position);
             holder.name.setText(state.getNazwa());
-            if (state.getZdjecie() == null)
+            if (state.getZdjecie() == null){
+                holder.img.setImageResource(R.drawable.ic_launcher);
                 return convertView;
+            }
 
             AssetManager assetManager = getAssets();
             try {
