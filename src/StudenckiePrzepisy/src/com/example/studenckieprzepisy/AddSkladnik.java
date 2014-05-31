@@ -1,24 +1,21 @@
 package com.example.studenckieprzepisy;
 
 import Database.Database;
-import Database.Przepis;
 import Database.Skladnik;
 import android.app.Activity;
-import android.app.AlertDialog;
 import android.app.Dialog;
 import android.content.Context;
-import android.content.DialogInterface;
+import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.*;
+import android.widget.AdapterView.OnItemClickListener;
 
 import java.util.ArrayList;
 import java.util.List;
-import android.widget.AdapterView;
-import android.widget.AdapterView.OnItemClickListener;
 
 /**
  * Created by piotr on 29.05.14.
@@ -30,8 +27,11 @@ public class AddSkladnik extends Activity {
     MyCustomAdapter dataAdapter = null;
     private String nazwa;
     private String opis;
-    private ArrayList<String> spinner_miary;
+    private String zdjecie = "";
+    private int idkategorii = 0;
+    private List<String> spinner_miary;
     private Integer liczbelki[] = new Integer[2000];
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -42,17 +42,18 @@ public class AddSkladnik extends Activity {
         Bundle extra = getIntent().getExtras();
         nazwa = extra.getString("nazwa");
         opis = extra.getString("opis");
+        zdjecie = extra.getString("zdjecie");
+        idkategorii = extra.getInt("kategoria");
         //getting data
-        spinner_miary = new ArrayList<String>();
-        spinner_miary.add("ALA");
-        spinner_miary.add("MA");
-        spinner_miary.add("KOTA");
-        for (int i = 0; i < liczbelki.length; liczbelki[i] = i, ++i);
+        Database db = new Database(getApplicationContext(), null, null, 1);
+        spinner_miary = db.getMiara();
+        for (int i = 0; i < liczbelki.length; liczbelki[i] = i, ++i) ;
         displayListView();
         checkButtonClick();
 
 
     }
+
     private void displayListView() {
 
         // Array list of countries
@@ -80,6 +81,7 @@ public class AddSkladnik extends Activity {
             }
         });
     }
+
     private class MyCustomAdapter extends ArrayAdapter<PrzepisSkladnikWybor> {
 
         private ArrayList<PrzepisSkladnikWybor> stateList;
@@ -120,11 +122,11 @@ public class AddSkladnik extends Activity {
                 holder.name.setOnClickListener(new View.OnClickListener() {
                     public void onClick(View v) {
                         CheckBox cb = (CheckBox) v;
-                        PrzepisSkladnikWybor _state = (PrzepisSkladnikWybor) cb.getTag();
+                        final PrzepisSkladnikWybor _state = (PrzepisSkladnikWybor) cb.getTag();
                         final Dialog alertbox = new Dialog(getContext());
 
                         LayoutInflater li = LayoutInflater.from(getContext());
-                        final View promptsView = li.inflate(R.layout.two_spinners,null);
+                        final View promptsView = li.inflate(R.layout.two_spinners, null);
                         Spinner s = (Spinner) promptsView.findViewById(R.id.spinner);
                         ArrayAdapter<String> adapter_state = new ArrayAdapter<String>(getContext(),
                                 android.R.layout.simple_spinner_item, spinner_miary);
@@ -139,14 +141,17 @@ public class AddSkladnik extends Activity {
                             @Override
                             public void onClick(View v) {
                                 Spinner s = (Spinner) promptsView.findViewById(R.id.spinner);
-                                Toast.makeText(getContext(),"BAZINGA" + s.getSelectedItem(),Toast.LENGTH_LONG).show();
+                                Spinner s1 = (Spinner) promptsView.findViewById(R.id.spinner2);
+                                _state.setMiara(s.getSelectedItem().toString());
+                                _state.setIle(s1.getSelectedItemId());
                                 alertbox.dismiss();
 
                             }
                         });
 
                         // show it
-                        alertbox.show();
+                        if (cb.isChecked())
+                            alertbox.show();
                         _state.setMiara("ZAZNACZONO");
                         _state.getSkladnik().setIle(32);
                         _state.setChoosen(cb.isChecked());
@@ -177,25 +182,24 @@ public class AddSkladnik extends Activity {
 
             @Override
             public void onClick(View v) {
-
-                StringBuffer responseText = new StringBuffer();
-                responseText.append("Selected Countries are...\n");
-
                 ArrayList<PrzepisSkladnikWybor> stateList = dataAdapter.stateList;
+                ArrayList<PrzepisSkladnikWybor> wybrane = new ArrayList<PrzepisSkladnikWybor>();
 
                 for (int i = 0; i < stateList.size(); i++) {
                     PrzepisSkladnikWybor state = stateList.get(i);
-
                     if (state.isChoosen()) {
-                        responseText.append("\n" + state.getSkladnik().toString() + "@" + state.getIle() + " @" + state.getMiara());
+                        wybrane.add(stateList.get(i));
                     }
                 }
 
-                Toast.makeText(getApplicationContext(), responseText,
-                        Toast.LENGTH_LONG).show();
+                Database db = new Database(getApplicationContext(), null, null, 1);
+                db.addPrzepis(idkategorii, nazwa, opis, zdjecie, wybrane);
+                Intent intent = new Intent(AddSkladnik.this, MainActivity.class);
+                intent.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TASK | Intent.FLAG_ACTIVITY_NEW_TASK);
+                startActivity(intent);
+
             }
         });
     }
-
 
 }

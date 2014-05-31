@@ -1,15 +1,17 @@
 package com.example.studenckieprzepisy;
 
 import Database.Database;
+import Database.DatabaseInit;
 import Database.Kategoria;
 import android.app.Activity;
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.v4.app.ListFragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.*;
-import Database.DatabaseInit;
+
 import java.util.List;
 
 public class TabPierwszy extends ListFragment {
@@ -54,9 +56,10 @@ public class TabPierwszy extends ListFragment {
     @Override
     public void onListItemClick(ListView l, View v, int position, long id) {
         super.onListItemClick(l, v, position, id);
-        Toast.makeText(getActivity().getApplicationContext(), ":D", Toast.LENGTH_LONG).show();
+        Intent intent = new Intent(getActivity(), PrzepisFromKategoria.class);
+        intent.putExtra("idkategorii",category.get(position).getId());
+        startActivity(intent);
     }
-
 
 
     class CustomList extends ArrayAdapter<String> {

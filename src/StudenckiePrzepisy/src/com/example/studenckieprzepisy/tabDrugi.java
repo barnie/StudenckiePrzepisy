@@ -12,7 +12,10 @@ import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.*;
+import android.widget.ArrayAdapter;
+import android.widget.ImageView;
+import android.widget.ListView;
+import android.widget.TextView;
 
 import java.io.InputStream;
 import java.util.HashMap;
@@ -32,7 +35,8 @@ public class tabDrugi extends ListFragment {
         Database db = new Database(getActivity().getApplicationContext(), null, null, 1);
         przepis = db.getPrzepisy();
         for (Przepis p : przepis) {
-            Log.d("PRZEPISY!", p.getZdjecie().trim());
+            if (p.getZdjecie() != null)
+                Log.d("PRZEPISY!", p.toString());
         }
         web = new String[przepis.size()];
         imageId = new Integer[przepis.size()];
@@ -76,15 +80,20 @@ public class tabDrugi extends ListFragment {
             txtTitle.setText(web[position]);
             imageView.setImageResource(imageId[position]);
             AssetManager assetManager = getActivity().getAssets();
+            if (przepis.get(position).getZdjecie() == null)
+                return rowView;
             try {
                 if (lista.size() < position) {
                     Log.d("ZDJECIE", "" + przepis.get(position).getZdjecie());
-                    InputStream ims = assetManager.open(przepis.get(position).getZdjecie());
-                    Drawable d = Drawable.createFromStream(ims, null);
+                    Drawable d;
+                    if (przepis.get(position).getZdjecie().length() < 9) {
+                        InputStream ims = assetManager.open(przepis.get(position).getZdjecie());
+                        d = Drawable.createFromStream(ims, null);
+                    } else {
+                        d = Drawable.createFromPath(przepis.get(position).getZdjecie());
+                    }
                     imageView.setImageDrawable(d);
-                    Log.d("ZDJECIE!", "" + position);
                     lista.put(position, d);
-                    Log.d("ZDJECIEL", "" + lista.size());
                     imageView.setImageDrawable(d);
                 } else {
                     imageView.setImageDrawable(lista.get(position));

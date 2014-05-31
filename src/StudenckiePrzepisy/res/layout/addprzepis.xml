@@ -1,39 +1,64 @@
 <?xml version="1.0" encoding="utf-8"?>
-
-
 <RelativeLayout
         android:layout_width="fill_parent"
         android:layout_height="fill_parent" xmlns:android="http://schemas.android.com/apk/res/android"
         android:orientation="vertical">
+    <ScrollView
+            android:layout_width="fill_parent"
+            android:layout_height="fill_parent" android:layout_alignParentTop="true"
+            android:layout_alignParentLeft="true">
+    <LinearLayout android:layout_width="fill_parent" android:layout_height="fill_parent" android:orientation="vertical">
 
-    <Button
-            android:layout_width="200dp"
-            android:layout_height="150dp"
-            android:hint="Dodaj Zdjecie"
-            android:id="@+id/add_image" android:clickable="true" android:layout_alignParentTop="true"
-            android:layout_centerHorizontal="true"/>
-    <EditText
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:hint="Nazwa"
-            android:enabled="true"
-            android:id="@+id/nazwa"
+        <TableLayout
+                android:layout_width="fill_parent"
+                android:layout_height="fill_parent">
 
-            android:layout_alignParentLeft="true" android:layout_below="@+id/add_image"
-            android:layout_above="@+id/opis"/>
-    <EditText
-            android:layout_width="match_parent"
-            android:layout_height="150dp"
-            android:hint="Opis Przepisu"
+            <RelativeLayout
+                    android:layout_width="fill_parent"
+                    android:layout_height="fill_parent">
+                <Button
+                        android:layout_width="200dp"
+                        android:layout_height="150dp"
+                        android:hint="Dodaj Zdjecie"
+                        android:id="@+id/add_image" android:clickable="true" android:layout_alignParentTop="true"
+                        android:layout_centerHorizontal="true"/>
+            </RelativeLayout>
+            <TableRow
+                    android:layout_width="fill_parent"
+                    android:layout_height="fill_parent">
+                <Spinner
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:id="@+id/kategoria" android:layout_below="@+id/add_image"
+                        android:layout_alignRight="@+id/add_image"
+                        android:layout_column="1"/>
+            </TableRow>
+            <EditText
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:hint="Nazwa"
+                    android:enabled="true"
+                    android:id="@+id/nazwa"
 
-            android:id="@+id/opis"
-            android:layout_above="@+id/button2" android:layout_alignParentLeft="true"/>
-    <Button
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Dalej"
-            android:id="@+id/button2" android:layout_gravity="right" android:layout_alignParentBottom="true"
-            android:layout_alignParentRight="true"/>
+                    android:layout_alignParentLeft="true" android:layout_below="@+id/add_image"
+                    android:layout_above="@+id/opis"/>
+            <EditText
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:hint="Opis Przepisu"
 
+                    android:id="@+id/opis"
+                    android:layout_above="@+id/button2" android:layout_alignParentLeft="true"/>
+        </TableLayout>
+        <Button
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:text="Dalej"
+                android:id="@+id/button2" android:layout_gravity="right"
+                android:layout_alignParentBottom="true" android:layout_alignParentRight="true"
+                android:layout_alignParentLeft="true"/>
+
+    </LinearLayout>
+    </ScrollView>
 
 </RelativeLayout>

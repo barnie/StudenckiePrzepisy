@@ -12,7 +12,6 @@ import android.support.v4.view.ViewPager;
 import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
-import android.widget.Toast;
 
 public class MainActivity extends FragmentActivity implements
         ActionBar.TabListener {
@@ -38,10 +37,6 @@ public class MainActivity extends FragmentActivity implements
         for (String tab_name : tabs)
             actionBar.addTab(actionBar.newTab().setText(tab_name)
                     .setTabListener(this));
-        Log.d("AA", "COS4");
-        //actionBar.hide();
-        //DatabaseInit dinit = new DatabaseInit(getApplicationContext());
-        //dinit.initDB();
         prefs = getSharedPreferences("com.example.studenckieprzepisy", MODE_PRIVATE);
         boolean firstRun = prefs.getBoolean("INSTALL", false);
         if (!firstRun) {
