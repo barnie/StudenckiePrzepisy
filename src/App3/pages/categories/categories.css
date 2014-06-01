@@ -12,7 +12,8 @@
             text-decoration: none;
             padding-left: 25px;
             text-transform: uppercase;
-            color: #333;
+            color: black;
+            //background-color: red;
         }
 
 .nav-bar .nav-button-categories a {
@@ -50,7 +51,7 @@ body .bottomMenu .right {
     overflow-x: hidden;
     font-size: large;
     font-family:'Buxton Sketch';
-
+    text-transform: uppercase;
 }
 
     #listContainer #containerOfRecipies {
