@@ -25,7 +25,12 @@
     #recipeContainer .recipe #name{
         font-weight: bold;
         font-size: 150%;
+            font-family:'Buxton Sketch';
     }
+
+        #recipeContainer .recipe #category{
+            font-family:'Buxton Sketch';
+            text-transform: uppercase;
 
      #recipeContainer #img_container{
         text-align: center;
@@ -33,14 +38,14 @@
         margin-top:4%;
         margin-bottom:2%;
         height: 35%;
-        width: 60%;
+        width: 30%;
     }
 
         #recipeContainer #img_container img {
             height: 100%;
             width: 70%;
-            border: solid;
-            border-color: black;
+            border: groove;
+            border-color: darkred;
         }
 
     #recipeContainer #name {
