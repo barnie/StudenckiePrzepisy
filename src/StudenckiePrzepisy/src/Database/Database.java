@@ -1,5 +1,6 @@
 package Database;
 
+import android.content.ContentUris;
 import android.content.ContentValues;
 import android.content.Context;
 import android.database.Cursor;
@@ -234,21 +235,34 @@ public class Database extends SQLiteOpenHelper {
         return przepis;
     }
 
-    public List<Przepis> getPrzepisByKategoriaId(int id){
+    public List<Przepis> searchPrzepis(String nazwa){
+        String query = "SELECT * FROM " + TABLE_PRZEPIS + " WHERE " + COLUMN_NAZWA + " like \'" + "%" + nazwa + "%" + "\'";
+        List<Przepis> przepisy = new ArrayList<Przepis>();
+        SQLiteDatabase db = this.getWritableDatabase();
+        Cursor cursor = db.rawQuery(query, null);
+        if(cursor.moveToFirst()){
+            do {
+                przepisy.add(new Przepis(cursor.getInt(0), cursor.getInt(1), cursor.getString(2), cursor.getString(3), cursor.getString(4)));
+            } while (cursor.moveToNext());
+        }
+        return przepisy;
+    }
+
+    public List<Przepis> getPrzepisByKategoriaId(int id) {
         List<Przepis> przepisy = new ArrayList<Przepis>();
         String query = "Select * FROM " + TABLE_PRZEPIS + " WHERE " + COLUMN_IDKATEGORII + " = " + id;
         SQLiteDatabase db = this.getWritableDatabase();
         Cursor cursor = db.rawQuery(query, null);
         if (cursor.moveToFirst()) {
             do {
-            przepisy.add(new Przepis(cursor.getInt(0), cursor.getInt(1), cursor.getString(2), cursor.getString(3), cursor.getString(4)));
-            } while(cursor.moveToNext());
+                przepisy.add(new Przepis(cursor.getInt(0), cursor.getInt(1), cursor.getString(2), cursor.getString(3), cursor.getString(4)));
+            } while (cursor.moveToNext());
         }
         db.close();
         return przepisy;
     }
 
-    public List<String> getMiara(){
+    public List<String> getMiara() {
         List<String> miary = new ArrayList<String>();
         String query = "Select DISTINCT " + COLUMN_MIARA + " FROM " + TABLE_PRZEPIS_SKLADNIK;
         SQLiteDatabase db = this.getWritableDatabase();
@@ -256,7 +270,7 @@ public class Database extends SQLiteOpenHelper {
         if (cursor.moveToFirst()) {
             do {
                 miary.add(cursor.getString(0));
-            }while(cursor.moveToNext());
+            } while (cursor.moveToNext());
         }
         db.close();
         return miary;
@@ -292,7 +306,7 @@ public class Database extends SQLiteOpenHelper {
         return ps;
     }
 
-    public void addPrzepis(int id_Kategorii, String nazwa, String opis, String zdjecie, ArrayList<PrzepisSkladnikWybor> ps){
+    public void addPrzepis(int id_Kategorii, String nazwa, String opis, String zdjecie, ArrayList<PrzepisSkladnikWybor> ps) {
         SQLiteDatabase db = this.getWritableDatabase();
         String query = "Select max(id) from " + TABLE_PRZEPIS + " ;";
         Cursor cursor = db.rawQuery(query, null);
@@ -307,7 +321,7 @@ public class Database extends SQLiteOpenHelper {
         values.put(COLUMN_OPIS, opis);
         values.put(COLUMN_ZDJECIE, zdjecie);
         db.insert(TABLE_PRZEPIS, null, values);
-        for (PrzepisSkladnikWybor iterator : ps){
+        for (PrzepisSkladnikWybor iterator : ps) {
             ContentValues values1 = new ContentValues();
             values1.put(COLUMN_IDPRZEPIS, id);
             values1.put(COLUMN_IDSKLADNIK, iterator.getSkladnik().getId());
