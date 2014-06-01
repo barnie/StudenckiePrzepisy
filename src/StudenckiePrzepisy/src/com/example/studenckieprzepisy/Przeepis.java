@@ -6,6 +6,7 @@ import Database.PrzepisSkladnik;
 import Database.Skladnik;
 import android.app.Activity;
 import android.content.Intent;
+import android.content.res.AssetFileDescriptor;
 import android.content.res.AssetManager;
 import android.graphics.drawable.Drawable;
 import android.net.Uri;
@@ -16,7 +17,9 @@ import android.view.MenuInflater;
 import android.view.MenuItem;
 import android.widget.ImageView;
 import android.widget.TextView;
+import android.widget.Toast;
 
+import java.io.IOException;
 import java.io.InputStream;
 import java.util.List;
 
@@ -83,12 +86,21 @@ public class Przeepis extends Activity {
 
     public void sendSms() {
         Intent smsIntent = new Intent(android.content.Intent.ACTION_SEND);
-        smsIntent.putExtra("sms_body", p.getNazwa() + "\n" + output + "\n" + p.getOpis());
+        smsIntent.setType("vnd.android-dir/mms-sms");
         if (p.getZdjecie() != null && p.getZdjecie().compareTo("") != 0 && p.getZdjecie().length() > 9) {
             smsIntent.putExtra(Intent.EXTRA_STREAM, Uri.parse("file://" + p.getZdjecie()));
             smsIntent.setType("image/png");
+        } else if (p.getZdjecie() != null && p.getZdjecie().compareTo("") != 0){
+            Toast.makeText(getApplicationContext(), "Wysylam bez zdjecia/Prawa Autorskie", Toast.LENGTH_LONG).show();
+            Intent intentt = new Intent(Intent.ACTION_VIEW);
+            intentt.setData(Uri.parse("sms:"));
+            intentt.setType("vnd.android-dir/mms-sms");
+            intentt.putExtra("sms_body", p.getNazwa() + "\n" + output + "\n" + p.getOpis());
+            startActivity(intentt);
+            return;
         }
-        startActivity(Intent.createChooser(smsIntent, "Wybierz swojego klienta sms/mms"));
+        smsIntent.putExtra("sms_body", p.getNazwa() + "\n" + output + "\n" + p.getOpis());
+        startActivity(Intent.createChooser(smsIntent, "Wybierz swojego klienta sms :"));
     }
 
     public void sendEmail() {
@@ -98,6 +110,8 @@ public class Przeepis extends Activity {
         if (p.getZdjecie() != null && p.getZdjecie().compareTo("") != 0 && p.getZdjecie().length() > 9) {
             result.putExtra(Intent.EXTRA_STREAM, Uri.parse("file://" + p.getZdjecie()));
             result.setType("image/png");
+        } else if (p.getZdjecie() != null && p.getZdjecie().compareTo("") != 0){
+            Toast.makeText(getApplicationContext(), "Wysylam bez zdjecia/Prawa Autorskie", Toast.LENGTH_LONG).show();
         }
         result.setType("message/rfc822");
         startActivity(Intent.createChooser(result, "Wybierz swojego klienta email :"));
