@@ -6,6 +6,7 @@ import android.app.Activity;
 import android.app.Dialog;
 import android.content.Context;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.LayoutInflater;
@@ -174,8 +175,17 @@ public class AddSkladnik extends Activity {
 
     }
 
-    private void checkButtonClick() {
 
+    public void clearState() {
+        SharedPreferences.Editor pref = this.getSharedPreferences("com.example.studenckieprzepisy", Context.MODE_PRIVATE).edit();
+        pref.remove("nazwa");
+        pref.remove("opis");
+        pref.remove("kategoria");
+        pref.remove("zdjecie");
+        pref.commit();
+    }
+
+    private void checkButtonClick() {
         Button myButton = (Button) findViewById(R.id.button);
 
         myButton.setOnClickListener(new View.OnClickListener() {
@@ -185,6 +195,7 @@ public class AddSkladnik extends Activity {
                 ArrayList<PrzepisSkladnikWybor> stateList = dataAdapter.stateList;
                 ArrayList<PrzepisSkladnikWybor> wybrane = new ArrayList<PrzepisSkladnikWybor>();
 
+                clearState();
                 for (int i = 0; i < stateList.size(); i++) {
                     PrzepisSkladnikWybor state = stateList.get(i);
                     if (state.isChoosen()) {

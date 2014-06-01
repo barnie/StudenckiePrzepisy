@@ -110,6 +110,7 @@ public class AddPrzepis extends Activity {
 
     }
 
+
     public void saveState() {
         SharedPreferences.Editor pref = this.getSharedPreferences("com.example.studenckieprzepisy", Context.MODE_PRIVATE).edit();
         pref.putString("nazwa", nazwa.getText().toString());

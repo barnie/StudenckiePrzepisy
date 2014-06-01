@@ -3,6 +3,8 @@ package com.example.studenckieprzepisy;
 import Database.Database;
 import Database.Przepis;
 import android.app.Activity;
+import android.app.AlertDialog;
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.content.res.AssetManager;
 import android.graphics.drawable.Drawable;
@@ -12,10 +14,7 @@ import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.ArrayAdapter;
-import android.widget.ImageView;
-import android.widget.ListView;
-import android.widget.TextView;
+import android.widget.*;
 
 import java.io.InputStream;
 import java.util.HashMap;
@@ -26,7 +25,7 @@ public class tabDrugi extends ListFragment {
     String[] web;
     Integer[] imageId;
     List<Przepis> przepis;
-
+    CustomList adapter;
 
     HashMap<Integer, Drawable> lista = new HashMap<Integer, Drawable>();
 
@@ -34,20 +33,54 @@ public class tabDrugi extends ListFragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
         Database db = new Database(getActivity().getApplicationContext(), null, null, 1);
         przepis = db.getPrzepisy();
-        for (Przepis p : przepis) {
-            if (p.getZdjecie() != null)
-                Log.d("PRZEPISY!", p.toString());
-        }
         web = new String[przepis.size()];
         imageId = new Integer[przepis.size()];
         for (int i = 0; i < przepis.size(); i++) {
             web[i] = przepis.get(i).getNazwa();
             imageId[i] = R.drawable.pingwinek;
         }
-        CustomList adapter = new
+        adapter = new
                 CustomList(getActivity(), web, imageId);
         setListAdapter(adapter);
         return super.onCreateView(inflater, container, savedInstanceState);
+    }
+
+    @Override
+    public void onActivityCreated(Bundle savedState) {
+        super.onActivityCreated(savedState);
+
+        getListView().setOnItemLongClickListener(new AdapterView.OnItemLongClickListener() {
+
+            @Override
+            public boolean onItemLongClick(AdapterView<?> arg0, View arg1,
+                                           final int arg2, long arg3) {
+                AlertDialog.Builder builderSingle = new AlertDialog.Builder(
+                        getActivity());
+                builderSingle.setTitle("Usuwanie Przepisu").setMessage("Na pewno chcesz usunac przepis?");
+                builderSingle.setPositiveButton("TAK", new DialogInterface.OnClickListener() {
+                    @Override
+                    public void onClick(DialogInterface dialog, int which) {
+                        Database db = new Database(getActivity().getApplicationContext(), null, null, 1);
+                        db.removePrzepis(przepis.get(arg2));
+                        adapter.notifyDataSetChanged();
+                        getActivity().finish();
+                        Intent intent = new Intent(getActivity(), MainActivity.class);
+                        startActivity(intent);
+                        dialog.dismiss();
+                    }
+                });
+                builderSingle.setNegativeButton("Anuluj", new DialogInterface.OnClickListener() {
+                    @Override
+                    public void onClick(DialogInterface dialog, int which) {
+                        dialog.dismiss();
+                    }
+                });
+                builderSingle.create();
+                builderSingle.show();
+
+                return true;
+            }
+        });
     }
 
     @Override
@@ -92,11 +125,18 @@ public class tabDrugi extends ListFragment {
                     } else {
                         d = Drawable.createFromPath(przepis.get(position).getZdjecie());
                     }
-                    imageView.setImageDrawable(d);
+                    try {
+                        imageView.setImageDrawable(d);
+                    } catch (Exception e) {
+                        e.printStackTrace();
+                    } //catch out of memory
                     lista.put(position, d);
-                    imageView.setImageDrawable(d);
                 } else {
-                    imageView.setImageDrawable(lista.get(position));
+                    try {
+                        imageView.setImageDrawable(lista.get(position));
+                    } catch (Exception e) {
+                        e.printStackTrace();
+                    }
                 }
             } catch (Exception ex) {
                 ex.printStackTrace();

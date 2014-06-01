@@ -1,6 +1,5 @@
 package Database;
 
-import android.content.ContentUris;
 import android.content.ContentValues;
 import android.content.Context;
 import android.database.Cursor;
@@ -235,12 +234,12 @@ public class Database extends SQLiteOpenHelper {
         return przepis;
     }
 
-    public List<Przepis> searchPrzepis(String nazwa){
+    public List<Przepis> searchPrzepis(String nazwa) {
         String query = "SELECT * FROM " + TABLE_PRZEPIS + " WHERE " + COLUMN_NAZWA + " like \'" + "%" + nazwa + "%" + "\'";
         List<Przepis> przepisy = new ArrayList<Przepis>();
         SQLiteDatabase db = this.getWritableDatabase();
         Cursor cursor = db.rawQuery(query, null);
-        if(cursor.moveToFirst()){
+        if (cursor.moveToFirst()) {
             do {
                 przepisy.add(new Przepis(cursor.getInt(0), cursor.getInt(1), cursor.getString(2), cursor.getString(3), cursor.getString(4)));
             } while (cursor.moveToNext());
@@ -330,6 +329,13 @@ public class Database extends SQLiteOpenHelper {
             db.insert(TABLE_PRZEPIS_SKLADNIK, null, values1);
             values1.clear();
         }
+        db.close();
+    }
+
+    public void removePrzepis(Przepis p) {
+        SQLiteDatabase db = this.getWritableDatabase();
+        db.delete(TABLE_PRZEPIS, COLUMN_ID + " = ?", new String[]{String.valueOf(p.getId())});
+        db.delete(TABLE_PRZEPIS_SKLADNIK, COLUMN_IDPRZEPIS + " = ?", new String[]{String.valueOf(p.getId())});
         db.close();
     }
 
