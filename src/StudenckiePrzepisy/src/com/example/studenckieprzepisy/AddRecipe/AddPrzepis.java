@@ -1,7 +1,7 @@
-package com.example.studenckieprzepisy.DodaniePrzepisu;
+package com.example.studenckieprzepisy.AddRecipe;
 
-import Database.Database;
-import Database.Kategoria;
+import com.example.studenckieprzepisy.Database.Database;
+import com.example.studenckieprzepisy.Database.Kategoria;
 import android.app.Activity;
 import android.content.Context;
 import android.content.Intent;

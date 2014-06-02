@@ -1,12 +1,11 @@
-package com.example.studenckieprzepisy;
+package com.example.studenckieprzepisy.RecipeView;
 
-import Database.Database;
-import Database.Przepis;
-import Database.PrzepisSkladnik;
-import Database.Skladnik;
+import com.example.studenckieprzepisy.Database.Database;
+import com.example.studenckieprzepisy.Database.Przepis;
+import com.example.studenckieprzepisy.Database.PrzepisSkladnik;
+import com.example.studenckieprzepisy.Database.Skladnik;
 import android.app.Activity;
 import android.content.Intent;
-import android.content.res.AssetFileDescriptor;
 import android.content.res.AssetManager;
 import android.graphics.drawable.Drawable;
 import android.net.Uri;
@@ -18,8 +17,8 @@ import android.view.MenuItem;
 import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
+import com.example.studenckieprzepisy.R;
 
-import java.io.IOException;
 import java.io.InputStream;
 import java.util.List;
 

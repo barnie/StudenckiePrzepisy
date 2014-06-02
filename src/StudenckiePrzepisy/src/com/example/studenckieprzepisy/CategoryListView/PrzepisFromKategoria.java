@@ -1,9 +1,8 @@
-package com.example.studenckieprzepisy;
+package com.example.studenckieprzepisy.CategoryListView;
 
-import Database.Database;
-import Database.Przepis;
+import com.example.studenckieprzepisy.Database.Database;
+import com.example.studenckieprzepisy.Database.Przepis;
 import android.app.Activity;
-import android.app.Dialog;
 import android.content.Context;
 import android.content.Intent;
 import android.content.res.AssetManager;
@@ -14,10 +13,10 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.*;
-import org.w3c.dom.Text;
+import com.example.studenckieprzepisy.R;
+import com.example.studenckieprzepisy.RecipeView.Przeepis;
 
 import java.io.InputStream;
-import java.util.ArrayList;
 import java.util.List;
 
 /**

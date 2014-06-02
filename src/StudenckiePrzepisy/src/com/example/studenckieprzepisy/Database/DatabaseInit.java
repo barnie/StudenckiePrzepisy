@@ -1,4 +1,4 @@
-package Database;
+package com.example.studenckieprzepisy.Database;
 
 import android.content.Context;
 

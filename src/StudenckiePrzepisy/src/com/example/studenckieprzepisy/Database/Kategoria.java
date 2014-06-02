@@ -1,4 +1,4 @@
-package Database;
+package com.example.studenckieprzepisy.Database;
 
 /**
  * Created by piotr on 21.04.14.

@@ -1,7 +1,7 @@
 package com.example.studenckieprzepisy;
 
-import Database.Database;
-import Database.DatabaseInit;
+import com.example.studenckieprzepisy.Database.Database;
+import com.example.studenckieprzepisy.Database.DatabaseInit;
 import android.app.ActionBar;
 import android.app.ActionBar.Tab;
 import android.app.AlertDialog;
@@ -17,8 +17,9 @@ import android.view.MenuItem;
 import android.widget.ArrayAdapter;
 import android.widget.EditText;
 import android.widget.Toast;
-import Database.Przepis;
-import com.example.studenckieprzepisy.DodaniePrzepisu.AddPrzepis;
+import com.example.studenckieprzepisy.Database.Przepis;
+import com.example.studenckieprzepisy.AddRecipe.AddPrzepis;
+import com.example.studenckieprzepisy.RecipeView.Przeepis;
 
 import java.util.List;
 

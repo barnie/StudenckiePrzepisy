@@ -1,8 +1,8 @@
 package com.example.studenckieprzepisy;
 
-import Database.Database;
-import Database.DatabaseInit;
-import Database.Kategoria;
+import com.example.studenckieprzepisy.Database.Database;
+import com.example.studenckieprzepisy.Database.DatabaseInit;
+import com.example.studenckieprzepisy.Database.Kategoria;
 import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
@@ -11,6 +11,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.*;
+import com.example.studenckieprzepisy.CategoryListView.PrzepisFromKategoria;
 
 import java.util.List;
 

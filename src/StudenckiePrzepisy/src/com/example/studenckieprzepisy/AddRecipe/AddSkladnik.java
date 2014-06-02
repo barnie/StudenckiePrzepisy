@@ -1,7 +1,7 @@
-package com.example.studenckieprzepisy.DodaniePrzepisu;
+package com.example.studenckieprzepisy.AddRecipe;
 
-import Database.Database;
-import Database.Skladnik;
+import com.example.studenckieprzepisy.Database.Database;
+import com.example.studenckieprzepisy.Database.Skladnik;
 import android.app.Activity;
 import android.app.Dialog;
 import android.content.Context;
@@ -15,7 +15,6 @@ import android.view.ViewGroup;
 import android.widget.*;
 import android.widget.AdapterView.OnItemClickListener;
 import com.example.studenckieprzepisy.MainActivity;
-import com.example.studenckieprzepisy.PrzepisSkladnikWybor;
 import com.example.studenckieprzepisy.R;
 
 import java.util.ArrayList;
