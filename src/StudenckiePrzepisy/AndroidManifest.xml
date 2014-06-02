@@ -28,8 +28,8 @@
         </activity>
         <activity android:name=".Przeepis"
                   android:icon="@drawable/ic_launcher"/>
-        <activity android:name=".AddPrzepis" />
-        <activity android:name=".AddSkladnik" android:screenOrientation="portrait"
+        <activity android:name=".DodaniePrzepisu.AddPrzepis" />
+        <activity android:name=".DodaniePrzepisu.AddSkladnik" android:screenOrientation="portrait"
                    android:configChanges="keyboardHidden|orientation|screenSize" />
         <activity android:name=".PrzepisFromKategoria"/>
     </application>

@@ -90,8 +90,9 @@ public class Przeepis extends Activity {
         if (p.getZdjecie() != null && p.getZdjecie().compareTo("") != 0 && p.getZdjecie().length() > 9) {
             smsIntent.putExtra(Intent.EXTRA_STREAM, Uri.parse("file://" + p.getZdjecie()));
             smsIntent.setType("image/png");
-        } else if (p.getZdjecie() != null && p.getZdjecie().compareTo("") != 0){
-            Toast.makeText(getApplicationContext(), "Wysylam bez zdjecia/Prawa Autorskie", Toast.LENGTH_LONG).show();
+        } else if (p.getZdjecie() != null ){
+            if (p.getZdjecie().compareTo("") != 0)
+                Toast.makeText(getApplicationContext(), "Wysylam bez zdjecia/Prawa Autorskie", Toast.LENGTH_LONG).show();
             Intent intentt = new Intent(Intent.ACTION_VIEW);
             intentt.setData(Uri.parse("sms:"));
             intentt.setType("vnd.android-dir/mms-sms");

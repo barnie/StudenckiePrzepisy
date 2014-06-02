@@ -1,4 +1,4 @@
-package com.example.studenckieprzepisy;
+package com.example.studenckieprzepisy.DodaniePrzepisu;
 
 import Database.Database;
 import Database.Skladnik;
@@ -14,6 +14,9 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.*;
 import android.widget.AdapterView.OnItemClickListener;
+import com.example.studenckieprzepisy.MainActivity;
+import com.example.studenckieprzepisy.PrzepisSkladnikWybor;
+import com.example.studenckieprzepisy.R;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -137,6 +140,7 @@ public class AddSkladnik extends Activity {
                                 android.R.layout.simple_spinner_item, liczbelki);
                         liczby.setAdapter(adapter_liczby);
                         Button b = (Button) promptsView.findViewById(R.id.ok);
+                        b.setText("OK");
                         alertbox.setContentView(promptsView);
                         b.setOnClickListener(new View.OnClickListener() {
                             @Override

@@ -1,4 +1,4 @@
-package com.example.studenckieprzepisy;
+package com.example.studenckieprzepisy.DodaniePrzepisu;
 
 import Database.Database;
 import Database.Kategoria;
@@ -14,6 +14,7 @@ import android.provider.MediaStore;
 import android.util.Log;
 import android.view.View;
 import android.widget.*;
+import com.example.studenckieprzepisy.R;
 
 import java.util.ArrayList;
 import java.util.List;

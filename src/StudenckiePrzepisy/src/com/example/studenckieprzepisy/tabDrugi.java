@@ -7,6 +7,8 @@ import android.app.AlertDialog;
 import android.content.DialogInterface;
 import android.content.Intent;
 import android.content.res.AssetManager;
+import android.graphics.Bitmap;
+import android.graphics.BitmapFactory;
 import android.graphics.drawable.Drawable;
 import android.os.Bundle;
 import android.support.v4.app.ListFragment;
@@ -16,6 +18,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.*;
 
+import java.io.IOException;
 import java.io.InputStream;
 import java.util.HashMap;
 import java.util.List;
@@ -104,6 +107,14 @@ public class tabDrugi extends ListFragment {
             this.imageId = imageId;
         }
 
+        private Bitmap getBitmap(String name) throws IOException {
+            AssetManager asset = getActivity().getAssets();
+            InputStream is = asset.open(name);
+            BitmapFactory.Options o2 = new BitmapFactory.Options();
+            o2.inSampleSize = 40;
+            return BitmapFactory.decodeStream(is, null, o2);
+        }
+
         @Override
         public View getView(int position, View view, ViewGroup parent) {
             LayoutInflater inflater = context.getLayoutInflater();
@@ -115,22 +126,31 @@ public class tabDrugi extends ListFragment {
             AssetManager assetManager = getActivity().getAssets();
             if (przepis.get(position).getZdjecie() == null)
                 return rowView;
+            Drawable d = null;
             try {
                 if (lista.size() < position) {
                     Log.d("ZDJECIE", "" + przepis.get(position).getZdjecie());
-                    Drawable d;
+
                     if (przepis.get(position).getZdjecie().length() < 9) {
-                        InputStream ims = assetManager.open(przepis.get(position).getZdjecie());
-                        d = Drawable.createFromStream(ims, null);
+                        imageView.setImageBitmap(getBitmap(przepis.get(position).getZdjecie()));
                     } else {
-                        d = Drawable.createFromPath(przepis.get(position).getZdjecie());
+                        try {
+                            BitmapFactory.Options o2 = new BitmapFactory.Options();
+                            o2.inSampleSize = 40;
+                            Bitmap bitmap = BitmapFactory.decodeFile(przepis.get(position).getZdjecie(), o2);
+                            imageView.setImageBitmap(bitmap);
+                        } catch (Exception e) {
+                            e.printStackTrace();
+                        }
                     }
                     try {
-                        imageView.setImageDrawable(d);
+                        if (d != null)
+                            imageView.setImageDrawable(d);
                     } catch (Exception e) {
                         e.printStackTrace();
                     } //catch out of memory
-                    lista.put(position, d);
+                    if (d != null)
+                        lista.put(position, d);
                 } else {
                     try {
                         imageView.setImageDrawable(lista.get(position));
