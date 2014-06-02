@@ -157,7 +157,6 @@ public class AddSkladnik extends Activity {
                         if (cb.isChecked())
                             alertbox.show();
                         _state.setMiara("ZAZNACZONO");
-                        _state.getSkladnik().setIle(32);
                         _state.setChoosen(cb.isChecked());
                     }
                 });
