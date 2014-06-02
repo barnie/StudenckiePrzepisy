@@ -7,5 +7,6 @@
     <string name="title_activity_menu">Menu</string>
     <string name="add_przepis_menu">D odaj Przepis</string>
     <string name="Szukanie_po_nazwie">Szukanie po nazwie</string>
+    <string name="Advanced_search">Szukanie po skladnikach</string>
 
 </resources>

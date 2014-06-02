@@ -339,4 +339,25 @@ public class Database extends SQLiteOpenHelper {
         db.close();
     }
 
+    public List<String> advanceSearch(List<Skladnik> s) {
+        String query = "SELECT Przepis.nazwa FROM przepis_Skladnik INNER JOIN przepis ON Przepis_Skladnik.id_przepis =  przepis.id WHERE Przepis_Skladnik.id_Skladnik = ";
+        int i = 0;
+        for (i = 0; i < s.size() - 1; i++) {
+            query += s.get(i).getId() + " OR Przepis_Skladnik.id_Skladnik = ";
+        }
+        if (s.size() > 1)
+            query += s.get(i).getId() + " GROUP BY Przepis_Skladnik.id_przepis HAVING COUNT(*) > 1; ";
+        else
+            query += s.get(i).getId() + " GROUP BY Przepis_Skladnik.id_przepis HAVING COUNT(*) > 0; ";
+        SQLiteDatabase db = this.getWritableDatabase();
+        Cursor cursor = db.rawQuery(query, null);
+        List<String> przepisy = new ArrayList<String>();
+        if (cursor.moveToFirst()) {
+            do {
+                przepisy.add(cursor.getString(0));
+            } while (cursor.moveToNext());
+        }
+        return przepisy;
+    }
+
 }

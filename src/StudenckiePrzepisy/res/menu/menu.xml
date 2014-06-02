@@ -13,5 +13,10 @@
             android:showAsAction="never"
             android:title="@string/Szukanie_po_nazwie"
         />
-
+    <item
+            android:id="@+id/advanced_search"
+            android:orderInCategory="100"
+            android:showAsAction="never"
+            android:title="@string/Advanced_search"
+            />
 </menu>

@@ -1,5 +1,7 @@
 package com.example.studenckieprzepisy;
 
+import android.util.Log;
+import com.example.studenckieprzepisy.AdvancedSearch.AdvancedSearch;
 import com.example.studenckieprzepisy.Database.Database;
 import com.example.studenckieprzepisy.Database.DatabaseInit;
 import android.app.ActionBar;
@@ -19,8 +21,10 @@ import android.widget.EditText;
 import android.widget.Toast;
 import com.example.studenckieprzepisy.Database.Przepis;
 import com.example.studenckieprzepisy.AddRecipe.AddPrzepis;
+import com.example.studenckieprzepisy.Database.Skladnik;
 import com.example.studenckieprzepisy.RecipeView.Przeepis;
 
+import java.util.ArrayList;
 import java.util.List;
 
 public class MainActivity extends FragmentActivity implements
@@ -98,6 +102,7 @@ public class MainActivity extends FragmentActivity implements
     public boolean onCreateOptionsMenu(Menu menu) {
         menu.add(0, R.id.add_przepis, 0, "Dodaj Przepis");
         menu.add(1, R.id.search, 0, "Szukanie po nazwie");
+        menu.add(2, R.id.advanced_search, 0, "Szukanie po skladnikach");
         return true;
     }
 
@@ -126,6 +131,10 @@ public class MainActivity extends FragmentActivity implements
                         // Do nothing.
                     }
                 }).show();
+                break;
+            case R.id.advanced_search:
+                Intent intent1 = new Intent(MainActivity.this, AdvancedSearch.class);
+                startActivity(intent1);
                 break;
         }
         return true;

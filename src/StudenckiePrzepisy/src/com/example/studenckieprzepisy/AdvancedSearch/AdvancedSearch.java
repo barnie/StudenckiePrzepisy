@@ -1,10 +1,10 @@
-package com.example.studenckieprzepisy.AddRecipe;
+package com.example.studenckieprzepisy.AdvancedSearch;
 
-import com.example.studenckieprzepisy.Database.Database;
-import com.example.studenckieprzepisy.Database.Skladnik;
 import android.app.Activity;
+import android.app.AlertDialog;
 import android.app.Dialog;
 import android.content.Context;
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.Bundle;
@@ -13,27 +13,25 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.*;
-import android.widget.AdapterView.OnItemClickListener;
+import com.example.studenckieprzepisy.AddRecipe.PrzepisSkladnikWybor;
+import com.example.studenckieprzepisy.Database.Database;
+import com.example.studenckieprzepisy.Database.Przepis;
+import com.example.studenckieprzepisy.Database.Skladnik;
 import com.example.studenckieprzepisy.MainActivity;
 import com.example.studenckieprzepisy.R;
+import com.example.studenckieprzepisy.RecipeView.Przeepis;
 
 import java.util.ArrayList;
 import java.util.List;
 
 /**
- * Created by piotr on 29.05.14.
+ * Created by piotr on 03.06.14.
  */
-public class AddSkladnik extends Activity {
+public class AdvancedSearch extends Activity {
 
     private Button b;
     private ListView list;
     MyCustomAdapter dataAdapter = null;
-    private String nazwa;
-    private String opis;
-    private String zdjecie = "";
-    private int idkategorii = 0;
-    private List<String> spinner_miary;
-    private Integer liczbelki[] = new Integer[2000];
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -41,16 +39,8 @@ public class AddSkladnik extends Activity {
         setContentView(R.layout.addskladniklist);
         b = (Button) findViewById(R.id.button);
         list = (ListView) findViewById(R.id.listView);
-        //init layouts
-        Bundle extra = getIntent().getExtras();
-        nazwa = extra.getString("nazwa");
-        opis = extra.getString("opis");
-        zdjecie = extra.getString("zdjecie");
-        idkategorii = extra.getInt("kategoria");
-        //getting data
+        b.setText("Szukaj");
         Database db = new Database(getApplicationContext(), null, null, 1);
-        spinner_miary = db.getMiara();
-        for (int i = 0; i < liczbelki.length; liczbelki[i] = i, ++i) ;
         displayListView();
         checkButtonClick();
 
@@ -72,7 +62,7 @@ public class AddSkladnik extends Activity {
         // Assign adapter to ListView
         listView.setAdapter(dataAdapter);
 
-        listView.setOnItemClickListener(new OnItemClickListener() {
+        listView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
 
             public void onItemClick(AdapterView<?> parent, View view,
                                     int position, long id) {
@@ -126,38 +116,7 @@ public class AddSkladnik extends Activity {
                     public void onClick(View v) {
                         CheckBox cb = (CheckBox) v;
                         final PrzepisSkladnikWybor _state = (PrzepisSkladnikWybor) cb.getTag();
-                        final Dialog alertbox = new Dialog(getContext());
-
-                        LayoutInflater li = LayoutInflater.from(getContext());
-                        final View promptsView = li.inflate(R.layout.two_spinners, null);
-                        Spinner s = (Spinner) promptsView.findViewById(R.id.spinner);
-                        ArrayAdapter<String> adapter_state = new ArrayAdapter<String>(getContext(),
-                                android.R.layout.simple_spinner_item, spinner_miary);
-                        s.setAdapter(adapter_state);
-                        Spinner liczby = (Spinner) promptsView.findViewById(R.id.spinner2);
-                        ArrayAdapter<Integer> adapter_liczby = new ArrayAdapter<Integer>(getContext(),
-                                android.R.layout.simple_spinner_item, liczbelki);
-                        liczby.setAdapter(adapter_liczby);
-                        Button b = (Button) promptsView.findViewById(R.id.ok);
-                        b.setText("OK");
-                        alertbox.setContentView(promptsView);
-                        b.setOnClickListener(new View.OnClickListener() {
-                            @Override
-                            public void onClick(View v) {
-                                Spinner s = (Spinner) promptsView.findViewById(R.id.spinner);
-                                Spinner s1 = (Spinner) promptsView.findViewById(R.id.spinner2);
-                                _state.setMiara(s.getSelectedItem().toString());
-                                _state.setIle(s1.getSelectedItemId());
-                                alertbox.dismiss();
-
-                            }
-                        });
-
-                        // show it
-                        if (cb.isChecked())
-                            alertbox.show();
                         _state.setMiara("ZAZNACZONO");
-                        _state.getSkladnik().setIle(32);
                         _state.setChoosen(cb.isChecked());
                     }
                 });
@@ -179,14 +138,44 @@ public class AddSkladnik extends Activity {
     }
 
 
-    public void clearState() {
-        SharedPreferences.Editor pref = this.getSharedPreferences("com.example.studenckieprzepisy", Context.MODE_PRIVATE).edit();
-        pref.remove("nazwa");
-        pref.remove("opis");
-        pref.remove("kategoria");
-        pref.remove("zdjecie");
-        pref.commit();
+    public void buildListViewDialog(List<String> przepisy){
+        if (przepisy.size() == 0){
+            Toast.makeText(getApplicationContext(), "Nie znaleziono przepisow pasujacych do wzorca", Toast.LENGTH_LONG).show();
+            return;
+        }
+        AlertDialog.Builder builderSingle = new AlertDialog.Builder(
+                AdvancedSearch.this);
+        builderSingle.setIcon(R.drawable.ic_launcher);
+        builderSingle.setTitle("Wyszukane Przepisy");
+        final ArrayAdapter<String> arrayAdapter = new ArrayAdapter<String>(
+                this,
+                android.R.layout.select_dialog_singlechoice);
+        for (String p: przepisy){
+            arrayAdapter.add(p);
+        }
+        builderSingle.setNegativeButton("cancel",
+                new DialogInterface.OnClickListener() {
+
+                    @Override
+                    public void onClick(DialogInterface dialog, int which) {
+                        dialog.dismiss();
+                    }
+                });
+
+        builderSingle.setAdapter(arrayAdapter,
+                new DialogInterface.OnClickListener() {
+
+                    @Override
+                    public void onClick(DialogInterface dialog, int which) {
+                        String strName = arrayAdapter.getItem(which);
+                        Intent intent = new Intent(AdvancedSearch.this, Przeepis.class);
+                        intent.putExtra("KEY", strName);
+                        startActivity(intent);
+                    }
+                });
+        builderSingle.show();
     }
+
 
     private void checkButtonClick() {
         Button myButton = (Button) findViewById(R.id.button);
@@ -196,24 +185,19 @@ public class AddSkladnik extends Activity {
             @Override
             public void onClick(View v) {
                 ArrayList<PrzepisSkladnikWybor> stateList = dataAdapter.stateList;
-                ArrayList<PrzepisSkladnikWybor> wybrane = new ArrayList<PrzepisSkladnikWybor>();
+                List<Skladnik> wybrane = new ArrayList<Skladnik>();
 
-                clearState();
                 for (int i = 0; i < stateList.size(); i++) {
                     PrzepisSkladnikWybor state = stateList.get(i);
                     if (state.isChoosen()) {
-                        wybrane.add(stateList.get(i));
+                        wybrane.add(stateList.get(i).getSkladnik());
                     }
                 }
 
                 Database db = new Database(getApplicationContext(), null, null, 1);
-                db.addPrzepis(idkategorii, nazwa, opis, zdjecie, wybrane);
-                Intent intent = new Intent(AddSkladnik.this, MainActivity.class);
-                intent.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TASK | Intent.FLAG_ACTIVITY_NEW_TASK);
-                startActivity(intent);
-
+                List<String> wyszukane = db.advanceSearch(wybrane);
+                buildListViewDialog(wyszukane);
             }
         });
     }
-
 }
