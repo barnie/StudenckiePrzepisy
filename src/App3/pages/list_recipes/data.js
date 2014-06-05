@@ -52,8 +52,8 @@ ItList.prototype.next = function () {
 function loadRecData(i, myData, array) {
     return Windows.Storage.ApplicationData.current.localFolder.getFileAsync(array.it.picture).then(function (file) {
         var varShortTitle;
-        if (array.it.title > 19)
-            varShortTitle = array.it.title.substr(0, 16) + "...";
+        if (array.it.title.length > 30)
+            varShortTitle = array.it.title.substr(0, 27) + "...";
         else
             varShortTitle = array.it.title;
         myData[myData.length] = { title: array.it.title, shortTitle: varShortTitle, picture: 'url("' + "ms-appdata:///local/" + array.it.picture + '")', size: 'cover' };
@@ -64,8 +64,8 @@ function loadRecData(i, myData, array) {
     },
             function () {
                 var varShortTitle;
-                if (array.it.title > 19)
-                    varShortTitle = array.it.title.substr(0, 16) + "...";
+                if (array.it.title.length > 30)
+                    varShortTitle = array.it.title.substr(0, 27) + "...";
                 else
                     varShortTitle = array.it.title;
                 myData[myData.length] = { title: array.it.title, shortTitle: varShortTitle, picture: 'url("' + "/images/" + array.it.picture + '")', size: 'cover' };
