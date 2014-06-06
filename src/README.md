@@ -26,3 +26,6 @@ kat6.jpg - http://www.sxc.hu/photo/16044
 11.jpg - http://www.sxc.hu/photo/1022900
 12.jpg - http://www.sxc.hu/photo/1386882
 13.jpg - http://www.sxc.hu/photo/850523
+
+-> Ikon:
+setBut.png - http://www.freeimages.com/photo/1105896

@@ -14,7 +14,9 @@
             recipe.Display();
             var deleteRecipe = document.getElementById("buttonDel");
             deleteRecipe.addEventListener("click", recipe.Delete, false);
-            document.getElementById("buttonDel").style.display = "inline";
+            if (Settings.getFrom != 'ws') {
+                document.getElementById("buttonDel").style.display = "inline";
+            }
             //koniec ustawiania usuwania
         },
 

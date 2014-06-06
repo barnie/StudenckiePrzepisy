@@ -78,6 +78,7 @@
     <Content Include="images\food_wallpaper2.jpg" />
     <Content Include="images\food_wallpaper3.jpg" />
     <Content Include="images\Green-1024x768.jpg" />
+    <Content Include="images\iconSet.png" />
     <Content Include="images\kat1.jpg" />
     <Content Include="images\kat2.jpg" />
     <Content Include="images\kat3.jpg" />
@@ -87,6 +88,7 @@
     <Content Include="images\loading.gif" />
     <Content Include="images\pobrane.jpg" />
     <Content Include="images\red_metro.jpg" />
+    <Content Include="images\setBut.png" />
     <Content Include="images\spadzetixD.jpg" />
     <Content Include="images\Windows8Green.jpg" />
     <Content Include="js\default_inserts.js" />
@@ -96,6 +98,8 @@
     <Content Include="js\navigator.js" />
     <Content Include="js\ParseHelper.js" />
     <Content Include="js\SearchHelper.js" />
+    <Content Include="js\Settings.js" />
+    <Content Include="js\WebServiceHandler.js" />
     <Content Include="pages\add_recipe\add_recipe.css" />
     <Content Include="pages\add_recipe\add_recipe.html" />
     <Content Include="pages\add_recipe\add_recipe.js" />
@@ -108,6 +112,9 @@
     <Content Include="pages\delete\delete_confirm.css" />
     <Content Include="pages\delete\delete_confirm.html" />
     <Content Include="pages\delete\delete_confirm.js" />
+    <Content Include="pages\settings\settings.css" />
+    <Content Include="pages\settings\settings.html" />
+    <Content Include="pages\settings\settings.js" />
     <Content Include="pages\home\home.css" />
     <Content Include="pages\home\home.html" />
     <Content Include="pages\home\home.js" />

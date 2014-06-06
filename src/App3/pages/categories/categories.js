@@ -44,6 +44,10 @@
             document.getElementById("container").style.borderSpacing = "" + window.screen.availWidth * 0.028 + "px 0 "; //odstêpy miêdzy kategoriami
             document.getElementById("myDiv").style.width = window.screen.availWidth * 1.25 + "px"; //sprawiam ze tabelka bedzie wychodzic poza ekran (dolny scroll)
             console.log("szer=" + window.screen.availWidth * 1.25);
+            //check ws or db
+            if (Settings.getFrom == 'ws') {
+                document.getElementById("addRecButMenu").style.display = "none";
+            }
 
 
         },
@@ -78,12 +82,19 @@
         else if (("" + link).search("list_recipes") != -1) {
 
             var array = [];
-
-            getPrzepisy(array).then(function () {
-                loadRecipiesList(array).then( function() {
-                    WinJS.Navigation.navigate(link.href, array); 
+            if (Settings.getFrom == 'ws') {
+                WebServiceHandler.getPrzepisy(array).then(function () {
+                    loadRecipiesList(array);
+                    WinJS.Navigation.navigate(link.href, array);
                 })
-            })
+            }
+            else { //db
+                getPrzepisy(array).then(function () {
+                    loadRecipiesList(array).then(function () {
+                        WinJS.Navigation.navigate(link.href, array);
+                    })
+                })
+            }
 
         }
         else if(("" + link).search("add_recipe") != -1) {
