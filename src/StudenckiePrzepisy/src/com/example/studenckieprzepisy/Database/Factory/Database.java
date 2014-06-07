@@ -74,7 +74,6 @@ public class Database extends SQLiteOpenHelper implements DatabaseFactory {
     }
 
 
-
     public void addManyPrzepisSkladnik(List<PrzepisSkladnik> ps) {
         SQLiteDatabase db = this.getWritableDatabase();
         ContentValues values[] = new ContentValues[ps.size()];
@@ -335,8 +334,8 @@ public class Database extends SQLiteOpenHelper implements DatabaseFactory {
         db.close();
     }
 
-    public List<String> advanceSearch(List<Skladnik> s) {
-        String query = "SELECT Przepis.nazwa FROM przepis_Skladnik INNER JOIN przepis ON Przepis_Skladnik.id_przepis =  przepis.id WHERE Przepis_Skladnik.id_Skladnik = ";
+    public List<Przepis> advanceSearch(List<Skladnik> s) {
+        String query = "SELECT Przepis.id,Przepis.id_kategorii, Przepis.nazwa, Przepis.opis, Przepis.zdjecie FROM przepis_Skladnik INNER JOIN przepis ON Przepis_Skladnik.id_przepis =  przepis.id WHERE Przepis_Skladnik.id_Skladnik = ";
         int i = 0;
         for (i = 0; i < s.size() - 1; i++) {
             query += s.get(i).getId() + " OR Przepis_Skladnik.id_Skladnik = ";
@@ -347,10 +346,10 @@ public class Database extends SQLiteOpenHelper implements DatabaseFactory {
             query += s.get(i).getId() + " GROUP BY Przepis_Skladnik.id_przepis HAVING COUNT(*) > 0; ";
         SQLiteDatabase db = this.getWritableDatabase();
         Cursor cursor = db.rawQuery(query, null);
-        List<String> przepisy = new ArrayList<String>();
+        List<Przepis> przepisy = new ArrayList<Przepis>();
         if (cursor.moveToFirst()) {
             do {
-                przepisy.add(cursor.getString(0));
+                przepisy.add(new Przepis(cursor.getInt(0), cursor.getInt(1), cursor.getString(2), cursor.getString(3), cursor.getString(4)));
             } while (cursor.moveToNext());
         }
         return przepisy;

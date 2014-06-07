@@ -13,9 +13,9 @@ import java.util.List;
 /**
  * Created by piotr on 07.06.14.
  */
-public class SqliBridge extends DateBridge {
+public class SqlBridge extends DateBridge {
 
-    public SqliBridge(DatabaseFactory factory){
+    public SqlBridge(DatabaseFactory factory) {
         super(factory);
     }
 
@@ -41,7 +41,7 @@ public class SqliBridge extends DateBridge {
 
     @Override
     public void addPrzepis(int id_Kategorii, String nazwa, String opis, String zdjecie, ArrayList<PrzepisSkladnikWybor> ps) {
-        this.factory.addPrzepis(id_Kategorii,nazwa, opis, zdjecie, ps);
+        this.factory.addPrzepis(id_Kategorii, nazwa, opis, zdjecie, ps);
     }
 
     @Override
@@ -110,7 +110,7 @@ public class SqliBridge extends DateBridge {
     }
 
     @Override
-    public List<String> advanceSearch(List<Skladnik> s) {
+    public List<Przepis> advanceSearch(List<Skladnik> s) {
         return this.factory.advanceSearch(s);
     }
 

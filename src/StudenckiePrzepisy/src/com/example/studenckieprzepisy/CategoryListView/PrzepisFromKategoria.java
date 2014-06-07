@@ -1,7 +1,5 @@
 package com.example.studenckieprzepisy.CategoryListView;
 
-import com.example.studenckieprzepisy.Database.Factory.Database;
-import com.example.studenckieprzepisy.Database.DatabaseObjects.Przepis;
 import android.app.Activity;
 import android.content.Context;
 import android.content.Intent;
@@ -13,6 +11,8 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.*;
+import com.example.studenckieprzepisy.Database.DatabaseObjects.Przepis;
+import com.example.studenckieprzepisy.Database.Factory.Database;
 import com.example.studenckieprzepisy.R;
 import com.example.studenckieprzepisy.RecipeView.Przeepis;
 
@@ -26,13 +26,14 @@ public class PrzepisFromKategoria extends Activity {
     private ListView list;
     MyCustomAdapter dataAdapter = null;
     private int idKategorii = 0;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.przepis_from_kategoria);
         list = (ListView) findViewById(R.id.listView);
         Bundle extra = getIntent().getExtras();
-        idKategorii = extra.getInt("idkategorii",0);
+        idKategorii = extra.getInt("idkategorii", 0);
         displayListView();
     }
 
@@ -102,7 +103,7 @@ public class PrzepisFromKategoria extends Activity {
 
             Przepis state = stateList.get(position);
             holder.name.setText(state.getNazwa());
-            if (state.getZdjecie() == null){
+            if (state.getZdjecie() == null) {
                 holder.img.setImageResource(R.drawable.ic_launcher);
                 return convertView;
             }
@@ -110,14 +111,14 @@ public class PrzepisFromKategoria extends Activity {
             AssetManager assetManager = getAssets();
             try {
                 Drawable d;
-                if (state.getZdjecie().length() < 9){
+                if (state.getZdjecie().length() < 9) {
                     InputStream ims = assetManager.open(state.getZdjecie());
                     d = Drawable.createFromStream(ims, null);
                 } else {
                     d = Drawable.createFromPath(state.getZdjecie());
                 }
                 holder.img.setImageDrawable(d);
-            }catch (Exception ex){
+            } catch (Exception ex) {
                 ex.printStackTrace();
             }
 

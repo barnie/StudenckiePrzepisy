@@ -60,7 +60,7 @@ public abstract class DateBridge { //tylko taka "odmiana" mostu ma moim zdaniem 
 
     public abstract List<Przepis> searchPrzepis(String nazwa);
 
-    public abstract List<String> advanceSearch(List<Skladnik> s);
+    public abstract List<Przepis> advanceSearch(List<Skladnik> s);
 
     public abstract DatabaseFactory getFactory();
 

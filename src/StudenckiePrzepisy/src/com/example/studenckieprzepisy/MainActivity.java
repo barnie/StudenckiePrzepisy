@@ -1,8 +1,5 @@
 package com.example.studenckieprzepisy;
 
-import com.example.studenckieprzepisy.AdvancedSearch.AdvancedSearch;
-import com.example.studenckieprzepisy.Database.Factory.Database;
-import com.example.studenckieprzepisy.Database.DatabaseInit;
 import android.app.ActionBar;
 import android.app.ActionBar.Tab;
 import android.app.AlertDialog;
@@ -18,9 +15,13 @@ import android.view.MenuItem;
 import android.widget.ArrayAdapter;
 import android.widget.EditText;
 import android.widget.Toast;
-import com.example.studenckieprzepisy.Database.DatabaseObjects.Przepis;
 import com.example.studenckieprzepisy.AddRecipe.AddPrzepis;
+import com.example.studenckieprzepisy.AdvancedSearch.AdvancedSearch;
+import com.example.studenckieprzepisy.Database.DatabaseInit;
+import com.example.studenckieprzepisy.Database.DatabaseObjects.Przepis;
+import com.example.studenckieprzepisy.Database.Factory.Database;
 import com.example.studenckieprzepisy.RecipeView.Przeepis;
+import com.example.studenckieprzepisy.Search.StrategySearch;
 
 import java.util.List;
 
@@ -52,8 +53,8 @@ public class MainActivity extends FragmentActivity implements
         boolean firstRun = prefs.getBoolean("INSTALL", false);
         if (!firstRun) {
             prefs.edit().putBoolean("INSTALL", true).commit();
-            DatabaseInit dinit = new DatabaseInit(getApplicationContext());
-            dinit.initDB();
+            DatabaseInit init = DatabaseInit.getInstance(getApplicationContext());
+            init.initDB();
         }
         viewPager.setOnPageChangeListener(new ViewPager.OnPageChangeListener() {
 
@@ -118,10 +119,8 @@ public class MainActivity extends FragmentActivity implements
                         .setView(input)
                         .setPositiveButton("Szukaj", new DialogInterface.OnClickListener() {
                             public void onClick(DialogInterface dialog, int whichButton) {
-                                String value = input.getText().toString();
-                                Database db = new Database(getApplicationContext(), null, null, 1);
-                                List<Przepis> przepisy = db.searchPrzepis(value.trim());
-                                buildListViewDialog(przepisy);
+                                StrategySearch search = new StrategySearch(getApplicationContext(), input.getText().toString().trim());
+                                buildListViewDialog(search.search());
                             }
                         }).setNegativeButton("Anuluj", new DialogInterface.OnClickListener() {
                     public void onClick(DialogInterface dialog, int whichButton) {
@@ -137,8 +136,8 @@ public class MainActivity extends FragmentActivity implements
         return true;
     }
 
-    public void buildListViewDialog(List<Przepis> przepisy){
-        if (przepisy.size() == 0){
+    public void buildListViewDialog(List<Przepis> przepisy) {
+        if (przepisy.size() == 0) {
             Toast.makeText(getApplicationContext(), "Nie znaleziono przepisow pasujacych do wzorca", Toast.LENGTH_LONG).show();
             return;
         }
@@ -149,7 +148,7 @@ public class MainActivity extends FragmentActivity implements
         final ArrayAdapter<String> arrayAdapter = new ArrayAdapter<String>(
                 this,
                 android.R.layout.select_dialog_singlechoice);
-        for (Przepis p: przepisy){
+        for (Przepis p : przepisy) {
             arrayAdapter.add(p.getNazwa());
         }
         builderSingle.setNegativeButton("cancel",

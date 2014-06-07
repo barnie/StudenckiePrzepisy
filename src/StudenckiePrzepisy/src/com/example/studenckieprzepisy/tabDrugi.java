@@ -1,7 +1,5 @@
 package com.example.studenckieprzepisy;
 
-import com.example.studenckieprzepisy.Database.Factory.Database;
-import com.example.studenckieprzepisy.Database.DatabaseObjects.Przepis;
 import android.app.Activity;
 import android.app.AlertDialog;
 import android.content.DialogInterface;
@@ -17,6 +15,10 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.*;
+import com.example.studenckieprzepisy.Database.Bridge.DateBridge;
+import com.example.studenckieprzepisy.Database.Bridge.SqlBridge;
+import com.example.studenckieprzepisy.Database.DatabaseObjects.Przepis;
+import com.example.studenckieprzepisy.Database.Factory.Database;
 import com.example.studenckieprzepisy.RecipeView.Przeepis;
 
 import java.io.IOException;
@@ -35,7 +37,7 @@ public class tabDrugi extends ListFragment {
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
-        Database db = new Database(getActivity().getApplicationContext(), null, null, 1);
+        DateBridge db = new SqlBridge(new Database(getActivity().getApplicationContext(), null, null, 1));
         przepis = db.getPrzepisy();
         web = new String[przepis.size()];
         imageId = new Integer[przepis.size()];

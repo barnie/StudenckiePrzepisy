@@ -1,8 +1,5 @@
 package com.example.studenckieprzepisy;
 
-import com.example.studenckieprzepisy.Database.Factory.Database;
-import com.example.studenckieprzepisy.Database.DatabaseInit;
-import com.example.studenckieprzepisy.Database.DatabaseObjects.Kategoria;
 import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
@@ -10,8 +7,16 @@ import android.support.v4.app.ListFragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.*;
+import android.widget.ArrayAdapter;
+import android.widget.ImageView;
+import android.widget.ListView;
+import android.widget.TextView;
 import com.example.studenckieprzepisy.CategoryListView.PrzepisFromKategoria;
+import com.example.studenckieprzepisy.Database.Bridge.DateBridge;
+import com.example.studenckieprzepisy.Database.Bridge.SqlBridge;
+import com.example.studenckieprzepisy.Database.DAO.KategoriaDaoSqlImpl;
+import com.example.studenckieprzepisy.Database.DatabaseObjects.Kategoria;
+import com.example.studenckieprzepisy.Database.Factory.Database;
 
 import java.util.List;
 
@@ -30,10 +35,7 @@ public class TabPierwszy extends ListFragment {
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
-        Database db = new Database(getActivity().getApplicationContext(), null, null, 1);
-
-        DatabaseInit a = new DatabaseInit(getActivity().getApplicationContext());
-        category = db.getKategorie();
+        category = new KategoriaDaoSqlImpl(getActivity().getApplicationContext()).getKategorie();
         for (int i = 0; i < category.size(); i++)
             System.out.println(category.get(i).toString());
         web = new String[category.size()];
@@ -59,7 +61,7 @@ public class TabPierwszy extends ListFragment {
     public void onListItemClick(ListView l, View v, int position, long id) {
         super.onListItemClick(l, v, position, id);
         Intent intent = new Intent(getActivity(), PrzepisFromKategoria.class);
-        intent.putExtra("idkategorii",category.get(position).getId());
+        intent.putExtra("idkategorii", category.get(position).getId());
         startActivity(intent);
     }
 
