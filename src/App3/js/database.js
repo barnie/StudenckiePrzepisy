@@ -148,7 +148,7 @@ function addPrzepis(id_kategorii, nazwa, opis, zdjecie, tab) {
     });
 }
 
-//use only in createDB()
+//use only in createDB(), create  and load setting  file too
 function dbInsert() {
     var test;
     var dbPath = Windows.Storage.ApplicationData.current.localFolder.path + '\\przepisy_db.sqlite';
@@ -170,12 +170,20 @@ function dbInsert() {
                  console.log('close the db');
                  db.close();
                  if (test != 0) {
+                     Windows.Storage.ApplicationData.current.localFolder.getFileAsync("settings.txt").done(function (file) {
+                         Windows.Storage.FileIO.readTextAsync(file).done(function (contents) {
+                             Settings.getFrom = contents;
+                         })
+                     });
                      var array = [];
                      getKategorie(array).then(function () {
                          WinJS.Navigation.navigate("/pages/categories/categories.html", array);
                      })
                  }
-                 else {
+                 else { //not have database
+                     Windows.Storage.ApplicationData.current.localFolder.createFileAsync("settings.txt").done(function (file) { //create settings
+                         Windows.Storage.FileIO.writeTextAsync(file, "db");
+                     });
                      default_insert();
                  }
              }).then(function () {
