@@ -49,29 +49,49 @@
             }
         });
 
-        findPrzepis(categories, ingridines, myArray).then(function () {
+        if (Settings.getFrom != 'ws') {
+            findPrzepis(categories, ingridines, myArray).then(function () {
                 var tempArray = new Array();
                 var j = 0;
-                for (var i = 0; i < myArray.length; i++)
-                {
-                    if(myArray[i][1].toLowerCase().substr(0,queryText.length) === queryText)
-                    {
+                for (var i = 0; i < myArray.length; i++) {
+                    if (myArray[i][1].toLowerCase().substr(0, queryText.length) === queryText) {
                         tempArray[j] = myArray[i];
                         j++;
                     }
                 }
                 if (j == 0)
                     WinJS.Navigation.navigate('/pages/search/searchFailed.html');
-                    else
-                {
-                    loadRecipiesList(tempArray).then(function(){ 
+                else {
+                    loadRecipiesList(tempArray).then(function () {
                         WinJS.Navigation.navigate("pages/list_recipes/list_recipes.html", tempArray);
                     })
                 }
-                
-                
+
+
             }
-        );
+            );
+        }
+        else {
+            WebServiceHandler.findPrzepis(categories, ingridines, myArray).then(function () {
+                var tempArray = new Array();
+                var j = 0;
+                for (var i = 0; i < myArray.length; i++) {
+                    if (myArray[i][1].toLowerCase().substr(0, queryText.length) === queryText) {
+                        tempArray[j] = myArray[i];
+                        j++;
+                    }
+                }
+                if (j == 0)
+                    WinJS.Navigation.navigate('/pages/search/searchFailed.html');
+                else {
+                    loadRecipiesList(tempArray);
+                    WinJS.Navigation.navigate("pages/list_recipes/list_recipes.html", tempArray);
+                }
+
+
+            }
+            );
+        }
     }
 
 })();

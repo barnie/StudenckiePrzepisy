@@ -112,12 +112,12 @@
     <Content Include="pages\delete\delete_confirm.css" />
     <Content Include="pages\delete\delete_confirm.html" />
     <Content Include="pages\delete\delete_confirm.js" />
+    <Content Include="pages\home\home.html" />
+    <Content Include="pages\home\home.js" />
     <Content Include="pages\settings\settings.css" />
     <Content Include="pages\settings\settings.html" />
     <Content Include="pages\settings\settings.js" />
     <Content Include="pages\home\home.css" />
-    <Content Include="pages\home\home.html" />
-    <Content Include="pages\home\home.js" />
     <Content Include="pages\list_recipes\list_recipes.css" />
     <Content Include="pages\list_recipes\list_recipes.html" />
     <Content Include="pages\list_recipes\list_recipes.js" />

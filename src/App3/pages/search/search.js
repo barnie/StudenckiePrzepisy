@@ -33,17 +33,41 @@
 
     function querySubmittedHandler(eventObject) {
         var queryText = eventObject.detail.queryText;
-            var myArray = new Array();
-            getOnePrzepis(queryText, myArray).then(function ()
-            {
-                if(myArray[2] == undefined)
-                {
+        var myArray = new Array();
+        if (Settings.getFrom != 'ws') {
+            getOnePrzepis(queryText, myArray).then(function () {
+                if (myArray[2] == undefined) {
                     WinJS.Navigation.navigate('/pages/search/searchFailed.html');
                 }
-                else
-                {
+                else {
                     WinJS.Navigation.navigate('/pages/recipe/recipe.html', myArray);
-                } 
+                }
             });
+        }
+        else {
+            WebServiceHandler.getOnePrzepis(queryText, myArray).then(function () {
+                if (myArray[2] == undefined) {
+                    WinJS.Navigation.navigate('/pages/search/searchFailed.html');
+                }
+                else {
+                    //get Ingridients names
+                    var ingAr = new Array();
+                    var itIng = 5;
+                    for (var i = 0 ; itIng < myArray.length ; i++) {
+                        ingAr[i] = myArray[itIng][0];
+                        itIng++;
+                    }
+
+                    if (myArray.length > 0) {
+                        getNameOfSkladniki(myArray, ingAr).then(function () {
+                            WinJS.Navigation.navigate("/pages/recipe/recipe.html", myArray); //idziemy do strony z przepisem
+                        })
+                    }
+                    else {
+                        WinJS.Navigation.navigate('/pages/recipe/recipe.html', myArray);
+                    }
+                }
+            });
+        }
     }
 })();

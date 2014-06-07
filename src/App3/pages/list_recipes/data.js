@@ -84,15 +84,14 @@ function loadRecipiesList(array) {
     var check = listObj.getIterator(); //if false 0 obj in collection
     if (!check) return 0;
     if (Settings.getFrom == 'ws') {
-        var i = true;
-        while( i ){
+        for( var i = 0; i < array.length ; i++ ){
             var varShortTitle;
             if (listObj.it.title.length > 25)
                 varShortTitle = listObj.it.title.substr(0, 22) + "...";
             else
                 varShortTitle = listObj.it.title;
-            myData[myData.length] = { title: listObj.it.title, shortTitle: varShortTitle, picture: 'url("' + listObj.it.picture + '")', size: 'cover' };
-            i = listObj.it.next();
+            myData[myData.length] = { title: listObj.it.title, shortTitle: varShortTitle, picture: 'url("' + listObj.it.picture + '")', size: 'cover', array: array[i]  };
+            listObj.it.next();
         }
 
         // Create a WinJS.Binding.List from the array. 

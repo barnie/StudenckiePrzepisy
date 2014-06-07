@@ -362,7 +362,41 @@ function getPrzepis_Skladnik(array) {
     Zwraca Skladniki w jednowymiarowej tablicy :
     zwraca pole nazwe dla kazdego skladnika
 */
-
+function getNameOfSkladniki(array, idSkl) {
+    var dbPath = Windows.Storage.ApplicationData.current.localFolder.path + '\\przepisy_db.sqlite';
+    return SQLite3JS.openAsync(dbPath)
+              .then(function (db) {
+                  console.log('DB opened');
+                  console.log(Windows.Storage.ApplicationData.current.localFolder.path);
+                  var QUERY = 'SELECT id, nazwa FROM Skladnik WHERE id in(';
+                  var i = 0
+                  for (; i < idSkl.length - 1; i++) {
+                      QUERY += idSkl[i] + ',';
+                  }
+                  QUERY += idSkl[i];
+                  QUERY += ');'
+                  return db.eachAsync(QUERY, function (row) {
+                    
+                      var index = idSkl.indexOf(row.id.toString());
+                      while (index != -1) {
+                          array[index + 5][0] = row.nazwa;//+5 because we have 5 other data name, picture etc.
+                          idSkl[index] = -1;
+                          index = idSkl.indexOf(row.id.toString());
+                      }
+                  });
+              }, function (error) {
+                  if (db) {
+                      db.close();
+                  }
+                  console.log('ERROR Select * Skladnik ' + error.message);
+              })
+             .then(function (db) {
+                 console.log('close the db');
+                 db.close();
+             }).then(function () {
+                 return array;
+             });
+}
 function getSkladnik(array) {
 
     var dbPath = Windows.Storage.ApplicationData.current.localFolder.path + '\\przepisy_db.sqlite';

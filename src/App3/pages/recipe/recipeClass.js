@@ -32,21 +32,28 @@ Display.prototype.execute = function (options) {
     document.getElementById("category").innerHTML = options[1];
     document.getElementById("name").innerHTML = options[2];
     document.getElementById("description").innerHTML = options[3];
-
-    Windows.Storage.ApplicationData.current.localFolder.getFileAsync(options[4]).done(function (file) {
+    if (Settings.getFrom != 'ws') {
+        Windows.Storage.ApplicationData.current.localFolder.getFileAsync(options[4]).done(function (file) {
+            var imgHandler = document.createElement("img");
+            imgHandler.id = "myImgHandler";
+            var imageBlob = URL.createObjectURL(file);
+            imgHandler.src = imageBlob;
+            URL.revokeObjectURL(imageBlob);
+            document.getElementById("img_container").appendChild(imgHandler);
+        },
+        function () {
+            var imgHandler = document.createElement("img");
+            imgHandler.id = "myImgHandler";
+            imgHandler.src = '/images/' + options[4];
+            document.getElementById("img_container").appendChild(imgHandler);
+        });
+    }
+    else {
         var imgHandler = document.createElement("img");
         imgHandler.id = "myImgHandler";
-        var imageBlob = URL.createObjectURL(file);
-        imgHandler.src = imageBlob;
-        URL.revokeObjectURL(imageBlob);
+        imgHandler.src = options[4];
         document.getElementById("img_container").appendChild(imgHandler);
-    },
-    function () {
-        var imgHandler = document.createElement("img");
-        imgHandler.id = "myImgHandler";
-        imgHandler.src = '/images/' + options[4];
-        document.getElementById("img_container").appendChild(imgHandler);
-    });
+    }
 
     var container = "<ul>";
     for (var i = 5; i < options.length ; i++) {
