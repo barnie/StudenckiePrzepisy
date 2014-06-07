@@ -46,7 +46,7 @@
   <PropertyGroup>
     <TargetPlatformIdentifier>Windows</TargetPlatformIdentifier>
     <TargetPlatformVersion>8.1</TargetPlatformVersion>
-    <DefaultLanguage>en-US</DefaultLanguage>
+    <DefaultLanguage>pl</DefaultLanguage>
     <PackageCertificateKeyFile>App3_TemporaryKey.pfx</PackageCertificateKeyFile>
     <MinimumVisualStudioVersion>12.0</MinimumVisualStudioVersion>
     <AppxAutoIncrementPackageRevision>False</AppxAutoIncrementPackageRevision>
