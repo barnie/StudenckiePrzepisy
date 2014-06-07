@@ -2,11 +2,9 @@ package com.example.studenckieprzepisy.AdvancedSearch;
 
 import android.app.Activity;
 import android.app.AlertDialog;
-import android.app.Dialog;
 import android.content.Context;
 import android.content.DialogInterface;
 import android.content.Intent;
-import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.LayoutInflater;
@@ -14,12 +12,14 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.*;
 import com.example.studenckieprzepisy.AddRecipe.PrzepisSkladnikWybor;
-import com.example.studenckieprzepisy.Database.Database;
-import com.example.studenckieprzepisy.Database.Przepis;
-import com.example.studenckieprzepisy.Database.Skladnik;
-import com.example.studenckieprzepisy.MainActivity;
+import com.example.studenckieprzepisy.Database.Bridge.DateBridge;
+import com.example.studenckieprzepisy.Database.Bridge.SqlBridge;
+import com.example.studenckieprzepisy.Database.DatabaseObjects.Przepis;
+import com.example.studenckieprzepisy.Database.DatabaseObjects.Skladnik;
+import com.example.studenckieprzepisy.Database.Factory.Database;
 import com.example.studenckieprzepisy.R;
 import com.example.studenckieprzepisy.RecipeView.Przeepis;
+import com.example.studenckieprzepisy.Search.StrategySearch;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -51,7 +51,7 @@ public class AdvancedSearch extends Activity {
 
         // Array list of countries
         ArrayList<PrzepisSkladnikWybor> stateList = new ArrayList<PrzepisSkladnikWybor>();
-        Database db = new Database(getApplicationContext(), null, null, 1);
+        DateBridge db = new SqlBridge(new Database(getApplicationContext(), null, null, 1));
         List<Skladnik> skladniczki = db.getSkladniki();
         for (Skladnik i : skladniczki)
             stateList.add(new PrzepisSkladnikWybor(i, false));
@@ -138,8 +138,8 @@ public class AdvancedSearch extends Activity {
     }
 
 
-    public void buildListViewDialog(List<String> przepisy){
-        if (przepisy.size() == 0){
+    public void buildListViewDialog(List<String> przepisy) {
+        if (przepisy.size() == 0) {
             Toast.makeText(getApplicationContext(), "Nie znaleziono przepisow pasujacych do wzorca", Toast.LENGTH_LONG).show();
             return;
         }
@@ -150,7 +150,7 @@ public class AdvancedSearch extends Activity {
         final ArrayAdapter<String> arrayAdapter = new ArrayAdapter<String>(
                 this,
                 android.R.layout.select_dialog_singlechoice);
-        for (String p: przepisy){
+        for (String p : przepisy) {
             arrayAdapter.add(p);
         }
         builderSingle.setNegativeButton("cancel",
@@ -193,10 +193,13 @@ public class AdvancedSearch extends Activity {
                         wybrane.add(stateList.get(i).getSkladnik());
                     }
                 }
-
-                Database db = new Database(getApplicationContext(), null, null, 1);
-                List<String> wyszukane = db.advanceSearch(wybrane);
-                buildListViewDialog(wyszukane);
+                StrategySearch search = new StrategySearch(getApplicationContext(), wybrane);
+                List<Przepis> wyszukane = search.search();
+                ArrayList<String> tmp = new ArrayList<String>();
+                for (Przepis p : wyszukane) {
+                    tmp.add(p.getNazwa());
+                }
+                buildListViewDialog(tmp);
             }
         });
     }

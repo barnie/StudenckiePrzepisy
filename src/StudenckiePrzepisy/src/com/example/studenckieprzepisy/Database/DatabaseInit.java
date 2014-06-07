@@ -1,6 +1,11 @@
 package com.example.studenckieprzepisy.Database;
 
 import android.content.Context;
+import com.example.studenckieprzepisy.Database.DatabaseObjects.Kategoria;
+import com.example.studenckieprzepisy.Database.DatabaseObjects.Przepis;
+import com.example.studenckieprzepisy.Database.DatabaseObjects.PrzepisSkladnik;
+import com.example.studenckieprzepisy.Database.DatabaseObjects.Skladnik;
+import com.example.studenckieprzepisy.Database.Factory.Database;
 
 import java.util.ArrayList;
 
@@ -9,12 +14,21 @@ import java.util.ArrayList;
  */
 public class DatabaseInit {
 
-    private Context context;
+    private static Context context= null;
+    private static DatabaseInit init = null;
 
     private DatabaseInit() {
     }
 
-    public DatabaseInit(Context context) {
+    public static DatabaseInit getInstance(Context co){
+        context = co;
+        if (init == null){
+            return new DatabaseInit(context);
+        }  else
+            return init;
+    }
+
+    private DatabaseInit(Context context) {
         this.context = context;
     }
 

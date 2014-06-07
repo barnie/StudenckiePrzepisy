@@ -1,7 +1,5 @@
 package com.example.studenckieprzepisy.AddRecipe;
 
-import com.example.studenckieprzepisy.Database.Database;
-import com.example.studenckieprzepisy.Database.Kategoria;
 import android.app.Activity;
 import android.content.Context;
 import android.content.Intent;
@@ -14,6 +12,10 @@ import android.provider.MediaStore;
 import android.util.Log;
 import android.view.View;
 import android.widget.*;
+import com.example.studenckieprzepisy.Database.Bridge.DateBridge;
+import com.example.studenckieprzepisy.Database.Bridge.SqlBridge;
+import com.example.studenckieprzepisy.Database.DatabaseObjects.Kategoria;
+import com.example.studenckieprzepisy.Database.Factory.Database;
 import com.example.studenckieprzepisy.R;
 
 import java.util.ArrayList;
@@ -44,7 +46,7 @@ public class AddPrzepis extends Activity {
         image_path = shared.getString("zdjecie", ""); //Ustawienie zdjecie
         nazwa.setText(shared.getString("nazwa", ""));
         opis.setText(shared.getString("opis", ""));
-        Database db = new Database(getApplicationContext(), null, null, 1);
+        DateBridge db = new SqlBridge(new Database(getApplicationContext(), null, null, 1));
         ArrayList<String> spinner_miary = new ArrayList<String>();
         List<Kategoria> kat = db.getKategorie();
         for (Kategoria k : kat) {

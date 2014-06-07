@@ -1,7 +1,5 @@
 package com.example.studenckieprzepisy.AddRecipe;
 
-import com.example.studenckieprzepisy.Database.Database;
-import com.example.studenckieprzepisy.Database.Skladnik;
 import android.app.Activity;
 import android.app.Dialog;
 import android.content.Context;
@@ -14,6 +12,8 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.*;
 import android.widget.AdapterView.OnItemClickListener;
+import com.example.studenckieprzepisy.Database.DatabaseObjects.Skladnik;
+import com.example.studenckieprzepisy.Database.Factory.Database;
 import com.example.studenckieprzepisy.MainActivity;
 import com.example.studenckieprzepisy.R;
 

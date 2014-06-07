@@ -1,4 +1,4 @@
-package com.example.studenckieprzepisy.Database;
+package com.example.studenckieprzepisy.Database.Factory;
 
 import android.content.ContentValues;
 import android.content.Context;
@@ -6,6 +6,10 @@ import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteOpenHelper;
 import com.example.studenckieprzepisy.AddRecipe.PrzepisSkladnikWybor;
+import com.example.studenckieprzepisy.Database.DatabaseObjects.Kategoria;
+import com.example.studenckieprzepisy.Database.DatabaseObjects.Przepis;
+import com.example.studenckieprzepisy.Database.DatabaseObjects.PrzepisSkladnik;
+import com.example.studenckieprzepisy.Database.DatabaseObjects.Skladnik;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -13,7 +17,7 @@ import java.util.List;
 /**
  * Created by piotr on 19.04.14.
  */
-public class Database extends SQLiteOpenHelper {
+public class Database extends SQLiteOpenHelper implements DatabaseFactory {
     private static final int DATABASE_VERSION = 1;
     private static final String DATABASE_NAME = "food.db";
     //tables:
@@ -69,15 +73,6 @@ public class Database extends SQLiteOpenHelper {
         onCreate(db);
     }
 
-    public void test() {
-        SQLiteDatabase db = this.getWritableDatabase();
-        ContentValues values = new ContentValues();
-        values.put(COLUMN_ID, 1);
-        values.put(COLUMN_RODZAJ, "A");
-        values.put(COLUMN_ZDJECIE, "B");
-        db.insert(TABLE_KATEGORIE, null, values);
-        db.close();
-    }
 
     public void addManyPrzepisSkladnik(List<PrzepisSkladnik> ps) {
         SQLiteDatabase db = this.getWritableDatabase();
@@ -339,8 +334,8 @@ public class Database extends SQLiteOpenHelper {
         db.close();
     }
 
-    public List<String> advanceSearch(List<Skladnik> s) {
-        String query = "SELECT Przepis.nazwa FROM przepis_Skladnik INNER JOIN przepis ON Przepis_Skladnik.id_przepis =  przepis.id WHERE Przepis_Skladnik.id_Skladnik = ";
+    public List<Przepis> advanceSearch(List<Skladnik> s) {
+        String query = "SELECT Przepis.id,Przepis.id_kategorii, Przepis.nazwa, Przepis.opis, Przepis.zdjecie FROM przepis_Skladnik INNER JOIN przepis ON Przepis_Skladnik.id_przepis =  przepis.id WHERE Przepis_Skladnik.id_Skladnik = ";
         int i = 0;
         for (i = 0; i < s.size() - 1; i++) {
             query += s.get(i).getId() + " OR Przepis_Skladnik.id_Skladnik = ";
@@ -351,10 +346,10 @@ public class Database extends SQLiteOpenHelper {
             query += s.get(i).getId() + " GROUP BY Przepis_Skladnik.id_przepis HAVING COUNT(*) > 0; ";
         SQLiteDatabase db = this.getWritableDatabase();
         Cursor cursor = db.rawQuery(query, null);
-        List<String> przepisy = new ArrayList<String>();
+        List<Przepis> przepisy = new ArrayList<Przepis>();
         if (cursor.moveToFirst()) {
             do {
-                przepisy.add(cursor.getString(0));
+                przepisy.add(new Przepis(cursor.getInt(0), cursor.getInt(1), cursor.getString(2), cursor.getString(3), cursor.getString(4)));
             } while (cursor.moveToNext());
         }
         return przepisy;

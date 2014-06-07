@@ -1,9 +1,5 @@
 package com.example.studenckieprzepisy.RecipeView;
 
-import com.example.studenckieprzepisy.Database.Database;
-import com.example.studenckieprzepisy.Database.Przepis;
-import com.example.studenckieprzepisy.Database.PrzepisSkladnik;
-import com.example.studenckieprzepisy.Database.Skladnik;
 import android.app.Activity;
 import android.content.Intent;
 import android.content.res.AssetManager;
@@ -17,6 +13,10 @@ import android.view.MenuItem;
 import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
+import com.example.studenckieprzepisy.Database.DatabaseObjects.Przepis;
+import com.example.studenckieprzepisy.Database.DatabaseObjects.PrzepisSkladnik;
+import com.example.studenckieprzepisy.Database.DatabaseObjects.Skladnik;
+import com.example.studenckieprzepisy.Database.Factory.Database;
 import com.example.studenckieprzepisy.R;
 
 import java.io.InputStream;
@@ -34,6 +34,8 @@ public class Przeepis extends Activity {
     private TextView opis;
     private Przepis p;
     private String output = "";
+    private FacadeSend facadeSend;
+
 
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -41,6 +43,8 @@ public class Przeepis extends Activity {
         zdjecie = (ImageView) findViewById(R.id.zdjecie);
         skladniki = (TextView) findViewById(R.id.skladniki);
         opis = (TextView) findViewById(R.id.opis);
+
+        facadeSend = new FacadeSend(Przeepis.this);
 
         String przepis = getIntent().getExtras().getString("KEY");
         getActionBar().setTitle(przepis);
@@ -89,7 +93,7 @@ public class Przeepis extends Activity {
         if (p.getZdjecie() != null && p.getZdjecie().compareTo("") != 0 && p.getZdjecie().length() > 9) {
             smsIntent.putExtra(Intent.EXTRA_STREAM, Uri.parse("file://" + p.getZdjecie()));
             smsIntent.setType("image/png");
-        } else if (p.getZdjecie() != null ){
+        } else if (p.getZdjecie() != null) {
             if (p.getZdjecie().compareTo("") != 0)
                 Toast.makeText(getApplicationContext(), "Wysylam bez zdjecia/Prawa Autorskie", Toast.LENGTH_LONG).show();
             Intent intentt = new Intent(Intent.ACTION_VIEW);
@@ -110,7 +114,7 @@ public class Przeepis extends Activity {
         if (p.getZdjecie() != null && p.getZdjecie().compareTo("") != 0 && p.getZdjecie().length() > 9) {
             result.putExtra(Intent.EXTRA_STREAM, Uri.parse("file://" + p.getZdjecie()));
             result.setType("image/png");
-        } else if (p.getZdjecie() != null && p.getZdjecie().compareTo("") != 0){
+        } else if (p.getZdjecie() != null && p.getZdjecie().compareTo("") != 0) {
             Toast.makeText(getApplicationContext(), "Wysylam bez zdjecia/Prawa Autorskie", Toast.LENGTH_LONG).show();
         }
         result.setType("message/rfc822");
@@ -122,10 +126,10 @@ public class Przeepis extends Activity {
     public boolean onOptionsItemSelected(MenuItem item) {
         switch (item.getItemId()) {
             case R.id.wyslij_sms:
-                sendSms();
+                facadeSend.sendSms(p,output);
                 break;
             case R.id.wyslij_email:
-                sendEmail();
+                facadeSend.sendEmail(p,output);
                 break;
         }
         return true;

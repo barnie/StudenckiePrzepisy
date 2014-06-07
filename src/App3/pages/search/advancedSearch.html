@@ -3,6 +3,7 @@
 <head>
     <title>Wyszukaj przepis</title>
     <link href="//Microsoft.WinJS.2.0/css/ui-light.css" rel="stylesheet" />
+    <link href="/pages/search/advancedSearch.css" rel="stylesheet" />
     <script src="//Microsoft.WinJS.2.0/js/base.js"></script>
     <script src="//Microsoft.WinJS.2.0/js/ui.js"></script>
     <script src="/js/database.js"></script>
@@ -32,43 +33,45 @@
                 <button class="win-backbutton" aria-label="Back" disabled type="button"></button>
             </header>
         </div>
-        <table>
-            <tr>
-                <td>
-                    <div style="text-align:center; margin-top:60px; margin-bottom:60px;">
-                        <div id="searchBoxId" data-win-control="WinJS.UI.SearchBox" style="margin:auto;"></div>
-                    </div>
-                </td>
-                <td>
-                    <div style="text-align:center;">
-                        <div id="categoryTemplate" data-win-control="WinJS.Binding.Template">
-                            <div style="padding:5px; margin:5px;">
-                                <img style="width: 60px; height: 60px;"
-                                     data-win-bind="src: picture" />
-                                <div>
-                                    <h4 data-win-bind="innerText: title"></h4>
+        <div id="table">
+            <table>
+                <tr>
+                    <td>
+                        <div style="text-align:center;">
+                            <div id="categoryTemplate" data-win-control="WinJS.Binding.Template">
+                                <div style="padding:5px; margin:5px;">
+                                    <img style="width: 95px; border: groove; border-color: darkred;"
+                                         data-win-bind="src: picture" />
+                                    <div>
+                                        <h4 data-win-bind="innerText: title"></h4>
+                                        <h6 style="visibility:hidden;" data-win-bind="innerText: id"></h6>
+                                    </div>
+                                </div>
+                            </div>
+                            <div style="padding: 3px; width: 200px;" id="listaKategorii" data-win-control="WinJS.UI.ListView" data-win-options="{itemDataSource : DataExample.catList.dataSource, itemTemplate: select('#categoryTemplate'), layout: {type: WinJS.UI.ListLayout, orientation: WinJS.UI.Orientation.vertical} }"></div>
+                        </div>
+                    </td>
+                    <td>
+                        <div style="text-align:center; margin-top:60px; margin-bottom:60px;">
+                            <div id="searchBoxId" data-win-control="WinJS.UI.SearchBox"></div>
+                        </div>
+                    </td>
+                    <td>
+                        <div style="text-align:center;">
+                            <div id="ingridientTemplate" data-win-control="WinJS.Binding.Template">
+                                <div style="padding:5px; margin:5px; width:90%; height:70%;">
+                                    <h6 data-win-bind="innerText: name"></h6>
                                     <h6 style="visibility:hidden;" data-win-bind="innerText: id"></h6>
                                 </div>
                             </div>
-                        </div>
-                        <div style="padding: 3px; " id="listaKategorii" data-win-control="WinJS.UI.ListView" data-win-options="{itemDataSource : DataExample.catList.dataSource, itemTemplate: select('#categoryTemplate'), layout: {type: WinJS.UI.ListLayout, orientation: WinJS.UI.Orientation.vertical} }"></div>
-                    </div>
-                </td>
-                <td>
-                    <div style="text-align:center;">
-                        <div id="ingridientTemplate" data-win-control="WinJS.Binding.Template">
-                            <div style="padding:5px; margin:5px; width:30px; height:30px;">
-                                <h6 data-win-bind="innerText: name"></h6>
-                                <h6 style="visibility:hidden;" data-win-bind="innerText: id"></h6>
+                            <div style="padding: 3px; width: 200px;">
+                                <div id="mozliweSkladniki" data-win-control="WinJS.UI.ListView" data-win-options="{itemDataSource : DataExample.ingList.dataSource, itemTemplate: select('#ingridientTemplate'),layout : {type: WinJS.UI.ListLayout, orientation: WinJS.UI.Orientation.vertical}}"></div>
                             </div>
                         </div>
-                        <div style="padding: 3px; ">
-                            <div id="mozliweSkladniki" data-win-control="WinJS.UI.ListView" data-win-options="{itemDataSource : DataExample.ingList.dataSource, itemTemplate: select('#ingridientTemplate'),layout : {type: WinJS.UI.ListLayout, orientation: WinJS.UI.Orientation.vertical}}"></div>
-                        </div>
-                    </div>
-                </td>
-            </tr>
-        </table>
+                    </td>
+                </tr>
+            </table>
+        </div>
     </div>
 </body>
 </html>
