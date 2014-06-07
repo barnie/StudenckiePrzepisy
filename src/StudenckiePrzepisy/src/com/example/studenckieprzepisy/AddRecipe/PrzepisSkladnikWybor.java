@@ -1,6 +1,6 @@
 package com.example.studenckieprzepisy.AddRecipe;
 
-import com.example.studenckieprzepisy.Database.Skladnik;
+import com.example.studenckieprzepisy.Database.DatabaseObjects.Skladnik;
 
 /**
  * Created by piotr on 29.05.14.

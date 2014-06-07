@@ -1,8 +1,7 @@
 package com.example.studenckieprzepisy;
 
-import android.util.Log;
 import com.example.studenckieprzepisy.AdvancedSearch.AdvancedSearch;
-import com.example.studenckieprzepisy.Database.Database;
+import com.example.studenckieprzepisy.Database.Factory.Database;
 import com.example.studenckieprzepisy.Database.DatabaseInit;
 import android.app.ActionBar;
 import android.app.ActionBar.Tab;
@@ -19,12 +18,10 @@ import android.view.MenuItem;
 import android.widget.ArrayAdapter;
 import android.widget.EditText;
 import android.widget.Toast;
-import com.example.studenckieprzepisy.Database.Przepis;
+import com.example.studenckieprzepisy.Database.DatabaseObjects.Przepis;
 import com.example.studenckieprzepisy.AddRecipe.AddPrzepis;
-import com.example.studenckieprzepisy.Database.Skladnik;
 import com.example.studenckieprzepisy.RecipeView.Przeepis;
 
-import java.util.ArrayList;
 import java.util.List;
 
 public class MainActivity extends FragmentActivity implements

@@ -1,4 +1,4 @@
-package com.example.studenckieprzepisy.Database;
+package com.example.studenckieprzepisy.Database.Factory;
 
 import android.content.ContentValues;
 import android.content.Context;
@@ -6,6 +6,10 @@ import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteOpenHelper;
 import com.example.studenckieprzepisy.AddRecipe.PrzepisSkladnikWybor;
+import com.example.studenckieprzepisy.Database.DatabaseObjects.Kategoria;
+import com.example.studenckieprzepisy.Database.DatabaseObjects.Przepis;
+import com.example.studenckieprzepisy.Database.DatabaseObjects.PrzepisSkladnik;
+import com.example.studenckieprzepisy.Database.DatabaseObjects.Skladnik;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -13,7 +17,7 @@ import java.util.List;
 /**
  * Created by piotr on 19.04.14.
  */
-public class Database extends SQLiteOpenHelper {
+public class Database extends SQLiteOpenHelper implements DatabaseFactory {
     private static final int DATABASE_VERSION = 1;
     private static final String DATABASE_NAME = "food.db";
     //tables:
@@ -69,15 +73,7 @@ public class Database extends SQLiteOpenHelper {
         onCreate(db);
     }
 
-    public void test() {
-        SQLiteDatabase db = this.getWritableDatabase();
-        ContentValues values = new ContentValues();
-        values.put(COLUMN_ID, 1);
-        values.put(COLUMN_RODZAJ, "A");
-        values.put(COLUMN_ZDJECIE, "B");
-        db.insert(TABLE_KATEGORIE, null, values);
-        db.close();
-    }
+
 
     public void addManyPrzepisSkladnik(List<PrzepisSkladnik> ps) {
         SQLiteDatabase db = this.getWritableDatabase();

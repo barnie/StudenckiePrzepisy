@@ -1,9 +1,9 @@
 package com.example.studenckieprzepisy.RecipeView;
 
-import com.example.studenckieprzepisy.Database.Database;
-import com.example.studenckieprzepisy.Database.Przepis;
-import com.example.studenckieprzepisy.Database.PrzepisSkladnik;
-import com.example.studenckieprzepisy.Database.Skladnik;
+import com.example.studenckieprzepisy.Database.Factory.Database;
+import com.example.studenckieprzepisy.Database.DatabaseObjects.Przepis;
+import com.example.studenckieprzepisy.Database.DatabaseObjects.PrzepisSkladnik;
+import com.example.studenckieprzepisy.Database.DatabaseObjects.Skladnik;
 import android.app.Activity;
 import android.content.Intent;
 import android.content.res.AssetManager;

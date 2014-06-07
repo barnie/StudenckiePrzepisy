@@ -1,8 +1,8 @@
 package com.example.studenckieprzepisy;
 
-import com.example.studenckieprzepisy.Database.Database;
+import com.example.studenckieprzepisy.Database.Factory.Database;
 import com.example.studenckieprzepisy.Database.DatabaseInit;
-import com.example.studenckieprzepisy.Database.Kategoria;
+import com.example.studenckieprzepisy.Database.DatabaseObjects.Kategoria;
 import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
@@ -31,6 +31,7 @@ public class TabPierwszy extends ListFragment {
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
         Database db = new Database(getActivity().getApplicationContext(), null, null, 1);
+
         DatabaseInit a = new DatabaseInit(getActivity().getApplicationContext());
         category = db.getKategorie();
         for (int i = 0; i < category.size(); i++)

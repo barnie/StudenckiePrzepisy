@@ -1,7 +1,7 @@
 package com.example.studenckieprzepisy.CategoryListView;
 
-import com.example.studenckieprzepisy.Database.Database;
-import com.example.studenckieprzepisy.Database.Przepis;
+import com.example.studenckieprzepisy.Database.Factory.Database;
+import com.example.studenckieprzepisy.Database.DatabaseObjects.Przepis;
 import android.app.Activity;
 import android.content.Context;
 import android.content.Intent;

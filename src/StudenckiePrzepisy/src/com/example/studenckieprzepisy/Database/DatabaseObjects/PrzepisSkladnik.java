@@ -1,4 +1,4 @@
-package com.example.studenckieprzepisy.Database;
+package com.example.studenckieprzepisy.Database.DatabaseObjects;
 
 /**
  * Created by piotr on 21.04.14.

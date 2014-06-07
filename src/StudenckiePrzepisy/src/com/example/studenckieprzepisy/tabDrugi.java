@@ -1,7 +1,7 @@
 package com.example.studenckieprzepisy;
 
-import com.example.studenckieprzepisy.Database.Database;
-import com.example.studenckieprzepisy.Database.Przepis;
+import com.example.studenckieprzepisy.Database.Factory.Database;
+import com.example.studenckieprzepisy.Database.DatabaseObjects.Przepis;
 import android.app.Activity;
 import android.app.AlertDialog;
 import android.content.DialogInterface;

@@ -1,7 +1,7 @@
 package com.example.studenckieprzepisy.AddRecipe;
 
-import com.example.studenckieprzepisy.Database.Database;
-import com.example.studenckieprzepisy.Database.Skladnik;
+import com.example.studenckieprzepisy.Database.Factory.Database;
+import com.example.studenckieprzepisy.Database.DatabaseObjects.Skladnik;
 import android.app.Activity;
 import android.app.Dialog;
 import android.content.Context;

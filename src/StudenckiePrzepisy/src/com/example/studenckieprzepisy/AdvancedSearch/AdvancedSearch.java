@@ -2,11 +2,9 @@ package com.example.studenckieprzepisy.AdvancedSearch;
 
 import android.app.Activity;
 import android.app.AlertDialog;
-import android.app.Dialog;
 import android.content.Context;
 import android.content.DialogInterface;
 import android.content.Intent;
-import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.LayoutInflater;
@@ -14,10 +12,8 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.*;
 import com.example.studenckieprzepisy.AddRecipe.PrzepisSkladnikWybor;
-import com.example.studenckieprzepisy.Database.Database;
-import com.example.studenckieprzepisy.Database.Przepis;
-import com.example.studenckieprzepisy.Database.Skladnik;
-import com.example.studenckieprzepisy.MainActivity;
+import com.example.studenckieprzepisy.Database.Factory.Database;
+import com.example.studenckieprzepisy.Database.DatabaseObjects.Skladnik;
 import com.example.studenckieprzepisy.R;
 import com.example.studenckieprzepisy.RecipeView.Przeepis;
 
