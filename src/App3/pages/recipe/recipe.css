@@ -42,8 +42,8 @@
     }
 
         #recipeContainer #img_container img {
-            height: 100%;
-            width: 70%;
+            height: 130%;
+            width: 91%;
             border: groove;
             border-color: darkred;
         }
@@ -53,21 +53,26 @@
     }
 
     #recipeContainer #description {
-        height: 43%;
+        height: auto;
         overflow: auto;
         overflow-x: hidden;
         padding-right:4%;
-        margin-top:2%;
+        margin-top:8%;
         text-align: justify;
         width: 95%;
+        background-color: rgba(200, 0, 0, 0.7);
+        font-family: 'Global User Interface';
+        font-size: larger;
     }
 
     #recipeContainer #ingredients {
-        height: 78%;
+        height: auto;
         margin-top: 8%;
         font-size: 110%;
         overflow: auto;
         overflow-x: hidden;
+        background-color: rgba(200, 0, 0, 0.7);
+        font-family: 'Global User Interface';
     }
 
         #recipeContainer #ingredients #list ul {
