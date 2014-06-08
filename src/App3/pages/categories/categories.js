@@ -6,14 +6,14 @@
 
     WinJS.UI.Pages.define("/pages/categories/categories.html", {
         ready: function (element, options) {
-            
-            //script:
-
+            //links handler:
+            WinJS.Utilities.query("a").listen("click", anchorHandler, false);
             //date prepare:
             var categories = options;
             var count = options.length;
             //date prepared, start script:
-            var layout = new LayoutContainer(count, 'myTabCss', 'myRowCss', 'myCellCss');
+            var layout = new LayoutContainer();
+            layout.SetValue(count, 'myTabCss', 'myRowCss', 'myCellCss');
             var table = layout.CreateContainer();
 
             if (count < 3)
@@ -43,23 +43,84 @@
             //additional data for css prepare:
             document.getElementById("container").style.borderSpacing = "" + window.screen.availWidth * 0.028 + "px 0 "; //odstêpy miêdzy kategoriami
             document.getElementById("myDiv").style.width = window.screen.availWidth * 1.25 + "px"; //sprawiam ze tabelka bedzie wychodzic poza ekran (dolny scroll)
-            console.log("szer=" + window.screen.availWidth * 1.25);
+            //check ws or db
+            if (Settings.getFrom == 'ws') {
+                document.getElementById("addRecButMenu").style.display = "none";
+            }
 
 
         },
         loadRecipe: function (arg) {
             arg = $(this).data('arg');
-            // TODO 2: Tutaj umiesc kod ktory otworzy nowa strone albo wykona cos na podstawie tego arg ktory podales w funkcji CreateElementContent > repicesIds[i]
             var array = [];
-            getPrzepisyKat(arg, array).then(function () {
-                loadRecipiesList(array); //ladujemy liste przepisow
-                WinJS.Navigation.navigate( "pages/list_recipes/list_recipes.html" , array );
-            })
-            // TODO 2
+            if (Settings.getFrom != 'ws') {
+                getPrzepisyKat(arg, array).then(function () {
+                    loadRecipiesList(array).then(function () { //ladujemy liste przepisow
+                        WinJS.Navigation.navigate("pages/list_recipes/list_recipes.html", array);
+                    })
+                })
+            }
+            else {
+                WebServiceHandler.getPrzepisy(array, arg).then(function () {
+                    loadRecipiesList(array); //ladujemy liste przepisow
+                    WinJS.Navigation.navigate("pages/list_recipes/list_recipes.html", array);
+                })
+            }
         },
         unload: function () {
             // TODO: Respond to navigations away from this page.
         }
     });
+
+    function anchorHandler(eventInfo) { //jak sie w linka kliknie
+        eventInfo.preventDefault();
+        var link = eventInfo.target;
+        if (("" + link).search("categories") != -1) { //jak link bedzie zawieral categories (bedzie wiec do categories)
+
+            var array = [];
+
+            getKategorie(array).then(function () {
+                WinJS.Navigation.navigate(link.href, array);
+            })
+
+        }
+        else if (("" + link).search("list_recipes") != -1) {
+
+            var array = [];
+            if (Settings.getFrom == 'ws') {
+                WebServiceHandler.getPrzepisy(array).then(function () {
+                    loadRecipiesList(array);
+                    WinJS.Navigation.navigate(link.href, array);
+                })
+            }
+            else { //db
+                getPrzepisy(array).then(function () {
+                    loadRecipiesList(array).then(function () {
+                        WinJS.Navigation.navigate(link.href, array);
+                    })
+                })
+            }
+
+        }
+        else if(("" + link).search("add_recipe") != -1) {
+
+            var array = [];
+
+            getKategorie(array).then(function () {
+                for (var i = 0 ; i < array.length ; i++) {
+                    categoryArray[i] = { title: array[i][1], picture: "/images/" + array[i][2], id: array[i][0] };
+                }
+                getSkladnikAddRecipe(array).then(function () {
+                    for (var i = 0 ; i < array.length ; i++) {
+                        ingridientArray[i] = { name: array[i][0], id: array[i][1] };
+                    }
+                    WinJS.Navigation.navigate(link.href);
+                })
+            })
+        }
+        else {
+            WinJS.Navigation.navigate(link.href);
+        }
+    }
 })();
 

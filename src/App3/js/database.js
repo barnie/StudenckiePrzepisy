@@ -11,14 +11,19 @@ C:\Users\Twoja_nazwa_usera\AppData\Local\Packages\7cbc57f9-d6bb-4fc5-8ce0-d0c51f
 function createDB() {
     var dbPath = Windows.Storage.ApplicationData.current.localFolder.path + '\\przepisy_db.sqlite';
     SQLite3JS.openAsync(dbPath).then(function (db) {
-        db.runAsync('create table IF NOT EXISTS Kategorie (id integer PRIMARY KEY AUTOINCREMENT, rodzaj TEXT, zdjecie TEXT)');
-        db.runAsync('create table IF NOT EXISTS Przepis (id integer PRIMARY KEY AUTOINCREMENT, id_kategorii integer REFERENCES Kategorie(id), nazwa TEXT, opis TEXT, zdjecie TEXT)');
-        db.runAsync('create table IF NOT EXISTS Skladnik (id integer PRIMARY KEY AUTOINCREMENT,nazwa TEXT, ile INT DEFAULT 1)')
-        db.runAsync('create table IF NOT EXISTS Przepis_Skladnik (id_przepis integer REFERENCES Przepis(id), id_skladnik integer REFERENCES Skladnik(id),miara TEXT,ile TEXT, PRIMARY KEY(id_przepis,id_skladnik))').then(function () {
-
-            db.runAsync('create trigger IF NOT EXISTS przepis_sklad AFTER INSERT on Przepis_Skladnik BEGIN UPDATE skladnik set ile = (select ile from skladnik where id = new.id_skladnik) + 1  where id = new.id_skladnik;   END;');
-            db.runAsync('CREATE TRIGGER IF NOT EXISTS del_przepis_sklad AFTER DELETE ON Przepis_Skladnik BEGIN 	UPDATE skladnik SET ile = (SELECT ile FROM skladnik WHERE id = old.id_skladnik) - 1         WHERE id = old.id_skladnik;         END;');
-            db.close()
+        return db.runAsync('create table IF NOT EXISTS Kategorie (id integer PRIMARY KEY AUTOINCREMENT, rodzaj TEXT, zdjecie TEXT)').done(function () {
+            return db.runAsync('create table IF NOT EXISTS Przepis (id integer PRIMARY KEY AUTOINCREMENT, id_kategorii integer REFERENCES Kategorie(id), nazwa TEXT, opis TEXT, zdjecie TEXT)').done(function () {
+                return db.runAsync('create table IF NOT EXISTS Skladnik (id integer PRIMARY KEY AUTOINCREMENT,nazwa TEXT, ile INT DEFAULT 1)').done(function () {
+                    return db.runAsync('create table IF NOT EXISTS Przepis_Skladnik (id_przepis integer REFERENCES Przepis(id), id_skladnik integer REFERENCES Skladnik(id),miara TEXT,ile TEXT, PRIMARY KEY(id_przepis,id_skladnik))').done(function () {
+                        return db.runAsync('create trigger IF NOT EXISTS przepis_sklad AFTER INSERT on Przepis_Skladnik BEGIN UPDATE skladnik set ile = (select ile from skladnik where id = new.id_skladnik) + 1  where id = new.id_skladnik;   END;').done(function () {
+                            return db.runAsync('CREATE TRIGGER IF NOT EXISTS del_przepis_sklad AFTER DELETE ON Przepis_Skladnik BEGIN 	UPDATE skladnik SET ile = (SELECT ile FROM skladnik WHERE id = old.id_skladnik) - 1         WHERE id = old.id_skladnik;         END;').done(function () {
+                                db.close();
+                                dbInsert();
+                          })
+                       })
+                    })
+                })
+            })
         })
     });
 }
@@ -143,11 +148,53 @@ function addPrzepis(id_kategorii, nazwa, opis, zdjecie, tab) {
     });
 }
 
+//use only in createDB(), create  and load setting  file too
+function dbInsert() {
+    var test;
+    var dbPath = Windows.Storage.ApplicationData.current.localFolder.path + '\\przepisy_db.sqlite';
+    var i = 0;
+    return SQLite3JS.openAsync(dbPath)
+              .then(function (db) {
+                  console.log('DB opened');
+                  return db.eachAsync('SELECT count(*) as sum FROM Skladnik;', function (row) {
+                      test = row.sum;
+                      console.log('##Skladnikie_Ilosc : ' + row.sum);
+                  });
+              }, function (error) {
+                  if (db) {
+                      db.close();
+                  }
+                  console.log('ERROR Select * from Skladnik ' + error.message);
+              })
+             .then(function (db) {
+                 console.log('close the db');
+                 db.close();
+                 if (test != 0) {
+                     Windows.Storage.ApplicationData.current.localFolder.getFileAsync("settings.txt").done(function (file) {
+                         Windows.Storage.FileIO.readTextAsync(file).done(function (contents) {
+                             Settings.getFrom = contents;
+                         })
+                     });
+                     var array = [];
+                     getKategorie(array).then(function () {
+                         WinJS.Navigation.navigate("/pages/categories/categories.html", array);
+                     })
+                 }
+                 else { //not have database
+                     Windows.Storage.ApplicationData.current.localFolder.createFileAsync("settings.txt").done(function (file) { //create settings
+                         Windows.Storage.FileIO.writeTextAsync(file, "db");
+                     });
+                     default_insert();
+                 }
+             }).then(function () {
+                 return test;
+             });
+
+}
 /*
     Zwraca jednowymiarowa tablice Kategorii
     Zwraca pole rodzaj i zapisuje je do podanej tablicy
 */
-
 function getKategorie(array) {
 
     var dbPath = Windows.Storage.ApplicationData.current.localFolder.path + '\\przepisy_db.sqlite';
@@ -315,7 +362,41 @@ function getPrzepis_Skladnik(array) {
     Zwraca Skladniki w jednowymiarowej tablicy :
     zwraca pole nazwe dla kazdego skladnika
 */
-
+function getNameOfSkladniki(array, idSkl) {
+    var dbPath = Windows.Storage.ApplicationData.current.localFolder.path + '\\przepisy_db.sqlite';
+    return SQLite3JS.openAsync(dbPath)
+              .then(function (db) {
+                  console.log('DB opened');
+                  console.log(Windows.Storage.ApplicationData.current.localFolder.path);
+                  var QUERY = 'SELECT id, nazwa FROM Skladnik WHERE id in(';
+                  var i = 0
+                  for (; i < idSkl.length - 1; i++) {
+                      QUERY += idSkl[i] + ',';
+                  }
+                  QUERY += idSkl[i];
+                  QUERY += ');'
+                  return db.eachAsync(QUERY, function (row) {
+                    
+                      var index = idSkl.indexOf(row.id.toString());
+                      while (index != -1) {
+                          array[index + 5][0] = row.nazwa;//+5 because we have 5 other data name, picture etc.
+                          idSkl[index] = -1;
+                          index = idSkl.indexOf(row.id.toString());
+                      }
+                  });
+              }, function (error) {
+                  if (db) {
+                      db.close();
+                  }
+                  console.log('ERROR Select * Skladnik ' + error.message);
+              })
+             .then(function (db) {
+                 console.log('close the db');
+                 db.close();
+             }).then(function () {
+                 return array;
+             });
+}
 function getSkladnik(array) {
 
     var dbPath = Windows.Storage.ApplicationData.current.localFolder.path + '\\przepisy_db.sqlite';
@@ -326,6 +407,34 @@ function getSkladnik(array) {
                   console.log(Windows.Storage.ApplicationData.current.localFolder.path);
                   return db.eachAsync('SELECT * FROM Skladnik;', function (row) {
                       array[i++] = row.nazwa;
+                  });
+              }, function (error) {
+                  if (db) {
+                      db.close();
+                  }
+                  console.log('ERROR Select * Skladnik ' + error.message);
+              })
+             .then(function (db) {
+                 console.log('close the db');
+                 db.close();
+             }).then(function () {
+                 return array;
+             });
+}
+
+function getSkladnikAddRecipe(array) {
+
+    var dbPath = Windows.Storage.ApplicationData.current.localFolder.path + '\\przepisy_db.sqlite';
+    var i = 0;
+    return SQLite3JS.openAsync(dbPath)
+              .then(function (db) {
+                  console.log('DB opened');
+                  console.log(Windows.Storage.ApplicationData.current.localFolder.path);
+                  return db.eachAsync('SELECT * FROM Skladnik;', function (row) {
+                      array[i] = new Array();
+                      array[i][0] = row.nazwa;
+                      array[i][1] = row.id;
+                      i++;
                   });
               }, function (error) {
                   if (db) {
@@ -454,12 +563,22 @@ function findPrzepis(kategorie,skladniki,array) {
     var i = 0;
     return SQLite3JS.openAsync(dbPath)
               .then(function (db) {
-                  QUERY = " SELECT Przepis_Skladnik.id_przepis, Przepis_Skladnik.id_skladnik ,Przepis.nazwa FROM przepis_Skladnik INNER JOIN przepis ON Przepis_Skladnik.id_przepis =  przepis.id WHERE Przepis_Skladnik.id_Skladnik =  ";
+                  QUERY = " SELECT Przepis_Skladnik.id_przepis, Przepis_Skladnik.id_skladnik ,Przepis.nazwa, Przepis.zdjecie FROM przepis_Skladnik INNER JOIN przepis ON Przepis_Skladnik.id_przepis =  przepis.id WHERE Przepis_Skladnik.id_Skladnik in (";
                   var j = 0;
-                  for (j = 0; j < skladniki.length - 1 ; j++) {
-                      QUERY += skladniki[j] + " OR Przepis_Skladnik.id_Skladnik = ";
+                  for (j = 0; j < skladniki.length - 1; j++) {
+                      QUERY += skladniki[j] + ",";
                   }
-                  QUERY += skladniki[j] + " GROUP BY Przepis_Skladnik.id_przepis HAVING COUNT(*) > 1; ";
+                  QUERY += skladniki[j];
+                  QUERY += ") and przepis.id_kategorii in ("
+                  var k = 0;
+                  for (k = 0; k < kategorie.length-1; k++)
+                  {
+                      QUERY += kategorie[k] + ",";
+                  }
+                  QUERY += kategorie[k];
+                  QUERY += ")";
+                      
+                  QUERY += " GROUP BY Przepis_Skladnik.id_przepis HAVING COUNT(*) > 0; ";
                   console.log(QUERY);
                   return db.eachAsync(QUERY, function (row) {
                       console.log('#' + row.nazwa + '#')
@@ -467,6 +586,7 @@ function findPrzepis(kategorie,skladniki,array) {
                       array[i][0] = row.id_przepis;
                       array[i][1] = row.nazwa;
                       array[i][2] = row.id_skladnik;
+                      array[i][3] = row.zdjecie;
                       i++;
                   });
               }, function (error) {

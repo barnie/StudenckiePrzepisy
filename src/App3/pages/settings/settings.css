@@ -1,0 +1,48 @@
+﻿body {
+    height: 100%;
+    width: 100%;
+}
+#backCont{
+    margin: 1%;
+}
+#containerOfOptions{
+  display: -ms-flexbox;
+  -ms-flex-direction: column;
+  width: 25%;
+  margin-left: auto ;
+  margin-right: auto ;
+}
+
+.choose{
+    height: 10%;
+    display: -ms-flexbox;
+    -ms-flex-direction: row;
+    
+}
+#containerOfOptions h2{
+    margin-left: auto ;
+    margin-right: auto ;
+    text-align: center;
+    padding-bottom: 1em;
+    width:100%;
+}
+.choose img{
+    margin: auto;
+    height: 70%;
+    width: 50%;
+}
+
+.option{
+    background: black;
+    margin-right: 2%;
+    margin-left: 2%;
+    width: 70%;
+    display: -ms-flexbox;
+    -ms-flex-direction: column;
+    color:white;
+    cursor: pointer;
+    text-align: center;
+    border-style: solid;
+    border-width: 1px;
+    border-color: red;
+}

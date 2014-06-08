@@ -1,0 +1,17 @@
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+      xmlns:tools="http://schemas.android.com/tools"
+      tools:context="com.example.studenckieprzepisy.Menu" >
+
+    <item
+            android:id="@+id/wyslij_sms"
+            android:orderInCategory="100"
+            android:showAsAction="never"
+            android:title="Wyslij przepis sms"/>
+    <item
+            android:id="@+id/wyslij_email"
+            android:orderInCategory="100"
+            android:showAsAction="never"
+            android:title="wyslij przepis emailem"
+            />
+
+</menu>

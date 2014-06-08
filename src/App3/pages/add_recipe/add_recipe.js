@@ -1,4 +1,5 @@
-﻿(function () {
+﻿
+(function () {
     "use strict";
     var fileObj;
     var page = WinJS.UI.Pages.define("/pages/add_recipe/add_recipe.html", {

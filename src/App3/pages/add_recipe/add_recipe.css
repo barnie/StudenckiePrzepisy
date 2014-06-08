@@ -1,52 +1,139 @@
 ﻿#text {
-    text-align:center;
+    text-align: center;
     height: 100%;
     color: black;
-    background: rgba(0,100,0,0.8); 
+    background: rgba(230, 0, 0, 0.7);
     font-size: medium;
-    font-family: Georgia;
+    font-family: 'Global User Interface';
     font-style: italic;
-    font-weight:bold;
+    font-weight: bold;
 }
-#fieldtext{
+
+#fieldtext {
     height: 100%;
     color: black;
-    font-size: small;
-    font-family: Georgia;
+    font-family: 'Global User Interface';
     font-style: italic;
-    font-weight:bold;
+    font-weight: bold;
+    background-color: rgba(230, 0, 0, 0.7);
 }
-img.center {
-          box-sizing:border-box;
--moz-box-sizing:border-box; /* Firefox */
-    display: block;
-  margin-left: auto;
-  margin-right: auto;
-}
-body .bottomButtonAdd{
-    position:fixed;
-    top: 75%;
-    right: 12%;
-}
-body .bottomButtonDel{
-    position:fixed;
-    top: 75%;
-    right: 30%;
-}
-body .box1{
-    position:fixed;
-    right:5%;
-    top:5%;
-    bottom:30%;
-    left:75%;
-}
-#listaSkladnikow{
-          box-sizing:border-box;
--moz-box-sizing:border-box; /* Firefox */
-    left:51%;
-    right:27%;
-    top:5%;
-}
-body .category{
 
+#imgHolder {
+    box-sizing: border-box;
+    -moz-box-sizing: border-box; /* Firefox */
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    max-height:400px; max-width:240px;
+    max-width:10%;
+}
+
+.bottomButtonAdd {
+    background-color:rgba(230, 0, 0, 0.7);
+    position: fixed;
+    top: 75%;
+    left:40%;
+    padding: 3px;
+}
+
+.bottomButtonDel {
+    background-color:rgba(230, 0, 0, 0.7);
+    padding: 3px;
+    position: fixed;
+    top: 75%;
+    right: 40%;
+}
+
+.box1 {
+    position: fixed;
+    right: 5%;
+    top: 5%;
+    bottom: 30%;
+    left: 75%;
+}
+
+#ingredientList {
+    box-sizing: border-box;
+    -moz-box-sizing: border-box; /* Firefox */
+    left: 51%;
+    right: 27%;
+    top: 5%;
+}
+
+#listaKategorii .win-item
+{
+   background-color: rgb(230, 0, 0);
+   height: 145px;
+   width: auto;
+   font-family: 'Buxton Sketch';
+   text-transform: uppercase;
+}
+
+#listaKategorii .win-listview
+{
+    margin-right: auto;
+}
+
+#contentHolder {
+    height: 100%;
+    margin: 1%;
+    display: -ms-flexbox;
+    -ms-flex-direction: row;
+    overflow: auto;
+    overflow-x: hidden;
+}
+
+#contentDiv{
+    height: 90%; width: 90%; padding: 3px;
+}
+.spacePad{
+    padding: 3px;
+}
+.spacePadMarg{
+    padding: 3px;
+    margin:5px;
+}
+img.imgSize{
+    max-width: 240px; max-height: 400px;
+}
+.hide{
+    visibility:hidden;
+}
+.category{
+
+    padding: 3px; 
+    position: fixed; 
+    width: 200px;
+}
+
+#name
+{
+    margin: auto;
+}
+
+#mozliweSkladniki .win-item
+{
+    background-color: rgb(230, 0, 0);
+    height: 40px;
+    width: auto;
+    font-size: large;
+    font-family: 'Global User Interface';
+}
+
+.win-container.win-selected .win-selectionborder {
+    border-color: rgb(255, 110, 110) !important;
+}
+.win-container.win-selected:hover .win-selectionborder {
+    border-color: rgb(255, 110, 110) !important;
+}
+.win-selected .win-selectionbackground {
+    background-color: rgb(255, 110, 110) !important;
+}
+.win-selected:hover .win-selectionbackground {
+    background-color: rgb(255, 110, 110) !important;
+}
+
+#repiceName
+{
+    font-family: 'Buxton Sketch';
 }

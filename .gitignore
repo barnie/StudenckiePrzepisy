@@ -39,3 +39,4 @@ Thumbs.db
 *.jsproj.user
 Debug/
 *.opensdf
+*.idea

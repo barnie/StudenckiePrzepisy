@@ -1,6 +1,6 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Package xmlns="http://schemas.microsoft.com/appx/2010/manifest" xmlns:m2="http://schemas.microsoft.com/appx/2013/manifest">
-  <Identity Name="7cbc57f9-d6bb-4fc5-8ce0-d0c51fa32295" Version="1.1.0.0" Publisher="CN=Piotr Kruk" />
+  <Identity Name="7cbc57f9-d6bb-4fc5-8ce0-d0c51fa32295" Version="1.1.0.1" Publisher="CN=Piotr Kruk" />
   <Properties>
     <DisplayName>App3</DisplayName>
     <PublisherDisplayName>Piotr Kruk</PublisherDisplayName>
@@ -15,13 +15,13 @@
   </Resources>
   <Applications>
     <Application Id="App" StartPage="default.html">
-      <m2:VisualElements DisplayName="App3" Description="App3" BackgroundColor="#464646" ForegroundText="light" Square150x150Logo="images\logo.png" Square30x30Logo="images\smalllogo.png">
+      <m2:VisualElements DisplayName="Książka kucharska" Description="Najpyszniejsza aplikacja ze wszystkich" BackgroundColor="#464646" ForegroundText="light" Square150x150Logo="images\logo.png" Square30x30Logo="images\smalllogo.png">
         <m2:DefaultTile>
           <m2:ShowNameOnTiles>
             <m2:ShowOn Tile="square150x150Logo" />
           </m2:ShowNameOnTiles>
         </m2:DefaultTile>
-        <m2:SplashScreen Image="images\splashscreen.png" />
+        <m2:SplashScreen Image="images\splashscreen.png" BackgroundColor="white" />
       </m2:VisualElements>
     </Application>
   </Applications>

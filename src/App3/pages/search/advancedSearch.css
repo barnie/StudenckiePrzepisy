@@ -1,0 +1,37 @@
+﻿#listaKategorii .win-item
+{
+   background-color: rgb(230, 0, 0);
+   height: 145px;
+   width: 170px;
+   font-family: 'Buxton Sketch';
+   text-transform: uppercase;
+}
+
+#mozliweSkladniki .win-item
+{
+    background-color: rgb(230, 0, 0);
+    height: 40px;
+    width: 170px;
+    font-size: large;
+    font-family: 'Global User Interface';
+}
+
+#table 
+{
+      width: 700px ;
+margin: auto;
+margin-top: 10%;
+}
+
+.win-container.win-selected .win-selectionborder {
+    border-color: rgb(255, 110, 110) !important;
+}
+.win-container.win-selected:hover .win-selectionborder {
+    border-color: rgb(255, 110, 110) !important;
+}
+.win-selected .win-selectionbackground {
+    background-color: rgb(255, 110, 110) !important;
+}
+.win-selected:hover .win-selectionbackground {
+    background-color: rgb(255, 110, 110) !important;
+}

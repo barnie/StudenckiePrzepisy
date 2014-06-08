@@ -11,19 +11,42 @@
 
     <!-- App4 references -->
     <link href="/css/default.css" rel="stylesheet" />
-    <script src="/js/default.js"></script>
-    <script src="/js/navigator.js"></script>
     <script src="SQLite3JS/js/SQLite3.js"></script>
+    <script src="js/Settings.js"></script>
     <script src="/js/SQLite3.js"></script>
     <script src="/js/database.js"></script>
-    <script src="/js/default_inserts.js"></script>
+    <script src="js/default_inserts.js"></script>   
+    <script src="js/installDb.js"></script>
+    <script src="/js/default.js"></script>
+    <script src="/js/navigator.js"></script>
     <script src="/pages/list_recipes/data.js"></script>
+    <script src="js/WebServiceHandler.js"></script>
     <script>
         function openSearch() {
             WinJS.Navigation.navigate("/pages/search/search.html");
         }
-        function openExample() {
-            WinJS.Navigation.navigate("/pages/search/advancedSearch.html");
+        function goHome() {
+            var array = [];
+            getKategorie(array).then(function () {
+                WinJS.Navigation.navigate("/pages/categories/categories.html", array);
+            })
+        }
+        function openExample() { //searching
+            var array = [];
+            
+                getKategorie(array).then(function () {
+                    for (var i = 0 ; i < array.length ; i++) {
+                        categoryArray[i] = { title: array[i][1], picture: "/images/" + array[i][2], id: array[i][0] };
+                    }
+                        getSkladnikAddRecipe(array).then(function () {
+                            for (var i = 0 ; i < array.length ; i++) {
+                                ingridientArray[i] = { name: array[i][0], id: array[i][1] };
+                            }
+                            WinJS.Navigation.navigate("/pages/search/advancedSearch.html");
+                        })
+
+                });
+              
         }
     </script>
 </head>
@@ -33,11 +56,10 @@
         data-win-options="{layout:'custom',placement:'bottom'}", class="bottomMenu">
         <header aria-label="Navigation bar" role="banner">
             <div class="left">
-                <button id="home" data-win-control="WinJS.UI.AppBarCommand" data-win-options="{icon:'home', label:'Home', onclick:null, type:'button', tooltip:'Powrót do głownego ekranu'}"></button>
+                <button id="home" data-win-control="WinJS.UI.AppBarCommand" data-win-options="{icon:'home', label:'Home', onclick:null, type:'button', tooltip:'Powrót do głownego ekranu'}" onclick="goHome()"></button>
             </div>
             <div class="right">
                 <button id="buttonDel" data-win-control="WinJS.UI.AppBarCommand" data-win-options="{icon:'delete', label:'Usuń przepis', type:'button', tooltip:'Usuń otwarty przepis'}"></button>
-                <button data-win-control="WinJS.UI.AppBarCommand" data-win-options="{icon:'bullets', label:'Zaznacz posiadane składniki', type:'button', tooltip:'Powiem ci co możesz zjeść'}"></button>
                 <button data-win-control="WinJS.UI.AppBarCommand" data-win-options="{icon:'find', label:'Wyszukiwanie', type:'button', tooltip:'Wpisz nazę bądź fragment'}" onclick="openSearch()"></button>
                 <button data-win-control="WinJS.UI.AppBarCommand" data-win-options="{icon:'find', label:'Wyszukiwanie zaawansowane', type:'button', tooltip:'Szukamy po nazwie, typie, składnikach'}" onclick="openExample()"></button>
             </div>

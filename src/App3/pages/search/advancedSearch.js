@@ -31,48 +31,6 @@
         }
     }
 
-    function loadRecipiesList(array) {
-        "use strict";
-
-        var myData = [];
-        for (var i = 0 ; i < array.length ; i++) {
-            myData[i] = { title: array[i][1] };
-        }
-
-        // Create a WinJS.Binding.List from the array. 
-        var itemsList = new WinJS.Binding.List(myData);
-
-        // Sorts the groups
-        function compareGroups(leftKey, rightKey) {
-            return leftKey.charCodeAt(0) - rightKey.charCodeAt(0);
-        }
-
-        // Returns the group key that an item belongs to
-        function getGroupKey(dataItem) {
-            return dataItem.title.toUpperCase().charAt(0);
-        }
-
-        // Returns the title for a group
-        function getGroupData(dataItem) {
-            return {
-                title: dataItem.title.toUpperCase().charAt(0)
-            };
-        }
-
-        // Create the groups for the ListView from the item data and the grouping functions
-        var groupedItemsList = itemsList.createGrouped(getGroupKey, getGroupData, compareGroups);
-
-
-        WinJS.Namespace.define("myData",
-              {
-                  groupedItemsList: groupedItemsList
-              });
-
-
-
-
-    }
-
     function querySubmittedHandler(eventObject) {
         var queryText = eventObject.detail.queryText;
         var myArray = new Array();
@@ -91,28 +49,49 @@
             }
         });
 
-        findPrzepis(categories, ingridines, myArray).then(function () {
+        if (Settings.getFrom != 'ws') {
+            findPrzepis(categories, ingridines, myArray).then(function () {
                 var tempArray = new Array();
                 var j = 0;
-                for (var i = 0; i < myArray.length; i++)
-                {
-                    if(myArray[i][1].toLowerCase().substr(0,queryText.length) === queryText)
-                    {
+                for (var i = 0; i < myArray.length; i++) {
+                    if (myArray[i][1].toLowerCase().substr(0, queryText.length) === queryText) {
                         tempArray[j] = myArray[i];
                         j++;
                     }
                 }
                 if (j == 0)
                     WinJS.Navigation.navigate('/pages/search/searchFailed.html');
-                    else
-                {
-                    loadRecipiesList(tempArray); 
+                else {
+                    loadRecipiesList(tempArray).then(function () {
+                        WinJS.Navigation.navigate("pages/list_recipes/list_recipes.html", tempArray);
+                    })
+                }
+
+
+            }
+            );
+        }
+        else {
+            WebServiceHandler.findPrzepis(categories, ingridines, myArray).then(function () {
+                var tempArray = new Array();
+                var j = 0;
+                for (var i = 0; i < myArray.length; i++) {
+                    if (myArray[i][1].toLowerCase().substr(0, queryText.length) === queryText) {
+                        tempArray[j] = myArray[i];
+                        j++;
+                    }
+                }
+                if (j == 0)
+                    WinJS.Navigation.navigate('/pages/search/searchFailed.html');
+                else {
+                    loadRecipiesList(tempArray);
                     WinJS.Navigation.navigate("pages/list_recipes/list_recipes.html", tempArray);
                 }
-                
-                
+
+
             }
-        );
+            );
+        }
     }
 
 })();

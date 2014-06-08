@@ -2,13 +2,9 @@
     <meta charset="utf-8" />
     <title>Recipes list</title>
     <link href="/pages/list_recipes/list_recipes.css" rel="stylesheet" />
-    <script src="/pages/list_recipes/list_recipes.js"></script>
-    
-
-    
+    <script src="/pages/list_recipes/list_recipes.js"></script> 
 </head>
 <body>
-   
         <div id="backCont">
             <header aria-label="Header content" role="banner">
                 <button class="win-backbutton" aria-label="Back" disabled type="button"></button>
@@ -25,10 +21,10 @@
             data-win-control="WinJS.Binding.Template" 
             style="display: -ms-grid;" >
 
-            <div class="namesItem" data-win-bind="style.background: picture">
+            <div class="namesItem" data-win-bind="style.background: picture; style.backgroundSize: size">
                 <div class="namesItem-Detail">
                     <br /><br /><br /><br /><br /><br />
-                    <h4 data-win-bind="innerText: title"></h4>
+                    <h4 data-win-bind="innerText: shortTitle"></h4>
 
                 </div>
             </div>
@@ -40,8 +36,5 @@
                 groupDataSource: myData.groupedItemsList.groups.dataSource,
                 groupHeaderTemplate: select('#letter')}">
         </div>
-
-
-
-   
+    
 </body>
