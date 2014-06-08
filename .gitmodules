@@ -1,3 +1,6 @@
 [submodule "server"]
 	path = server
 	url = https://github.com/MadNeptun/DistributedRecipeServer
+[submodule "DistributedRecipeServer"]
+	path = DistributedRecipeServer
+	url = https://github.com/MadNeptun/DistributedRecipeServer.git
