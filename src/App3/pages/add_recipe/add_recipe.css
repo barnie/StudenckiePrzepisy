@@ -1,21 +1,21 @@
 ﻿#text {
     text-align: center;
     height: 100%;
-    color: white;
-    background: pink;
+    color: black;
+    background: rgba(230, 0, 0, 0.7);
     font-size: medium;
-    font-family: Georgia;
+    font-family: 'Global User Interface';
     font-style: italic;
     font-weight: bold;
 }
 
 #fieldtext {
     height: 100%;
-    color: white;
-    font-size: small;
-    font-family: Georgia;
+    color: black;
+    font-family: 'Global User Interface';
     font-style: italic;
     font-weight: bold;
+    background-color: rgba(230, 0, 0, 0.7);
 }
 
 #imgHolder {
@@ -29,7 +29,7 @@
 }
 
 .bottomButtonAdd {
-    background-color:pink;
+    background-color:rgba(230, 0, 0, 0.7);
     position: fixed;
     top: 75%;
     left:40%;
@@ -37,7 +37,7 @@
 }
 
 .bottomButtonDel {
-    background-color:pink;
+    background-color:rgba(230, 0, 0, 0.7);
     padding: 3px;
     position: fixed;
     top: 75%;
@@ -58,6 +58,20 @@
     left: 51%;
     right: 27%;
     top: 5%;
+}
+
+#listaKategorii .win-item
+{
+   background-color: rgb(230, 0, 0);
+   height: 145px;
+   width: auto;
+   font-family: 'Buxton Sketch';
+   text-transform: uppercase;
+}
+
+#listaKategorii .win-listview
+{
+    margin-right: auto;
 }
 
 #contentHolder {
@@ -89,5 +103,37 @@ img.imgSize{
 
     padding: 3px; 
     position: fixed; 
-    min-width: 300px;
+    width: 200px;
+}
+
+#name
+{
+    margin: auto;
+}
+
+#mozliweSkladniki .win-item
+{
+    background-color: rgb(230, 0, 0);
+    height: 40px;
+    width: auto;
+    font-size: large;
+    font-family: 'Global User Interface';
+}
+
+.win-container.win-selected .win-selectionborder {
+    border-color: rgb(255, 110, 110) !important;
+}
+.win-container.win-selected:hover .win-selectionborder {
+    border-color: rgb(255, 110, 110) !important;
+}
+.win-selected .win-selectionbackground {
+    background-color: rgb(255, 110, 110) !important;
+}
+.win-selected:hover .win-selectionbackground {
+    background-color: rgb(255, 110, 110) !important;
+}
+
+#repiceName
+{
+    font-family: 'Buxton Sketch';
 }

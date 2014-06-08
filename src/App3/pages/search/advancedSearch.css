@@ -3,6 +3,8 @@
    background-color: rgb(230, 0, 0);
    height: 145px;
    width: 170px;
+   font-family: 'Buxton Sketch';
+   text-transform: uppercase;
 }
 
 #mozliweSkladniki .win-item
@@ -11,6 +13,7 @@
     height: 40px;
     width: 170px;
     font-size: large;
+    font-family: 'Global User Interface';
 }
 
 #table 
