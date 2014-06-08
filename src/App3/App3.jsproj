@@ -86,6 +86,7 @@
     <Content Include="images\kat5.jpg" />
     <Content Include="images\kat6.jpg" />
     <Content Include="images\loading.gif" />
+    <Content Include="images\logo.jpg" />
     <Content Include="images\pobrane.jpg" />
     <Content Include="images\red_metro.jpg" />
     <Content Include="images\setBut.png" />
