@@ -17,6 +17,7 @@ import android.widget.EditText;
 import android.widget.Toast;
 import com.example.studenckieprzepisy.AddRecipe.AddPrzepis;
 import com.example.studenckieprzepisy.AdvancedSearch.AdvancedSearch;
+import com.example.studenckieprzepisy.AdvancedSearch.NormalSearch;
 import com.example.studenckieprzepisy.Database.DatabaseInit;
 import com.example.studenckieprzepisy.Database.DatabaseObjects.Przepis;
 import com.example.studenckieprzepisy.Database.Factory.Database;
@@ -112,21 +113,7 @@ public class MainActivity extends FragmentActivity implements
                 startActivity(intent);
                 break;
             case R.id.search:
-                final EditText input = new EditText(this);
-                new AlertDialog.Builder(MainActivity.this)
-                        .setTitle("Wyszukaj Przepis")
-                        .setMessage("Wpisz nazwe przepisu")
-                        .setView(input)
-                        .setPositiveButton("Szukaj", new DialogInterface.OnClickListener() {
-                            public void onClick(DialogInterface dialog, int whichButton) {
-                                StrategySearch search = new StrategySearch(getApplicationContext(), input.getText().toString().trim());
-                                buildListViewDialog(search.search());
-                            }
-                        }).setNegativeButton("Anuluj", new DialogInterface.OnClickListener() {
-                    public void onClick(DialogInterface dialog, int whichButton) {
-                        // Do nothing.
-                    }
-                }).show();
+                startActivity(new Intent(this, NormalSearch.class));
                 break;
             case R.id.advanced_search:
                 Intent intent1 = new Intent(MainActivity.this, AdvancedSearch.class);

@@ -5,6 +5,7 @@ import android.app.AlertDialog;
 import android.content.Context;
 import android.content.DialogInterface;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.LayoutInflater;
@@ -22,6 +23,8 @@ import com.example.studenckieprzepisy.RecipeView.Przeepis;
 import com.example.studenckieprzepisy.Search.StrategySearch;
 
 import java.util.ArrayList;
+import java.util.Collections;
+import java.util.Comparator;
 import java.util.List;
 
 /**
@@ -47,26 +50,35 @@ public class AdvancedSearch extends Activity {
 
     }
 
+
     private void displayListView() {
 
-        // Array list of countries
         ArrayList<PrzepisSkladnikWybor> stateList = new ArrayList<PrzepisSkladnikWybor>();
         DateBridge db = new SqlBridge(new Database(getApplicationContext(), null, null, 1));
         List<Skladnik> skladniczki = db.getSkladniki();
-        for (Skladnik i : skladniczki)
-            stateList.add(new PrzepisSkladnikWybor(i, false));
+        Collections.sort(skladniczki, new Comparator<Skladnik>() {
+            public int compare(Skladnik a, Skladnik b) {
+                return a.getNazwa().compareTo(b.getNazwa());
+            }
+        });
+        Log.d("AAA","AAA");
 
-        // create an ArrayAdaptar from the String Array
+        SharedPreferences shared = AdvancedSearch.this.getSharedPreferences("com.example.studenckieprzepisy", Context.MODE_PRIVATE);
+        for (Skladnik i : skladniczki){
+        Log.d("AAA",shared.getString(i.getNazwa(),""));
+            if (shared.getString(i.getNazwa(),"").compareTo(i.getNazwa()) == 0)
+                stateList.add(new PrzepisSkladnikWybor(i, true));
+            else
+                stateList.add(new PrzepisSkladnikWybor(i, false));
+        }
         dataAdapter = new MyCustomAdapter(this, R.layout.addskladniklist, stateList);
         ListView listView = (ListView) findViewById(R.id.listView);
-        // Assign adapter to ListView
         listView.setAdapter(dataAdapter);
 
         listView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
 
             public void onItemClick(AdapterView<?> parent, View view,
                                     int position, long id) {
-                // When clicked, show a toast with the TextView text
                 PrzepisSkladnikWybor state = (PrzepisSkladnikWybor) parent.getItemAtPosition(position);
                 Toast.makeText(getApplicationContext(),
                         "Clicked on : " + state.getMiara(), Toast.LENGTH_LONG)
@@ -138,10 +150,17 @@ public class AdvancedSearch extends Activity {
     }
 
 
-    public void buildListViewDialog(List<String> przepisy) {
+    public void buildListViewDialog(final List<Skladnik> przepisy) {
         if (przepisy.size() == 0) {
             Toast.makeText(getApplicationContext(), "Nie znaleziono przepisow pasujacych do wzorca", Toast.LENGTH_LONG).show();
             return;
+        }
+
+        StrategySearch search = new StrategySearch(getApplicationContext(), przepisy);
+        List<Przepis> wyszukane = search.search();
+        ArrayList<String> tmp = new ArrayList<String>();
+        for (Przepis p : wyszukane) {
+            tmp.add(p.getNazwa());
         }
         AlertDialog.Builder builderSingle = new AlertDialog.Builder(
                 AdvancedSearch.this);
@@ -150,7 +169,7 @@ public class AdvancedSearch extends Activity {
         final ArrayAdapter<String> arrayAdapter = new ArrayAdapter<String>(
                 this,
                 android.R.layout.select_dialog_singlechoice);
-        for (String p : przepisy) {
+        for (String p : tmp) {
             arrayAdapter.add(p);
         }
         builderSingle.setNegativeButton("cancel",
@@ -186,21 +205,36 @@ public class AdvancedSearch extends Activity {
             public void onClick(View v) {
                 ArrayList<PrzepisSkladnikWybor> stateList = dataAdapter.stateList;
                 List<Skladnik> wybrane = new ArrayList<Skladnik>();
-
                 for (int i = 0; i < stateList.size(); i++) {
                     PrzepisSkladnikWybor state = stateList.get(i);
                     if (state.isChoosen()) {
                         wybrane.add(stateList.get(i).getSkladnik());
+
                     }
                 }
-                StrategySearch search = new StrategySearch(getApplicationContext(), wybrane);
-                List<Przepis> wyszukane = search.search();
-                ArrayList<String> tmp = new ArrayList<String>();
-                for (Przepis p : wyszukane) {
-                    tmp.add(p.getNazwa());
-                }
-                buildListViewDialog(tmp);
+                buildListViewDialog(wybrane);
             }
         });
+    }
+
+    @Override
+    protected void onSaveInstanceState(Bundle outState) {
+        super.onSaveInstanceState(outState);
+        List<PrzepisSkladnikWybor> tmp = dataAdapter.stateList;
+        SharedPreferences.Editor pref = this.getSharedPreferences("com.example.studenckieprzepisy", Context.MODE_PRIVATE).edit();
+        for (PrzepisSkladnikWybor i: tmp){
+            if (i.isChoosen()) {
+                Log.d("PS ", i.getSkladnik().getNazwa());
+                pref.putString(i.getSkladnik().getNazwa(),i.getSkladnik().getNazwa());
+            }
+        }
+        pref.commit();
+    }
+
+    @Override
+    public void onBackPressed() {
+        super.onBackPressed();
+        SharedPreferences.Editor pref = AdvancedSearch.this.getSharedPreferences("com.example.studenckieprzepisy", Context.MODE_PRIVATE).edit();
+        pref.clear().commit();
     }
 }

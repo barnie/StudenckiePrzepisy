@@ -45,11 +45,13 @@ public class Przeepis extends Activity {
         opis = (TextView) findViewById(R.id.opis);
 
         facadeSend = new FacadeSend(Przeepis.this);
-
+        Log.e("ADSADSA","TEST");
         String przepis = getIntent().getExtras().getString("KEY");
         getActionBar().setTitle(przepis);
+        Log.e("ADSADSADASDS!:", przepis);
         Database db = new Database(getApplicationContext(), null, null, 1);
         p = db.getPrzepis(przepis);
+        if (p != null && p.getOpis() != null)
         opis.setText(p.getOpis());
         AssetManager assetManager = getAssets();
         try {
