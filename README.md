@@ -33,7 +33,7 @@ Projekt Książki Kucharskiej wykonywanej w ramach kursu Projekt Zespołowy 1 i 
 	
 ### Autorzy Projektu (alfabetycznie):
 	Bartosz Bargiel <bargl1991@gmail.com>
-	Piotr Kruk <ppiotr.kruk@uj.edu.pl>
+	Piotr Kruk <piotr@kruk.co>
 	Marcin Milik <marcin.milik@uj.edu.pl>
 	Piotr Rachwał <piotr.rachwal27@gmail.com>
 
